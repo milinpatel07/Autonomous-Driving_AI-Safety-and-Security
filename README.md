@@ -26,12 +26,7 @@ The project is tested with the following versions:
    ```bash
    pip install -r requirements.txt
    pip install spconv-cu121 ensemble-boxes
-<<<<<
-   # optionally install SharedArray for faster KITTI info generation
-   pip install SharedArray
-=======
 
->>>>> master
    ```
 3. Build the project:
    ```bash
@@ -103,3 +98,14 @@ docker run --gpus all -it \
     -v /path/to/kitti:/workspace/OpenPCDet_Car/data/kitti \
     openpcdet_car
 ```
+
+## Uncertainty Calibration
+
+The repository includes utilities to measure calibration with Expected Calibration Error (ECE) and to apply temperature scaling. After training your model, run:
+
+```bash
+python tools/temp_scaling.py --cfg_file tools/cfgs/kitti_models/pv_rcnn_car.yaml \
+    --ckpt your_model.pth
+```
+
+This computes the ECE metric using `tools/eval_utils/ece.py` and saves a calibrated model checkpoint.
