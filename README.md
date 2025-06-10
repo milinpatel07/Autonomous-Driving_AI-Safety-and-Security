@@ -25,7 +25,7 @@ The project is tested with the following versions:
 2. Install the remaining dependencies:
    ```bash
    pip install -r requirements.txt
-   pip install spconv-cuda12.1 ensemble-boxes
+   pip install spconv-cu121 ensemble-boxes
    ```
 3. Build the project:
    ```bash
@@ -52,7 +52,6 @@ data
         └── calib
 ```
 
-<<<<<
 Only the `Car` class should appear in the label files.  After arranging the
 files, generate the KITTI information files and ground‑truth database:
 
@@ -60,9 +59,7 @@ files, generate the KITTI information files and ground‑truth database:
 python -m pcdet.datasets.kitti.kitti_dataset create_kitti_infos \
     tools/cfgs/dataset_configs/kitti_car_dataset.yaml
 ```
-=======
 
->>>>> master
 
 ## Training
 
@@ -86,8 +83,8 @@ Fused results are saved to `ensemble_output/ensemble_result.pkl`.
 
 ## Docker
 
-A simple Dockerfile is provided to create an environment matching the
-above versions.  Build with
+A Dockerfile is provided to create an environment matching the
+above versions.  Build the image with
 
 ```bash
 docker build -t openpcdet_car .
@@ -96,5 +93,7 @@ docker build -t openpcdet_car .
 and run with
 
 ```bash
-docker run --gpus all -it openpcdet_car
+docker run --gpus all -it \
+    -v /path/to/kitti:/workspace/OpenPCDet_Car/data/kitti \
+    openpcdet_car
 ```
