@@ -26,11 +26,12 @@ The project is tested with the following versions:
    ```bash
    pip install -r requirements.txt
    pip install spconv-cu121 ensemble-boxes
-
+<<<<<
    # optionally install SharedArray for faster KITTI info generation
    pip install SharedArray
 =======
 
+>>>>> master
    ```
 3. Build the project:
    ```bash

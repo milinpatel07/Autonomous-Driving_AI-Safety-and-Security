@@ -364,7 +364,7 @@ if __name__ == '__main__':
         ROOT_DIR = (Path(__file__).resolve().parent / '../../../').resolve()
         create_waymo_infos(
             dataset_cfg=dataset_cfg,
-            class_names=['Vehicle', 'Pedestrian', 'Cyclist'],
+            class_names=dataset_cfg.CLASS_NAMES,
             data_path=ROOT_DIR / 'data' / 'waymo',
             save_path=ROOT_DIR / 'data' / 'waymo',
             raw_data_tag='raw_data',
