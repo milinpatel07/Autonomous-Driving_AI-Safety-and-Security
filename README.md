@@ -52,7 +52,17 @@ data
         └── calib
 ```
 
-Only the `Car` class should appear in the label files.
+<<<<<
+Only the `Car` class should appear in the label files.  After arranging the
+files, generate the KITTI information files and ground‑truth database:
+
+```bash
+python -m pcdet.datasets.kitti.kitti_dataset create_kitti_infos \
+    tools/cfgs/dataset_configs/kitti_car_dataset.yaml
+```
+=======
+
+>>>>> master
 
 ## Training
 
