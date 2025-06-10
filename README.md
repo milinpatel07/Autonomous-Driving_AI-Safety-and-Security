@@ -17,20 +17,42 @@ The project is tested with the following versions:
 | torchvision   | 0.17.1  |
 | spconv        | 2.3.6   |
 
-1. Install the dependencies:
+1. Install PyTorch with CUDA 12.1 (replace the index URL if using a different CUDA version):
+   ```bash
+   pip install torch==2.2.1+cu121 torchvision==0.17.1+cu121 \
+       --extra-index-url https://download.pytorch.org/whl/cu121
+   ```
+2. Install the remaining dependencies:
    ```bash
    pip install -r requirements.txt
    pip install spconv-cuda12.1 ensemble-boxes
    ```
-2. Build the project:
+3. Build the project:
    ```bash
    python setup.py develop
    ```
 
 ## Dataset
 
-Place your KITTI formatted dataset under `data/kitti` with the usual
-`training` and `ImageSets` folders.  Only the `Car` class is expected in labels.
+Place your KITTI formatted dataset under `data/kitti` with the following
+structure:
+
+```
+data
+└── kitti
+    ├── ImageSets
+    ├── training
+    │   ├── image_2
+    │   ├── velodyne
+    │   ├── label_2
+    │   └── calib
+    └── testing
+        ├── image_2
+        ├── velodyne
+        └── calib
+```
+
+Only the `Car` class should appear in the label files.
 
 ## Training
 
