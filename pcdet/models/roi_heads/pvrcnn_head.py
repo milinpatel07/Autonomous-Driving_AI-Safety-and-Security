@@ -36,7 +36,11 @@ class PVRCNNHead(RoIHeadTemplate):
             pre_channel = self.model_cfg.SHARED_FC[k]
 
             if k != self.model_cfg.SHARED_FC.__len__() - 1 and self.model_cfg.DP_RATIO > 0:
-                shared_fc_list.append(nn.Dropout(self.model_cfg.DP_RATIO))
+                if getattr(self.model_cfg, 'MC_DROPOUT', False):
+                    from ..model_utils import MonteCarloDropout
+                    shared_fc_list.append(MonteCarloDropout(self.model_cfg.DP_RATIO))
+                else:
+                    shared_fc_list.append(nn.Dropout(self.model_cfg.DP_RATIO))
 
         self.shared_fc_layer = nn.Sequential(*shared_fc_list)
 

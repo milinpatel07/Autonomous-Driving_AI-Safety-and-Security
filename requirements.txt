@@ -1,8 +1,10 @@
-numpy
-torch>=1.1
+numpy==1.26.3
+torch==2.2.1
 numba
-tensorboardX
+tensorboardX==2.6.2.2
 easydict
 pyyaml
 scikit-image
-tqdm
+tqdm==4.65.0
+torchvision==0.17.1
+ensemble-boxes
