@@ -37,7 +37,11 @@ class RoIHeadTemplate(nn.Module):
             ])
             pre_channel = fc_list[k]
             if self.model_cfg.DP_RATIO >= 0 and k == 0:
-                fc_layers.append(nn.Dropout(self.model_cfg.DP_RATIO))
+                if getattr(self.model_cfg, 'MC_DROPOUT', False):
+                    from ..model_utils import MonteCarloDropout
+                    fc_layers.append(MonteCarloDropout(self.model_cfg.DP_RATIO))
+                else:
+                    fc_layers.append(nn.Dropout(self.model_cfg.DP_RATIO))
         fc_layers.append(nn.Conv1d(pre_channel, output_channels, kernel_size=1, bias=True))
         fc_layers = nn.Sequential(*fc_layers)
         return fc_layers

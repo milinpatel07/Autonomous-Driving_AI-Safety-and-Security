@@ -2,6 +2,7 @@ import numpy as np
 import torch.nn as nn
 
 from .anchor_head_template import AnchorHeadTemplate
+from ..model_utils import MonteCarloDropout2d
 
 
 class AnchorHeadSingle(AnchorHeadTemplate):
@@ -23,6 +24,15 @@ class AnchorHeadSingle(AnchorHeadTemplate):
             kernel_size=1
         )
 
+        dropout_prob = self.model_cfg.get('DROPOUT_PROB', 0.0)
+        if dropout_prob > 0:
+            if self.model_cfg.get('MC_DROPOUT', False):
+                self.dropout = MonteCarloDropout2d(dropout_prob)
+            else:
+                self.dropout = nn.Dropout2d(dropout_prob)
+        else:
+            self.dropout = nn.Identity()
+
         if self.model_cfg.get('USE_DIRECTION_CLASSIFIER', None) is not None:
             self.conv_dir_cls = nn.Conv2d(
                 input_channels,
@@ -40,6 +50,7 @@ class AnchorHeadSingle(AnchorHeadTemplate):
 
     def forward(self, data_dict):
         spatial_features_2d = data_dict['spatial_features_2d']
+        spatial_features_2d = self.dropout(spatial_features_2d)
 
         cls_preds = self.conv_cls(spatial_features_2d)
         box_preds = self.conv_box(spatial_features_2d)
