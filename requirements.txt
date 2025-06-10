@@ -8,3 +8,4 @@ scikit-image
 tqdm==4.65.0
 torchvision==0.17.1
 ensemble-boxes
+scipy

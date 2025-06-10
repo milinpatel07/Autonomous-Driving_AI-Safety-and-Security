@@ -75,6 +75,17 @@ Use the provided configuration for PV-RCNN:
 python tools/train.py --cfg_file tools/cfgs/kitti_models/pv_rcnn_car.yaml
 ```
 
+
+## Uncertainty Calibration
+
+The repository includes utilities to measure calibration with Expected Calibration Error (ECE) and to apply temperature scaling. After training your model, run:
+
+```bash
+python tools/temp_scaling.py --cfg_file tools/cfgs/kitti_models/pv_rcnn_car.yaml \
+    --ckpt your_model.pth
+```
+
+This computes the ECE metric using `tools/eval_utils/ece.py` and saves a calibrated model checkpoint.
 ## Ensemble and Monte‑Carlo Dropout
 
 * Monte‑Carlo dropout is enabled when `MC_DROPOUT: True` in model configs.
