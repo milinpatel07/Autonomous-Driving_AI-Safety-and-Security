@@ -26,8 +26,11 @@ The project is tested with the following versions:
    ```bash
    pip install -r requirements.txt
    pip install spconv-cu121 ensemble-boxes
+
    # optionally install SharedArray for faster KITTI info generation
    pip install SharedArray
+=======
+
    ```
 3. Build the project:
    ```bash
@@ -61,6 +64,7 @@ files, generate the KITTI information files and ground‑truth database:
 python -m pcdet.datasets.kitti.kitti_dataset create_kitti_infos \
     tools/cfgs/dataset_configs/kitti_car_dataset.yaml
 ```
+
 
 ## Training
 
