@@ -1,0 +1,90 @@
+# AV Perception & Safety Workshop - Python Dependencies
+# Compatible with Python 3.8+
+
+# Core Deep Learning
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.0.0  # YOLOv8
+# detectron2 @ git+https://github.com/facebookresearch/detectron2.git  # Uncomment if needed
+
+# Computer Vision & Image Processing
+opencv-python>=4.8.0
+opencv-contrib-python>=4.8.0
+Pillow>=10.0.0
+
+# 3D Point Cloud Processing
+open3d>=0.17.0
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Data Processing & Analysis
+pandas>=2.0.0
+scikit-learn>=1.3.0
+scikit-image>=0.21.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.14.0
+ipywidgets>=8.0.0
+
+# Jupyter & Interactive
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+notebook>=7.0.0
+ipykernel>=6.25.0
+
+# Dataset Handling
+nuscenes-devkit>=1.1.10  # nuScenes dataset
+lyft-dataset-sdk>=0.0.8  # Lyft Level 5 dataset
+waymo-open-dataset-tf-2-11-0>=1.6.0  # Waymo dataset (TensorFlow version)
+
+# Additional ML Tools
+albumentations>=1.3.0  # Data augmentation
+imgaug>=0.4.0
+
+# Metrics & Evaluation
+pycocotools>=2.0.6  # COCO evaluation metrics
+torchmetrics>=1.0.0
+
+# Uncertainty Estimation
+laplace-torch>=0.1.0  # Laplace approximation
+uncertainty-toolbox>=0.1.0
+
+# Video Processing
+imageio>=2.31.0
+imageio-ffmpeg>=0.4.0
+
+# Progress Bars & Logging
+tqdm>=4.65.0
+tensorboard>=2.13.0
+
+# HTTP Requests & Downloads
+requests>=2.31.0
+wget>=3.2
+
+# Configuration & Utilities
+pyyaml>=6.0
+omegaconf>=2.3.0
+hydra-core>=1.3.0
+
+# Embedded Systems (Raspberry Pi)
+# Uncomment if running on Raspberry Pi:
+# picamera2
+# rpi.gpio
+
+# Optional: Point Cloud Utilities
+# pypcd>=0.1.1
+# pyntcloud>=0.3.0
+
+# Optional: ROS Integration
+# rclpy  # ROS 2 Python client
+# sensor_msgs_py
+
+# Optional: Advanced Visualization
+# mayavi>=4.8.0  # 3D visualization (requires VTK)
+
+# Development Tools (optional)
+# black>=23.0.0  # Code formatting
+# flake8>=6.0.0  # Linting
+# pytest>=7.4.0  # Testing
