@@ -2,21 +2,40 @@
 
 **Author:** Milin Patel
 **Institution:** Hochschule Kempten - University of Applied Sciences
-**Duration:** 3.5 hours (09:00 - 12:30)
+**Total Duration:** 6-7 hours (can be split across multiple days)
+**Status:** ✅ **COMPLETE - All 4 Sessions Ready!**
+
+[![All Sessions Complete](https://img.shields.io/badge/Sessions-4%2F4%20Complete-success.svg)]()
+[![Notebooks](https://img.shields.io/badge/Notebooks-18%20Total-blue.svg)]()
+[![Google Colab Ready](https://img.shields.io/badge/Google%20Colab-Ready-orange.svg)](https://colab.research.google.com/)
 
 ## 🎯 Workshop Overview
 
-This hands-on workshop provides a comprehensive introduction to AI-based perception systems in autonomous vehicles, their failure modes, safety standards, and uncertainty estimation techniques. Participants will gain practical experience through interactive demonstrations, real datasets, and Jupyter notebook exercises.
+This comprehensive, hands-on workshop provides complete coverage of AI-based perception systems in autonomous vehicles, their failure modes, safety and security standards, uncertainty estimation, and validation techniques. Participants will gain both theoretical knowledge and practical implementation experience through 18 interactive Jupyter notebooks, all runnable in Google Colab.
 
-## 📋 Workshop Schedule
+## 📋 Workshop Schedule (All Sessions Available)
 
-| Time | Duration | Session |
-|------|----------|---------|
-| 09:00 - 10:30 | 90 min | **Session 1:** AI-based Perception Systems in Autonomous Vehicles |
-| 10:30 - 10:45 | 15 min | ☕ Coffee Break |
-| 10:45 - 11:30 | 45 min | **Session 2:** Failure Modes in Machine Learning-based Perception |
-| 11:30 - 12:00 | 30 min | **Session 3:** Safety Standards for Autonomous Driving Systems |
-| 12:00 - 12:30 | 30 min | **Session 4:** Uncertainty Estimation in Object Detection |
+| Session | Duration | Topic | Notebooks |
+|---------|----------|-------|-----------|
+| **Session 1** | 90-100 min | **AI-based Perception Systems** | 01-06 (6 notebooks) |
+| **Session 2** | 90 min | **Failure Modes and Edge Cases** | 07-10 (4 notebooks) |
+| **Session 3** | 120 min | **Safety and Security Standards** | 11-14 (4 notebooks) |
+| **Session 4** | 90 min | **Uncertainty Estimation and Validation** | 15-18 (4 notebooks) |
+| **TOTAL** | **6-7 hours** | **Complete Workshop** | **18 notebooks** |
+
+### Recommended Workshop Formats
+
+**Option A: Full-Day Workshop** (6-7 hours with breaks)
+- Morning: Sessions 1 & 2 (3 hours + 15 min break)
+- Afternoon: Sessions 3 & 4 (3.5 hours + 15 min break)
+
+**Option B: Multi-Day Workshop** (2 days)
+- Day 1: Sessions 1 & 2 (AI Perception + Failures)
+- Day 2: Sessions 3 & 4 (Standards + Validation)
+
+**Option C: Self-Paced Online Learning**
+- Work through all 18 notebooks at your own pace
+- All notebooks work independently in Google Colab
 
 ## 🎓 Learning Objectives
 
@@ -118,86 +137,79 @@ jupyter lab
 
 6. **Navigate to Session 1** and open the first notebook!
 
-## 📚 Session Contents
+## 📚 Complete Session Contents
 
-### Session 1: AI-based Perception Systems (90 min)
+### Session 1: AI-based Perception Systems (90-100 min) ✅
 **Location:** `Session_1_AI_Perception_Systems/`
 
-- **Notebooks (6):**
-  1. Introduction & SAE Levels
-  2. Sensor Modalities Visualization
-  3. Object Detection Demo (YOLOv8, Faster R-CNN)
-  4. Dataset Exploration (KITTI, nuScenes, Waymo)
-  5. Sensor Fusion Basics
-  6. Pedestrian Detection Case Study
+**All 6 Notebooks:**
+1. **01_Introduction_SAE_Levels.ipynb** (15 min) - SAE J3016 automation levels, ODD, AV architecture
+2. **02_Sensor_Modalities_Visualization.ipynb** (15-20 min) - Camera, LiDAR, Radar comparison with 3D visualizations
+3. **03_Object_Detection_Demo.ipynb** (20 min) - YOLOv8 implementation, real-time inference, failure analysis
+4. **04_Dataset_Exploration.ipynb** (20 min) - KITTI, nuScenes, Waymo datasets analysis and comparison
+5. **05_Sensor_Fusion_Basics.ipynb** (15 min) - Early, late, deep fusion with working code implementations
+6. **06_Pedestrian_Detection_Case_Study.ipynb** (15 min) - Safety-critical pedestrian detection, ISO 26262 ASIL-D
 
-- **Interactive Demos:**
-  - Live object detection with webcam
-  - 3D LiDAR point cloud visualization
-  - Multi-sensor data fusion
-  - Real-time inference benchmarking
+**Key Features:**
+- All notebooks work in Google Colab (zero setup!)
+- Interactive visualizations and working code
+- Real-world AV examples and datasets
+- Exercises with solutions
+- Links to Hugging Face demos
 
-- **Exercises:**
-  - Compare SAE automation levels
-  - Analyze sensor trade-offs
-  - Train object detector on custom data
-  - Evaluate detection performance (mAP, precision, recall)
+---
 
-### Session 2: Failure Modes in ML Perception (45 min)
-**Location:** `Session_2_Failure_Modes/`
+### Session 2: Failure Modes and Edge Cases (90 min) ✅
+**Location:** `Session_2_Failure_Modes_and_Edge_Cases/`
 
-- **Real Accident Analysis:**
-  - Uber ATG Tempe crash (2018) - NTSB report breakdown
-  - Tesla Autopilot incidents
-  - Cruise SF accident (2023)
+**All 4 Notebooks:**
+7. **07_AV_Failure_Case_Studies.ipynb** (20 min) - Uber ATG, Tesla, Cruise accidents with NTSB analysis
+8. **08_OOD_Detection.ipynb** (25 min) - 4 OOD detection methods with implementations (Mahalanobis, Energy-based, MC Dropout)
+9. **09_Corner_Cases_and_Edge_Cases.ipynb** (20 min) - Long-tail distribution, risk matrices, combinatorial scenarios
+10. **10_Adversarial_Attacks_on_Perception.ipynb** (25 min) - FGSM, PGD attacks, sensor spoofing, defenses, ISO/SAE 21434
 
-- **Failure Types:**
-  - False positives/negatives
-  - Misclassification
-  - Out-of-distribution (OOD) scenarios
-  - Adversarial examples
+**Key Features:**
+- Real accident analysis with root causes
+- Working implementations of all OOD methods
+- Adversarial attack code demonstrations
+- Connection to ISO 21448 SOTIF
+- Cybersecurity threat analysis (TARA)
 
-- **Root Causes:**
-  - Training data gaps
-  - Weather/lighting conditions
-  - Sensor limitations
-  - Algorithm design choices
+---
 
-### Session 3: Safety Standards (30 min)
-**Location:** `Session_3_Safety_Standards/`
+### Session 3: Safety and Security Standards (120 min) ✅
+**Location:** `Session_3_Safety_and_Security_Standards/`
 
-- **ISO 26262** - Functional Safety
-- **ISO 21448 (SOTIF)** - Safety of the Intended Functionality
-- **ISO 8800** - Safety & AI in Road Vehicles
-- **ISO 21434** - Cybersecurity
+**All 4 Notebooks:**
+11. **11_ISO_26262_Functional_Safety.ipynb** (30 min) - V-Model, ASIL classification, HARA methodology
+12. **12_ISO_21448_SOTIF.ipynb** (30 min) - Four scenario categories, triggering conditions, SOTIF process
+13. **13_ISO_8800_AI_Safety.ipynb** (25 min) - AI trustworthiness, data quality, model monitoring, human-AI interaction
+14. **14_ISO_SAE_21434_Cybersecurity.ipynb** (35 min) - TARA methodology, CAL levels, penetration testing
 
-- **Integrated Case Study:**
-  - Apply ALL standards to pedestrian detection system
-  - Hazard analysis and risk assessment (HARA)
-  - Define Operational Design Domain (ODD)
-  - SOTIF scenario space (Known/Unknown Safe/Unsafe)
+**Key Features:**
+- Complete HARA and TARA templates (markdown)
+- Interactive worksheets for standards compliance
+- Real-world safety analysis examples
+- Integration guide showing how standards work together
+- Professional, standards-compliant terminology
 
-### Session 4: Uncertainty Estimation (30 min)
-**Location:** `Session_4_Uncertainty_Estimation/`
+---
 
-- **Uncertainty Types:**
-  - Aleatoric (data) uncertainty
-  - Epistemic (model) uncertainty
+### Session 4: Uncertainty Estimation and Validation (90 min) ✅
+**Location:** `Session_4_Uncertainty_Estimation_and_Validation/`
 
-- **Quantification Methods:**
-  - Monte Carlo Dropout
-  - Deep Ensembles
-  - Bayesian Neural Networks (intro)
+**All 4 Notebooks:**
+15. **15_Uncertainty_Types_in_Deep_Learning.ipynb** (20 min) - Aleatoric vs epistemic uncertainty, sources in AV perception
+16. **16_MC_Dropout_and_Ensembles.ipynb** (25 min) - Complete implementations of Monte Carlo Dropout and Deep Ensembles
+17. **17_Calibration_and_Reliability.ipynb** (20 min) - ECE metric, temperature scaling, reliability diagrams
+18. **18_Safety_Validation_and_Testing.ipynb** (25 min) - Pegasus 6-layer model, scenario-based testing, statistical evidence
 
-- **Implementation:**
-  - Add uncertainty to YOLOv8
-  - Visualize confidence vs uncertainty
-  - Uncertainty-aware decision making
-
-- **Live Demo:**
-  - Raspberry Pi with camera
-  - Real-time detection + uncertainty
-  - Change conditions → observe uncertainty
+**Key Features:**
+- Working Python scripts (uncertainty.py, calibration.py, validation.py)
+- Production-ready code for uncertainty quantification
+- Complete validation plan templates
+- Connection to ISO 26262 V&V requirements
+- Statistical analysis (Kalra & Paddock "billion miles")
 
 ## 🛠️ Technologies Used
 

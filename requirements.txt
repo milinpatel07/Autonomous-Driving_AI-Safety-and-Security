@@ -1,56 +1,144 @@
-# AI and Safety in Autonomous Driving Workshop - Requirements
-# Python 3.8+ required
+# Autonomous Driving: AI, Safety, and Security Workshop
+# Complete Requirements for All 4 Sessions
+# Python 3.8+ Required
+# Compatible with Google Colab and Local Installation
 
-# Deep Learning Frameworks
+# ==========================================
+# CORE DEEP LEARNING FRAMEWORKS
+# ==========================================
 torch>=2.0.0
 torchvision>=0.15.0
-ultralytics>=8.0.0  # YOLOv8
+ultralytics>=8.0.0              # YOLOv8 for object detection
+# tensorflow>=2.13.0            # Uncomment if using TensorFlow-based models
+# tensorflow-probability>=0.21.0  # For Bayesian methods (optional)
 
-# Computer Vision
+# ==========================================
+# COMPUTER VISION & IMAGE PROCESSING
+# ==========================================
 opencv-python>=4.8.0
 opencv-contrib-python>=4.8.0
 Pillow>=10.0.0
 scikit-image>=0.21.0
+imageio>=2.31.0
+imageio-ffmpeg>=0.4.8
 
-# 3D Vision & Point Clouds
+# ==========================================
+# 3D VISION & POINT CLOUD PROCESSING
+# ==========================================
 open3d>=0.17.0
-pyntcloud>=0.3.0
+# pyntcloud>=0.3.0              # Optional: Additional point cloud utilities
 
-# Data Science & Numerical Computing
-numpy>=1.24.0
+# ==========================================
+# DATA SCIENCE & NUMERICAL COMPUTING
+# ==========================================
+numpy>=1.24.0,<2.0.0            # Compatible with all dependencies
 pandas>=2.0.0
 scipy>=1.10.0
+scikit-learn>=1.3.0
 
-# Visualization
+# ==========================================
+# VISUALIZATION
+# ==========================================
 matplotlib>=3.7.0
 seaborn>=0.12.0
 plotly>=5.14.0
 ipywidgets>=8.0.0
 
-# Jupyter Environment
+# ==========================================
+# JUPYTER & INTERACTIVE NOTEBOOKS
+# ==========================================
 jupyter>=1.0.0
 jupyterlab>=4.0.0
 notebook>=7.0.0
 ipykernel>=6.25.0
 
-# AV Dataset Tools
-# nuscenes-devkit>=1.1.9  # Uncomment if using full nuScenes dataset
-# waymo-open-dataset-tf-2-11-0>=1.6.0  # Uncomment if using Waymo dataset
+# ==========================================
+# AV DATASETS (Optional - Large Downloads)
+# ==========================================
+# nuscenes-devkit>=1.1.10       # Uncomment if working with nuScenes full dataset
+# lyft-dataset-sdk>=0.0.8        # Uncomment if working with Lyft dataset
+# waymo-open-dataset-tf-2-11-0>=1.6.0  # Uncomment if working with Waymo dataset
 
-# Utilities
-tqdm>=4.65.0
-requests>=2.31.0
-wget>=3.2
-gdown>=4.7.0  # For Google Drive downloads
+# ==========================================
+# OBJECT DETECTION & EVALUATION
+# ==========================================
+pycocotools>=2.0.6              # COCO evaluation metrics
+torchmetrics>=1.0.0             # ML metrics for PyTorch
 
-# Image & Video Processing
-imageio>=2.31.0
-imageio-ffmpeg>=0.4.8
+# ==========================================
+# DATA AUGMENTATION (Optional but Recommended)
+# ==========================================
+albumentations>=1.3.0           # Advanced data augmentation
+# imgaug>=0.4.0                 # Alternative augmentation library
 
-# Metrics & Evaluation
-scikit-learn>=1.3.0
-pycocotools>=2.0.6
+# ==========================================
+# UNCERTAINTY QUANTIFICATION
+# ==========================================
+# laplace-torch>=0.1.0          # Laplace approximation for Bayesian deep learning
+# uncertainty-toolbox>=0.1.0    # Uncertainty metrics and calibration
 
-# Optional: For advanced features
-# albumentations>=1.3.0  # Data augmentation
-# timm>=0.9.0  # PyTorch image models
+# ==========================================
+# UTILITIES & HELPERS
+# ==========================================
+tqdm>=4.65.0                    # Progress bars
+requests>=2.31.0                # HTTP requests
+wget>=3.2                       # File downloads
+gdown>=4.7.0                    # Google Drive downloads
+pyyaml>=6.0                     # YAML configuration files
+
+# ==========================================
+# LOGGING & MONITORING (Optional)
+# ==========================================
+# tensorboard>=2.13.0           # TensorBoard logging
+# wandb>=0.15.0                 # Weights & Biases (optional)
+
+# ==========================================
+# DEVELOPMENT & TESTING (Optional)
+# ==========================================
+# pytest>=7.4.0                 # Unit testing
+# black>=23.0.0                 # Code formatting
+# flake8>=6.0.0                 # Linting
+# mypy>=1.5.0                   # Type checking
+
+# ==========================================
+# EMBEDDED SYSTEMS (Raspberry Pi - Optional)
+# ==========================================
+# picamera2                     # Raspberry Pi camera interface
+# RPi.GPIO                      # GPIO control
+
+# ==========================================
+# NOTES FOR GOOGLE COLAB USERS
+# ==========================================
+# Most packages are pre-installed in Colab including:
+# - torch, torchvision, numpy, pandas, matplotlib, seaborn, scipy, scikit-learn
+# - opencv-python, Pillow, imageio
+# - jupyter, ipywidgets
+#
+# Each notebook has a setup cell that installs missing dependencies
+# You typically DON'T need to run `pip install -r requirements.txt` in Colab
+
+# ==========================================
+# INSTALLATION INSTRUCTIONS
+# ==========================================
+# Local Installation:
+#   1. Create virtual environment: python -m venv venv
+#   2. Activate: source venv/bin/activate (Linux/Mac) or venv\Scripts\activate (Windows)
+#   3. Install: pip install -r requirements.txt
+#   4. Launch: jupyter lab
+#
+# Google Colab:
+#   - No installation needed! Just open notebooks with the Colab badge
+#   - Setup cells in each notebook install any missing packages
+
+# ==========================================
+# TROUBLESHOOTING
+# ==========================================
+# If you encounter dependency conflicts:
+#   - Try installing in a fresh virtual environment
+#   - Use: pip install --upgrade pip setuptools wheel
+#   - Install PyTorch first: pip install torch torchvision
+#   - Then install remaining requirements
+#
+# For GPU support (local installation):
+#   - Install CUDA-enabled PyTorch: see https://pytorch.org/get-started/locally/
+#   - Verify: python -c "import torch; print(torch.cuda.is_available())"
