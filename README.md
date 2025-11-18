@@ -1,377 +1,640 @@
-# 🚗 AI and Safety in Autonomous Driving Workshop
+# Autonomous Driving: AI, Safety, and Security Workshop
 
-**A comprehensive hands-on workshop exploring AI-based perception systems and safety considerations in autonomous vehicles**
+**Comprehensive Workshop on AI-based Perception, Functional Safety, and Cybersecurity in Autonomous Vehicles**
+
+**Author:** Milin Patel
+**Institution:** Hochschule Kempten
+**Focus:** Autonomous Systems, AI Safety, Functional Safety Standards
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Google Colab](https://img.shields.io/badge/Launch-Google%20Colab-orange.svg)](https://colab.research.google.com/)
+[![ISO 26262](https://img.shields.io/badge/ISO%2026262-ASIL%20D-red.svg)](https://www.iso.org/standard/68383.html)
+[![ISO 21448](https://img.shields.io/badge/ISO%2021448-SOTIF-orange.svg)](https://www.iso.org/standard/77490.html)
+[![ISO/SAE 21434](https://img.shields.io/badge/ISO%2FSAE%2021434-Cybersecurity-blue.svg)](https://www.iso.org/standard/70918.html)
 
 ---
 
 ## 📖 Overview
 
-This repository contains a complete, ready-to-run workshop on **AI and Safety for Autonomous Driving**. Learn how autonomous vehicles perceive their environment, understand safety-critical AI systems, and implement real-world perception algorithms with hands-on Jupyter notebooks.
+This repository provides a comprehensive, academically rigorous workshop on **Autonomous Driving with emphasis on AI-based perception, functional safety, and cybersecurity**. The workshop integrates international standards (ISO 26262, ISO 21448 SOTIF, ISO/SAE 21434) with practical implementations of perception algorithms, uncertainty quantification, and safety validation techniques.
 
-**Perfect for:**
-- 🎓 Students learning about autonomous driving
-- 👨‍💻 Engineers working on AV systems
-- 🔬 Researchers in AI safety and perception
-- 🏫 Educators teaching autonomous systems
+**Target Audience:**
+- Graduate students in autonomous systems, robotics, and AI safety
+- Engineers developing safety-critical autonomous driving systems
+- Researchers in AI safety, uncertainty estimation, and verification & validation
+- Safety engineers working with ISO 26262 and ISO 21448 (SOTIF) compliance
+- Cybersecurity professionals addressing automotive security (ISO/SAE 21434)
 
----
-
-## ✨ Key Features
-
-✅ **6 Complete Interactive Jupyter Notebooks** - Fully working implementations
-✅ **Google Colab Compatible** - Run everything online, no local setup required
-✅ **Real-World Datasets** - Work with KITTI, nuScenes, and Waymo data
-✅ **Working Code Examples** - YOLOv8, Faster R-CNN, sensor fusion implementations
-✅ **Safety-Critical Focus** - Understand AI failures and safety standards
-✅ **End-to-End Implementations** - Complete scripts and utilities included
+**Prerequisites:**
+- Python programming (intermediate level)
+- Basic machine learning and computer vision knowledge
+- Familiarity with deep learning frameworks (PyTorch)
+- Understanding of probability and statistics (for uncertainty quantification)
+- Basic knowledge of automotive systems (recommended)
 
 ---
 
-## 🎯 What You'll Learn
+## 🎯 Learning Objectives
 
-### Session 1: AI-based Perception Systems
-- **SAE J3016 Automation Levels** - Understanding L0 to L5 autonomous driving
-- **Sensor Technologies** - Camera, LiDAR, Radar comparison and fusion
-- **Object Detection** - Deep learning models (YOLOv8, Faster R-CNN)
-- **Dataset Exploration** - KITTI, nuScenes, Waymo Open Dataset
-- **Sensor Fusion Basics** - Combining multi-modal sensor data
-- **Case Study** - Pedestrian detection system analysis
+Upon completion of this workshop, participants will be able to:
 
-### Topics Covered
-- 🤖 AI in perception, prediction, and planning
-- 📷 Camera-based vision systems
-- 🌐 3D LiDAR point cloud processing
-- 📡 Radar for all-weather detection
-- 🔗 Multi-sensor fusion strategies
-- 🎯 Real-time object detection
-- ⚠️ Safety-critical system design
-- 📊 Performance metrics and evaluation
+### Technical Competencies
+1. **Perception Systems**: Implement and evaluate AI-based perception algorithms (object detection, segmentation, sensor fusion)
+2. **Sensor Technologies**: Analyze trade-offs between camera, LiDAR, and radar sensors in various operational design domains (ODDs)
+3. **Uncertainty Quantification**: Apply Bayesian deep learning, Monte Carlo Dropout, and ensemble methods for uncertainty estimation
+4. **Dataset Handling**: Work with industry-standard datasets (KITTI, nuScenes, Waymo Open Dataset)
 
----
+### Safety and Standards
+5. **ISO 26262 (Functional Safety)**: Understand ASIL decomposition, safety goals, and functional safety concepts for autonomous systems
+6. **ISO 21448 (SOTIF)**: Identify and mitigate performance limitations and triggering conditions in AI-based perception
+7. **ISO 8800 (AI Safety)**: Apply safety principles for AI/ML systems in safety-related applications
+8. **Failure Mode Analysis**: Conduct systematic analysis of edge cases, corner cases, and out-of-distribution scenarios
 
-## 🚀 Quick Start
-
-### Option 1: Google Colab (Recommended - No Installation!)
-
-**Launch directly in your browser:**
-
-1. **Open any notebook** from the list below
-2. **Click "Open in Colab"** badge at the top of the notebook
-3. **Run all cells** - Dependencies install automatically!
-
-📓 **Start here:** [01_Introduction_SAE_Levels.ipynb](AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/notebooks/01_Introduction_SAE_Levels.ipynb)
-
-### Option 2: Local Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/milinpatel07/OpenPCDet_Car.git
-cd OpenPCDet_Car
-
-# Create virtual environment
-python -m venv av_workshop_env
-source av_workshop_env/bin/activate  # On Windows: av_workshop_env\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Launch Jupyter
-cd AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems
-jupyter lab
-```
-
-**Requirements:**
-- Python 3.8 or higher
-- 4GB RAM minimum (8GB recommended)
-- Internet connection (for downloading models and sample data)
+### Security
+9. **ISO/SAE 21434 (Cybersecurity)**: Understand threat analysis and risk assessment (TARA) for autonomous vehicles
+10. **Adversarial Robustness**: Evaluate perception systems against adversarial attacks and sensor spoofing
 
 ---
 
 ## 📚 Workshop Structure
 
-### Session 1: AI-based Perception Systems (90 minutes)
+### **Session 1: AI-based Perception Systems** (90 minutes)
 
-| # | Notebook | Topics | Duration |
-|---|----------|--------|----------|
-| 1 | [**Introduction & SAE Levels**](AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/notebooks/01_Introduction_SAE_Levels.ipynb) | SAE J3016 levels, AV architecture, AI roles | 15 min |
-| 2 | [**Sensor Modalities**](AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/notebooks/02_Sensor_Modalities_Visualization.ipynb) | Camera, LiDAR, Radar visualization & comparison | 15 min |
-| 3 | [**Object Detection Demo**](AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/notebooks/03_Object_Detection_Demo.ipynb) | YOLOv8, Faster R-CNN, real-time inference | 20 min |
-| 4 | [**Dataset Exploration**](AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/notebooks/04_Dataset_Exploration.ipynb) | KITTI, nuScenes, Waymo datasets | 20 min |
-| 5 | [**Sensor Fusion Basics**](AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/notebooks/05_Sensor_Fusion_Basics.ipynb) | Early/late fusion, multi-modal detection | 15 min |
-| 6 | [**Pedestrian Detection Case Study**](AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/notebooks/06_Pedestrian_Detection_Case_Study.ipynb) | Safety-critical system analysis | 15 min |
+**Focus:** Sensor modalities, object detection, and datasets
 
-**Total:** ~100 minutes (with exercises)
+| Notebook | Topic | Standards Referenced | Duration |
+|----------|-------|---------------------|----------|
+| 01 | SAE J3016 Automation Levels & AV Architecture | SAE J3016 | 15 min |
+| 02 | Sensor Modalities: Camera, LiDAR, Radar | ISO 26262-5 (Hardware) | 15 min |
+| 03 | Object Detection: YOLOv8, Faster R-CNN | - | 20 min |
+| 04 | AV Datasets: KITTI, nuScenes, Waymo | - | 20 min |
+| 05 | Sensor Fusion: Early, Late, Deep Fusion | ISO 26262-6 (SW) | 15 min |
+| 06 | Pedestrian Detection Safety Case Study | ISO 26262-3 (Concept) | 15 min |
 
----
-
-## 🎓 Learning Path
-
-```
-START → Notebook 1: SAE Levels & Architecture
-          ↓
-        Notebook 2: Sensor Technologies
-          ↓
-        Notebook 3: Object Detection (KEY!)
-          ↓
-        Notebook 4: Real Datasets
-          ↓
-        Notebook 5: Sensor Fusion
-          ↓
-        Notebook 6: Safety Case Study → COMPLETE!
-```
-
-**Minimum Path (45 min):** Notebooks 1, 3, 6
-**Recommended Path (90 min):** All notebooks
-**Deep Dive (3+ hours):** All notebooks + exercises
+**Key Concepts:**
+- SAE J3016 automation levels (L0-L5) and associated safety requirements
+- Sensor comparison: measurement principles, failure modes, environmental limitations
+- Deep learning architectures for object detection (YOLO, R-CNN families)
+- Benchmark datasets and evaluation metrics (AP, mAP, IoU)
+- Multi-modal sensor fusion architectures
+- Safety-critical perception system design
 
 ---
 
-## 💻 What's Included
+### **Session 2: Failure Modes and Edge Cases** (90 minutes)
 
-### Interactive Jupyter Notebooks
-- ✅ Fully executable code cells
-- ✅ Detailed explanations and visualizations
-- ✅ Hands-on exercises with solutions
-- ✅ Real-world examples and case studies
-- ✅ Interactive widgets and plots
+**Focus:** Understanding AI failures, out-of-distribution detection, and safety validation
 
-### Python Scripts & Utilities
-```
-AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/scripts/
-├── object_detection.py        # YOLOv8, Faster R-CNN inference
-├── sensor_visualization.py    # 3D point cloud, camera overlay
-├── dataset_loader.py          # KITTI, nuScenes, Waymo loaders
-└── utils.py                   # Helper functions, metrics
-```
+| Notebook | Topic | Standards Referenced | Duration |
+|----------|-------|---------------------|----------|
+| 07 | Real-world AV Failures: Case Studies | ISO 21448 (SOTIF) | 20 min |
+| 08 | Out-of-Distribution (OOD) Detection | ISO 21448, ISO 8800 | 25 min |
+| 09 | Corner Cases and Edge Cases | ISO 21448 (Triggering Conditions) | 20 min |
+| 10 | Adversarial Attacks on Perception | ISO/SAE 21434 | 25 min |
 
-### Sample Data
-- 🖼️ Urban driving scenes
-- 🚶 Pedestrian crossing scenarios
-- 🛣️ Highway traffic images
-- 📊 Pre-processed point clouds
-- 🎯 Annotated ground truth
+**Key Concepts:**
+- Analysis of real-world AV accidents (Uber ATG 2018, Tesla Autopilot incidents)
+- Specification insufficiencies vs. performance limitations (ISO 21448 terminology)
+- OOD detection methods: Mahalanobis distance, energy-based detection, OpenMax
+- Long-tail distribution in driving scenarios and rare event simulation
+- Adversarial examples: FGSM, PGD, physical attacks on traffic signs
+- Sensor spoofing and jamming attacks
+
+**Case Studies:**
+1. **Uber ATG Fatal Crash (2018)**: Perception system failure, safety driver monitoring
+2. **Tesla Autopilot Crashes**: Limitations of camera-based perception in high-contrast scenarios
+3. **Waymo Corner Cases**: Handling construction zones, unusual pedestrian behavior
+4. **nuScenes Weather Challenges**: Performance degradation in rain and night conditions
 
 ---
 
-## 🛠️ Technologies Used
+### **Session 3: Safety and Security Standards** (120 minutes)
 
-### Deep Learning Frameworks
-- **PyTorch** - Neural network training and inference
-- **Ultralytics YOLOv8** - State-of-the-art object detection
-- **Torchvision** - Computer vision models and utilities
+**Focus:** ISO 26262, ISO 21448 (SOTIF), ISO/SAE 21434, and ISO 8800
 
-### Computer Vision
-- **OpenCV** - Image processing and visualization
-- **Open3D** - 3D point cloud processing
-- **Pillow (PIL)** - Image manipulation
+| Notebook | Topic | Standards | Duration |
+|----------|-------|-----------|----------|
+| 11 | ISO 26262: Functional Safety for AVs | ISO 26262-1 to 12 | 30 min |
+| 12 | ISO 21448: Safety of the Intended Functionality (SOTIF) | ISO 21448:2022 | 30 min |
+| 13 | ISO 8800: AI Safety in Autonomous Systems | ISO/IEC TR 5469, PAS 8800 | 25 min |
+| 14 | ISO/SAE 21434: Automotive Cybersecurity | ISO/SAE 21434:2021 | 35 min |
+
+**Key Concepts:**
+
+#### ISO 26262 (Functional Safety)
+- V-Model development process for safety-critical systems
+- ASIL (Automotive Safety Integrity Level) classification: QM, ASIL A-D
+- Safety goals and functional safety concepts for perception systems
+- Hardware-software interface (HSI) considerations for AI accelerators
+- Verification and validation strategies for ML-based components
+
+#### ISO 21448 (SOTIF - Safety of the Intended Functionality)
+- Known safe, known unsafe, unknown safe, unknown unsafe scenarios
+- Triggering conditions and performance limitations
+- Verification and validation for insufficient specifications
+- Integration with ISO 26262 (combined safety argumentation)
+- SOTIF process: design, verification, validation, and field monitoring
+
+#### ISO 8800 / ISO/IEC TR 5469 (AI Safety)
+- Trustworthiness characteristics: robustness, explainability, transparency
+- Data quality and dataset bias assessment
+- Training, validation, test set management
+- Model monitoring and retraining strategies
+- Human-AI interaction safety
+
+#### ISO/SAE 21434 (Cybersecurity)
+- Threat analysis and risk assessment (TARA) methodology
+- Cybersecurity goals and requirements
+- Attack vectors: sensor spoofing, V2X manipulation, ECU exploitation
+- Secure software updates (OTA) and cryptographic protection
+- Cybersecurity validation and penetration testing
+
+**Deliverables:**
+- Hazard analysis and risk assessment (HARA) template for perception systems
+- SOTIF insufficiency analysis worksheet
+- TARA (Threat Analysis and Risk Assessment) example for V2X communication
+- Traceability matrix: safety requirements to verification tests
+
+---
+
+### **Session 4: Uncertainty Estimation and Validation** (90 minutes)
+
+**Focus:** Bayesian deep learning, uncertainty quantification, and safety validation
+
+| Notebook | Topic | Techniques | Duration |
+|----------|-------|------------|----------|
+| 15 | Uncertainty in Deep Learning: Aleatoric vs. Epistemic | Bayesian DL | 20 min |
+| 16 | Monte Carlo Dropout for Uncertainty | MC Dropout, Ensembles | 25 min |
+| 17 | Calibration and Reliability Diagrams | Temperature Scaling, ECE | 20 min |
+| 18 | Safety Validation and Testing | Scenario-based Testing | 25 min |
+
+**Key Concepts:**
+
+#### Uncertainty Types
+- **Aleatoric Uncertainty**: Irreducible uncertainty from noisy data (sensor noise, occlusions)
+- **Epistemic Uncertainty**: Reducible uncertainty from lack of training data (OOD scenarios)
+- **Model Uncertainty**: Uncertainty in learned parameters (weight distributions)
+
+#### Uncertainty Estimation Methods
+- **Bayesian Neural Networks (BNNs)**: Full posterior distribution over weights
+- **Monte Carlo Dropout**: Approximate Bayesian inference using dropout at test time
+- **Deep Ensembles**: Multiple models trained independently for diversity
+- **Evidential Deep Learning**: Directly estimate higher-order uncertainty
+- **Conformal Prediction**: Distribution-free uncertainty quantification
+
+#### Calibration
+- **Reliability Diagrams**: Visualizing calibration quality
+- **Expected Calibration Error (ECE)**: Quantitative calibration metric
+- **Temperature Scaling**: Post-hoc calibration technique
+- **Platt Scaling**: Logistic regression-based calibration
+
+#### Safety Validation
+- **Scenario-based Testing**: Concrete, functional, logical scenarios (Pegasus 6-layer model)
+- **Simulation-based Validation**: High-fidelity physics simulation (CARLA, LGSVL, Metadrive)
+- **X-in-the-Loop Testing**: SIL, HIL, VIL, DIL validation strategies
+- **Field Operational Tests (FOT)**: Statistical evidence from real-world deployment
+- **Formal Verification**: Mathematical proofs for safety properties (limited applicability to DNNs)
+
+---
+
+## 🚀 Quick Start
+
+### Option 1: Google Colab (Recommended - No Installation)
+
+1. Navigate to any notebook in `AV_Perception_Safety_Workshop/Session_X/notebooks/`
+2. Click the "Open in Colab" badge at the top
+3. Run all cells (dependencies install automatically)
+
+### Option 2: Local Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security.git
+cd Autonomous-Driving_AI-Safety-and-Security
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Launch Jupyter Lab
+jupyter lab
+```
+
+**System Requirements:**
+- Python 3.8+ (tested on 3.8, 3.9, 3.10, 3.11)
+- 8GB RAM minimum (16GB recommended for large datasets)
+- GPU optional but recommended for training (CUDA 11.3+)
+- 10GB disk space for datasets and models
+
+---
+
+## 🛠️ Technologies and Frameworks
+
+### Deep Learning
+- **PyTorch** (2.0+): Neural network training and inference
+- **Ultralytics YOLOv8**: Real-time object detection
+- **Torchvision**: Pre-trained models and transforms
+- **MMDetection**: Unified detection framework (Faster R-CNN, RetinaNet, etc.)
+
+### Computer Vision and 3D
+- **OpenCV** (4.5+): Image processing and classical CV
+- **Open3D**: 3D point cloud processing and visualization
+- **Kornia**: Differentiable computer vision library
+
+### Uncertainty and Probabilistic ML
+- **TensorFlow Probability**: Bayesian layers and distributions
+- **PyTorch Distributions**: Probability distributions
+- **Uncertainty Toolbox**: Calibration metrics and visualization
 
 ### Data Science
-- **NumPy** - Numerical computing
-- **Pandas** - Data manipulation
-- **Matplotlib & Seaborn** - Visualization
-- **Plotly** - Interactive 3D plots
+- **NumPy**: Numerical computing
+- **Pandas**: Data manipulation and analysis
+- **Matplotlib / Seaborn**: Static visualization
+- **Plotly**: Interactive 3D plots
 
-### Autonomous Driving
-- **KITTI Dataset Tools** - Benchmark dataset utilities
-- **nuScenes DevKit** - Multi-modal dataset API
-- **Waymo Open Dataset** - Large-scale AV dataset
-
----
-
-## 📊 Example Outputs
-
-### Object Detection on Urban Scenes
-```python
-# From Notebook 3
-results = detect_objects(image, model='yolov8n', conf=0.5)
-# Output: 15 cars, 8 pedestrians, 3 cyclists detected
-# Inference time: 23ms (43 FPS)
-```
-
-### 3D LiDAR Visualization
-```python
-# From Notebook 2
-visualize_pointcloud(lidar_data, color_by='distance')
-# Interactive 3D viewer with rotation, zoom, filtering
-```
-
-### Sensor Fusion Performance
-```python
-# From Notebook 5
-fusion_results = late_fusion(camera_dets, lidar_dets)
-# Camera only: 82% mAP | LiDAR only: 78% mAP | Fused: 91% mAP
-```
-
----
-
-## 🎯 Learning Outcomes
-
-After completing this workshop, you will be able to:
-
-- ✅ Explain the difference between SAE automation levels (L0-L5)
-- ✅ Compare camera, LiDAR, and radar sensors for AV applications
-- ✅ Implement object detection using YOLOv8 and Faster R-CNN
-- ✅ Load and visualize KITTI, nuScenes, and Waymo datasets
-- ✅ Understand sensor fusion techniques (early, late, deep)
-- ✅ Analyze safety-critical perception systems
-- ✅ Identify potential AI failure modes in autonomous driving
-- ✅ Design multi-sensor perception systems
+### Autonomous Driving Datasets
+- **KITTI DevKit**: Object detection, tracking, depth estimation
+- **nuScenes DevKit**: Multi-modal dataset with full sensor suite
+- **Waymo Open Dataset**: Large-scale AV dataset with diverse scenarios
 
 ---
 
 ## 📂 Repository Structure
 
 ```
-OpenPCDet_Car/
-├── README.md                              # This file
-├── LICENSE                                # MIT License
-├── requirements.txt                       # Python dependencies
+Autonomous-Driving_AI-Safety-and-Security/
+├── README.md                                    # Main documentation (this file)
+├── LICENSE                                      # MIT License
+├── requirements.txt                             # Python dependencies
+├── SAFETY.md                                    # ISO 26262 & ISO 21448 documentation
+├── SECURITY.md                                  # ISO/SAE 21434 & cybersecurity guidelines
+├── AI_SAFETY.md                                 # ISO 8800 & AI safety principles
 │
-└── AV_Perception_Safety_Workshop/        # Main workshop folder
-    ├── README.md                          # Workshop overview
-    ├── setup_instructions.md              # Detailed setup guide
-    ├── requirements.txt                   # Workshop-specific deps
-    │
-    └── Session_1_AI_Perception_Systems/  # Session 1 materials
-        ├── README.md                      # Session guide
-        │
-        ├── notebooks/                     # 6 Jupyter notebooks
-        │   ├── 01_Introduction_SAE_Levels.ipynb
-        │   ├── 02_Sensor_Modalities_Visualization.ipynb
-        │   ├── 03_Object_Detection_Demo.ipynb
-        │   ├── 04_Dataset_Exploration.ipynb
-        │   ├── 05_Sensor_Fusion_Basics.ipynb
-        │   └── 06_Pedestrian_Detection_Case_Study.ipynb
-        │
-        ├── scripts/                       # Python utilities
-        │   ├── object_detection.py
-        │   ├── sensor_visualization.py
-        │   ├── dataset_loader.py
-        │   └── utils.py
-        │
-        ├── data/                          # Sample data (auto-downloaded)
-        │   ├── sample_images/
-        │   └── sample_pointclouds/
-        │
-        ├── exercises/                     # Hands-on exercises
-        │   └── solutions/
-        │
-        └── resources/                     # External links & references
-            ├── links.md
-            ├── datasets.md
-            └── references.md
+├── docs/                                        # Additional documentation
+│   ├── standards/
+│   │   ├── ISO_26262_Overview.md
+│   │   ├── ISO_21448_SOTIF_Guide.md
+│   │   ├── ISO_SAE_21434_Cybersecurity.md
+│   │   └── ISO_8800_AI_Safety.md
+│   ├── uncertainty_estimation.md
+│   └── validation_strategies.md
+│
+├── AV_Perception_Safety_Workshop/
+│   │
+│   ├── Session_1_AI_Perception_Systems/
+│   │   ├── notebooks/
+│   │   │   ├── 01_Introduction_SAE_Levels.ipynb
+│   │   │   ├── 02_Sensor_Modalities_Visualization.ipynb
+│   │   │   ├── 03_Object_Detection_Demo.ipynb
+│   │   │   ├── 04_Dataset_Exploration.ipynb
+│   │   │   ├── 05_Sensor_Fusion_Basics.ipynb
+│   │   │   └── 06_Pedestrian_Detection_Case_Study.ipynb
+│   │   │
+│   │   ├── scripts/
+│   │   │   ├── object_detection.py              # YOLOv8, Faster R-CNN implementations
+│   │   │   ├── sensor_visualization.py          # LiDAR, camera visualization
+│   │   │   ├── dataset_loader.py                # KITTI, nuScenes loaders
+│   │   │   └── utils.py                         # Helper functions
+│   │   │
+│   │   └── exercises/
+│   │       ├── Exercise_1_Sensor_Comparison.md
+│   │       ├── Exercise_2_Detection_Evaluation.md
+│   │       └── solutions/
+│   │
+│   ├── Session_2_Failure_Modes/
+│   │   ├── notebooks/
+│   │   │   ├── 07_AV_Failure_Case_Studies.ipynb
+│   │   │   ├── 08_OOD_Detection.ipynb
+│   │   │   ├── 09_Corner_Cases.ipynb
+│   │   │   └── 10_Adversarial_Attacks.ipynb
+│   │   │
+│   │   ├── scripts/
+│   │   │   ├── ood_detection.py                 # OOD detection methods
+│   │   │   ├── adversarial.py                   # FGSM, PGD attacks
+│   │   │   └── failure_analysis.py              # Failure mode analysis tools
+│   │   │
+│   │   └── exercises/
+│   │       ├── Exercise_3_OOD_Detection.md
+│   │       └── Exercise_4_Adversarial_Robustness.md
+│   │
+│   ├── Session_3_Safety_Security_Standards/
+│   │   ├── notebooks/
+│   │   │   ├── 11_ISO_26262_Functional_Safety.ipynb
+│   │   │   ├── 12_ISO_21448_SOTIF.ipynb
+│   │   │   ├── 13_ISO_8800_AI_Safety.ipynb
+│   │   │   └── 14_ISO_SAE_21434_Cybersecurity.ipynb
+│   │   │
+│   │   ├── templates/
+│   │   │   ├── HARA_Template.xlsx              # Hazard Analysis & Risk Assessment
+│   │   │   ├── SOTIF_Analysis_Template.xlsx
+│   │   │   ├── TARA_Template.xlsx              # Threat Analysis & Risk Assessment
+│   │   │   └── Safety_Concept_Template.docx
+│   │   │
+│   │   └── exercises/
+│   │       ├── Exercise_5_HARA.md
+│   │       └── Exercise_6_TARA.md
+│   │
+│   └── Session_4_Uncertainty_Validation/
+│       ├── notebooks/
+│       │   ├── 15_Uncertainty_Types.ipynb
+│       │   ├── 16_MC_Dropout_Ensembles.ipynb
+│       │   ├── 17_Calibration.ipynb
+│       │   └── 18_Safety_Validation.ipynb
+│       │
+│       ├── scripts/
+│       │   ├── uncertainty.py                    # Uncertainty quantification methods
+│       │   ├── calibration.py                    # Calibration metrics and plots
+│       │   └── validation.py                     # Validation test suite
+│       │
+│       └── exercises/
+│           ├── Exercise_7_Uncertainty.md
+│           └── Exercise_8_Validation.md
+│
+└── data/                                         # Sample data (auto-downloaded)
+    ├── kitti_samples/
+    ├── nuscenes_mini/
+    └── waymo_samples/
 ```
 
 ---
 
-## 🎥 Demo & Screenshots
+## 📊 Standards Reference
 
-### Notebook 3: Live Object Detection
-![Object Detection Demo](https://via.placeholder.com/800x400/4A90E2/FFFFFF?text=YOLOv8+Detection+Demo)
+### ISO 26262 (Functional Safety)
 
-### Notebook 2: 3D LiDAR Point Cloud
-![LiDAR Visualization](https://via.placeholder.com/800x400/50C878/FFFFFF?text=Interactive+3D+Point+Cloud)
+**Scope:** Electrical and electronic (E/E) systems in road vehicles
+**Current Version:** ISO 26262:2018 (Second edition)
+**Parts:** 12 parts covering management, concept, system, hardware, software, validation
 
-### Notebook 5: Multi-Sensor Fusion
-![Sensor Fusion](https://via.placeholder.com/800x400/FF6B6B/FFFFFF?text=Camera+%2B+LiDAR+Fusion)
+**Key Concepts:**
+- **ASIL (Automotive Safety Integrity Level)**: QM, A, B, C, D (highest)
+- **V-Model**: Requirements → Design → Implementation → Testing
+- **Safety Lifecycle**: Concept → Development → Production → Operation → Decommissioning
+- **Functional Safety Concept**: High-level safety requirements derived from safety goals
+
+**Application to AVs:**
+- Perception systems typically require ASIL B or C
+- Trajectory planning and vehicle control require ASIL D
+- Redundancy and fail-operational designs for higher ASILs
+
+**Resources:**
+- [ISO 26262-1:2018](https://www.iso.org/standard/68383.html) - Vocabulary
+- [ISO 26262-3:2018](https://www.iso.org/standard/72437.html) - Concept phase
+- [ISO 26262-6:2018](https://www.iso.org/standard/68389.html) - Software development
+
+---
+
+### ISO 21448 (SOTIF - Safety of the Intended Functionality)
+
+**Scope:** Absence of unreasonable risk due to performance limitations and misuse
+**Published:** June 2022
+**Complements:** ISO 26262 (addresses different types of hazards)
+
+**Key Concepts:**
+- **Known Safe**: Scenarios verified to be safe
+- **Known Unsafe**: Identified hazardous scenarios requiring mitigation
+- **Unknown Unsafe**: Potentially hazardous scenarios not yet identified (residual risk)
+- **Triggering Conditions**: Environmental/system conditions causing performance limitations
+- **Performance Limitations**: Functional insufficiencies in sensors, algorithms
+
+**SOTIF Process:**
+1. **Design**: Minimize performance limitations and triggering conditions
+2. **Verification**: Test known unsafe scenarios
+3. **Validation**: Discover unknown unsafe scenarios through extensive testing
+4. **Field Monitoring**: Continuous learning from deployed fleet
+
+**Application to AI/ML:**
+- Critical for neural network-based perception (non-deterministic behavior)
+- OOD detection and uncertainty estimation as SOTIF mitigation
+- Scenario-based testing and simulation for validation
+
+**Resources:**
+- [ISO 21448:2022](https://www.iso.org/standard/77490.html) - Main standard
+- [PAS 21448:2019](https://www.iso.org/standard/77490.html) - Preliminary version
+
+---
+
+### ISO/SAE 21434 (Automotive Cybersecurity)
+
+**Scope:** Cybersecurity engineering for road vehicles
+**Published:** August 2021
+**Developed by:** ISO and SAE jointly
+
+**Key Concepts:**
+- **TARA (Threat Analysis and Risk Assessment)**: Systematic identification of threats
+- **Cybersecurity Goals**: High-level objectives derived from threat analysis
+- **CAL (Cybersecurity Assurance Level)**: Similar to ASIL for security (CAL 1-4)
+- **Attack Vector**: Path or means by which attacker gains access
+- **Attack Feasibility**: Likelihood of successful attack (specialist knowledge, time, equipment)
+
+**Threat Categories for AVs:**
+1. **Sensor Attacks**: LiDAR spoofing, camera blinding, GNSS jamming
+2. **V2X Attacks**: Message injection, denial of service, Sybil attacks
+3. **Backend Attacks**: Cloud infrastructure compromise, data exfiltration
+4. **Physical Access**: OBD-II exploitation, ECU reprogramming
+
+**Cybersecurity Lifecycle:**
+- Concept phase: TARA, cybersecurity goals
+- Development: Secure design, implementation, verification
+- Production: Secure manufacturing, key management
+- Operations: Incident response, security updates (OTA)
+- Decommissioning: Secure data deletion
+
+**Resources:**
+- [ISO/SAE 21434:2021](https://www.iso.org/standard/70918.html) - Main standard
+- [SAE J3061](https://www.sae.org/standards/content/j3061_201601/) - Predecessor guideline
+
+---
+
+### ISO 8800 and AI Safety Guidelines
+
+**Note:** ISO 8800 is not yet a published standard. Current AI safety guidance comes from:
+
+- **ISO/IEC TR 5469:2024** - Artificial intelligence — Functional safety and AI systems
+- **PAS 8800** (proposed, not yet published)
+- **ISO/IEC 23894:2023** - Information technology — AI — Guidance on risk management
+- **ISO/IEC 42001:2023** - AI management system
+
+**Key AI Safety Principles:**
+1. **Data Quality**: Representative, diverse, labeled correctly, bias assessment
+2. **Model Transparency**: Explainability, interpretability, documentation
+3. **Robustness**: Performance under distribution shift, adversarial perturbations
+4. **Uncertainty Awareness**: Quantify and communicate model uncertainty
+5. **Human Oversight**: Human-in-the-loop, human-on-the-loop designs
+6. **Continuous Monitoring**: Performance tracking, anomaly detection, retraining triggers
+7. **Fail-Safe Mechanisms**: Graceful degradation, fallback systems
+
+**Integration with ISO 26262 and ISO 21448:**
+- Data quality → SOTIF insufficiency mitigation
+- Uncertainty quantification → ISO 26262 diagnostic coverage
+- Monitoring → ISO 21448 field validation
+
+**Resources:**
+- [ISO/IEC TR 5469:2024](https://www.iso.org/standard/81283.html)
+- [ISO/IEC 23894:2023](https://www.iso.org/standard/77304.html)
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
 
 ---
 
 ## 🔗 External Resources
 
+### Standards Organizations
+- [ISO (International Organization for Standardization)](https://www.iso.org/)
+- [SAE International](https://www.sae.org/)
+- [NIST (National Institute of Standards and Technology)](https://www.nist.gov/)
+- [UNECE WP.29](https://unece.org/transport/vehicle-regulations) - UN vehicle regulations
+
 ### Datasets
-- [KITTI Vision Benchmark](http://www.cvlibs.net/datasets/kitti/)
-- [nuScenes Dataset](https://www.nuscenes.org/)
-- [Waymo Open Dataset](https://waymo.com/open/)
-- [BDD100K Driving Dataset](https://bdd-data.berkeley.edu/)
+- [KITTI Vision Benchmark](http://www.cvlibs.net/datasets/kitti/) - Object detection, tracking, depth
+- [nuScenes Dataset](https://www.nuscenes.org/) - 1000 scenes, full sensor suite, Boston & Singapore
+- [Waymo Open Dataset](https://waymo.com/open/) - 1950 segments, diverse weather and lighting
+- [BDD100K](https://bdd-data.berkeley.edu/) - 100K diverse driving videos
+- [Argoverse 2](https://www.argoverse.org/) - HD maps, motion forecasting
+- [CADC (Canadian Adverse Driving Conditions)](http://cadcd.uwaterloo.ca/) - Snowy driving
 
-### Interactive Tools
-- [nuScenes Explorer (Web)](https://www.nuscenes.org/nuscenes#explore)
-- [Waymo Dataset Viewer](https://waymo.com/open/viewer/)
-- [YOLOv8 Live Demo](https://huggingface.co/spaces/Xenova/yolov9-web)
+### Simulation Platforms
+- [CARLA Simulator](https://carla.org/) - Open-source AV simulation
+- [LGSVL Simulator](https://www.svlsimulator.com/) - Unity-based AV simulation
+- [Metadrive](https://metadrive-simulator.github.io/) - Lightweight RL-focused simulator
+- [SUMO](https://eclipse.dev/sumo/) - Traffic simulation
 
-### Academic Papers
-- [SAE J3016 Automation Levels](https://www.sae.org/standards/content/j3016_202104/)
-- [YOLOv8 Architecture](https://arxiv.org/abs/2305.09972)
-- [nuScenes Benchmark](https://arxiv.org/abs/1903.11027)
-- [PointPillars (3D Detection)](https://arxiv.org/abs/1812.05784)
+### Academic Papers and Books
+
+#### Perception
+- Geiger et al. (2012): "Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite"
+- Caesar et al. (2020): "nuScenes: A multimodal dataset for autonomous driving"
+- Bochkovskiy et al. (2020): "YOLOv4: Optimal Speed and Accuracy of Object Detection"
+
+#### Safety
+- Koopman & Wagner (2016): "Challenges in Autonomous Vehicle Testing and Validation"
+- Kalra & Paddock (2016): "Driving to Safety: How Many Miles of Driving Would It Take to Demonstrate Autonomous Vehicle Reliability?"
+- Ulbrich et al. (2015): "Defining and Substantiating the Terms Scene, Situation, and Scenario for Automated Driving"
+
+#### Uncertainty
+- Gal & Ghahramani (2016): "Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning"
+- Kendall & Gal (2017): "What Uncertainties Do We Need in Bayesian Deep Learning for Computer Vision?"
+- Lakshminarayanan et al. (2017): "Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles"
+
+#### Books
+- **"Automated Driving: Safer and More Efficient Future Driving"** (Watzenig & Horn, 2016)
+- **"Autonomous Driving: Technical, Legal and Social Aspects"** (Maurer et al., 2016)
+- **"Safety of the Intended Functionality: Engineering the System"** (Burton et al., 2023)
+- **"ISO 26262 - A Practical Guide"** (Schmittner et al., 2022)
+
+### Online Courses and Tutorials
+- [Coursera: Self-Driving Cars Specialization](https://www.coursera.org/specializations/self-driving-cars) (University of Toronto)
+- [Udacity: Self-Driving Car Engineer Nanodegree](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd0013)
+- [Apollo Open Platform](https://apollo.auto/) - Baidu's open AV platform with tutorials
+- [Autoware](https://www.autoware.org/) - Open-source AV software stack
+
+---
+
+## 🧪 Exercises and Assignments
+
+Each session includes hands-on exercises with progressive difficulty:
+
+### Session 1 Exercises
+1. **Sensor Trade-off Analysis**: Compare sensor configurations for different ODDs (urban, highway, rural)
+2. **Detection Performance**: Evaluate YOLOv8 vs. Faster R-CNN on KITTI benchmark
+3. **Sensor Fusion**: Implement late fusion for camera + LiDAR detections
+
+### Session 2 Exercises
+4. **OOD Detection**: Implement Mahalanobis distance-based OOD detector
+5. **Adversarial Robustness**: Generate adversarial examples and evaluate defenses
+6. **Failure Analysis**: Analyze failure modes from nuScenes challenging scenarios
+
+### Session 3 Exercises
+7. **HARA (Hazard Analysis and Risk Assessment)**: Complete HARA for pedestrian detection system
+8. **SOTIF Insufficiency Analysis**: Identify triggering conditions for perception failures
+9. **TARA (Threat Analysis and Risk Assessment)**: Conduct TARA for V2X communication
+
+### Session 4 Exercises
+10. **Uncertainty Quantification**: Compare MC Dropout vs. Deep Ensembles
+11. **Calibration**: Apply temperature scaling to improve model calibration
+12. **Validation Strategy**: Design scenario-based test suite for urban driving
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to:
-- 🐛 Report bugs or issues
-- 💡 Suggest new features or improvements
-- 📝 Improve documentation
-- 🔧 Submit pull requests
+Contributions are welcome! Areas for contribution:
+- Additional case studies and real-world examples
+- New notebooks on emerging topics (transformers, NeRF, world models)
+- Improved documentation and tutorials
+- Bug fixes and code optimization
+- Translation to other languages
+
+Please open an issue or submit a pull request.
 
 ---
 
-## 📝 License
+## 📝 Citation
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👨‍💼 Author
-
-**Milin Patel**
-
-- GitHub: [@milinpatel07](https://github.com/milinpatel07)
-- Workshop Focus: AI Safety in Autonomous Driving
-
----
-
-## 🙏 Acknowledgments
-
-- **OpenPCDet** - 3D object detection framework
-- **Ultralytics** - YOLOv8 implementation
-- **KITTI, nuScenes, Waymo** - Autonomous driving datasets
-- **Open-source community** - Tools and libraries
-
----
-
-## 📧 Contact & Support
-
-- **Issues:** Open a [GitHub Issue](https://github.com/milinpatel07/OpenPCDet_Car/issues)
-- **Questions:** Check existing issues or start a discussion
-- **Workshop Inquiries:** See repository discussions
-
----
-
-## 🎓 Citation
-
-If you use this workshop in your research or teaching, please cite:
+If you use this workshop in your research, teaching, or industrial work, please cite:
 
 ```bibtex
-@misc{patel2025av_workshop,
+@misc{patel2025av_safety_security_workshop,
   author = {Patel, Milin},
-  title = {AI and Safety in Autonomous Driving Workshop},
+  title = {Autonomous Driving: AI, Safety, and Security Workshop},
   year = {2025},
   publisher = {GitHub},
-  url = {https://github.com/milinpatel07/OpenPCDet_Car}
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security}},
+  note = {Comprehensive workshop on AI-based perception, ISO 26262, ISO 21448, and ISO/SAE 21434}
 }
 ```
 
 ---
 
-## ⭐ Star History
+## 📧 Contact
 
-If you find this workshop helpful, please consider giving it a star! ⭐
+**Milin Patel**
+Hochschule Kempten
+Focus: Autonomous Systems, AI Safety, Functional Safety
+
+- GitHub: [@milinpatel07](https://github.com/milinpatel07)
+- Issues: [GitHub Issues](https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/issues)
+
+For workshop-related questions, please open a GitHub issue with the appropriate label.
 
 ---
 
-**Ready to dive into autonomous vehicle AI and safety?**
+## 📄 License
 
-👉 **[Start with Notebook 1: Introduction & SAE Levels](AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/notebooks/01_Introduction_SAE_Levels.ipynb)**
-
-🚀 **[Launch in Google Colab (No setup required!)](https://colab.research.google.com/)**
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-*Last updated: 2025-01-17*
+## 🙏 Acknowledgments
+
+- **ISO and SAE** for developing comprehensive safety and security standards
+- **KITTI, nuScenes, Waymo** for providing open autonomous driving datasets
+- **Open-source community** for tools and frameworks (PyTorch, OpenCV, Open3D)
+- **Hochschule Kempten** for supporting this educational initiative
+
+---
+
+## 🔄 Version History
+
+- **v2.0.0** (2025-01-18): Complete overhaul with safety, security, and uncertainty content
+  - Added Sessions 2, 3, 4 with ISO standards coverage
+  - Comprehensive documentation on ISO 26262, 21448, 21434, and AI safety
+  - Uncertainty quantification and validation notebooks
+  - Academic rigor improvements and standard terminology
+
+- **v1.0.0** (2025-01-17): Initial release with Session 1 (Perception)
+
+---
+
+**Ready to build safe and secure autonomous systems?**
+
+👉 **[Start with Session 1, Notebook 1: SAE Automation Levels](AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/notebooks/01_Introduction_SAE_Levels.ipynb)**
+
+🚀 **[Or launch directly in Google Colab - no installation required!](https://colab.research.google.com/)**
+
+---
+
+*Last Updated: 2025-01-18 by Milin Patel*
