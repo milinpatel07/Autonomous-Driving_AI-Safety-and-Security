@@ -397,7 +397,7 @@ class SyntheticDataGenerator:
                 labels.append({
                     'type': 'Car',
                     'bbox': np.random.randint([200, 200, 300, 250]),
-                    'location': np.random.uniform([−10, 10, 0], [10, 30, 0]),
+                    'location': np.random.uniform([-10, 10, 0], [10, 30, 0]),
                     'dimensions': np.array([1.5, 4.0, 1.6]),  # h, l, w
                     'confidence': np.random.uniform(0.8, 0.99)
                 })
