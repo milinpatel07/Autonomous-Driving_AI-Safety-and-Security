@@ -21,13 +21,13 @@ See the LICENSE file in the root directory for full license text.
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Workshop Status](https://img.shields.io/badge/Status-Complete%20%26%20Ready-brightgreen.svg)]()
-[![All Sessions](https://img.shields.io/badge/Sessions-4%2F4%20Complete-success.svg)]()
+[![All Sessions](https://img.shields.io/badge/Sessions-5%2F5%20Complete-success.svg)]()
 [![Google Colab](https://img.shields.io/badge/Platform-Google%20Colab-orange.svg)](https://colab.research.google.com/)
 [![ISO 26262](https://img.shields.io/badge/ISO%2026262-ASIL%20D-red.svg)](https://www.iso.org/standard/68383.html)
 [![ISO 21448](https://img.shields.io/badge/ISO%2021448-SOTIF-orange.svg)](https://www.iso.org/standard/77490.html)
 [![ISO/SAE 21434](https://img.shields.io/badge/ISO%2FSAE%2021434-Cybersecurity-blue.svg)](https://www.iso.org/standard/70918.html)
 
-> **Workshop Status**: All 4 sessions complete. All 18 Jupyter notebooks can be used in Google Colab or locally.
+> **Workshop Status**: All 5 sessions complete. All 24 Jupyter notebooks can be used in Google Colab or locally.
 
 ---
 
@@ -214,6 +214,31 @@ Upon completion of this workshop, participants will be able to:
 
 ---
 
+### **Session 5: Advanced Topics**
+
+**Focus:** V2X communication, explainability, deployment challenges, and standards gaps
+
+| Notebook | Topic | Standards Referenced |
+|----------|-------|---------------------|
+| 19 | V2X Communication and Cooperative Perception | SAE J2735, IEEE 802.11p, ISO/SAE 21434 |
+| 20 | Explainability (XAI) for Safety Certification | ISO/IEC TR 5469, EU AI Act |
+| 21 | Standards Integration - Practical Workflow | ISO 26262 + 21448 + 21434 |
+| 22 | Industry Deployment Challenges | Real-world case studies |
+| 23 | ODD Definition and Runtime Monitoring | ISO 34503, SAE J3016 |
+| 24 | Standards Gaps and Open Problems | Research frontier |
+
+**Key Concepts:**
+- V2V, V2I, V2P, V2N communication protocols and security
+- C-V2X vs DSRC comparison and deployment status
+- XAI methods: LIME, SHAP, GradCAM for regulatory compliance
+- Multi-standard integration and conflict resolution
+- Regulatory barriers and economic viability analysis
+- ODD specification using ISO 34503 framework
+- Minimal Risk Condition (MRC) and graceful degradation
+- Current standards limitations and open research problems
+
+---
+
 ## 🚀 Quick Start
 
 ### Option 1: Google Colab
@@ -222,7 +247,7 @@ Upon completion of this workshop, participants will be able to:
 
 1. Browse to any session folder and click the Colab badge at the top of a notebook
 2. Dependencies install automatically when first cell is executed
-3. For complete learning path, follow Session 1 → 2 → 3 → 4
+3. For complete learning path, follow Session 1 → 2 → 3 → 4 → 5
 
 ### Option 2: Local Installation
 
@@ -258,6 +283,7 @@ View all notebooks directly on GitHub with rendered outputs:
 - [Session 2: Failure Modes and Edge Cases](AV_Perception_Safety_Workshop/Session_2_Failure_Modes_and_Edge_Cases/)
 - [Session 3: Safety and Security Standards](AV_Perception_Safety_Workshop/Session_3_Safety_and_Security_Standards/)
 - [Session 4: Uncertainty Estimation and Validation](AV_Perception_Safety_Workshop/Session_4_Uncertainty_Estimation_and_Validation/)
+- [Session 5: Advanced Topics](AV_Perception_Safety_Workshop/Session_5_Advanced_Topics/)
 
 ---
 
@@ -576,14 +602,17 @@ Each session includes hands-on exercises with progressive difficulty:
 6. **Failure Analysis**: Analyze failure modes from nuScenes challenging scenarios
 
 ### Session 3 Exercises
-7. **HARA (Hazard Analysis and Risk Assessment)**: Complete HARA for pedestrian detection system
-8. **SOTIF Insufficiency Analysis**: Identify triggering conditions for perception failures
-9. **TARA (Threat Analysis and Risk Assessment)**: Conduct TARA for V2X communication
+5. **HARA (Hazard Analysis and Risk Assessment)**: Complete HARA for pedestrian detection system
+6. **TARA (Threat Analysis and Risk Assessment)**: Conduct TARA for V2X communication
 
 ### Session 4 Exercises
-10. **Uncertainty Quantification**: Compare MC Dropout vs. Deep Ensembles
-11. **Calibration**: Apply temperature scaling to improve model calibration
-12. **Validation Strategy**: Design scenario-based test suite for urban driving
+7. **Uncertainty Quantification**: Compare MC Dropout vs. Deep Ensembles
+8. **Validation Strategy**: Design scenario-based test suite for urban driving
+
+### Session 5 Exercises
+9. **V2X Security Analysis**: Apply TARA methodology to smart intersection system
+10. **XAI for Certification**: Generate explainability evidence for AI perception models
+11. **Multi-Standard Integration**: Perform combined HARA + SOTIF + TARA for autonomous parking system
 
 ---
 
@@ -648,7 +677,13 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ## Version History
 
-- **v2.0.0** (2025-11-23): Workshop with all 4 sessions
+- **v3.0.0** (2025-11-23): Complete workshop with all 5 sessions
+  - **Session 5 Added**: Advanced Topics (V2X Communication, XAI, Standards Integration, Industry Challenges, ODD Monitoring, Standards Gaps)
+  - All 24 Jupyter notebooks covering comprehensive AV safety curriculum
+  - 11 hands-on exercises across all sessions
+  - Complete integration of ISO 26262, ISO 21448, and ISO/SAE 21434
+
+- **v2.0.0** (2025-11-23): Workshop with Sessions 1-4
   - Sessions 1-4 with ISO standards coverage (ISO 26262, 21448, 21434)
   - Uncertainty quantification and validation notebooks
   - Standards-aligned terminology and references
