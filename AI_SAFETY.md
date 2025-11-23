@@ -1,3 +1,11 @@
+<!--
+Copyright (c) 2025 Milin Patel
+Hochschule Kempten - University of Applied Sciences
+
+Autonomous Driving: AI Safety and Security Workshop
+This project is licensed under the MIT License.
+-->
+
 # AI Safety for Autonomous Vehicles
 
 **Uncertainty Quantification, Trustworthiness, and Safe AI/ML Systems**

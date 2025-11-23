@@ -1,3 +1,15 @@
+<!--
+Copyright (c) 2025 Milin Patel
+Hochschule Kempten - University of Applied Sciences
+
+Autonomous Driving: AI Safety and Security Workshop
+Comprehensive educational materials covering AI-based perception, ISO 26262,
+ISO 21448 (SOTIF), ISO/SAE 21434, and uncertainty quantification for autonomous vehicles.
+
+This project is licensed under the MIT License.
+See the LICENSE file in the root directory for full license text.
+-->
+
 # Autonomous Driving: AI, Safety, and Security Workshop
 
 **Comprehensive Workshop on AI-based Perception, Functional Safety, and Cybersecurity in Autonomous Vehicles**
@@ -664,4 +676,5 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ---
 
-*Last Updated: 2025-01-18 by Milin Patel*
+*Last Updated: 2025-11-23 by Milin Patel*
+*Copyright © 2025 Milin Patel. All Rights Reserved.*
