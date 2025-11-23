@@ -1,6 +1,5 @@
 # Exercise 5: Hazard Analysis and Risk Assessment (HARA) for Automated Emergency Braking
 
-**Estimated Time:** 45 minutes
 **Difficulty:** Intermediate
 **Prerequisites:** Completed Notebook 11 (ISO 26262)
 
@@ -55,7 +54,7 @@ By completing this exercise, you will:
 
 ---
 
-## Part 1: Operational Situation Analysis (10 minutes)
+## Part 1: Operational Situation Analysis
 
 Identify at least **5 operational situations** where the AEB system operates.
 
@@ -79,7 +78,7 @@ Complete the table below:
 
 ---
 
-## Part 2: Hazard Identification (15 minutes)
+## Part 2: Hazard Identification
 
 For each operational situation, identify hazardous events that could occur.
 
@@ -116,7 +115,7 @@ Complete the HARA table (at least 6 hazards):
 
 ---
 
-## Part 3: Hazard Classification (10 minutes)
+## Part 3: Hazard Classification
 
 For each hazard, determine Severity (S), Exposure (E), and Controllability (C).
 
@@ -183,7 +182,7 @@ Your justifications:
 
 ---
 
-## Part 4: ASIL Determination (5 minutes)
+## Part 4: ASIL Determination
 
 Using the ASIL determination matrix, calculate ASIL for each hazard.
 
@@ -219,7 +218,7 @@ For **Severity S3**:
 
 ---
 
-## Part 5: Safety Goals and Requirements (5 minutes)
+## Part 5: Safety Goals and Requirements
 
 Derive safety goals from ASIL-rated hazards.
 

@@ -1,7 +1,6 @@
 # Exercise 7: Uncertainty Quantification for AV Perception
 
 **Session 4: Uncertainty Estimation and Validation**
-**Duration:** 60 minutes
 **Difficulty:** Advanced
 
 ## Objectives
@@ -23,7 +22,7 @@ By the end of this exercise, you will:
 
 ---
 
-## Part 1: Implement MC Dropout for YOLOv8 (20 min)
+## Part 1: Implement MC Dropout for YOLOv8
 
 ### Task 1.1: Setup
 
@@ -96,7 +95,7 @@ Create visualizations showing:
 
 ---
 
-## Part 2: Build Deep Ensemble (15 min)
+## Part 2: Build Deep Ensemble
 
 ### Task 2.1: Train Ensemble Members
 
@@ -157,7 +156,7 @@ class YOLOEnsemble:
 
 ---
 
-## Part 3: Out-of-Distribution Analysis (15 min)
+## Part 3: Out-of-Distribution Analysis
 
 ### Task 3.1: Create OOD Dataset
 
@@ -215,7 +214,7 @@ Test this:
 
 ---
 
-## Part 4: Uncertainty-Aware Decision Logic (10 min)
+## Part 4: Uncertainty-Aware Decision Logic
 
 ### Task 4.1: Design Decision Rules
 
@@ -283,7 +282,7 @@ Create test scenarios and verify your logic:
 
 ---
 
-## Part 5: Connect to SOTIF (ISO 21448) (10 min)
+## Part 5: Connect to SOTIF (ISO 21448)
 
 ### Task 5.1: SOTIF Scenario Classification
 

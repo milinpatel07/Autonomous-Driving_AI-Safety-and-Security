@@ -321,10 +321,10 @@ This document contains links to reports, papers, datasets, tools, and standards 
 - GitHub: https://github.com/carla-simulator/carla
 - Description: Open-source simulator for autonomous driving
 
-**LGSVL Simulator (SVL)**
-- Website: https://www.svlsimulator.com/
-- GitHub: https://github.com/lgsvl/simulator
-- Description: Unity-based, sensor simulation, ROS integration
+**SUMO (Simulation of Urban MObility)**
+- Website: https://eclipse.dev/sumo/
+- GitHub: https://github.com/eclipse/sumo
+- Description: Traffic simulation, open-source
 
 **AirSim**
 - Website: https://microsoft.github.io/AirSim/

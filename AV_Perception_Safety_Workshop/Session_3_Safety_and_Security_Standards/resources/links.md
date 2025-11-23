@@ -192,9 +192,9 @@ This document provides comprehensive resources for learning about automotive saf
    - https://carla.org/
    - **Free** - open-source autonomous driving simulator
 
-2. **LGSVL Simulator** (now part of Unity)
-   - https://www.svlsimulator.com/
-   - **Free** (community edition) - AV simulation
+2. **SUMO Traffic Simulator**
+   - https://eclipse.dev/sumo/
+   - **Free** - open-source traffic simulation
 
 3. **Scenic** (UC Berkeley)
    - https://scenic-lang.readthedocs.io/

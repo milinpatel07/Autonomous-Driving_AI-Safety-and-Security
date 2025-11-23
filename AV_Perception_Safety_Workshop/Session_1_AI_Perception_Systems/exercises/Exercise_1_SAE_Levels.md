@@ -2,7 +2,6 @@
 
 **Session 1: AI-based Perception Systems**
 **Difficulty:** Beginner
-**Duration:** 15-20 minutes
 
 ---
 
@@ -16,7 +15,7 @@ After completing this exercise, you will be able to:
 
 ---
 
-## Part A: Vehicle Classification (10 min)
+## Part A: Vehicle Classification
 
 ### Task 1: Classify by SAE Level
 
@@ -72,7 +71,7 @@ Answer these questions:
 
 ---
 
-## Part B: Operational Design Domain (ODD) (10 min)
+## Part B: Operational Design Domain (ODD)
 
 ### Task 3: Define ODD for Campus Shuttle
 

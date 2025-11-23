@@ -1,7 +1,6 @@
 # Exercise 8: Design a Complete Validation Strategy
 
 **Session 4: Uncertainty Estimation and Validation**
-**Duration:** 60 minutes
 **Difficulty:** Advanced
 
 ## Objectives
@@ -32,7 +31,7 @@ You are the **Safety Validation Lead** for an autonomous shuttle project:
 
 ---
 
-## Part 1: Define Scenario Space (15 min)
+## Part 1: Define Scenario Space
 
 ### Task 1.1: Apply Pegasus 6-Layer Model
 
@@ -243,7 +242,7 @@ to the road while the shuttle approaches at moderate speed in good visibility.
 
 ---
 
-## Part 2: Test Case Development (15 min)
+## Part 2: Test Case Development
 
 ### Task 2.1: Prioritize Scenarios
 
@@ -327,7 +326,7 @@ total_combinations = 5 * 6 * 5 * 2 * 2 * 4 = 2,400 possible scenarios
 
 ---
 
-## Part 3: Validation Phases (15 min)
+## Part 3: Validation Phases
 
 ### Task 3.1: Phase 1 - SIL (Simulation)
 
@@ -341,7 +340,6 @@ total_combinations = 5 * 6 * 5 * 2 * 2 * 4 = 2,400 possible scenarios
 ```markdown
 ## SIL Phase
 
-**Duration:** 2 months
 
 **Simulator:** CARLA or similar
 
@@ -417,7 +415,7 @@ total_combinations = 5 * 6 * 5 * 2 * 2 * 4 = 2,400 possible scenarios
 
 ---
 
-## Part 4: Statistical Evidence (10 min)
+## Part 4: Statistical Evidence
 
 ### Task 4.1: Calculate Miles Needed
 
@@ -464,7 +462,7 @@ Since full statistical proof is impractical, define surrogates:
 
 ---
 
-## Part 5: ISO 26262 Compliance (5 min)
+## Part 5: ISO 26262 Compliance
 
 ### Task 5.1: Map to V&V Requirements
 

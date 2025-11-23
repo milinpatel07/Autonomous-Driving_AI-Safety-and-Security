@@ -1,6 +1,5 @@
 # Session 2: Failure Modes and Edge Cases in AV Perception
 
-**Duration:** 90 minutes (10:45 - 12:15)
 **Instructor:** Milin Patel
 
 ## 🎯 Session Objectives
@@ -16,28 +15,28 @@ By the end of this session, you will:
 
 ## 📋 Session Structure
 
-### Part A: Real-World Failure Analysis (20 min)
+### Part A: Real-World Failure Analysis
 - Uber ATG Tempe crash (2018) - detailed breakdown
 - Tesla Autopilot incidents
 - Cruise SF accident (2023)
 - Failure taxonomy and root cause analysis
 - Lessons learned for safety engineering
 
-### Part B: Out-of-Distribution Detection (25 min)
+### Part B: Out-of-Distribution Detection
 - OOD detection methods and algorithms
 - Mahalanobis distance, Energy-based, OpenMax
 - Uncertainty estimation with MC Dropout
 - Implementation and performance metrics
 - Connection to ISO 21448 SOTIF
 
-### Part C: Corner Cases and Long Tail (20 min)
+### Part C: Corner Cases and Long Tail
 - Definition: corner cases vs edge cases
 - Long-tail distribution in autonomous driving
 - Examples: unusual weather, rare objects
 - Simulation-based testing approaches
 - Coverage analysis and gap identification
 
-### Part D: Adversarial Attacks (25 min)
+### Part D: Adversarial Attacks
 - Digital adversarial examples (FGSM, PGD)
 - Physical attacks: adversarial patches
 - Sensor spoofing (LiDAR, camera)

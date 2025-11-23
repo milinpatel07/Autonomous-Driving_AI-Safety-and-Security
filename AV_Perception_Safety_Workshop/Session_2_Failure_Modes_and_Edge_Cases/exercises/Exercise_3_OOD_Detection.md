@@ -1,7 +1,6 @@
 # Exercise 3: Out-of-Distribution Detection System Design
 
 **Session 2: Failure Modes and Edge Cases**
-**Duration:** 45 minutes
 **Difficulty:** Intermediate
 
 ---
@@ -36,7 +35,7 @@ The shuttle's perception system was trained on:
 
 ---
 
-## Part 1: OOD Scenario Identification (10 min)
+## Part 1: OOD Scenario Identification
 
 **Task:** Identify potential out-of-distribution scenarios the shuttle might encounter.
 
@@ -83,7 +82,7 @@ Danger: High (misses pedestrians, objects)
 
 ---
 
-## Part 2: OOD Detection Method Selection (10 min)
+## Part 2: OOD Detection Method Selection
 
 **Task:** Choose and justify OOD detection method(s) for your system.
 
@@ -131,7 +130,7 @@ Danger: High (misses pedestrians, objects)
 
 ---
 
-## Part 3: Implementation Design (15 min)
+## Part 3: Implementation Design
 
 **Task:** Design the OOD detection system architecture.
 
@@ -185,7 +184,7 @@ Safety Decision Logic:
 
 ---
 
-## Part 4: Safety Response Design (10 min)
+## Part 4: Safety Response Design
 
 **Task:** Define safety responses for different OOD detection levels.
 
@@ -217,7 +216,7 @@ For each OOD score range, define:
 
 ---
 
-## Part 5: Validation and Testing (10 min)
+## Part 5: Validation and Testing
 
 **Task:** Design a validation plan for your OOD detector.
 

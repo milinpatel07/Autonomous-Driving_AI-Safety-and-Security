@@ -15,16 +15,15 @@ Welcome to the final session of the AV Perception Safety Workshop! This session 
 
 ## 📚 Session Structure
 
-**Total Duration:** ~90 minutes of content + 2 hours of exercises
-
-### Part 1: Understanding Uncertainty (20 min)
+**Total 
+### Part 1: Understanding Uncertainty
 **Notebook 15: Uncertainty Types in Deep Learning**
 - Aleatoric vs Epistemic uncertainty
 - Sources of uncertainty in AV perception
 - Why uncertainty matters for ISO 26262 and SOTIF
 - Uncertainty-aware decision making
 
-### Part 2: Quantifying Uncertainty (25 min)
+### Part 2: Quantifying Uncertainty
 **Notebook 16: MC Dropout and Deep Ensembles**
 - Monte Carlo Dropout implementation
 - Deep Ensembles for robust predictions
@@ -32,14 +31,14 @@ Welcome to the final session of the AV Perception Safety Workshop! This session 
 - Computational cost analysis
 - Practical recommendations for production
 
-### Part 3: Model Calibration (20 min)
+### Part 3: Model Calibration
 **Notebook 17: Calibration and Reliability**
 - Understanding calibration vs accuracy
 - Expected Calibration Error (ECE)
 - Temperature Scaling, Platt Scaling, Isotonic Regression
 - Why calibration is critical for safety decisions
 
-### Part 4: Safety Validation (25 min)
+### Part 4: Safety Validation
 **Notebook 18: Safety Validation and Testing**
 - Scenario-based testing (Pegasus 6-layer model)
 - Simulation-based validation
@@ -90,7 +89,7 @@ By the end of this session, you will be able to:
 
 **Helpful but not required:**
 - Experience with object detection (YOLO, Faster R-CNN, etc.)
-- Familiarity with simulation tools (CARLA, LGSVL)
+- Familiarity with simulation tools (CARLA, SUMO)
 - Knowledge of Bayesian inference
 
 ---
@@ -110,8 +109,8 @@ Session_4_Uncertainty_Estimation_and_Validation/
 │   ├── calibration.py (ECE, Temperature Scaling, reliability diagrams)
 │   └── validation.py (Scenario generation, coverage analysis, metrics)
 ├── exercises/
-│   ├── Exercise_7_Uncertainty_Quantification.md (60 min)
-│   └── Exercise_8_Validation_Strategy.md (60 min)
+│   ├── Exercise_7_Uncertainty_Quantification.md
+│   └── Exercise_8_Validation_Strategy.md
 └── resources/
     └── links.md (Papers, tools, datasets, standards)
 ```
@@ -165,22 +164,22 @@ plotly>=5.14.0
 ### Recommended Learning Path
 
 **For practitioners (limited time):**
-1. Notebook 15 (20 min) - Understand uncertainty types
-2. Notebook 16 (25 min) - Focus on Deep Ensembles
-3. Notebook 17 (20 min) - Learn Temperature Scaling
+1. Notebook 15 - Understand uncertainty types
+2. Notebook 16 - Focus on Deep Ensembles
+3. Notebook 17 - Learn Temperature Scaling
 4. Skim Notebook 18 - Get validation overview
 5. Exercise 7 - Apply to your use case
 
 **For researchers/students (deep dive):**
-1. All notebooks in order (90 min)
-2. Implement both exercises (120 min)
+1. All notebooks in order
+2. Implement both exercises
 3. Read key papers from resources
 4. Experiment with bonus challenges
 
 **For safety engineers:**
-1. Notebook 15 (20 min) - Uncertainty and SOTIF
-2. Notebook 17 (20 min) - Calibration for decisions
-3. Notebook 18 (25 min) - Focus heavily on validation
+1. Notebook 15 - Uncertainty and SOTIF
+2. Notebook 17 - Calibration for decisions
+3. Notebook 18 - Focus heavily on validation
 4. Exercise 8 - Design complete validation plan
 5. Map to ISO 26262 requirements
 
@@ -344,7 +343,7 @@ By the end of this session, you should be able to:
 
 ## 🎓 Exercises
 
-### Exercise 7: Uncertainty Quantification (60 min)
+### Exercise 7: Uncertainty Quantification
 
 **Objective:** Implement and evaluate uncertainty quantification for YOLOv8 object detection.
 
@@ -362,7 +361,7 @@ By the end of this session, you should be able to:
 
 **Difficulty:** Advanced
 
-### Exercise 8: Validation Strategy (60 min)
+### Exercise 8: Validation Strategy
 
 **Objective:** Design complete validation plan for campus shuttle perception system.
 
