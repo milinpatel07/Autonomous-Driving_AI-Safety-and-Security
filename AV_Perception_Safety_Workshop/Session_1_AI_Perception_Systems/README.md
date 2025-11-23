@@ -1,6 +1,5 @@
 # Session 1: AI-based Perception Systems in Autonomous Vehicles
 
-**Duration:** 90 minutes (09:00 - 10:30)
 **Instructor:** Milin Patel
 
 ## 🎯 Session Objectives
@@ -16,12 +15,12 @@ By the end of this session, you will:
 
 ## 📋 Session Structure
 
-### Part A: Introduction (20 min)
+### Part A: Introduction
 - SAE J3016 automation levels
 - Autonomous driving architecture
 - Role of AI in perception, prediction, planning
 
-### Part B: Perception Systems (35 min)
+### Part B: Perception Systems
 - Camera sensors and processing
 - LiDAR point clouds
 - Radar detection
@@ -29,12 +28,12 @@ By the end of this session, you will:
 - Deep learning for object detection
 - Training datasets overview
 
-### Part C: Interactive Demonstrations (30 min)
+### Part C: Interactive Demonstrations
 - **Demo 1:** Live object detection with YOLOv8
 - **Demo 2:** Dataset exploration (nuScenes, KITTI, Waymo)
 - **Demo 3:** Sensor modality comparison
 
-### Part D: Case Study & Discussion (5 min)
+### Part D: Case Study & Discussion
 - Pedestrian detection system analysis
 - Preview of failure modes (Session 2)
 
@@ -448,16 +447,16 @@ See `resources/references.md` for full bibliography.
 
 Watch before or after session:
 
-1. **Waymo Sensor Visualization** (3 min)
+1. **Waymo Sensor Visualization**
    https://www.youtube.com/watch?v=B8R148hFxPw
 
-2. **How Tesla Autopilot Works** (5 min)
+2. **How Tesla Autopilot Works**
    https://www.youtube.com/watch?v=uxLBcPdKfbs
 
-3. **Euro NCAP Pedestrian AEB Tests** (4 min)
+3. **Euro NCAP Pedestrian AEB Tests**
    https://www.youtube.com/watch?v=3_38KHlS1zQ
 
-4. **LiDAR Point Cloud Visualization** (2 min)
+4. **LiDAR Point Cloud Visualization**
    https://www.youtube.com/watch?v=KXpZ6B1YB_k
 
 ---

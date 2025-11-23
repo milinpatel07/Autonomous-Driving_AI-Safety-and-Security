@@ -27,7 +27,7 @@ See the LICENSE file in the root directory for full license text.
 [![ISO 21448](https://img.shields.io/badge/ISO%2021448-SOTIF-orange.svg)](https://www.iso.org/standard/77490.html)
 [![ISO/SAE 21434](https://img.shields.io/badge/ISO%2FSAE%2021434-Cybersecurity-blue.svg)](https://www.iso.org/standard/70918.html)
 
-> **🎉 Workshop Status**: ALL 4 SESSIONS COMPLETE! All 18 Jupyter notebooks are ready to use in Google Colab or locally. No setup required for Colab users - just click and run!
+> **Workshop Status**: All 4 sessions complete. All 18 Jupyter notebooks can be used in Google Colab or locally.
 
 ---
 
@@ -75,18 +75,18 @@ Upon completion of this workshop, participants will be able to:
 
 ## 📚 Workshop Structure
 
-### **Session 1: AI-based Perception Systems** (90 minutes)
+### **Session 1: AI-based Perception Systems**
 
 **Focus:** Sensor modalities, object detection, and datasets
 
-| Notebook | Topic | Standards Referenced | Duration |
-|----------|-------|---------------------|----------|
-| 01 | SAE J3016 Automation Levels & AV Architecture | SAE J3016 | 15 min |
-| 02 | Sensor Modalities: Camera, LiDAR, Radar | ISO 26262-5 (Hardware) | 15 min |
-| 03 | Object Detection: YOLOv8, Faster R-CNN | - | 20 min |
-| 04 | AV Datasets: KITTI, nuScenes, Waymo | - | 20 min |
-| 05 | Sensor Fusion: Early, Late, Deep Fusion | ISO 26262-6 (SW) | 15 min |
-| 06 | Pedestrian Detection Safety Case Study | ISO 26262-3 (Concept) | 15 min |
+| Notebook | Topic | Standards Referenced |
+|----------|-------|---------------------|
+| 01 | SAE J3016 Automation Levels & AV Architecture | SAE J3016 |
+| 02 | Sensor Modalities: Camera, LiDAR, Radar | ISO 26262-5 (Hardware) |
+| 03 | Object Detection: YOLOv8, Faster R-CNN | - |
+| 04 | AV Datasets: KITTI, nuScenes, Waymo | - |
+| 05 | Sensor Fusion: Early, Late, Deep Fusion | ISO 26262-6 (SW) |
+| 06 | Pedestrian Detection Safety Case Study | ISO 26262-3 (Concept) |
 
 **Key Concepts:**
 - SAE J3016 automation levels (L0-L5) and associated safety requirements
@@ -98,16 +98,16 @@ Upon completion of this workshop, participants will be able to:
 
 ---
 
-### **Session 2: Failure Modes and Edge Cases** (90 minutes)
+### **Session 2: Failure Modes and Edge Cases**
 
 **Focus:** Understanding AI failures, out-of-distribution detection, and safety validation
 
-| Notebook | Topic | Standards Referenced | Duration |
-|----------|-------|---------------------|----------|
-| 07 | Real-world AV Failures: Case Studies | ISO 21448 (SOTIF) | 20 min |
-| 08 | Out-of-Distribution (OOD) Detection | ISO 21448, ISO 8800 | 25 min |
-| 09 | Corner Cases and Edge Cases | ISO 21448 (Triggering Conditions) | 20 min |
-| 10 | Adversarial Attacks on Perception | ISO/SAE 21434 | 25 min |
+| Notebook | Topic | Standards Referenced |
+|----------|-------|---------------------|
+| 07 | Real-world AV Failures: Case Studies | ISO 21448 (SOTIF) |
+| 08 | Out-of-Distribution (OOD) Detection | ISO 21448, ISO 8800 |
+| 09 | Corner Cases and Edge Cases | ISO 21448 (Triggering Conditions) |
+| 10 | Adversarial Attacks on Perception | ISO/SAE 21434 |
 
 **Key Concepts:**
 - Analysis of real-world AV accidents (Uber ATG 2018, Tesla Autopilot incidents)
@@ -125,16 +125,16 @@ Upon completion of this workshop, participants will be able to:
 
 ---
 
-### **Session 3: Safety and Security Standards** (120 minutes)
+### **Session 3: Safety and Security Standards**
 
 **Focus:** ISO 26262, ISO 21448 (SOTIF), ISO/SAE 21434, and ISO 8800
 
-| Notebook | Topic | Standards | Duration |
-|----------|-------|-----------|----------|
-| 11 | ISO 26262: Functional Safety for AVs | ISO 26262-1 to 12 | 30 min |
-| 12 | ISO 21448: Safety of the Intended Functionality (SOTIF) | ISO 21448:2022 | 30 min |
-| 13 | ISO 8800: AI Safety in Autonomous Systems | ISO/IEC TR 5469, PAS 8800 | 25 min |
-| 14 | ISO/SAE 21434: Automotive Cybersecurity | ISO/SAE 21434:2021 | 35 min |
+| Notebook | Topic | Standards |
+|----------|-------|-----------|
+| 11 | ISO 26262: Functional Safety for AVs | ISO 26262-1 to 12 |
+| 12 | ISO 21448: Safety of the Intended Functionality (SOTIF) | ISO 21448:2022 |
+| 13 | ISO 8800: AI Safety in Autonomous Systems | ISO/IEC TR 5469, PAS 8800 |
+| 14 | ISO/SAE 21434: Automotive Cybersecurity | ISO/SAE 21434:2021 |
 
 **Key Concepts:**
 
@@ -174,16 +174,16 @@ Upon completion of this workshop, participants will be able to:
 
 ---
 
-### **Session 4: Uncertainty Estimation and Validation** (90 minutes)
+### **Session 4: Uncertainty Estimation and Validation**
 
 **Focus:** Bayesian deep learning, uncertainty quantification, and safety validation
 
-| Notebook | Topic | Techniques | Duration |
-|----------|-------|------------|----------|
-| 15 | Uncertainty in Deep Learning: Aleatoric vs. Epistemic | Bayesian DL | 20 min |
-| 16 | Monte Carlo Dropout for Uncertainty | MC Dropout, Ensembles | 25 min |
-| 17 | Calibration and Reliability Diagrams | Temperature Scaling, ECE | 20 min |
-| 18 | Safety Validation and Testing | Scenario-based Testing | 25 min |
+| Notebook | Topic | Techniques |
+|----------|-------|------------|
+| 15 | Uncertainty in Deep Learning: Aleatoric vs. Epistemic | Bayesian DL |
+| 16 | Monte Carlo Dropout for Uncertainty | MC Dropout, Ensembles |
+| 17 | Calibration and Reliability Diagrams | Temperature Scaling, ECE |
+| 18 | Safety Validation and Testing | Scenario-based Testing |
 
 **Key Concepts:**
 
@@ -207,7 +207,7 @@ Upon completion of this workshop, participants will be able to:
 
 #### Safety Validation
 - **Scenario-based Testing**: Concrete, functional, logical scenarios (Pegasus 6-layer model)
-- **Simulation-based Validation**: High-fidelity physics simulation (CARLA, LGSVL, Metadrive)
+- **Simulation-based Validation**: High-fidelity physics simulation (CARLA, SUMO)
 - **X-in-the-Loop Testing**: SIL, HIL, VIL, DIL validation strategies
 - **Field Operational Tests (FOT)**: Statistical evidence from real-world deployment
 - **Formal Verification**: Mathematical proofs for safety properties (limited applicability to DNNs)
@@ -216,22 +216,13 @@ Upon completion of this workshop, participants will be able to:
 
 ## 🚀 Quick Start
 
-### Option 1: Google Colab (⭐ Recommended - Zero Installation!)
+### Option 1: Google Colab
 
-**Start learning immediately - no setup required:**
+**Using Google Colab:**
 
-1. **Choose your starting point:**
-   - [📘 Session 1, Notebook 1: SAE Levels & AV Architecture](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/notebooks/01_Introduction_SAE_Levels.ipynb) (Recommended start)
-   - Or browse any session folder and click the Colab badge at the top of any notebook
-
-2. **Run the notebook:**
-   - All dependencies install automatically
-   - All code runs in your browser
-   - Works on free Colab tier (no GPU needed for most notebooks)
-
-3. **Progress through the workshop:**
-   - Session 1 → 2 → 3 → 4 for complete learning path
-   - Or jump to any topic of interest
+1. Browse to any session folder and click the Colab badge at the top of a notebook
+2. Dependencies install automatically when first cell is executed
+3. For complete learning path, follow Session 1 → 2 → 3 → 4
 
 ### Option 2: Local Installation
 
@@ -536,9 +527,8 @@ Autonomous-Driving_AI-Safety-and-Security/
 
 ### Simulation Platforms
 - [CARLA Simulator](https://carla.org/) - Open-source AV simulation
-- [LGSVL Simulator](https://www.svlsimulator.com/) - Unity-based AV simulation
-- [Metadrive](https://metadrive-simulator.github.io/) - Lightweight RL-focused simulator
 - [SUMO](https://eclipse.dev/sumo/) - Traffic simulation
+- [Waymo Sim Agents Challenge](https://waymo.com/open/challenges/2024/sim-agents/) - Behavior simulation
 
 ### Academic Papers and Books
 
@@ -656,23 +646,20 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ---
 
-## 🔄 Version History
+## Version History
 
-- **v2.0.0** (2025-01-18): Complete overhaul with safety, security, and uncertainty content
-  - Added Sessions 2, 3, 4 with ISO standards coverage
-  - Comprehensive documentation on ISO 26262, 21448, 21434, and AI safety
+- **v2.0.0** (2025-11-23): Workshop with all 4 sessions
+  - Sessions 1-4 with ISO standards coverage (ISO 26262, 21448, 21434)
   - Uncertainty quantification and validation notebooks
-  - Academic rigor improvements and standard terminology
+  - Standards-aligned terminology and references
 
-- **v1.0.0** (2025-01-17): Initial release with Session 1 (Perception)
+- **v1.0.0** (2025-01-17): Initial release with Session 1
 
 ---
 
-**Ready to build safe and secure autonomous systems?**
+**Getting Started:**
 
-👉 **[Start with Session 1, Notebook 1: SAE Automation Levels](AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/notebooks/01_Introduction_SAE_Levels.ipynb)**
-
-🚀 **[Or launch directly in Google Colab - no installation required!](https://colab.research.google.com/)**
+[Session 1, Notebook 1: SAE Automation Levels](AV_Perception_Safety_Workshop/Session_1_AI_Perception_Systems/notebooks/01_Introduction_SAE_Levels.ipynb)
 
 ---
 

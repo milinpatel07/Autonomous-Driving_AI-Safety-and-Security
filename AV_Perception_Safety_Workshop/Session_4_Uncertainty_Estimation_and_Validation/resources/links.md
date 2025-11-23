@@ -147,13 +147,9 @@
   - https://carla.org/
   - 📌 Most popular open-source AV simulator
 
-- **LGSVL (now Apollo)**
-  - https://www.svlsimulator.com/
-  - High-fidelity sensor simulation
-
-- **MetaDrive**
-  - https://github.com/metadriverse/metadrive
-  - Lightweight, procedural generation
+- **SUMO**
+  - https://eclipse.dev/sumo/
+  - Traffic simulation platform
 
 - **SUMMIT**
   - https://github.com/AdaCompNUS/summit

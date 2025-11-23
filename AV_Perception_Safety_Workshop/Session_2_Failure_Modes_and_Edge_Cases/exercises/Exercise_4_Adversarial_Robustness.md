@@ -1,7 +1,6 @@
 # Exercise 4: Adversarial Robustness Evaluation
 
 **Session 2: Failure Modes and Edge Cases**
-**Duration:** 60 minutes
 **Difficulty:** Advanced
 
 ---
@@ -37,7 +36,7 @@ Evaluate the adversarial robustness of a pedestrian detection system for autonom
 
 ---
 
-## Part 1: Threat Analysis (10 min)
+## Part 1: Threat Analysis
 
 **Task:** Perform threat analysis per ISO/SAE 21434.
 
@@ -86,7 +85,7 @@ For each attack vector, assess:
 
 ---
 
-## Part 2: Implement Adversarial Attacks (20 min)
+## Part 2: Implement Adversarial Attacks
 
 **Task:** Implement FGSM and PGD attacks on the pedestrian detector.
 
@@ -162,7 +161,7 @@ def pgd_attack_pedestrian(image, model, epsilon=0.03, alpha=0.007, num_iter=10):
 
 ---
 
-## Part 3: Physical Attack Simulation (10 min)
+## Part 3: Physical Attack Simulation
 
 **Task:** Design and simulate a physical adversarial patch attack.
 
@@ -230,7 +229,7 @@ for epoch in range(num_epochs):
 
 ---
 
-## Part 4: Design Defense Mechanisms (15 min)
+## Part 4: Design Defense Mechanisms
 
 **Task:** Design defenses against adversarial attacks.
 
@@ -322,7 +321,7 @@ for epoch in range(num_epochs):
 
 ---
 
-## Part 5: ISO/SAE 21434 Documentation (15 min)
+## Part 5: ISO/SAE 21434 Documentation
 
 **Task:** Document cybersecurity requirements per ISO/SAE 21434.
 

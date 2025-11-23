@@ -2,7 +2,6 @@
 
 ## Overview
 
-**Duration:** 120 minutes (2 hours)
 
 This session provides comprehensive coverage of the key safety and security standards applicable to autonomous driving systems, with a focus on AI-based perception systems.
 
@@ -19,7 +18,7 @@ By the end of this session, you will be able to:
 
 ## Session Structure
 
-### Notebook 11: ISO 26262 Functional Safety (30 min)
+### Notebook 11: ISO 26262 Functional Safety
 **File:** `notebooks/11_ISO_26262_Functional_Safety.ipynb`
 
 - ISO 26262 overview and 12-part structure
@@ -34,7 +33,7 @@ By the end of this session, you will be able to:
 
 ---
 
-### Notebook 12: ISO 21448 SOTIF (30 min)
+### Notebook 12: ISO 21448 SOTIF
 **File:** `notebooks/12_ISO_21448_SOTIF.ipynb`
 
 - SOTIF principles and differences from ISO 26262
@@ -48,7 +47,7 @@ By the end of this session, you will be able to:
 
 ---
 
-### Notebook 13: ISO/IEC 8800 AI Safety (25 min)
+### Notebook 13: ISO/IEC 8800 AI Safety
 **File:** `notebooks/13_ISO_8800_AI_Safety.ipynb`
 
 - AI safety principles for autonomous systems
@@ -66,7 +65,7 @@ By the end of this session, you will be able to:
 
 ---
 
-### Notebook 14: ISO/SAE 21434 Cybersecurity (35 min)
+### Notebook 14: ISO/SAE 21434 Cybersecurity
 **File:** `notebooks/14_ISO_SAE_21434_Cybersecurity.ipynb`
 
 - Automotive cybersecurity engineering
@@ -175,7 +174,6 @@ Apply ISO 26262 HARA methodology to an automated emergency braking (AEB) system:
 - Calculate ASIL levels
 - Define safety goals
 
-**Estimated Time:** 45 minutes
 
 ---
 
@@ -189,7 +187,6 @@ Apply ISO/SAE 21434 TARA methodology to V2X (Vehicle-to-Everything) communicatio
 - Determine CAL levels
 - Specify cybersecurity requirements
 
-**Estimated Time:** 45 minutes
 
 ---
 

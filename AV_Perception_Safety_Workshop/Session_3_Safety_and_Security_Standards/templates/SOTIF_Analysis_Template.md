@@ -386,7 +386,7 @@ System updates required when:
 ### Tools and Resources:
 
 - Scenario database management tools
-- Simulation platforms (CARLA, LGSVL, etc.)
+- Simulation platforms (CARLA, SUMO, etc.)
 - Field data collection and analysis systems
 - Automated scenario generation tools
 

@@ -1,6 +1,5 @@
 # Exercise 6: Threat Analysis and Risk Assessment (TARA) for V2X Communication
 
-**Estimated Time:** 45 minutes
 **Difficulty:** Intermediate to Advanced
 **Prerequisites:** Completed Notebook 14 (ISO/SAE 21434)
 
@@ -48,7 +47,7 @@ By completing this exercise, you will:
 
 ---
 
-## Part 1: Asset Identification (10 minutes)
+## Part 1: Asset Identification
 
 Identify assets that require protection and their cybersecurity properties.
 
@@ -93,7 +92,7 @@ Complete the asset table:
 
 ---
 
-## Part 2: Threat Actor and Attack Goal Identification (5 minutes)
+## Part 2: Threat Actor and Attack Goal Identification
 
 Identify relevant threat actors and their potential goals.
 
@@ -130,7 +129,7 @@ What might attackers want to achieve? (Check all that apply and add your own)
 
 ---
 
-## Part 3: Threat Scenario Development (15 minutes)
+## Part 3: Threat Scenario Development
 
 Develop threat scenarios for identified assets.
 
@@ -174,7 +173,7 @@ ___________________
 
 ---
 
-## Part 4: Impact Assessment (5 minutes)
+## Part 4: Impact Assessment
 
 Rate the impact of successful attacks on four dimensions.
 
@@ -214,7 +213,7 @@ ___________________
 
 ---
 
-## Part 5: Attack Feasibility Assessment (10 minutes)
+## Part 5: Attack Feasibility Assessment
 
 Assess attack feasibility using the 5-factor model.
 
@@ -264,7 +263,7 @@ ___________________
 
 ---
 
-## Part 6: Risk Determination (5 minutes)
+## Part 6: Risk Determination
 
 Combine impact and feasibility to determine risk level.
 
@@ -317,7 +316,7 @@ Based on risk level, determine CAL:
 
 ---
 
-## Part 7: Cybersecurity Goals and Requirements (5 minutes)
+## Part 7: Cybersecurity Goals and Requirements
 
 Derive cybersecurity goals and requirements from threats.
 

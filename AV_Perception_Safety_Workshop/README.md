@@ -2,8 +2,7 @@
 
 **Author:** Milin Patel
 **Institution:** Hochschule Kempten - University of Applied Sciences
-**Total Duration:** 6-7 hours (can be split across multiple days)
-**Status:** ✅ **COMPLETE - All 4 Sessions Ready!**
+**Total **Status:** ✅ **COMPLETE - All 4 Sessions Ready!**
 
 [![All Sessions Complete](https://img.shields.io/badge/Sessions-4%2F4%20Complete-success.svg)]()
 [![Notebooks](https://img.shields.io/badge/Notebooks-18%20Total-blue.svg)]()
@@ -143,12 +142,12 @@ jupyter lab
 **Location:** `Session_1_AI_Perception_Systems/`
 
 **All 6 Notebooks:**
-1. **01_Introduction_SAE_Levels.ipynb** (15 min) - SAE J3016 automation levels, ODD, AV architecture
+1. **01_Introduction_SAE_Levels.ipynb** - SAE J3016 automation levels, ODD, AV architecture
 2. **02_Sensor_Modalities_Visualization.ipynb** (15-20 min) - Camera, LiDAR, Radar comparison with 3D visualizations
-3. **03_Object_Detection_Demo.ipynb** (20 min) - YOLOv8 implementation, real-time inference, failure analysis
-4. **04_Dataset_Exploration.ipynb** (20 min) - KITTI, nuScenes, Waymo datasets analysis and comparison
-5. **05_Sensor_Fusion_Basics.ipynb** (15 min) - Early, late, deep fusion with working code implementations
-6. **06_Pedestrian_Detection_Case_Study.ipynb** (15 min) - Safety-critical pedestrian detection, ISO 26262 ASIL-D
+3. **03_Object_Detection_Demo.ipynb** - YOLOv8 implementation, real-time inference, failure analysis
+4. **04_Dataset_Exploration.ipynb** - KITTI, nuScenes, Waymo datasets analysis and comparison
+5. **05_Sensor_Fusion_Basics.ipynb** - Early, late, deep fusion with working code implementations
+6. **06_Pedestrian_Detection_Case_Study.ipynb** - Safety-critical pedestrian detection, ISO 26262 ASIL-D
 
 **Key Features:**
 - All notebooks work in Google Colab (zero setup!)
@@ -159,14 +158,14 @@ jupyter lab
 
 ---
 
-### Session 2: Failure Modes and Edge Cases (90 min) ✅
+### Session 2: Failure Modes and Edge Cases ✅
 **Location:** `Session_2_Failure_Modes_and_Edge_Cases/`
 
 **All 4 Notebooks:**
-7. **07_AV_Failure_Case_Studies.ipynb** (20 min) - Uber ATG, Tesla, Cruise accidents with NTSB analysis
-8. **08_OOD_Detection.ipynb** (25 min) - 4 OOD detection methods with implementations (Mahalanobis, Energy-based, MC Dropout)
-9. **09_Corner_Cases_and_Edge_Cases.ipynb** (20 min) - Long-tail distribution, risk matrices, combinatorial scenarios
-10. **10_Adversarial_Attacks_on_Perception.ipynb** (25 min) - FGSM, PGD attacks, sensor spoofing, defenses, ISO/SAE 21434
+7. **07_AV_Failure_Case_Studies.ipynb** - Uber ATG, Tesla, Cruise accidents with NTSB analysis
+8. **08_OOD_Detection.ipynb** - 4 OOD detection methods with implementations (Mahalanobis, Energy-based, MC Dropout)
+9. **09_Corner_Cases_and_Edge_Cases.ipynb** - Long-tail distribution, risk matrices, combinatorial scenarios
+10. **10_Adversarial_Attacks_on_Perception.ipynb** - FGSM, PGD attacks, sensor spoofing, defenses, ISO/SAE 21434
 
 **Key Features:**
 - Real accident analysis with root causes
@@ -177,14 +176,14 @@ jupyter lab
 
 ---
 
-### Session 3: Safety and Security Standards (120 min) ✅
+### Session 3: Safety and Security Standards ✅
 **Location:** `Session_3_Safety_and_Security_Standards/`
 
 **All 4 Notebooks:**
-11. **11_ISO_26262_Functional_Safety.ipynb** (30 min) - V-Model, ASIL classification, HARA methodology
-12. **12_ISO_21448_SOTIF.ipynb** (30 min) - Four scenario categories, triggering conditions, SOTIF process
-13. **13_ISO_8800_AI_Safety.ipynb** (25 min) - AI trustworthiness, data quality, model monitoring, human-AI interaction
-14. **14_ISO_SAE_21434_Cybersecurity.ipynb** (35 min) - TARA methodology, CAL levels, penetration testing
+11. **11_ISO_26262_Functional_Safety.ipynb** - V-Model, ASIL classification, HARA methodology
+12. **12_ISO_21448_SOTIF.ipynb** - Four scenario categories, triggering conditions, SOTIF process
+13. **13_ISO_8800_AI_Safety.ipynb** - AI trustworthiness, data quality, model monitoring, human-AI interaction
+14. **14_ISO_SAE_21434_Cybersecurity.ipynb** - TARA methodology, CAL levels, penetration testing
 
 **Key Features:**
 - Complete HARA and TARA templates (markdown)
@@ -195,14 +194,14 @@ jupyter lab
 
 ---
 
-### Session 4: Uncertainty Estimation and Validation (90 min) ✅
+### Session 4: Uncertainty Estimation and Validation ✅
 **Location:** `Session_4_Uncertainty_Estimation_and_Validation/`
 
 **All 4 Notebooks:**
-15. **15_Uncertainty_Types_in_Deep_Learning.ipynb** (20 min) - Aleatoric vs epistemic uncertainty, sources in AV perception
-16. **16_MC_Dropout_and_Ensembles.ipynb** (25 min) - Complete implementations of Monte Carlo Dropout and Deep Ensembles
-17. **17_Calibration_and_Reliability.ipynb** (20 min) - ECE metric, temperature scaling, reliability diagrams
-18. **18_Safety_Validation_and_Testing.ipynb** (25 min) - Pegasus 6-layer model, scenario-based testing, statistical evidence
+15. **15_Uncertainty_Types_in_Deep_Learning.ipynb** - Aleatoric vs epistemic uncertainty, sources in AV perception
+16. **16_MC_Dropout_and_Ensembles.ipynb** - Complete implementations of Monte Carlo Dropout and Deep Ensembles
+17. **17_Calibration_and_Reliability.ipynb** - ECE metric, temperature scaling, reliability diagrams
+18. **18_Safety_Validation_and_Testing.ipynb** - Pegasus 6-layer model, scenario-based testing, statistical evidence
 
 **Key Features:**
 - Working Python scripts (uncertainty.py, calibration.py, validation.py)

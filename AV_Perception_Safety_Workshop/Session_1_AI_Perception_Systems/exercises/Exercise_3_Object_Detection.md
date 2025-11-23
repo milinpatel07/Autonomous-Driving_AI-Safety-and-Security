@@ -2,7 +2,6 @@
 
 **Session 1: AI-based Perception Systems**
 **Difficulty:** Intermediate
-**Duration:** 25-30 minutes
 
 ---
 
@@ -25,7 +24,7 @@ After completing this exercise, you will be able to:
 
 ---
 
-## Part A: Basic Detection (10 min)
+## Part A: Basic Detection
 
 ### Task 1: Run Detection on Test Images
 
@@ -84,7 +83,7 @@ For **Image 1 (Urban)**:
 
 ---
 
-## Part B: Confidence Threshold Tuning (10 min)
+## Part B: Confidence Threshold Tuning
 
 ### Task 3: Precision-Recall Trade-off
 
@@ -130,7 +129,7 @@ for threshold in [0.25, 0.50, 0.75]:
 
 ---
 
-## Part C: Failure Mode Analysis (10 min)
+## Part C: Failure Mode Analysis
 
 ### Task 4: Identify Detection Failures
 
@@ -195,7 +194,7 @@ Test YOLOv8 on these **challenging scenarios** (find or create test images):
 
 ---
 
-## Part D: Safety Implications (5 min)
+## Part D: Safety Implications
 
 ### Task 6: Define Safety Requirements
 
