@@ -1,3 +1,11 @@
+<!--
+Copyright (c) 2025 Milin Patel
+Hochschule Kempten - University of Applied Sciences
+
+Autonomous Driving: AI Safety and Security Workshop
+This project is licensed under the MIT License.
+-->
+
 # Automotive Cybersecurity: ISO/SAE 21434
 
 **Cybersecurity Engineering for Autonomous Vehicles**

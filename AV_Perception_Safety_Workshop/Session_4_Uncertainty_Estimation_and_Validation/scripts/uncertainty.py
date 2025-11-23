@@ -1,10 +1,21 @@
+# Copyright (c) 2025 Milin Patel
+# Hochschule Kempten - University of Applied Sciences
+#
+# Autonomous Driving: AI Safety and Security Workshop
+# Comprehensive educational materials covering AI-based perception, ISO 26262,
+# ISO 21448 (SOTIF), ISO/SAE 21434, and uncertainty quantification for autonomous vehicles.
+#
+# This project is licensed under the MIT License.
+# See the LICENSE file in the root directory for full license text.
+
 """
 Uncertainty Estimation Helper Functions
 
 This module provides utilities for uncertainty quantification in deep learning,
 specifically focused on AV perception tasks.
 
-Author: AV Perception Safety Workshop
+Author: Milin Patel
+Institution: Hochschule Kempten
 Session: 4 - Uncertainty Estimation and Validation
 """
 

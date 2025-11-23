@@ -1,3 +1,11 @@
+<!--
+Copyright (c) 2025 Milin Patel
+Hochschule Kempten - University of Applied Sciences
+
+Autonomous Driving: AI Safety and Security Workshop
+This project is licensed under the MIT License.
+-->
+
 # Functional Safety for Autonomous Vehicles
 
 **ISO 26262 and ISO 21448 (SOTIF) Implementation Guide**
