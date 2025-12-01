@@ -6,20 +6,20 @@ Autonomous Driving: AI Safety and Security Workshop
 This project is licensed under the MIT License.
 -->
 
-# Session 5: Advanced Topics in AV Safety and Deployment
+# Session 5: Standards Integration and Deployment
 
 **Author:** Milin Patel
 **Institution:** Hochschule Kempten
 
 ## Overview
 
-This session covers advanced topics critical for real-world autonomous vehicle deployment:
+This session covers integration and deployment topics for autonomous vehicles:
 - V2X communication and cooperative perception
 - Explainability (XAI) for safety certification
-- How safety standards integrate in practice
+- Integration of safety standards in practice
 - Industry deployment challenges and barriers
 - Operational Design Domain (ODD) specification
-- Open problems and future research directions
+- Current limitations and open research problems
 
 ## Prerequisites
 
@@ -132,12 +132,12 @@ Perform combined HARA + SOTIF + TARA for an autonomous parking system.
 
 ## Key Takeaways
 
-1. **V2X is the future** but deployment is slow due to infrastructure costs
-2. **XAI is mandatory** for certification, not optional
-3. **Standards must be used together** - no single standard is enough
-4. **Deployment is hard** - technical challenges are solved, but regulatory/economic barriers remain
-5. **ODD is critical** - every AV must know its limits
-6. **Many problems remain open** - this is an active research field
+1. V2X communication enables cooperative perception but deployment faces infrastructure challenges
+2. Explainability (XAI) is required for AI/ML certification under emerging standards
+3. Multiple standards (ISO 26262, ISO 21448, ISO/SAE 21434) must be integrated for complete safety analysis
+4. Technical solutions exist for autonomous driving, but regulatory and economic barriers limit deployment
+5. ODD specification and monitoring are essential for safe autonomous vehicle operation
+6. Significant research problems remain in AI/ML safety validation and verification
 
 ## Resources
 

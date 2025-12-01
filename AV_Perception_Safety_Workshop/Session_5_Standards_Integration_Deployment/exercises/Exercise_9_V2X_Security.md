@@ -1,6 +1,6 @@
 # Exercise 9: V2X Security Analysis
 
-**Session 5: Advanced Topics in AV Safety**
+**Session 5: Standards Integration and Deployment**
 **Estimated Time**: 60 minutes
 
 ---

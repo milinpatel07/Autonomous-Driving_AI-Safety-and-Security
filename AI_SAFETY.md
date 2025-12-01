@@ -851,4 +851,4 @@ Full Deploy → OTA Updates → Continuous Learning
 
 ---
 
-*This document is part of the comprehensive Autonomous Driving: AI, Safety, and Security Workshop. For functional safety, see [SAFETY.md](SAFETY.md). For cybersecurity, see [SECURITY.md](SECURITY.md).*
+*This document is part of the Autonomous Driving: AI, Safety, and Security Workshop. For functional safety, see [SAFETY.md](SAFETY.md). For cybersecurity, see [SECURITY.md](SECURITY.md).*

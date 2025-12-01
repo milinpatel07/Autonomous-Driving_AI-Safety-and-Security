@@ -711,4 +711,4 @@ SOTIF validation requires demonstrating sufficiently low residual risk. Example 
 
 ---
 
-*This document is part of the comprehensive Autonomous Driving: AI, Safety, and Security Workshop. For cybersecurity, see [SECURITY.md](SECURITY.md). For AI-specific safety considerations, see [AI_SAFETY.md](AI_SAFETY.md).*
+*This document is part of the Autonomous Driving: AI, Safety, and Security Workshop. For cybersecurity, see [SECURITY.md](SECURITY.md). For AI-specific safety considerations, see [AI_SAFETY.md](AI_SAFETY.md).*
