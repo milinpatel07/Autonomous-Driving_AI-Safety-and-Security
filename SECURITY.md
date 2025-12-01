@@ -16,6 +16,12 @@ This project is licensed under the MIT License.
 
 ---
 
+> **📖 Quick Start:** For workshop overview and getting started, see [README.md](README.md)
+>
+> **Purpose:** This document provides detailed technical reference for automotive cybersecurity. It complements the main README with in-depth ISO/SAE 21434 implementation guidance, TARA methodology, and attack vector analysis.
+
+---
+
 ## Table of Contents
 
 1. [Introduction](#introduction)

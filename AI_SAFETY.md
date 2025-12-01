@@ -16,6 +16,12 @@ This project is licensed under the MIT License.
 
 ---
 
+> **📖 Quick Start:** For workshop overview and getting started, see [README.md](README.md)
+>
+> **Purpose:** This document provides detailed technical reference for AI/ML safety in autonomous systems. It complements the main README with in-depth guidance on uncertainty quantification, data quality, robustness, explainability, and integration with traditional safety standards.
+
+---
+
 ## Table of Contents
 
 1. [Introduction](#introduction)

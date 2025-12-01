@@ -1,6 +1,7 @@
 # Session 1: Useful Links and Online Resources
 
-**Last Updated:** 2025-01-17
+**Author:** Milin Patel
+**Institution:** Hochschule Kempten
 
 This document contains curated links to online tools, demos, and resources used in Session 1.
 

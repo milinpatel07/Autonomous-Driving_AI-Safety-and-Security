@@ -1,5 +1,5 @@
 # Autonomous Driving: AI, Safety, and Security Workshop
-# Complete Requirements for All 4 Sessions
+# Complete Requirements for All 5 Sessions
 # Python 3.8+ Required
 # Compatible with Google Colab and Local Installation
 

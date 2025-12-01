@@ -16,6 +16,12 @@ This project is licensed under the MIT License.
 
 ---
 
+> **📖 Quick Start:** For workshop overview and getting started, see [README.md](README.md)
+>
+> **Purpose:** This document provides detailed technical reference for functional safety standards. It complements the main README with in-depth ISO 26262 and ISO 21448 (SOTIF) implementation guidance.
+
+---
+
 ## Table of Contents
 
 1. [Introduction](#introduction)
