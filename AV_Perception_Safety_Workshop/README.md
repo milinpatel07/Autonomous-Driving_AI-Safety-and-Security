@@ -2,15 +2,15 @@
 
 **Author:** Milin Patel
 **Institution:** Hochschule Kempten - University of Applied Sciences
-**Total **Status:** ✅ **COMPLETE - All 4 Sessions Ready!**
+**Status:** ✅ **COMPLETE - All 5 Sessions Ready!**
 
-[![All Sessions Complete](https://img.shields.io/badge/Sessions-4%2F4%20Complete-success.svg)]()
-[![Notebooks](https://img.shields.io/badge/Notebooks-18%20Total-blue.svg)]()
+[![All Sessions Complete](https://img.shields.io/badge/Sessions-5%2F5%20Complete-success.svg)]()
+[![Notebooks](https://img.shields.io/badge/Notebooks-24%20Total-blue.svg)]()
 [![Google Colab Ready](https://img.shields.io/badge/Google%20Colab-Ready-orange.svg)](https://colab.research.google.com/)
 
 ## 🎯 Workshop Overview
 
-This comprehensive, hands-on workshop provides complete coverage of AI-based perception systems in autonomous vehicles, their failure modes, safety and security standards, uncertainty estimation, and validation techniques. Participants will gain both theoretical knowledge and practical implementation experience through 18 interactive Jupyter notebooks, all runnable in Google Colab.
+This comprehensive, hands-on workshop provides complete coverage of AI-based perception systems in autonomous vehicles, their failure modes, safety and security standards, uncertainty estimation, and advanced deployment topics. Participants will gain both theoretical knowledge and practical implementation experience through 24 interactive Jupyter notebooks, all runnable in Google Colab.
 
 ## 📋 Workshop Schedule (All Sessions Available)
 
@@ -20,21 +20,24 @@ This comprehensive, hands-on workshop provides complete coverage of AI-based per
 | **Session 2** | 90 min | **Failure Modes and Edge Cases** | 07-10 (4 notebooks) |
 | **Session 3** | 120 min | **Safety and Security Standards** | 11-14 (4 notebooks) |
 | **Session 4** | 90 min | **Uncertainty Estimation and Validation** | 15-18 (4 notebooks) |
-| **TOTAL** | **6-7 hours** | **Complete Workshop** | **18 notebooks** |
+| **Session 5** | 120 min | **Advanced Topics** | 19-24 (6 notebooks) |
+| **TOTAL** | **8-9 hours** | **Complete Workshop** | **24 notebooks** |
 
 ### Recommended Workshop Formats
 
-**Option A: Full-Day Workshop** (6-7 hours with breaks)
-- Morning: Sessions 1 & 2 (3 hours + 15 min break)
-- Afternoon: Sessions 3 & 4 (3.5 hours + 15 min break)
+**Option A: Multi-Day Workshop** (2 days)
+- Day 1: Sessions 1, 2, & 3 (AI Perception + Failures + Standards)
+- Day 2: Sessions 4 & 5 (Validation + Advanced Topics)
 
-**Option B: Multi-Day Workshop** (2 days)
-- Day 1: Sessions 1 & 2 (AI Perception + Failures)
-- Day 2: Sessions 3 & 4 (Standards + Validation)
+**Option B: Extended Workshop** (3 days)
+- Day 1: Sessions 1 & 2 (AI Perception + Failure Modes)
+- Day 2: Session 3 (Safety and Security Standards)
+- Day 3: Sessions 4 & 5 (Uncertainty Estimation + Advanced Topics)
 
 **Option C: Self-Paced Online Learning**
-- Work through all 18 notebooks at your own pace
+- Work through all 24 notebooks at your own pace
 - All notebooks work independently in Google Colab
+- Follow the recommended sequence: Session 1 → 2 → 3 → 4 → 5
 
 ## 🎓 Learning Objectives
 
@@ -72,29 +75,35 @@ AV_Perception_Safety_Workshop/
 │   ├── README.md                      # Session 1 detailed guide
 │   ├── notebooks/                     # Interactive Jupyter notebooks (6)
 │   ├── scripts/                       # Python utilities
-│   ├── data/                          # Sample images and point clouds
 │   ├── exercises/                     # Hands-on exercises + solutions
-│   ├── resources/                     # Links, datasets, references
-│   └── slides/                        # Presentation materials
+│   └── resources/                     # Links, datasets, references
 │
-├── Session_2_Failure_Modes/
+├── Session_2_Failure_Modes_and_Edge_Cases/
 │   ├── README.md
-│   ├── notebooks/                     # Failure analysis notebooks
-│   ├── case_studies/                  # Uber ATG, Tesla accidents
-│   └── exercises/
+│   ├── notebooks/                     # Failure analysis notebooks (4)
+│   ├── scripts/                       # OOD detection, adversarial attacks
+│   ├── exercises/
+│   └── resources/
 │
-├── Session_3_Safety_Standards/
+├── Session_3_Safety_and_Security_Standards/
 │   ├── README.md
-│   ├── notebooks/                     # Standards application
-│   ├── standards_docs/                # ISO summaries
-│   └── exercises/
+│   ├── notebooks/                     # Standards application (4)
+│   ├── templates/                     # HARA, SOTIF, TARA templates
+│   ├── exercises/
+│   └── resources/
 │
-└── Session_4_Uncertainty_Estimation/
+├── Session_4_Uncertainty_Estimation_and_Validation/
+│   ├── README.md
+│   ├── notebooks/                     # Uncertainty quantification (4)
+│   ├── scripts/                       # MC Dropout, calibration, validation
+│   ├── exercises/
+│   └── resources/
+│
+└── Session_5_Advanced_Topics/
     ├── README.md
-    ├── notebooks/                     # Uncertainty quantification
-    ├── scripts/                       # MC Dropout, ensembles
-    ├── raspberry_pi_demo/             # Embedded deployment
-    └── exercises/
+    ├── notebooks/                     # Advanced topics (6)
+    ├── exercises/                     # V2X, XAI, standards integration
+    └── resources/
 ```
 
 ## 🚀 Quick Start
@@ -210,6 +219,27 @@ jupyter lab
 - Connection to ISO 26262 V&V requirements
 - Statistical analysis (Kalra & Paddock "billion miles")
 
+---
+
+### Session 5: Advanced Topics ✅
+**Location:** `Session_5_Advanced_Topics/`
+
+**All 6 Notebooks:**
+19. **19_V2X_Communication_and_Cooperative_Perception.ipynb** - V2V, V2I protocols, C-V2X vs DSRC, cooperative perception
+20. **20_Explainability_XAI_for_Safety_Certification.ipynb** - LIME, SHAP, GradCAM for regulatory compliance and certification
+21. **21_Standards_Integration_Practical_Workflow.ipynb** - Combined ISO 26262 + 21448 + 21434 implementation workflow
+22. **22_Industry_Deployment_Challenges.ipynb** - Real-world case studies, regulatory barriers, economic viability
+23. **23_ODD_Definition_and_Runtime_Monitoring.ipynb** - Operational Design Domain specification, runtime monitoring, graceful degradation
+24. **24_Standards_Gaps_and_Open_Problems.ipynb** - Current limitations, research frontiers, emerging challenges
+
+**Key Features:**
+- V2X security analysis and TARA for connected vehicles
+- Explainability methods for AI certification and regulatory approval
+- Multi-standard integration with practical examples
+- Industry deployment insights from leading AV programs
+- Runtime monitoring strategies and Minimal Risk Condition (MRC)
+- Critical analysis of current standards gaps and future research directions
+
 ## 🛠️ Technologies Used
 
 - **Deep Learning:** PyTorch, Ultralytics (YOLOv8), Detectron2
@@ -317,5 +347,4 @@ Navigate to: `Session_1_AI_Perception_Systems/README.md`
 
 ---
 
-*Last Updated: 2025-01-17*
-*Workshop Version: 1.0*
+*Copyright © 2025 Milin Patel. All Rights Reserved.*

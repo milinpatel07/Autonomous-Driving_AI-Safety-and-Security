@@ -329,15 +329,6 @@ Autonomous-Driving_AI-Safety-and-Security/
 ├── SECURITY.md                                  # ISO/SAE 21434 & cybersecurity guidelines
 ├── AI_SAFETY.md                                 # ISO 8800 & AI safety principles
 │
-├── docs/                                        # Additional documentation
-│   ├── standards/
-│   │   ├── ISO_26262_Overview.md
-│   │   ├── ISO_21448_SOTIF_Guide.md
-│   │   ├── ISO_SAE_21434_Cybersecurity.md
-│   │   └── ISO_8800_AI_Safety.md
-│   ├── uncertainty_estimation.md
-│   └── validation_strategies.md
-│
 ├── AV_Perception_Safety_Workshop/
 │   │
 │   ├── Session_1_AI_Perception_Systems/
@@ -355,12 +346,14 @@ Autonomous-Driving_AI-Safety-and-Security/
 │   │   │   ├── dataset_loader.py                # KITTI, nuScenes loaders
 │   │   │   └── utils.py                         # Helper functions
 │   │   │
-│   │   └── exercises/
-│   │       ├── Exercise_1_Sensor_Comparison.md
-│   │       ├── Exercise_2_Detection_Evaluation.md
-│   │       └── solutions/
+│   │   ├── exercises/
+│   │   │   ├── Exercise_1_SAE_Levels.md
+│   │   │   └── Exercise_3_Object_Detection.md
+│   │   │
+│   │   └── resources/
+│   │       └── links.md                         # External resources
 │   │
-│   ├── Session_2_Failure_Modes/
+│   ├── Session_2_Failure_Modes_and_Edge_Cases/
 │   │   ├── notebooks/
 │   │   │   ├── 07_AV_Failure_Case_Studies.ipynb
 │   │   │   ├── 08_OOD_Detection.ipynb
@@ -372,11 +365,13 @@ Autonomous-Driving_AI-Safety-and-Security/
 │   │   │   ├── adversarial.py                   # FGSM, PGD attacks
 │   │   │   └── failure_analysis.py              # Failure mode analysis tools
 │   │   │
-│   │   └── exercises/
-│   │       ├── Exercise_3_OOD_Detection.md
-│   │       └── Exercise_4_Adversarial_Robustness.md
+│   │   ├── exercises/
+│   │   │   └── Exercise_4_Adversarial_Robustness.md
+│   │   │
+│   │   └── resources/
+│   │       └── links.md
 │   │
-│   ├── Session_3_Safety_Security_Standards/
+│   ├── Session_3_Safety_and_Security_Standards/
 │   │   ├── notebooks/
 │   │   │   ├── 11_ISO_26262_Functional_Safety.ipynb
 │   │   │   ├── 12_ISO_21448_SOTIF.ipynb
@@ -386,33 +381,50 @@ Autonomous-Driving_AI-Safety-and-Security/
 │   │   ├── templates/
 │   │   │   ├── HARA_Template.xlsx              # Hazard Analysis & Risk Assessment
 │   │   │   ├── SOTIF_Analysis_Template.xlsx
-│   │   │   ├── TARA_Template.xlsx              # Threat Analysis & Risk Assessment
-│   │   │   └── Safety_Concept_Template.docx
+│   │   │   └── TARA_Template.xlsx              # Threat Analysis & Risk Assessment
 │   │   │
-│   │   └── exercises/
-│   │       ├── Exercise_5_HARA.md
-│   │       └── Exercise_6_TARA.md
+│   │   ├── exercises/
+│   │   │   ├── Exercise_5_HARA.md
+│   │   │   └── Exercise_6_TARA.md
+│   │   │
+│   │   └── resources/
+│   │       └── links.md
 │   │
-│   └── Session_4_Uncertainty_Validation/
+│   ├── Session_4_Uncertainty_Estimation_and_Validation/
+│   │   ├── notebooks/
+│   │   │   ├── 15_Uncertainty_Types.ipynb
+│   │   │   ├── 16_MC_Dropout_Ensembles.ipynb
+│   │   │   ├── 17_Calibration.ipynb
+│   │   │   └── 18_Safety_Validation.ipynb
+│   │   │
+│   │   ├── scripts/
+│   │   │   ├── uncertainty.py                   # Uncertainty quantification methods
+│   │   │   ├── calibration.py                   # Calibration metrics and plots
+│   │   │   └── validation.py                    # Validation test suite
+│   │   │
+│   │   ├── exercises/
+│   │   │   ├── Exercise_7_Uncertainty.md
+│   │   │   └── Exercise_8_Validation.md
+│   │   │
+│   │   └── resources/
+│   │       └── links.md
+│   │
+│   └── Session_5_Advanced_Topics/
 │       ├── notebooks/
-│       │   ├── 15_Uncertainty_Types.ipynb
-│       │   ├── 16_MC_Dropout_Ensembles.ipynb
-│       │   ├── 17_Calibration.ipynb
-│       │   └── 18_Safety_Validation.ipynb
+│       │   ├── 19_V2X_Communication.ipynb
+│       │   ├── 20_Explainability_XAI.ipynb
+│       │   ├── 21_Standards_Integration.ipynb
+│       │   ├── 22_Industry_Deployment.ipynb
+│       │   ├── 23_ODD_Runtime_Monitoring.ipynb
+│       │   └── 24_Standards_Gaps.ipynb
 │       │
-│       ├── scripts/
-│       │   ├── uncertainty.py                    # Uncertainty quantification methods
-│       │   ├── calibration.py                    # Calibration metrics and plots
-│       │   └── validation.py                     # Validation test suite
+│       ├── exercises/
+│       │   ├── Exercise_9_V2X_Security.md
+│       │   ├── Exercise_10_XAI_Certification.md
+│       │   └── Exercise_11_Multi_Standard_Integration.md
 │       │
-│       └── exercises/
-│           ├── Exercise_7_Uncertainty.md
-│           └── Exercise_8_Validation.md
-│
-└── data/                                         # Sample data (auto-downloaded)
-    ├── kitti_samples/
-    ├── nuscenes_mini/
-    └── waymo_samples/
+│       └── resources/
+│           └── links.md
 ```
 
 ---
@@ -592,27 +604,24 @@ Autonomous-Driving_AI-Safety-and-Security/
 Each session includes hands-on exercises with progressive difficulty:
 
 ### Session 1 Exercises
-1. **Sensor Trade-off Analysis**: Compare sensor configurations for different ODDs (urban, highway, rural)
-2. **Detection Performance**: Evaluate YOLOv8 vs. Faster R-CNN on KITTI benchmark
-3. **Sensor Fusion**: Implement late fusion for camera + LiDAR detections
+1. **SAE Automation Levels Analysis**: Understanding SAE J3016 levels and their safety implications
+3. **Object Detection Performance**: Evaluate detection models on benchmark datasets
 
 ### Session 2 Exercises
-4. **OOD Detection**: Implement Mahalanobis distance-based OOD detector
-5. **Adversarial Robustness**: Generate adversarial examples and evaluate defenses
-6. **Failure Analysis**: Analyze failure modes from nuScenes challenging scenarios
+4. **Adversarial Robustness Testing**: Generate adversarial examples and evaluate defensive techniques
 
 ### Session 3 Exercises
-5. **HARA (Hazard Analysis and Risk Assessment)**: Complete HARA for pedestrian detection system
-6. **TARA (Threat Analysis and Risk Assessment)**: Conduct TARA for V2X communication
+5. **HARA (Hazard Analysis and Risk Assessment)**: Complete HARA for perception system using ISO 26262 methodology
+6. **TARA (Threat Analysis and Risk Assessment)**: Conduct cybersecurity TARA using ISO/SAE 21434 framework
 
 ### Session 4 Exercises
-7. **Uncertainty Quantification**: Compare MC Dropout vs. Deep Ensembles
-8. **Validation Strategy**: Design scenario-based test suite for urban driving
+7. **Uncertainty Quantification**: Implement and compare uncertainty estimation methods (MC Dropout, Ensembles)
+8. **Validation Strategy Design**: Develop scenario-based testing and validation approaches
 
 ### Session 5 Exercises
-9. **V2X Security Analysis**: Apply TARA methodology to smart intersection system
-10. **XAI for Certification**: Generate explainability evidence for AI perception models
-11. **Multi-Standard Integration**: Perform combined HARA + SOTIF + TARA for autonomous parking system
+9. **V2X Security Analysis**: Apply TARA methodology to V2X communication systems
+10. **XAI for Certification**: Generate explainability evidence for AI perception models using XAI techniques
+11. **Multi-Standard Integration**: Perform combined ISO 26262 + ISO 21448 + ISO/SAE 21434 analysis
 
 ---
 
@@ -677,18 +686,13 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ## Version History
 
-- **v3.0.0** (2025-11-23): Complete workshop with all 5 sessions
-  - **Session 5 Added**: Advanced Topics (V2X Communication, XAI, Standards Integration, Industry Challenges, ODD Monitoring, Standards Gaps)
-  - All 24 Jupyter notebooks covering comprehensive AV safety curriculum
-  - 11 hands-on exercises across all sessions
-  - Complete integration of ISO 26262, ISO 21448, and ISO/SAE 21434
-
-- **v2.0.0** (2025-11-23): Workshop with Sessions 1-4
-  - Sessions 1-4 with ISO standards coverage (ISO 26262, 21448, 21434)
-  - Uncertainty quantification and validation notebooks
-  - Standards-aligned terminology and references
-
-- **v1.0.0** (2025-01-17): Initial release with Session 1
+- **v1.0** (2025): Complete workshop curriculum
+  - All 5 sessions with 24 comprehensive Jupyter notebooks
+  - Coverage: AI Perception, Failure Analysis, Safety & Security Standards, Uncertainty Quantification, and Advanced Topics
+  - 11 hands-on exercises with templates and solutions
+  - Full integration of ISO 26262, ISO 21448 (SOTIF), and ISO/SAE 21434
+  - V2X Communication, XAI for certification, ODD definition, and standards integration
+  - Comprehensive resources and reference materials
 
 ---
 
@@ -698,5 +702,4 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ---
 
-*Last Updated: 2025-11-23 by Milin Patel*
 *Copyright © 2025 Milin Patel. All Rights Reserved.*
