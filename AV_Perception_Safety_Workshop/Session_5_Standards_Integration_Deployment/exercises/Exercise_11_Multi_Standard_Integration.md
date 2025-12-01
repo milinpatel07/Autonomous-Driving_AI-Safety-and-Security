@@ -1,6 +1,6 @@
 # Exercise 11: Multi-Standard Integration - Autonomous Parking System
 
-**Session 5: Advanced Topics in AV Safety**
+**Session 5: Standards Integration and Deployment**
 **Estimated Time**: 90 minutes
 
 ---

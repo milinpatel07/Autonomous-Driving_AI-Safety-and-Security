@@ -751,4 +751,4 @@ We will acknowledge receipt within 48 hours and provide updates on remediation t
 
 ---
 
-*This document is part of the comprehensive Autonomous Driving: AI, Safety, and Security Workshop. For functional safety, see [SAFETY.md](SAFETY.md). For AI-specific safety considerations, see [AI_SAFETY.md](AI_SAFETY.md).*
+*This document is part of the Autonomous Driving: AI, Safety, and Security Workshop. For functional safety, see [SAFETY.md](SAFETY.md). For AI-specific safety considerations, see [AI_SAFETY.md](AI_SAFETY.md).*

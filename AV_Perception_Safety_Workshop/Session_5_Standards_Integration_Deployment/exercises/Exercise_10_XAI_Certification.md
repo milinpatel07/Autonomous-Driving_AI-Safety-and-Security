@@ -1,6 +1,6 @@
 # Exercise 10: XAI for Safety Certification
 
-**Session 5: Advanced Topics in AV Safety**
+**Session 5: Standards Integration and Deployment**
 **Estimated Time**: 75 minutes
 
 ---

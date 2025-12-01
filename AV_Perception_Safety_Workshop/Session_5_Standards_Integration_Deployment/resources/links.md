@@ -1,4 +1,4 @@
-# Session 5: Advanced Topics - Links and Resources
+# Session 5: Standards Integration and Deployment - Resources
 
 **Author:** Milin Patel
 **Institution:** Hochschule Kempten

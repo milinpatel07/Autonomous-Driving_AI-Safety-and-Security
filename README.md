@@ -33,7 +33,7 @@ See the LICENSE file in the root directory for full license text.
 
 ## 📖 Overview
 
-This repository provides a academically comprehensive workshop on **Autonomous Driving with emphasis on AI-based perception, functional safety, and cybersecurity**. The workshop integrates international standards (ISO 26262, ISO 21448 SOTIF, ISO/SAE 21434) with practical implementations of perception algorithms, uncertainty quantification, and safety validation techniques.
+This repository provides a comprehensive workshop on **AI-based perception, functional safety, and cybersecurity for autonomous driving**. The workshop integrates international standards (ISO 26262, ISO 21448 SOTIF, ISO/SAE 21434) with practical implementations of perception algorithms, uncertainty quantification, and safety validation techniques.
 
 **Target Audience:**
 - Graduate students in autonomous systems, robotics, and AI safety
@@ -109,7 +109,7 @@ Upon completion of this workshop, participants will be able to:
 | 09 | Corner Cases and Edge Cases | ISO 21448 (Triggering Conditions) |
 | 10 | Adversarial Attacks on Perception | ISO/SAE 21434 |
 
-** Concepts:**
+**Key Concepts:**
 - Analysis of real-world AV accidents (Uber ATG 2018, Tesla Autopilot incidents)
 - Specification insufficiencies vs. performance limitations (ISO 21448 terminology)
 - OOD detection methods: Mahalanobis distance, energy-based detection, OpenMax
@@ -214,9 +214,9 @@ Upon completion of this workshop, participants will be able to:
 
 ---
 
-### **Session 5: Advanced Topics**
+### **Session 5: Standards Integration and Deployment**
 
-**Focus:** V2X communication, explainability, deployment challenges, and standards gaps
+**Focus:** Multi-standard integration, V2X communication, explainability, and deployment
 
 | Notebook | Topic | Standards Referenced |
 |----------|-------|---------------------|
@@ -283,7 +283,7 @@ View all notebooks directly on GitHub with rendered outputs:
 - [Session 2: Failure Modes and Edge Cases](AV_Perception_Safety_Workshop/Session_2_Failure_Modes_and_Edge_Cases/)
 - [Session 3: Safety and Security Standards](AV_Perception_Safety_Workshop/Session_3_Safety_and_Security_Standards/)
 - [Session 4: Uncertainty Estimation and Validation](AV_Perception_Safety_Workshop/Session_4_Uncertainty_Estimation_and_Validation/)
-- [Session 5: Advanced Topics](AV_Perception_Safety_Workshop/Session_5_Advanced_Topics/)
+- [Session 5: Standards Integration and Deployment](AV_Perception_Safety_Workshop/Session_5_Standards_Integration_Deployment/)
 
 ---
 
@@ -409,7 +409,7 @@ Autonomous-Driving_AI-Safety-and-Security/
 │   │   └── resources/
 │   │       └── links.md
 │   │
-│   └── Session_5_Advanced_Topics/
+│   └── Session_5_Standards_Integration_Deployment/
 │       ├── notebooks/
 │       │   ├── 19_V2X_Communication.ipynb
 │       │   ├── 20_Explainability_XAI.ipynb
@@ -686,13 +686,13 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ## Version History
 
-- **v1.0** (2025): Complete workshop curriculum
-  - All 5 sessions with 24 comprehensive Jupyter notebooks
-  - Coverage: AI Perception, Failure Analysis, Safety & Security Standards, Uncertainty Quantification, and Advanced Topics
-  - 11 hands-on exercises with templates and solutions
-  - Full integration of ISO 26262, ISO 21448 (SOTIF), and ISO/SAE 21434
-  - V2X Communication, XAI for certification, ODD definition, and standards integration
-  - Comprehensive resources and reference materials
+- **v1.0** (2025): Workshop curriculum
+  - 5 sessions with 24 Jupyter notebooks
+  - Coverage: AI Perception, Failure Analysis, Safety & Security Standards, Uncertainty Quantification, and Standards Integration & Deployment
+  - 11 exercises with templates and solutions
+  - Integration of ISO 26262, ISO 21448 (SOTIF), and ISO/SAE 21434
+  - V2X Communication, XAI, ODD definition, and multi-standard integration
+  - Reference materials and external resources
 
 ---
 
