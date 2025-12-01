@@ -3,7 +3,7 @@ Copyright (c) 2025 Milin Patel
 Hochschule Kempten - University of Applied Sciences
 
 Autonomous Driving: AI Safety and Security Workshop
-Comprehensive educational materials covering AI-based perception, ISO 26262,
+Educational materials covering AI-based perception, ISO 26262,
 ISO 21448 (SOTIF), ISO/SAE 21434, and uncertainty quantification for autonomous vehicles.
 
 This project is licensed under the MIT License.
@@ -12,7 +12,7 @@ See the LICENSE file in the root directory for full license text.
 
 # Autonomous Driving: AI, Safety, and Security Workshop
 
-**Comprehensive Workshop on AI-based Perception, Functional Safety, and Cybersecurity in Autonomous Vehicles**
+** Workshop on AI-based Perception, Functional Safety, and Cybersecurity in Autonomous Vehicles**
 
 **Author:** Milin Patel
 **Institution:** Hochschule Kempten
@@ -33,7 +33,7 @@ See the LICENSE file in the root directory for full license text.
 
 ## 📖 Overview
 
-This repository provides a comprehensive, academically rigorous workshop on **Autonomous Driving with emphasis on AI-based perception, functional safety, and cybersecurity**. The workshop integrates international standards (ISO 26262, ISO 21448 SOTIF, ISO/SAE 21434) with practical implementations of perception algorithms, uncertainty quantification, and safety validation techniques.
+This repository provides a academically comprehensive workshop on **Autonomous Driving with emphasis on AI-based perception, functional safety, and cybersecurity**. The workshop integrates international standards (ISO 26262, ISO 21448 SOTIF, ISO/SAE 21434) with practical implementations of perception algorithms, uncertainty quantification, and safety validation techniques.
 
 **Target Audience:**
 - Graduate students in autonomous systems, robotics, and AI safety
@@ -109,7 +109,7 @@ Upon completion of this workshop, participants will be able to:
 | 09 | Corner Cases and Edge Cases | ISO 21448 (Triggering Conditions) |
 | 10 | Adversarial Attacks on Perception | ISO/SAE 21434 |
 
-**Key Concepts:**
+** Concepts:**
 - Analysis of real-world AV accidents (Uber ATG 2018, Tesla Autopilot incidents)
 - Specification insufficiencies vs. performance limitations (ISO 21448 terminology)
 - OOD detection methods: Mahalanobis distance, energy-based detection, OpenMax
