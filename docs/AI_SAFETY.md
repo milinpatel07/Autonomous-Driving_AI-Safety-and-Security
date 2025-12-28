@@ -483,7 +483,6 @@ def calibrate(model, val_loader):
 - Architecture: YOLOv8-large
 - Parameters: 43.7M
 - Training Data: Custom dataset, 150K pedestrian instances
-- Training Duration: 72 hours on 8× NVIDIA A100
 
 ## Intended Use
 - Application: Autonomous vehicle perception
