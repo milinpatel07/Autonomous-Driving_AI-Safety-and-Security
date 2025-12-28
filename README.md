@@ -22,7 +22,7 @@
 
 This repository provides a comprehensive educational resource on **autonomous vehicle perception systems, functional safety engineering, Safety of the Intended Functionality (SOTIF), automotive cybersecurity, and AI safety**. The content integrates international standards (ISO 26262, ISO 21448, ISO/SAE 21434, ISO 8800) with practical implementations using PyTorch, Open3D, and industry-standard datasets.
 
-**NEW in v2.0:** Comprehensive LiDAR technology module covering sensor fundamentals, point cloud processing, and 3D annotation methodologies - addressing the most challenging aspects of autonomous vehicle perception data preparation.
+**NEW in v2.0:** Comprehensive LiDAR technology module covering sensor fundamentals, point cloud processing, and 3D annotation methodologies for autonomous vehicle perception data preparation.
 
 ### Target Audience
 
@@ -437,7 +437,7 @@ This resource provides practical implementation guidance for:
 
 7. **Environmental Noise**: Rain creates ghost points, fog reduces range 200m→50m, requiring filtering expertise
 
-8. **Sensor Fusion**: LiDAR-Camera fusion annotation is most complex, requiring precise calibration and 2D-3D alignment
+8. **Sensor Fusion**: LiDAR-Camera fusion annotation requires handling additional complexity, including precise calibration and 2D-3D alignment
 
 9. **Advanced Tools**: Professional platforms feature 4D playback, AI-assisted labeling, auto-complete, active learning
 
