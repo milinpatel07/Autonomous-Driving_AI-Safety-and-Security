@@ -349,12 +349,12 @@ Derive detailed requirements from cybersecurity goals:
 
 ### 12.2 Response Procedures
 
-| Severity | Response Time | Actions |
-|----------|--------------|---------|
-| Critical | Immediate (< 1 hour) | [Specific actions] |
-| High | < 4 hours | [Specific actions] |
-| Medium | < 24 hours | [Specific actions] |
-| Low | < 1 week | [Specific actions] |
+| Severity | Response Priority | Actions |
+|----------|-------------------|---------|
+| Critical | Immediate | [Specific actions] |
+| High | Urgent | [Specific actions] |
+| Medium | Standard | [Specific actions] |
+| Low | Routine | [Specific actions] |
 
 ### 12.3 Communication Plan
 

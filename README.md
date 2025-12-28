@@ -427,7 +427,7 @@ This resource provides practical implementation guidance for:
 
 2. **Massive Data Volume**: High-end sensors capture up to **1 million points per second**, creating processing challenges
 
-3. **Expert Pattern Recognition**: Raw point clouds appear as noise; annotators need **40+ hours training** to recognize patterns
+3. **Expert Pattern Recognition**: Raw point clouds appear as noise; annotators require significant training to recognize patterns
 
 4. **Physics Knowledge**: Annotators require real-world understanding of vehicle dimensions, road rules, environmental context
 
@@ -458,8 +458,6 @@ This resource provides practical implementation guidance for:
 4. Module 02: Failure Analysis
 5. Module 06: AI Safety
 
-**Duration:** 60-80 hours
-
 ### Path 2: Safety Engineer
 **Goal:** ISO 26262 and SOTIF certification
 
@@ -469,8 +467,6 @@ This resource provides practical implementation guidance for:
 4. Module 02: Failure Analysis
 5. Module 08: Advanced Topics (Standards Integration)
 
-**Duration:** 50-70 hours
-
 ### Path 3: Cybersecurity Specialist
 **Goal:** ISO/SAE 21434 implementation
 
@@ -478,8 +474,6 @@ This resource provides practical implementation guidance for:
 2. Module 08: Advanced Topics (V2X Security)
 3. Module 02: Failure Analysis (Adversarial Attacks)
 4. Module 07: Validation & Verification
-
-**Duration:** 40-60 hours
 
 ### Path 4: Research Scientist
 **Goal:** AI safety and uncertainty quantification
@@ -489,14 +483,10 @@ This resource provides practical implementation guidance for:
 3. Module 07: Validation & Verification
 4. Module 08: Advanced Topics (XAI, ODD)
 
-**Duration:** 50-70 hours
-
 ### Path 5: Complete Autonomous Systems
 **Goal:** End-to-end AV development
 
 All modules in sequence: 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09 → 10
-
-**Duration:** 150-200 hours
 
 ---
 

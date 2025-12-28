@@ -584,8 +584,8 @@ Cybersecurity Goal (CG-3): Verify integrity and authenticity of firmware
 5. CVE assignment and publication
 
 **Timelines:**
-- **Critical vulnerabilities**: 30-day disclosure timeline
-- **High severity**: 90-day disclosure timeline
+- **Critical vulnerabilities**: Expedited disclosure process
+- **High severity**: Standard disclosure process
 
 ---
 
@@ -681,7 +681,7 @@ Cybersecurity Goal (CG-3): Verify integrity and authenticity of firmware
 
 1. **Responsible Disclosure**
    - Report vulnerabilities privately to OEMs
-   - Allow reasonable time for patching (30-90 days)
+   - Allow reasonable time for patching
    - Coordinate public disclosure
 
 2. **Document and Publish**
@@ -740,7 +740,7 @@ If you discover a security vulnerability in this repository or related materials
    - Potential impact
    - Suggested mitigation (optional)
 
-We will acknowledge receipt within 48 hours and provide updates on remediation timeline.
+We will acknowledge receipt and provide updates on remediation timeline.
 
 ---
 

@@ -27,9 +27,8 @@ Upon completing this module, you will:
 ### Critical Challenges in LiDAR Annotation
 
 **1. Complexity and Time Investment**
-- LiDAR annotation requires **10× more time** than 2D image annotation
+- LiDAR annotation requires significantly more effort than 2D image annotation
 - Every object must be labeled in full 3D space: position (x, y, z), dimensions (height, width, depth), and orientation (yaw, pitch, roll)
-- Typical annotation time: 2-3 minutes per object in 3D vs. 10-20 seconds for 2D bounding boxes
 
 **2. Data Volume and Density**
 - High-end LiDAR sensors (Velodyne HDL-64E, Ouster OS1-128) capture up to **1 million points per second**
@@ -39,7 +38,7 @@ Upon completing this module, you will:
 
 **3. Pattern Recognition Expertise**
 - Raw LiDAR data initially appears as random noise to untrained annotators
-- Requires **significant training** (typically 40+ hours) to identify object patterns within point clouds
+- Requires significant training and expertise to identify object patterns within point clouds
 - Annotators must mentally reconstruct 3D shapes from discrete point samples
 - Understanding sensor artifacts (beam divergence, multi-path reflections) is essential
 
@@ -253,15 +252,6 @@ Located in `code/`:
 - [Open3D Documentation](http://www.open3d.org/docs/release/)
 - [KITTI Benchmark](http://www.cvlibs.net/datasets/kitti/)
 - [nuScenes Devkit](https://github.com/nutonomy/nuscenes-devkit)
-
----
-
-## Time Commitment
-
-- **Beginner Path**: 8-10 hours
-- **Intermediate Path**: 12-15 hours
-- **Advanced Path**: 15-20 hours
-- **Total Module**: 35-45 hours (including exercises)
 
 ---
 
