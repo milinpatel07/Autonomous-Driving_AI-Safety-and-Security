@@ -6,7 +6,7 @@
 
 ## Overview
 
-This advanced module integrates concepts from all previous modules and explores cutting-edge topics in autonomous vehicle development. Students examine V2X communication, explainable AI (XAI), multi-standard compliance, operational design domain (ODD) runtime monitoring, industry deployment challenges, and current gaps in safety and security standards. This module prepares students for real-world autonomous vehicle deployment and certification.
+This advanced module integrates concepts from all previous modules and explores emerging topics in autonomous vehicle development. Students examine V2X communication, explainable AI (XAI), multi-standard compliance, operational design domain (ODD) runtime monitoring, industry deployment challenges, and current gaps in safety and security standards. This module prepares students for real-world autonomous vehicle deployment and certification.
 
 ### Module Objectives
 

@@ -51,7 +51,7 @@ Upon completing this module, you will:
 - Sensor limitations understanding (maximum range ~200m, minimum range ~0.5m)
 
 **5. Occlusion Complexity**
-- **Occlusions are the hardest challenge** in LiDAR annotation
+- **Occlusions present a significant challenge** in LiDAR annotation
 - Partial occlusions: Annotators must predict missing object boundaries when parts are hidden
 - Complete occlusions: Objects invisible from sensor viewpoint but present in scene
 - Types of occlusions:
@@ -80,7 +80,7 @@ Upon completing this module, you will:
 - Annotators must distinguish real objects from environmental noise
 
 **8. Multi-Modal Fusion Annotation**
-- **LiDAR + Camera fusion is the most complex annotation task**
+- **LiDAR + Camera fusion annotation requires handling additional complexity**
 - Requires precise sensor calibration (extrinsic and intrinsic parameters)
 - Challenges:
   - 2D-3D correspondence mapping
