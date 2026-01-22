@@ -74,6 +74,7 @@ Click any badge to open directly in Google Colab.
 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/master/07_Integration_Deployment/notebooks/04_industry_deployment.ipynb) | Industry Deployment Challenges |
 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/master/07_Integration_Deployment/notebooks/05_odd_runtime_monitoring.ipynb) | ODD Runtime Monitoring |
 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/master/07_Integration_Deployment/notebooks/06_standards_gaps.ipynb) | Standards Gaps and Open Problems |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/master/07_Integration_Deployment/notebooks/07_regulations_type_approval.ipynb) | Regulations and Type Approval |
 
 ---
 
@@ -87,7 +88,7 @@ Click any badge to open directly in Google Colab.
 | 04 SOTIF | Triggering conditions, scenarios | ISO 21448 |
 | 05 Cybersecurity | TARA, attack surfaces | ISO/SAE 21434 |
 | 06 AI Safety | Uncertainty, calibration | ISO/PAS 8800 |
-| 07 Integration | V2X, XAI, deployment | Combined |
+| 07 Integration | V2X, XAI, deployment, regulations | UNECE R155/R156, EU AI Act |
 
 ---
 
@@ -114,11 +115,17 @@ jupyter lab
 
 ## References
 
+**Standards:**
 - ISO 26262:2018 - Functional safety
 - ISO 21448:2022 - Safety of the intended functionality
 - ISO/SAE 21434:2021 - Cybersecurity engineering
 - ISO/PAS 8800 - Safety and artificial intelligence
 - SAE J3016 - Driving automation taxonomy
+
+**Regulations:**
+- UNECE R155 - Cybersecurity management
+- UNECE R156 - Software update management
+- EU AI Act - Artificial intelligence regulation
 
 ---
 
