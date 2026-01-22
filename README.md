@@ -38,6 +38,8 @@ Click any notebook to open directly in Colab:
 |----------|-------|
 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety/notebooks/01_iso_26262_fundamentals.ipynb) | ISO 26262 Fundamentals |
 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety/notebooks/02_hara_methodology.ipynb) | HARA Methodology |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety/notebooks/03_fmea_analysis.ipynb) | FMEA Analysis |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety/notebooks/04_verification_validation.ipynb) | Verification and Validation |
 
 ### Module 04: SOTIF (ISO 21448)
 | Notebook | Topic |
@@ -52,6 +54,7 @@ Click any notebook to open directly in Colab:
 |----------|-------|
 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/05_Cybersecurity/notebooks/01_automotive_cybersecurity.ipynb) | Automotive Cybersecurity |
 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/05_Cybersecurity/notebooks/02_tara_methodology.ipynb) | TARA Methodology |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/05_Cybersecurity/notebooks/03_attack_surface_analysis.ipynb) | Attack Surface Analysis |
 
 ### Module 06: AI Safety
 | Notebook | Topic |
@@ -83,9 +86,9 @@ Click any notebook to open directly in Colab:
 - Sensor fusion and 3D point cloud processing
 
 **Safety Standards**
-- ISO 26262 (Functional Safety) - HARA, ASIL, V-Model
-- ISO 21448 (SOTIF) - Triggering conditions, scenario analysis
-- ISO/SAE 21434 (Cybersecurity) - TARA, CAL
+- ISO 26262 (Functional Safety) - HARA, FMEA, ASIL, V&V
+- ISO 21448 (SOTIF) - Triggering conditions, scenario analysis, simulation
+- ISO/SAE 21434 (Cybersecurity) - TARA, attack surface, defense-in-depth
 - ISO/PAS 8800 (AI Safety)
 
 **AI Safety**
