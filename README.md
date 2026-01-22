@@ -45,6 +45,7 @@ Click any notebook to open directly in Colab:
 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF/notebooks/01_sotif_fundamentals.ipynb) | SOTIF Fundamentals |
 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF/notebooks/02_scenario_analysis.ipynb) | Scenario Analysis and Triggering Conditions |
 | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF/notebooks/03_ood_detection_sotif.ipynb) | OOD Detection for SOTIF |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF/notebooks/04_simulation_sotif_validation.ipynb) | Simulation-Based SOTIF Validation |
 
 ### Module 05: Cybersecurity (ISO/SAE 21434)
 | Notebook | Topic |
