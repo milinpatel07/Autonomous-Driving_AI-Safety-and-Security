@@ -8,26 +8,36 @@ This module introduces ISO 26262, the international standard for functional safe
 
 ## What's in This Module
 
-**1 notebook covering:**
+**2 notebooks covering:**
 - ISO 26262 fundamentals and structure
 - V-Model development lifecycle
 - ASIL (Automotive Safety Integrity Levels)
+- Hazard Analysis and Risk Assessment (HARA)
 - Safety lifecycle and management
 
 ---
 
-## Notebook
+## Notebooks
 
-### ISO 26262 Fundamentals
+### 01. ISO 26262 Fundamentals
 **[01_iso_26262_fundamentals.ipynb](notebooks/01_iso_26262_fundamentals.ipynb)**
 
 Learn the basics of ISO 26262:
 - Standard structure (Parts 1-12)
 - V-Model development lifecycle
 - ASIL levels (A, B, C, D, QM)
-- Hazard Analysis and Risk Assessment (HARA) basics
 - Safety goals and requirements
-- Integration with perception systems
+
+### 02. HARA Methodology
+**[02_hara_methodology.ipynb](notebooks/02_hara_methodology.ipynb)**
+
+Detailed Hazard Analysis and Risk Assessment:
+- HARA process step-by-step
+- Severity, Exposure, Controllability classification
+- ASIL determination from S, E, C
+- Safety goal derivation
+- Practical examples for perception systems
+- Interactive HARA worksheet tool
 
 ---
 

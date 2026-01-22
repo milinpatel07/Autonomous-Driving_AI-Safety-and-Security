@@ -8,27 +8,38 @@ This module introduces ISO/SAE 21434, the automotive cybersecurity standard, and
 
 ## What's in This Module
 
-**1 notebook covering:**
+**2 notebooks covering:**
 - Automotive cybersecurity landscape
 - ISO/SAE 21434 fundamentals
-- Threat Analysis and Risk Assessment (TARA)
+- Threat Analysis and Risk Assessment (TARA) methodology
 - Attack vectors for autonomous vehicles
+- Cybersecurity Assurance Levels (CAL)
+- Safety-security integration
 
 ---
 
-## Notebook
+## Notebooks
 
-### Automotive Cybersecurity
+### 01. Automotive Cybersecurity Fundamentals
 **[01_automotive_cybersecurity.ipynb](notebooks/01_automotive_cybersecurity.ipynb)**
 
-Learn ISO/SAE 21434 basics:
+Introduction to ISO/SAE 21434:
 - Why cybersecurity matters for safety
-- Threat landscape: V2X attacks, sensor spoofing, GPS spoofing
-- TARA (Threat Analysis and Risk Assessment) methodology
-- Attack vectors specific to perception systems
-- LiDAR jamming and camera dazzling
+- Threat landscape overview
+- Attack vectors for perception systems
 - Secure development lifecycle
-- Integration with ISO 26262 (safety-security co-analysis)
+
+### 02. TARA Methodology
+**[02_tara_methodology.ipynb](notebooks/02_tara_methodology.ipynb)**
+
+Detailed Threat Analysis and Risk Assessment:
+- Asset identification for perception systems
+- STRIDE-based threat identification
+- Attack feasibility rating (elapsed time, expertise, etc.)
+- Impact assessment (safety, financial, operational, privacy)
+- Risk determination and CAL assignment
+- Cybersecurity goals and countermeasures
+- Safety-security integration with ISO 26262
 
 ---
 

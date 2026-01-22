@@ -8,26 +8,46 @@ SOTIF (Safety of the Intended Functionality) addresses safety risks from perform
 
 ## What's in This Module
 
-**1 notebook covering:**
+**3 notebooks covering:**
 - SOTIF fundamentals and motivation
-- Known/unknown safe/unsafe scenarios
-- Performance limitation analysis
+- Known/unknown safe/unsafe scenarios (4-quadrant model)
+- Triggering conditions and scenario analysis
+- Out-of-Distribution detection for SOTIF
 - Validation strategies for AI systems
 
 ---
 
-## Notebook
+## Notebooks
 
-### SOTIF Fundamentals
+### 01. SOTIF Fundamentals
 **[01_sotif_fundamentals.ipynb](notebooks/01_sotif_fundamentals.ipynb)**
 
-Learn ISO 21448 (SOTIF):
+Introduction to ISO 21448:
 - Why SOTIF complements ISO 26262
-- The 4-quadrant model: Known/Unknown × Safe/Unsafe scenarios
-- Triggering conditions and performance limitations
-- Systematic scenario identification
-- Validation approaches for AI perception
+- The 4-quadrant model
+- Basic triggering conditions
 - Integration with functional safety
+
+### 02. Scenario Analysis and Triggering Conditions
+**[02_scenario_analysis.ipynb](notebooks/02_scenario_analysis.ipynb)**
+
+Detailed scenario-based SOTIF analysis:
+- Systematic triggering condition identification
+- Functional insufficiencies for perception
+- Scenario generation methodologies
+- Scenario classification into quadrants
+- Validation pyramid approach
+
+### 03. OOD Detection for SOTIF
+**[03_ood_detection_sotif.ipynb](notebooks/03_ood_detection_sotif.ipynb)**
+
+Out-of-Distribution detection as SOTIF support:
+- OOD detection role in safety lifecycle
+- Mahalanobis distance method
+- k-NN based detection
+- Energy-based detection
+- Runtime monitoring implementation
+- Based on Patel et al. (2023) REFSQ paper
 
 ---
 
