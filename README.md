@@ -28,10 +28,10 @@ Click any notebook to open directly in Colab:
 ### Module 02: Failure Analysis
 | Notebook | Topic |
 |----------|-------|
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failure_Analysis/notebooks/07_AV_Failure_Case_Studies.ipynb) | AV Failure Case Studies (Uber, Tesla) |
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failure_Analysis/notebooks/08_OOD_Detection.ipynb) | Out-of-Distribution Detection |
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failure_Analysis/notebooks/09_Corner_Cases_and_Edge_Cases.ipynb) | Corner Cases and Edge Cases |
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failure_Analysis/notebooks/10_Adversarial_Attacks_on_Perception.ipynb) | Adversarial Attacks on Perception |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failure_Analysis/notebooks/01_av_failure_case_studies.ipynb) | AV Failure Case Studies (Uber, Tesla) |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failure_Analysis/notebooks/02_ood_detection.ipynb) | Out-of-Distribution Detection |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failure_Analysis/notebooks/03_corner_cases_edge_cases.ipynb) | Corner Cases and Edge Cases |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failure_Analysis/notebooks/04_adversarial_attacks.ipynb) | Adversarial Attacks on Perception |
 
 ### Module 03: Functional Safety (ISO 26262)
 | Notebook | Topic |
@@ -59,21 +59,21 @@ Click any notebook to open directly in Colab:
 ### Module 06: AI Safety
 | Notebook | Topic |
 |----------|-------|
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety/notebooks/05_ai_safety_standards.ipynb) | AI Safety Standards (ISO/PAS 8800) |
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety/notebooks/15_Uncertainty_Types_in_Deep_Learning.ipynb) | Uncertainty Types in Deep Learning |
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety/notebooks/16_MC_Dropout_and_Ensembles.ipynb) | MC Dropout and Ensembles |
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety/notebooks/17_Calibration_and_Reliability.ipynb) | Calibration and Reliability |
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety/notebooks/18_Safety_Validation_and_Testing.ipynb) | Safety Validation and Testing |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety/notebooks/01_ai_safety_standards.ipynb) | AI Safety Standards (ISO/PAS 8800) |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety/notebooks/02_uncertainty_types.ipynb) | Uncertainty Types in Deep Learning |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety/notebooks/03_mc_dropout_ensembles.ipynb) | MC Dropout and Ensembles |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety/notebooks/04_calibration_reliability.ipynb) | Calibration and Reliability |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety/notebooks/05_safety_validation_testing.ipynb) | Safety Validation and Testing |
 
-### Module 08: Advanced Topics
+### Module 07: Advanced Topics
 | Notebook | Topic |
 |----------|-------|
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Advanced_Topics/notebooks/19_V2X_Communication.ipynb) | V2X Communication |
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Advanced_Topics/notebooks/20_Explainability_XAI.ipynb) | Explainability (XAI) |
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Advanced_Topics/notebooks/21_Standards_Integration.ipynb) | Standards Integration |
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Advanced_Topics/notebooks/22_Industry_Deployment_Challenges.ipynb) | Industry Deployment Challenges |
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Advanced_Topics/notebooks/23_ODD_Runtime_Monitoring.ipynb) | ODD Runtime Monitoring |
-| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Advanced_Topics/notebooks/24_Standards_Gaps_Open_Problems.ipynb) | Standards Gaps and Open Problems |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Advanced_Topics/notebooks/01_v2x_communication.ipynb) | V2X Communication |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Advanced_Topics/notebooks/02_explainability_xai.ipynb) | Explainability (XAI) |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Advanced_Topics/notebooks/03_standards_integration.ipynb) | Standards Integration |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Advanced_Topics/notebooks/04_industry_deployment.ipynb) | Industry Deployment Challenges |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Advanced_Topics/notebooks/05_odd_runtime_monitoring.ipynb) | ODD Runtime Monitoring |
+| [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Advanced_Topics/notebooks/06_standards_gaps.ipynb) | Standards Gaps and Open Problems |
 
 ---
 
@@ -107,13 +107,13 @@ Click any notebook to open directly in Colab:
 ## Learning Paths
 
 **Complete Path:**
-Module 01 → 02 → 03 → 04 → 05 → 06 → 08
+Module 01 → 02 → 03 → 04 → 05 → 06 → 07
 
 **Perception Focus:**
 Module 01 → 02 → 06
 
 **Safety Standards Focus:**
-Module 03 → 04 → 05 → 08
+Module 03 → 04 → 05 → 07
 
 ---
 
