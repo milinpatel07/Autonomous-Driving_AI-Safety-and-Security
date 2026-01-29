@@ -1,15 +1,43 @@
-**__pycache__**
-**build**
-**egg-info**
-**dist**
-data/
-*.pyc
-venv/
-*.idea/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
 *.so
-*.yaml
-*.sh 
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data and model files
+data/
 *.pth
 *.pkl
-*.zip
+*.h5
+*.onnx
 *.bin
+*.zip
+*.tar.gz
+
+# Logs
+*.log

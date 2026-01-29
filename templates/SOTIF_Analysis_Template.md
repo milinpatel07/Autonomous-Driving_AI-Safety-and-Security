@@ -393,5 +393,5 @@ System updates required when:
 ---
 
 **Template Version:** 1.0
-**Last Updated:** November 2024
-**Reference Standard:** ISO/PAS 21448:2019
+**Last Updated:** 2025
+**Reference Standard:** ISO 21448:2022
