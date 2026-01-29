@@ -286,5 +286,5 @@ Derive functional safety requirements from safety goals:
 ---
 
 **Template Version:** 1.0
-**Last Updated:** November 2024
+**Last Updated:** 2025
 **Reference Standard:** ISO 26262:2018

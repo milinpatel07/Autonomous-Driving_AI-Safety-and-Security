@@ -1,5 +1,5 @@
-# Autonomous Driving: AI, Safety, and Security Workshop
-# Complete Requirements for All 5 Sessions
+# Autonomous Driving: AI Safety and Security
+# Requirements for All 7 Modules (33 Notebooks)
 # Python 3.8+ Required
 # Compatible with Google Colab and Local Installation
 

@@ -444,5 +444,5 @@ TARA shall be updated when:
 ---
 
 **Template Version:** 1.0
-**Last Updated:** November 2024
+**Last Updated:** 2025
 **Reference Standard:** ISO/SAE 21434:2021
