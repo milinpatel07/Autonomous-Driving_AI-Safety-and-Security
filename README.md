@@ -25,6 +25,7 @@ A structured, hands-on learning resource covering perception systems, functional
   - [07 — Integration and Deployment](#07--integration-and-deployment)
 - [Templates](#templates)
 - [Learning Paths](#learning-paths)
+- [What to Code Next](#what-to-code-next)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Option A: Google Colab (Recommended)](#option-a-google-colab-recommended)
@@ -252,6 +253,12 @@ Choose a path based on your goals:
 
 **Quick standards overview** (4 notebooks):
 > `03/01` ISO 26262 Fundamentals → `04/01` SOTIF Fundamentals → `05/01` Automotive Cybersecurity → `06/01` AI Safety Standards
+
+---
+
+## What to Code Next
+
+If you want to extend this repository beyond the current notebooks and templates, follow the prioritized engineering roadmap in [`NEXT_STEPS.md`](NEXT_STEPS.md). It proposes concrete utilities, new notebooks, and test infrastructure with clear definitions of done.
 
 ---
 
