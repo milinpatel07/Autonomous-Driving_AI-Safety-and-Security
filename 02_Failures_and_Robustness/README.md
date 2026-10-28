@@ -4,18 +4,16 @@ What goes wrong in the real world and why: documented incidents and their invest
 
 **4 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
 
-| # | Notebook | Level | Time | Open |
+| # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|
-| 01 | [Real-World Incident Case Studies](01_incident_case_studies.ipynb) | Beginner | ~75 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failures_and_Robustness/01_incident_case_studies.ipynb) |
-| 02 | [Corner Cases and Edge Cases](02_corner_cases.ipynb) | Beginner | ~70 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failures_and_Robustness/02_corner_cases.ipynb) |
-| 03 | [Out-of-Distribution (OOD) Detection: Methods and Evaluation](03_out_of_distribution_detection.ipynb) | Intermediate | ~80 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failures_and_Robustness/03_out_of_distribution_detection.ipynb) |
-| 04 | [Adversarial Attacks on Perception](04_adversarial_attacks.ipynb) | Intermediate | ~85 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failures_and_Robustness/04_adversarial_attacks.ipynb) |
+| 01 | [Real-World Incident Case Studies](01_incident_case_studies.ipynb) | Beginner | SAE J3016 (2021), ISO 21448:2022 (context) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failures_and_Robustness/01_incident_case_studies.ipynb) |
+| 02 | [Corner Cases and Edge Cases](02_corner_cases.ipynb) | Beginner | ISO 21448:2022, ISO 34502:2022, ISO 34503:2023 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failures_and_Robustness/02_corner_cases.ipynb) |
+| 03 | [Out-of-Distribution (OOD) Detection: Methods and Evaluation](03_out_of_distribution_detection.ipynb) | Intermediate | ISO 21448:2022, ISO/PAS 8800:2024 (context) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failures_and_Robustness/03_out_of_distribution_detection.ipynb) |
+| 04 | [Adversarial Attacks on Perception](04_adversarial_attacks.ipynb) | Intermediate | ISO/SAE 21434:2021, UN R155; ISO 21448:2022 (scope boundary) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/02_Failures_and_Robustness/04_adversarial_attacks.ipynb) |
 
 ## What you will learn
 
 ### 01 · Real-World Incident Case Studies
-
-*Standards:* SAE J3016 (2021), ISO 21448:2022 (context)
 
 - Read an official investigation report (NTSB, NHTSA) and separate *probable cause*, *contributing factors* and press claims
 - Reconstruct the Uber ATG Tempe crash (2018) from the NTSB's recorded perception timeline
@@ -26,8 +24,6 @@ What goes wrong in the real world and why: documented incidents and their invest
 
 ### 02 · Corner Cases and Edge Cases
 
-*Standards:* ISO 21448:2022, ISO 34502:2022, ISO 34503:2023
-
 - Distinguish edge cases from corner cases, and the test-engineering from the perception (ML) usage of "corner case"
 - Explain the long-tail problem and why rare scenarios matter for validation effort
 - Identify and organise corner cases using corner-case levels and the ISO 34502 disturbance categories
@@ -37,8 +33,6 @@ What goes wrong in the real world and why: documented incidents and their invest
 
 ### 03 · Out-of-Distribution (OOD) Detection: Methods and Evaluation
 
-*Standards:* ISO 21448:2022, ISO/PAS 8800:2024 (context)
-
 - Explain the OOD problem, and distinguish covariate from semantic shift and near- from far-OOD
 - Implement five post-hoc OOD scores: maximum softmax probability (MSP), ODIN, energy, class-conditional Mahalanobis and k-nearest-neighbour (k-NN) distance
 - Evaluate detectors correctly with AUROC and FPR at 95% TPR, stating the convention used
@@ -46,8 +40,6 @@ What goes wrong in the real world and why: documented incidents and their invest
 - Interpret the limits of OOD detection as a safety measure
 
 ### 04 · Adversarial Attacks on Perception
-
-*Standards:* ISO/SAE 21434:2021, UN R155; ISO 21448:2022 (scope boundary)
 
 - Define adversarial examples, threat models and perturbation budgets (with units)
 - Implement FGSM and PGD correctly (true labels, clipping, projection, random start) and measure attack success versus budget on a trained model
