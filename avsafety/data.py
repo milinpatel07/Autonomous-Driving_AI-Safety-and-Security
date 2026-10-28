@@ -61,6 +61,14 @@ def cache_dir() -> Path:
     return path
 
 
+def _atomic_write(target: Path, data: bytes) -> None:
+    """Write via a temporary file so concurrent readers never see a partial file."""
+    target.parent.mkdir(parents=True, exist_ok=True)
+    tmp = target.with_name(f".{target.name}.{os.getpid()}.tmp")
+    tmp.write_bytes(data)
+    os.replace(tmp, target)
+
+
 def attribution(*names: str) -> str:
     """Licence and citation lines for the datasets used."""
     return "\n".join(f"Data: {LICENCES[n]}" for n in (names or LICENCES))
@@ -124,18 +132,16 @@ def fetch_kitti_file(archive: str, member: str) -> bytes:
         data = _remote_zip(archive).read(member)
     except KeyError:
         raise DataUnavailable(f"{member} is not in {archive}") from None
-    target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_bytes(data)
+    _atomic_write(target, data)
     return data
 
 
 def _fetch_url(url: str, filename: str) -> Path:
     target = cache_dir() / filename
     if not target.exists():
-        target.parent.mkdir(parents=True, exist_ok=True)
         try:
             with urllib.request.urlopen(url, timeout=120) as resp:
-                target.write_bytes(resp.read())
+                _atomic_write(target, resp.read())
         except (urllib.error.URLError, OSError) as exc:
             raise DataUnavailable(f"cannot download {url}: {exc}") from None
     return target
