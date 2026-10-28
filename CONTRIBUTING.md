@@ -1,58 +1,56 @@
 # Contributing
 
-Thank you for your interest in contributing to this project. Contributions of all kinds are welcome — from fixing typos and improving explanations to adding new notebooks and templates.
+Thank you for helping to improve this course. Corrections are as valuable as new material: in safety
+engineering, a wrong table is worse than a missing one.
 
-## How to Contribute
+## Ways to contribute
 
-### Reporting Issues
+- **Report an error or outdated fact**: open a [content issue](https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/issues/new/choose) with the file, cell and a verifiable source.
+- **Report a notebook that does not run**: open a bug issue with the failing cell and environment.
+- **Suggest a topic**: see [ROADMAP.md](ROADMAP.md) for planned topics, then open a topic request.
+- **Submit a pull request**: fork, create a branch from `main`, and follow the rules below.
 
-If you find an error, broken link, outdated information, or have a suggestion:
+## Repository layout
 
-1. Open an [issue](https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/issues)
-2. Use a clear, descriptive title
-3. Describe the problem and where you found it (module, notebook, cell number)
-4. If applicable, suggest a fix or improvement
+```
+NN_Module_Name/            eight modules, each with a README.md and notebooks NN_topic.ipynb
+templates/                 HARA, SOTIF and TARA templates
+avsafety/                  tested Python toolkit (normative tables and formulas)
+site/                      website pages and interactive browser tools (site/tools/)
+scripts/                   check_course.py (linter), execute_notebooks.py
+tests/                     pytest suite, including browser-tool parity checks
+```
 
-### Suggesting Improvements
+## Notebook conventions
 
-Ideas for new content, better explanations, or structural changes are welcome. Open an issue with the label `enhancement` and describe:
+1. **Header**: title, module and position, an *Open in Colab* badge pointing at the file's path on `main`, a
+   small table (level, time, prerequisites, standards), author line and learning objectives.
+2. **Runs everywhere**: top to bottom on CPU in a few minutes, without dataset downloads (use synthetic data or
+   scikit-learn built-ins; wrap optional downloads with an offline fallback). Seed all random generators.
+3. **Correct and sourced**: standards are cited with their edition (e.g. ISO 21448:2022). Time-sensitive
+   statements say "(as of Month YYYY)" and link a primary source. Invented numbers are labelled
+   *Illustrative data*.
+4. **Consistent**: normative tables must give the same results as `avsafety` (the tests check the toolkit).
+5. **Ends with** key takeaways, self-assessment questions (answers in a collapsible block), references and
+   navigation links.
+6. British English, calm academic tone.
 
-- What you would like to see added or changed
-- Why it would improve the resource
-- Any references or materials that support the suggestion
+## Before opening a pull request
 
-### Submitting Changes
+```bash
+pip install -e ".[test]" -r requirements.txt
+pytest -q
+python scripts/check_course.py
+python scripts/execute_notebooks.py path/to/changed.ipynb
+```
 
-1. Fork the repository
-2. Create a feature branch from `master`:
-   ```bash
-   git checkout -b your-feature-name
-   ```
-3. Make your changes
-4. Test any modified notebooks to ensure they run without errors
-5. Commit with a clear message describing what you changed and why
-6. Push to your fork and open a pull request
+To refresh the stored outputs of a notebook you changed, run
+`python scripts/execute_notebooks.py --write path/to/changed.ipynb`.
 
-### Pull Request Guidelines
+## Code of conduct
 
-- Keep changes focused — one topic per pull request
-- Follow the existing file naming conventions (`##_descriptive_name.ipynb`)
-- Ensure notebooks run cleanly in Google Colab
-- Include copyright and author information consistent with existing notebooks
-- Reference relevant standards (ISO 26262, ISO 21448, ISO/SAE 21434, ISO/PAS 8800) where applicable
+Be respectful, constructive and professional. Focus on the content and ideas, not the person.
 
-## Content Guidelines
+## Licence
 
-- **Accuracy**: Ensure technical content is correct and references appropriate standards
-- **Clarity**: Write for a reader who may be new to the topic — explain terminology and assumptions
-- **Conciseness**: Be thorough but avoid unnecessary repetition
-- **Code quality**: Include comments, use descriptive variable names, and handle common errors
-- **Visualizations**: Prefer clear, labeled plots with titles and axis labels
-
-## Code of Conduct
-
-Be respectful, constructive, and professional in all interactions. Focus on the content and ideas, not the person.
-
-## License
-
-By contributing, you agree that your contributions will be licensed under the [MIT License](LICENSE).
+By contributing, you agree that your contributions are licensed under the [MIT Licence](LICENSE).

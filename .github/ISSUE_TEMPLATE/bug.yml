@@ -1,0 +1,21 @@
+name: Notebook does not run
+description: A notebook or tool fails in Colab or locally
+labels: [bug]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Notebook or tool
+    validations:
+      required: true
+  - type: dropdown
+    id: env
+    attributes:
+      label: Environment
+      options: [Google Colab, Local (pip), Website tool, Other]
+  - type: textarea
+    id: error
+    attributes:
+      label: Error message and the cell that failed
+    validations:
+      required: true
