@@ -4,7 +4,7 @@ Small, tested reference implementations of the normative tables and formulas use
 throughout the *Autonomous Driving: AI Safety and Security* course.
 
 ```bash
-pip install "git+https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security.git"
+pip install "avsafety[data] @ git+https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security.git"
 ```
 
 ```python
@@ -27,6 +27,7 @@ validation.miles_to_demonstrate(1.09e-8, 0.95)         # ~2.75e8 (RAND, 2016)
 | `validation` | zero-failure miles, Poisson confidence bounds | Kalra & Paddock, RAND 2016 |
 | `uq` | ECE, Brier, NLL, temperature scaling, split conformal | Guo et al. 2017; Angelopoulos & Bates 2021 |
 | `coverage` | n-wise scenario/ODD coverage | ISO 34502:2022, ISO 34503:2023 |
+| `data` | real public data on demand: KITTI object and tracking frames (camera, LiDAR, labels, calibration), NGSIM trajectories, NHTSA crash reports | KITTI (CC BY-NC-SA 3.0), US DOT, NHTSA |
 
 ISO/SAE 21434 Annexes E, G and H are informative; organisations may define their own rating
 schemes. These functions implement the examples given in the standard. Not a substitute for

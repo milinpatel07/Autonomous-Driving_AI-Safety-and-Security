@@ -4,7 +4,7 @@
 version: 1
 project:
   title: "Autonomous Driving: AI Safety and Security"
-  description: "An open course on perception, functional safety (ISO 26262), SOTIF (ISO 21448), cybersecurity (ISO/SAE 21434) and AI safety (ISO/PAS 8800) for automated vehicles — 40 runnable notebooks, templates, tools and a tested toolkit."
+  description: "An open course on the safety and security of automated driving — perception and prediction on real data, ISO 26262, ISO 21448 (SOTIF), ISO/SAE 21434, ISO/PAS 8800, runtime assurance, regulation and safety cases: 47 runnable notebooks, templates, interactive tools and a tested toolkit."
   keywords: [autonomous driving, functional safety, ISO 26262, SOTIF, ISO 21448, ISO/SAE 21434, ISO/PAS 8800, UL 4600, uncertainty, safety case]
   authors:
     - name: Milin Patel
@@ -24,7 +24,8 @@ project:
   toc:
     - file: site/index.md
     - file: site/learning-paths.md
-    - title: "01 · Perception Systems"
+    - file: site/industry.md
+    - title: "01 · Perception and Prediction"
       file: 01_Perception/README.md
       children:
         - file: 01_Perception/01_sae_levels_and_odd.ipynb
@@ -35,6 +36,7 @@ project:
         - file: 01_Perception/06_sensor_fusion.ipynb
         - file: 01_Perception/07_multi_object_tracking.ipynb
         - file: 01_Perception/08_driving_datasets.ipynb
+        - file: 01_Perception/09_trajectory_prediction.ipynb
     - title: "02 · Failures and Robustness"
       file: 02_Failures_and_Robustness/README.md
       children:
@@ -49,6 +51,7 @@ project:
         - file: 03_Functional_Safety_ISO26262/02_hara.ipynb
         - file: 03_Functional_Safety_ISO26262/03_fmea_and_fmeda.ipynb
         - file: 03_Functional_Safety_ISO26262/04_fault_tree_analysis.ipynb
+        - file: 03_Functional_Safety_ISO26262/05_stpa.ipynb
         - file: 03_Functional_Safety_ISO26262/06_verification_and_validation.ipynb
     - title: "04 · SOTIF (ISO 21448)"
       file: 04_SOTIF_ISO21448/README.md
@@ -74,12 +77,16 @@ project:
         - file: 06_AI_Safety_ISO_PAS_8800/04_calibration.ipynb
         - file: 06_AI_Safety_ISO_PAS_8800/05_conformal_prediction.ipynb
         - file: 06_AI_Safety_ISO_PAS_8800/06_explainability.ipynb
+        - file: 06_AI_Safety_ISO_PAS_8800/07_end_to_end_and_foundation_models.ipynb
         - file: 06_AI_Safety_ISO_PAS_8800/08_statistical_safety_validation.ipynb
     - title: "07 · Runtime Assurance and Operations"
       file: 07_Runtime_Assurance_and_Operations/README.md
       children:
         - file: 07_Runtime_Assurance_and_Operations/01_odd_and_runtime_monitoring.ipynb
+        - file: 07_Runtime_Assurance_and_Operations/02_safe_motion_planning_and_fallback.ipynb
+        - file: 07_Runtime_Assurance_and_Operations/03_human_factors_and_takeover.ipynb
         - file: 07_Runtime_Assurance_and_Operations/04_v2x_cooperative_driving.ipynb
+        - file: 07_Runtime_Assurance_and_Operations/05_field_safety_monitoring.ipynb
         - file: 07_Runtime_Assurance_and_Operations/06_industry_deployment.ipynb
     - title: "08 · Standards, Regulation and Safety Case"
       file: 08_Standards_Regulation_and_Safety_Case/README.md
@@ -88,10 +95,12 @@ project:
         - file: 08_Standards_Regulation_and_Safety_Case/02_regulation_and_type_approval.ipynb
         - file: 08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb
         - file: 08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb
+        - file: 08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb
     - title: "Toolbox"
       children:
         - file: site/interactive-tools.md
         - file: site/toolkit.md
+        - file: site/datasets.md
         - file: templates/HARA_Template.md
         - file: templates/SOTIF_Analysis_Template.md
         - file: templates/TARA_Template.md
@@ -106,6 +115,8 @@ site:
   nav:
     - title: Course
       url: /learning-paths
+    - title: Industry
+      url: /industry
     - title: Tools
       url: /interactive-tools
     - title: GitHub
