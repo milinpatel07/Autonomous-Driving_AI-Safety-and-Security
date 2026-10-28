@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TARA Risk Calculator</title>
+<meta name="description" content="ISO/SAE 21434 threat analysis: attack feasibility (attack potential, attack vector or CVSS v3.1), risk value and CAL.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><a class="home" href="index.html">← Safety tools</a><span class="muted">ISO/SAE 21434:2021 · clause 15</span></header>
+  <h1>TARA risk calculator</h1>
+  <p class="lead">Rate a threat scenario's impact and attack feasibility to obtain its risk value (1–5), and see the
+  cybersecurity assurance level (CAL) of the related cybersecurity goal. Uses the informative examples in
+  Annexes E, G and H; organisations may define their own schemes.</p>
+
+  <div class="grid two">
+    <section class="card">
+      <h2>1 · Impact rating</h2>
+      <label class="field"><span>Impact (worst of safety, financial, operational, privacy; road-user perspective)</span>
+        <select id="impact">
+          <option>Severe</option><option selected>Major</option><option>Moderate</option><option>Negligible</option>
+        </select>
+      </label>
+
+      <h2>2 · Attack feasibility</h2>
+      <div class="seg" id="method" role="group" aria-label="Feasibility rating approach">
+        <button type="button" data-m="potential" aria-pressed="true">Attack potential</button>
+        <button type="button" data-m="vector" aria-pressed="false">Attack vector</button>
+        <button type="button" data-m="cvss" aria-pressed="false">CVSS v3.1</button>
+      </div>
+
+      <div id="m-potential" style="margin-top:14px">
+        <label class="field"><span>Elapsed time</span><select id="f-time"></select></label>
+        <label class="field"><span>Specialist expertise</span><select id="f-exp"></select></label>
+        <label class="field"><span>Knowledge of the item</span><select id="f-know"></select></label>
+        <label class="field"><span>Window of opportunity</span><select id="f-win"></select></label>
+        <label class="field"><span>Equipment</span><select id="f-eq"></select></label>
+      </div>
+      <div id="m-vector" hidden style="margin-top:14px">
+        <p class="muted" style="margin-top:0">Annex G.4: the attack vector alone sets feasibility (Network → High … Physical → Very Low).</p>
+      </div>
+      <div id="m-cvss" hidden style="margin-top:14px">
+        <label class="field"><span>CVSS v3.1 vector</span>
+          <input type="text" id="cvss" value="CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" spellcheck="false" autocomplete="off">
+          <small>Only the exploitability sub-score feeds feasibility (Annex G.3). The base score is shown for reference.</small>
+        </label>
+      </div>
+
+      <label class="field" style="margin-top:14px"><span>Attack vector (also used for the CAL)</span>
+        <select id="vector"><option>Network</option><option>Adjacent</option><option selected>Local</option><option>Physical</option></select>
+      </label>
+    </section>
+
+    <section class="card" aria-live="polite">
+      <h2>Result</h2>
+      <div class="kpi" id="kpis"></div>
+      <div class="result" style="margin-top:16px">
+        <div id="risk" class="badge">–</div>
+        <div><div style="font-weight:600" id="risk-text"></div><div class="muted" id="treat" style="font-size:.9rem"></div></div>
+      </div>
+      <h2 style="margin-top:20px">Risk matrix (Annex H example)</h2>
+      <div class="table-scroll"><table class="matrix" id="rm" aria-label="Risk matrix"></table></div>
+      <div class="note"><b>CAL is not a risk value.</b> It sets the rigour of assurance activities for a
+      cybersecurity goal and is derived from impact and attack vector (Annex E, informative), so it can differ
+      from the risk value.</div>
+    </section>
+  </div>
+  <footer>Tables mirror the tested Python package <code>avsafety</code>. Teaching aid, not a substitute for the
+  standard. MIT Licence · Milin Patel.</footer>
+</div>
+<script src="avsafety.js"></script>
+<script>
+(function () {
+  const A = AVSafety, $ = (id) => document.getElementById(id);
+  const fill = (sel, obj, def) => { Object.keys(obj).forEach((k) => { const o = new Option(`${k}  (${obj[k]})`, k); if (k === def) o.selected = true; sel.add(o); }); };
+  fill($("f-time"), A.ELAPSED_TIME, "<=1 month"); fill($("f-exp"), A.EXPERTISE, "proficient");
+  fill($("f-know"), A.KNOWLEDGE, "restricted"); fill($("f-win"), A.WINDOW, "moderate"); fill($("f-eq"), A.EQUIPMENT, "specialized");
+  let method = "potential";
+  $("method").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
+    method = b.dataset.m;
+    $("method").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    ["potential", "vector", "cvss"].forEach((m) => ($("m-" + m).hidden = m !== method));
+    render();
+  }));
+  document.querySelectorAll("select, input").forEach((el) => el.addEventListener("input", render));
+
+  const AVMAP = { N: "Network", A: "Adjacent", L: "Local", P: "Physical" };
+  function render() {
+    const impact = $("impact").value;
+    let feas, detail = "", base = null;
+    if (method === "potential") {
+      const ap = A.attackPotential($("f-time").value, $("f-exp").value, $("f-know").value, $("f-win").value, $("f-eq").value);
+      feas = A.feasibilityFromPotential(ap); detail = `Attack potential ${ap}`;
+    } else if (method === "vector") {
+      feas = A.FEASIBILITY_FROM_VECTOR[$("vector").value]; detail = `Vector: ${$("vector").value}`;
+    } else {
+      try {
+        const v = $("cvss").value.trim();
+        const p = {}; v.split("/").filter((s) => !s.startsWith("CVSS")).forEach((s) => { const [k, x] = s.split(":"); p[k] = x; });
+        const e = A.cvss31Exploitability(p.AV, p.AC, p.PR, p.UI, p.S);
+        if (!isFinite(e)) throw new Error();
+        base = A.cvss31BaseScore(v); feas = A.feasibilityFromCvssExploitability(e);
+        detail = `Exploitability ${e.toFixed(2)}`;
+        if (AVMAP[p.AV] && $("vector").value !== AVMAP[p.AV]) $("vector").value = AVMAP[p.AV];
+        $("cvss").removeAttribute("aria-invalid");
+      } catch (err) { $("cvss").setAttribute("aria-invalid", "true"); feas = "Very Low"; detail = "Invalid vector"; }
+    }
+    const risk = A.riskValue(impact, feas);
+    const cal = A.determineCal(impact, $("vector").value);
+    $("kpis").innerHTML =
+      `<div><b>${impact}</b><span>Impact</span></div>` +
+      `<div><b>${feas}</b><span>Feasibility · ${detail}</span></div>` +
+      `<div><b>${cal === null ? "–" : "CAL " + cal}</b><span>Cybersecurity assurance level</span></div>` +
+      (base !== null ? `<div><b>${base.toFixed(1)}</b><span>CVSS v3.1 base score</span></div>` : "");
+    const r = $("risk"); r.className = "badge r" + risk; r.textContent = risk;
+    $("risk-text").textContent = `Risk value ${risk} of 5`;
+    $("treat").textContent = risk >= 4 ? "Typically: reduce the risk (cybersecurity goal + controls) — record the treatment decision (15.9)."
+      : risk === 3 ? "Decide: reduce, share or (with rationale) retain; record the treatment decision (15.9)."
+      : "Often retained with rationale or a cybersecurity claim; still record the decision (15.9).";
+    let h = "<tr><th></th>" + ["Very Low", "Low", "Medium", "High"].map((f) => `<th>${f}</th>`).join("") + "</tr>";
+    ["Severe", "Major", "Moderate", "Negligible"].forEach((imp) => {
+      h += `<tr><th>${imp}</th>` + ["Very Low", "Low", "Medium", "High"].map((f) => {
+        const v = A.riskValue(imp, f); return `<td class="r${v}${imp === impact && f === feas ? " hit" : ""}">${v}</td>`;
+      }).join("") + "</tr>";
+    });
+    $("rm").innerHTML = h;
+  }
+  render();
+})();
+</script>
+</body>
+</html>
