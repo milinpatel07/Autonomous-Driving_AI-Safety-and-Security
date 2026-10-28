@@ -90,7 +90,7 @@ project:
         - file: 08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb
     - title: "Toolbox"
       children:
-        - file: site/tools.md
+        - file: site/interactive-tools.md
         - file: site/toolkit.md
         - file: templates/HARA_Template.md
         - file: templates/SOTIF_Analysis_Template.md
@@ -107,6 +107,6 @@ site:
     - title: Course
       url: /learning-paths
     - title: Tools
-      url: /tools
+      url: /interactive-tools
     - title: GitHub
       url: https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security

@@ -3,7 +3,10 @@ title: "Autonomous Driving: AI Safety and Security"
 short_title: Home
 ---
 
-+++ {"kind": "split-image"}
+```{image} ../assets/banner.svg
+:alt: Course map from perception to safety case
+:width: 100%
+```
 
 ## An open course from sensors to safety cases
 
@@ -11,19 +14,13 @@ Forty runnable notebooks that take you from **how an automated vehicle perceives
 
 Every notebook runs in Google Colab with one click, needs no GPU and no dataset download, and comes with exercises, self-assessment questions and verified references.
 
-```{image} ../assets/banner.svg
-:alt: Course map from perception to safety case
-```
-
-+++
-
 ::::{grid} 1 2 2 4
 :::{card} 40 notebooks
 :link: learning-paths
 Eight modules, beginner to advanced, each with learning objectives and exercises.
 :::
 :::{card} Interactive tools
-:link: tools
+:link: interactive-tools
 ASIL, TARA, RSS and validation-mileage calculators that run on your phone.
 :::
 :::{card} Professional templates

@@ -106,16 +106,14 @@ def module_readme(folder: str, notebooks: list[Path], n: int) -> str:
     name, intro = MODULES[folder]
     out = [f"# Module {folder[:2]} · {name}", "", intro, "",
            f"**{len(notebooks)} notebooks** · each runs in Google Colab on CPU, without dataset downloads.", "",
-           "| # | Notebook | Level | Time | Open |", "|---|---|---|---|---|"]
+           "| # | Notebook | Level | Standards | Open |", "|---|---|---|---|---|"]
     details = []
     for nb in notebooks:
         info = header_info(nb)
         rel = f"{folder}/{nb.name}"
-        out.append(f"| {nb.name[:2]} | [{clean_title(info['title'])}]({nb.name}) | {info['level']} | {info['time']} | {colab(rel)} |")
+        out.append(f"| {nb.name[:2]} | [{clean_title(info['title'])}]({nb.name}) | {info['level']} | {info['standards'] or '–'} | {colab(rel)} |")
         if info["objectives"]:
             details.append(f"### {nb.name[:2]} · {clean_title(info['title'])}\n")
-            if info["standards"]:
-                details.append(f"*Standards:* {info['standards']}\n")
             details.extend(f"- {o}" for o in info["objectives"])
             details.append("")
     out += ["", "## What you will learn", ""] + details
@@ -135,12 +133,12 @@ def course_table() -> str:
     for folder, (name, _) in MODULES.items():
         nbs = sorted((ROOT / folder).glob("*.ipynb"))
         rows.append(f"<details>\n<summary><b>{folder[:2]} · {name}</b> — {len(nbs)} notebooks</summary>\n")
-        rows.append("| # | Notebook | Level | Time | Open |\n|---|---|---|---|---|")
+        rows.append("| # | Notebook | Level | Open |\n|---|---|---|---|")
         for nb in nbs:
             info = header_info(nb)
             rel = f"{folder}/{nb.name}"
             rows.append(f"| {folder[:2]}-{nb.name[:2]} | [{clean_title(info['title'])}]({rel}) | {info['level']} | "
-                        f"{info['time']} | {colab(rel)} |")
+                        f"{colab(rel)} |")
         rows.append("\n</details>\n")
     return "\n".join(rows)
 
