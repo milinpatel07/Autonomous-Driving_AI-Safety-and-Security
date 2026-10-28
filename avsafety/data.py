@@ -188,6 +188,24 @@ def parse_object_labels(text: str) -> list[dict]:
     return out
 
 
+OXTS_COLUMNS = ["lat", "lon", "alt", "roll", "pitch", "yaw", "vn", "ve", "vf", "vl", "vu", "ax", "ay", "az",
+                "af", "al", "au", "wx", "wy", "wz", "wf", "wl", "wu", "pos_accuracy", "vel_accuracy",
+                "navstat", "numsats", "posmode", "velmode", "orimode"]
+
+
+def parse_oxts(text: str):
+    """Parse KITTI OXTS GPS/IMU records (30 values per line) into a DataFrame.
+
+    Lines end with a trailing space, so split on runs of whitespace; splitting on a
+    single space would create a 31st empty field and shift every column by one.
+    """
+    import pandas as pd
+    rows = [line.split() for line in text.strip().splitlines() if line.strip()]
+    if any(len(r) != len(OXTS_COLUMNS) for r in rows):
+        raise ValueError("unexpected number of OXTS fields")
+    return pd.DataFrame(np.array(rows, dtype=float), columns=OXTS_COLUMNS)
+
+
 def kitti_difficulty(label: dict) -> str:
     """KITTI benchmark difficulty: Easy / Moderate / Hard, or 'Ignored'.
 
@@ -304,11 +322,7 @@ def kitti_tracking(sequence: int, frames=None, images: bool = True, points: bool
     text = fetch_kitti_file("data_tracking_label_2.zip", f"training/label_02/{seq}.txt").decode()
     labels = pd.read_csv(io.StringIO(text), sep=" ", header=None, usecols=range(17), names=cols)
     calib = parse_calib(fetch_kitti_file("data_tracking_calib.zip", f"training/calib/{seq}.txt").decode())
-    oxts_cols = ["lat", "lon", "alt", "roll", "pitch", "yaw", "vn", "ve", "vf", "vl", "vu", "ax", "ay", "az",
-                 "af", "al", "au", "wx", "wy", "wz", "wf", "wl", "wu", "pos_accuracy", "vel_accuracy",
-                 "navstat", "numsats", "posmode", "velmode", "orimode"]
-    oxts = pd.read_csv(io.StringIO(fetch_kitti_file("data_tracking_oxts.zip", f"training/oxts/{seq}.txt").decode()),
-                       sep=" ", header=None, names=oxts_cols)
+    oxts = parse_oxts(fetch_kitti_file("data_tracking_oxts.zip", f"training/oxts/{seq}.txt").decode())
     frames = list(range(int(labels["frame"].max()) + 1)) if frames is None else list(frames)
     out = {"sequence": seq, "labels": labels, "calib": calib, "oxts": oxts, "frames": frames}
     if images:
