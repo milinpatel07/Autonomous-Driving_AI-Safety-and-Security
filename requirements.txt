@@ -10,6 +10,7 @@ scipy>=1.9
 scikit-learn>=1.2
 matplotlib>=3.6
 plotly>=5.14
+networkx>=3.0
 ipywidgets>=8.0
 pillow>=9.0
 requests>=2.28
