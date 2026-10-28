@@ -57,7 +57,7 @@ The item definition should be **the same** as the one used for the ISO 26262 HAR
 | Operating modes | [Active, degraded, diagnostic] |
 | Operational environment and assumptions | [e.g. gateway filters diagnostic traffic; backend operated under ISO/IEC 27001] |
 
-*Example:* Pedestrian AEB function. Inside the boundary: front camera, front radar, perception ECU (DNN detector, fusion, AEB logic), its software, model weights and calibration data, and the CAN-FD link to the brake ECU. Interfaces: brake ECU, central gateway (diagnostics, OTA client), telematics unit, OEM backend.
+*Example:* AEB function (same item as the HARA in Module 03). Inside the boundary: front camera, front radar, perception ECU (DNN detector, fusion, AEB logic), its software, model weights and calibration data, and the CAN-FD link to the brake ECU. Interfaces: brake ECU, central gateway (diagnostics, OTA client), telematics unit, OEM backend.
 
 ### 1.1 Safety interface (from the HARA)
 
@@ -65,12 +65,12 @@ The item definition should be **the same** as the one used for the ISO 26262 HAR
 |---|---|---|---|---|
 | SG-xx | [from HARA] | [QM/A–D] | [ms] | [from HARA] |
 
-*Example (illustrative S/E/C, ASIL per ISO 26262-3:2018 Table 4):*
+*Example (from the HARA in [Module 03, Notebook 02](../03_Functional_Safety_ISO26262/02_hara.ipynb): S/E/C of the hazardous event that determines each goal's ASIL, which is the maximum over the events it covers; ASIL per ISO 26262-3:2018 Table 4):*
 
 | Safety goal | Description | S/E/C | ASIL | FTTI |
 |---|---|---|---|---|
-| SG-01 | Avoid unintended emergency braking | S2/E4/C2 | B | 200 ms |
-| SG-02 | Avoid omission of emergency braking for a pedestrian in the path | S3/E3/C3 | C | 300 ms |
+| SG-01 | Avoid unintended AEB deceleration | S3/E4/C3 (HE-03) | D | 300 ms |
+| SG-02 | Avoid omission of AEB deceleration when a collision with a pedestrian or a stationary vehicle is imminent | S3/E3/C2 (HE-02; HE-01: S3/E2/C2) | B | 500 ms |
 
 ---
 
@@ -105,7 +105,7 @@ Describe the adverse consequence **for the road user** (driver, passengers, pede
 
 | DS ID | Damage scenario | S | F | O | P | Impact | SG |
 |---|---|---|---|---|---|---|---|
-| DS-01 | Unintended emergency braking in following traffic → rear-end collision | Major | Moderate | Moderate | Negligible | Major | SG-01 |
+| DS-01 | Unintended emergency braking in following traffic → rear-end collision | Severe | Moderate | Moderate | Negligible | Severe | SG-01 |
 | DS-02 | No/late emergency braking for a pedestrian in the path → fatal collision | Severe | Major | Major | Negligible | Severe | SG-02 |
 | DS-03 | AEB unavailable (degraded mode, driver warned) | Negligible | Negligible | Major | Negligible | Major | – |
 | DS-04 | Recorded images of identifiable people disclosed | Negligible | Moderate | Negligible | Major | Major | – |
@@ -238,7 +238,7 @@ Example risk matrix (Annex H). The risk value runs from 1 (lowest) to 5 (highest
 |---|---|---|---|
 | TS-xx | | | |
 
-*Example:* TS-01 Major × Medium = 3; TS-02 Severe × Very Low = 2; TS-03 Severe × Medium = 4; TS-04 Severe × High = 5; TS-05 Severe × Low = 3; TS-06 Major × Low = 2; TS-07 Major × High = 4.
+*Example:* TS-01 Severe × Medium = 4; TS-02 Severe × Very Low = 2; TS-03 Severe × Medium = 4; TS-04 Severe × High = 5; TS-05 Severe × Low = 3; TS-06 Major × Low = 2; TS-07 Major × High = 4.
 
 ---
 
@@ -261,7 +261,7 @@ Example risk matrix (Annex H). The risk value runs from 1 (lowest) to 5 (highest
 
 | TS | Risk | Decision | Rationale | Goal/claim |
 |---|---|---|---|---|
-| TS-01 | 3 | Reduce | Risk ≥ 3 | CG-01 |
+| TS-01 | 4 | Reduce | Risk ≥ 3 | CG-01 |
 | TS-02 | 2 | Reduce | Risk 2 with Severe safety impact | CG-02 |
 | TS-03 | 4 | Reduce | Risk ≥ 3 | CG-03 |
 | TS-04 | 5 | Reduce | Risk ≥ 3 | CG-04 |
@@ -295,7 +295,7 @@ A CAL is **not** a risk value and has **no** correspondence to an ASIL.
 
 | ID | Type | TS | Statement | CAL |
 |---|---|---|---|---|
-| CG-01 | Goal | TS-01 | The integrity of the object list / brake request on CAN-FD shall be protected against forged frames injected on CAN-FD | 4 (Major, Network) |
+| CG-01 | Goal | TS-01 | The integrity of the object list / brake request on CAN-FD shall be protected against forged frames injected on CAN-FD | 4 (Severe, Network) |
 | CG-02 | Goal | TS-02 | The integrity of the perception DNN weights shall be protected against manipulated software updates | 4 (Severe, Network) |
 | CG-03 | Goal | TS-03 | The integrity of the object list shall be protected against physical adversarial patches | 2 (Severe, Physical) |
 | CG-04 | Goal | TS-04 | The availability of the camera video stream shall be protected against dazzling (detect and degrade) | 2 (Severe, Physical) |
@@ -321,7 +321,7 @@ Refine each goal into cybersecurity requirements allocated to architecture eleme
 
 | TS | Controls | Effect | Residual |
 |---|---|---|---|
-| TS-01 | AUTOSAR SecOC (truncated CMAC + freshness, keys in HSM); plausibility check in brake ECU | Knowledge → strictly confidential; AP 15 → 26 (Very Low) | 1 |
+| TS-01 | AUTOSAR SecOC (truncated CMAC + freshness, keys in HSM); plausibility check in brake ECU | Knowledge → strictly confidential; AP 15 → 26 (Very Low) | 2 |
 | TS-02 | Signed packages (ISO 24089 / UN R156 process), secure boot, HSM-protected signing keys | Already Very Low | 2 |
 | TS-03 | AEB requires confirmation by the independent radar channel; perception plausibility monitor | AP 14 → 36 (Very Low) | 2 |
 | TS-04 | Blinding detection → degraded mode with driver warning | Damage scenario DS-02 → DS-03 (impact Major); feasibility unchanged (High) | 4: needs documented acceptance or further measures |
@@ -343,7 +343,7 @@ Refine each goal into cybersecurity requirements allocated to architecture eleme
 | Timing of security controls vs FTTI | [Detection + reaction time ≤ FTTI?] |
 | Interface agreement / communication channel | [Reference; ISO 26262-2:2018 Annex E, ISO/SAE 21434 cl. 5] |
 
-*Example:* SG-02 can be violated by TS-02, TS-03, TS-04 and TS-05. Camera blinding detection (3 frames × 33 ms) plus transition to degraded mode (50 ms) takes 149 ms, within the 300 ms FTTI. A backend VSOC response (hours) is **not** a safety mechanism.
+*Example:* SG-02 can be violated by TS-02, TS-03, TS-04 and TS-05. Camera blinding detection (3 frames × 33 ms) plus transition to degraded mode (50 ms) takes 149 ms, within the 500 ms FTTI. A backend VSOC response (hours) is **not** a safety mechanism.
 
 ---
 

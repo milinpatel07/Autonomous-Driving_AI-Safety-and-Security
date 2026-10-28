@@ -1,6 +1,6 @@
 # HARA Template: Hazard Analysis and Risk Assessment (ISO 26262-3:2018)
 
-A working template for the hazard analysis and risk assessment of an item according to ISO 26262-3:2018, clauses 5 (item definition) and 6 (HARA). Each section has an empty table to fill in, followed by a short worked example: a Level 1 automated emergency braking (AEB) function, consistent with [Module 03, Notebook 02](../03_Functional_Safety_ISO26262/02_hara.ipynb).
+A working template for the hazard analysis and risk assessment of an item according to ISO 26262-3:2018, clauses 5 (item definition) and 6 (HARA). Each section has an empty table to fill in, followed by a short worked example: an automated emergency braking (AEB) function (a driver-assistance / active safety function), consistent with [Module 03, Notebook 02](../03_Functional_Safety_ISO26262/02_hara.ipynb).
 
 > **Before you start**
 > - The HARA analyses the **item at vehicle level**. Hazards are vehicle behaviours (e.g. "unintended deceleration"), not component outputs (e.g. "false positive of the detector").
@@ -44,13 +44,13 @@ A working template for the hazard analysis and risk assessment of an item accord
 | Legal requirements, standards, known hazards from similar items | |
 | Assumptions on the driver and other items | |
 
-**Example (AEB, Level 1):**
+**Example (AEB, driver-assistance / active safety function):**
 
 | Attribute | Content |
 |---|---|
 | Item name | Automated emergency braking (AEB) function |
 | Functional description | Detects vehicles, pedestrians and cyclists in the vehicle path; if a collision is imminent and the driver does not react, requests automatic deceleration up to full braking (about 10 m/s²) |
-| Level of automation | SAE Level 1 (driver assistance); the driver remains responsible for monitoring and braking |
+| Level of automation | Driver-assistance / active safety function (momentary intervention; not driving automation per SAE J3016:2021, so outside Levels 1–5); the driver remains responsible for monitoring and braking |
 | Included | Front camera and radar, perception and fusion, threat assessment and decision logic, deceleration request, driver-warning request |
 | Excluded | Brake system / ESC hydraulics (separate item), instrument-cluster HMI hardware |
 | Inputs | Camera images, radar targets, vehicle speed, yaw rate, brake-pedal and steering activity |
@@ -170,12 +170,12 @@ A hazardous event = malfunctioning behaviour × operational situation.
 
 | HE ID | MB | OS | Mode | Hazardous event | S | S rationale | E | C | C rationale | ASIL | SG |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| HE-01 | MB-01 | OS-01 | Active | No AEB braking for a pedestrian at 30–50 km/h | S3 | Pedestrian struck at up to 50 km/h | E2 | C2 | Level 1: the driver remains responsible for braking; most attentive drivers brake themselves | A | SG-02 |
+| HE-01 | MB-01 | OS-01 | Active | No AEB braking for a pedestrian at 30–50 km/h | S3 | Pedestrian struck at up to 50 km/h | E2 | C2 | Driver assistance: the driver remains responsible for braking; most attentive drivers brake themselves | A | SG-02 |
 | HE-02 | MB-01 | OS-04 | Active | No AEB braking when approaching a stationary queue | S3 | High-speed impact into a stationary vehicle | E3 | C2 | Driver monitors the road and normally brakes | B | SG-02 |
 | HE-03 | MB-02 | OS-03 | Active | Unintended full braking at 100–130 km/h with a close follower | S3 | Rear impact at a high speed difference, possibly by a heavy goods vehicle | E4 | C3 | Sudden full braking without warning at about 1 s headway: fewer than 90 % of following drivers avoid the impact | D | SG-01 |
 | HE-04 | MB-02 | OS-02 | Active | Unintended full braking at 30–50 km/h with a close follower | S1 | Low-speed rear-end impact (whiplash) | E4 | C2 | Following drivers can normally brake in time | A | SG-01 |
 
-Note on the example: some published AEB analyses argue that omission (MB-01) of a Level 1 function is QM, because the vehicle then behaves like one without AEB. Whatever you decide, record the argument.
+Note on the example: some published AEB analyses argue that omission (MB-01) of a driver-assistance function is QM, because the vehicle then behaves like one without AEB. Whatever you decide, record the argument.
 
 ---
 
@@ -199,7 +199,7 @@ A safe state is an **operating mode**, such as "function switched off, driver wa
 | SG ID | Safety goal | ASIL | Covered HEs | Safe state | FTTI (illustrative) | Remarks |
 |---|---|---|---|---|---|---|
 | SG-01 | Avoid unintended AEB deceleration (illustrative limit: > 3 m/s² for > 300 ms) | D | HE-03, HE-04 | AEB deceleration request inhibited, AEB-unavailable warning; driver keeps full control | ≈ 300 ms, to be derived from the deceleration ramp and confirmed by vehicle tests | Candidate for ASIL decomposition D → B(D) + B(D): decision channel and independent plausibility channel; requires a dependent failure analysis (ISO 26262-9, clause 7). Hardware metrics and PMHF stay at ASIL D. |
-| SG-02 | Avoid omission of AEB deceleration when a collision with a pedestrian or a stationary vehicle is imminent | B | HE-01, HE-02 | AEB unavailable, driver warned; driver remains responsible for braking | ≈ 500 ms (illustrative) | The SG-01 safe state (AEB off) is acceptable for Level 1 only because the driver is the fallback |
+| SG-02 | Avoid omission of AEB deceleration when a collision with a pedestrian or a stationary vehicle is imminent | B | HE-01, HE-02 | AEB unavailable, driver warned; driver remains responsible for braking | ≈ 500 ms (illustrative) | The SG-01 safe state (AEB off) is acceptable for a driver-assistance function only because the driver is the fallback |
 
 ---
 
@@ -219,6 +219,8 @@ Functional safety requirements are specified in the functional safety concept (I
 | FSR-01.2 | SG-01 | B(D) | Forward a deceleration request only when an independent check confirms an imminent collision | Plausibility channel (brake ECU) |
 | FSR-01.3 | SG-01 | D | Protect the deceleration request against corruption, repetition and loss (end-to-end protection) | Communication path |
 | FSR-02.1 | SG-02 | B | Detect faults that prevent AEB braking and warn the driver within the fault-handling time | AEB ECU, HMI |
+
+Note on FSR-01.2: the item definition excludes the brake system. The plausibility function on the brake ECU is either declared part of the AEB item (boundary updated accordingly) or specified as a requirement on the neighbouring brake item and agreed through a development interface agreement (DIA, ISO 26262-8:2018, clause 5). Either way, the B(D) requirement and the independence argument must hold across that interface.
 
 Perception **performance targets** (e.g. pedestrian recall, false-positive rate per hour) are not ISO 26262 safety requirements and carry no ASIL. Record them as acceptance criteria in the SOTIF analysis ([`SOTIF_Analysis_Template.md`](SOTIF_Analysis_Template.md)) and, for ML components, under ISO/PAS 8800.
 
