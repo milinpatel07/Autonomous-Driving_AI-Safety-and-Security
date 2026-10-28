@@ -67,4 +67,4 @@ jobs:
       - name: Execute every notebook in the module
         env:
           MPLBACKEND: Agg
-        run: python scripts/execute_notebooks.py ${{ matrix.module }}/*.ipynb
+        run: python scripts/execute_notebooks.py --timeout 1800 ${{ matrix.module }}/*.ipynb
