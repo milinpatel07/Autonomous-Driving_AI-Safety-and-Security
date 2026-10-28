@@ -11,7 +11,7 @@ MIT Licence. Corrections and contributions are welcome: see the
 
 ## Research behind the course
 
-- Patel, M., & Jung, R. (2026). Integrating cybersecurity into the AI safety assurance argument: A GSN pattern for AI-based perception components. *Lecture Notes in Computer Science*. Springer. <https://doi.org/10.1007/978-3-032-35506-5_55>
+- Patel, M., & Jung, R. (2026). Integrating cybersecurity into the AI safety assurance argument: A GSN pattern for AI-based perception components in highly automated driving. In *Computer Safety, Reliability, and Security. SAFECOMP 2026 Workshops*, LNCS, pp. 763–779. Springer. <https://doi.org/10.1007/978-3-032-35506-5_55>
 - Patel, M., & Jung, R. (2026). Uncertainty evaluation to support safety of the intended functionality analysis for identifying performance insufficiencies in ML-based LiDAR object detection. *Proc. 12th Int. Conf. on Vehicle Technology and Intelligent Transport Systems (VEHITS)*. <https://doi.org/10.5220/0014967200004030>
 - Patel, M., & Jung, R. (2026). Uncertainty representation in a SOTIF-related use case with Dempster–Shafer theory for LiDAR sensor-based object detection. *Communications in Computer and Information Science*. Springer. <https://doi.org/10.1007/978-3-032-23187-1_10>
 - Patel, M., Jung, R., & Khatun, M. (2025). A systematic literature review on safety of the intended functionality for automated driving systems. *SAE Technical Paper* 2025-01-5030. <https://doi.org/10.4271/2025-01-5030>
