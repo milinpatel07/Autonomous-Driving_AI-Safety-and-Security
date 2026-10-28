@@ -31,6 +31,20 @@ LEFTOVERS = [
     (re.compile(r"ISO/IEC 8800"), "use 'ISO/PAS 8800:2024'"),
     (re.compile(r"ISO/PAS 21448:2019"), "superseded by ISO 21448:2022"),
 ]
+# A deprecated name may appear when the text explains that it was superseded.
+CONTEXT_OK = re.compile(r"supersed|replac|pre-standard|predecessor|withdrawn|not \"?ISO/IEC 8800|no \"?ISO/IEC 8800|formerly", re.I)
+
+
+def leftover_hits(text: str):
+    for pattern, why in LEFTOVERS:
+        for m in pattern.finditer(text):
+            window = text[max(0, m.start() - 160): m.end() + 160]
+            if pattern.pattern.startswith("ISO") and CONTEXT_OK.search(window):
+                continue
+            yield why
+            break
+
+
 MODULE_DIRS = sorted(p for p in ROOT.iterdir() if p.is_dir() and re.match(r"\d\d_", p.name))
 
 
@@ -82,9 +96,8 @@ def check_notebook(path: Path, errors: list[str]) -> None:
             errors.append(f"{rel}: cell {i} does not parse")
         if cell.get("cell_type") == "markdown":
             check_links(src, path.parent, f"{rel} cell {i}", errors)
-        for pattern, why in LEFTOVERS:
-            if pattern.search(src):
-                errors.append(f"{rel} cell {i}: {why}")
+        for why in leftover_hits(src):
+            errors.append(f"{rel} cell {i}: {why}")
 
 
 def main() -> int:
