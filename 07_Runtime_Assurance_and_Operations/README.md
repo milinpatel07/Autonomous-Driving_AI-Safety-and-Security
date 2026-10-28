@@ -2,7 +2,7 @@
 
 Safety in operation: monitoring the ODD at runtime, safe motion planning and fallback, the human driver in supervision and takeover, cooperative driving with V2X, field safety monitoring with real NHTSA crash reports, and how automated driving is being deployed today.
 
-**6 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
+**6 notebooks** · each runs in Google Colab on CPU; real-data notebooks download the frames and records they need on demand.
 
 | # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|

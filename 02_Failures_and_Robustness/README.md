@@ -2,7 +2,7 @@
 
 What goes wrong in the real world and why: documented incidents and their investigations, corner cases, out-of-distribution inputs and adversarial attacks on perception.
 
-**4 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
+**4 notebooks** · each runs in Google Colab on CPU; real-data notebooks download the frames and records they need on demand.
 
 | # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|

@@ -24,9 +24,10 @@ tests/                     pytest suite, including browser-tool parity checks
 ## Notebook conventions
 
 1. **Header**: title, module and position, an *Open in Colab* badge pointing at the file's path on `main`, a
-   small table (level, time, prerequisites, standards), author line and learning objectives.
-2. **Runs everywhere**: top to bottom on CPU in a few minutes, without dataset downloads (use synthetic data or
-   scikit-learn built-ins; wrap optional downloads with an offline fallback). Seed all random generators.
+   small table (level, prerequisites, standards), author line and learning objectives.
+2. **Runs everywhere**: top to bottom on CPU. Use real public data through the `avsafety.data` loaders where the
+   result depends on it (they download only what a notebook needs and cache it), and synthetic data, labelled
+   *Illustrative data*, where it does not. Seed all random generators.
 3. **Correct and sourced**: standards are cited with their edition (e.g. ISO 21448:2022). Time-sensitive
    statements say "(as of Month YYYY)" and link a primary source. Invented numbers are labelled
    *Illustrative data*.

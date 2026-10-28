@@ -2,7 +2,7 @@
 
 Making machine-learning components trustworthy enough for a safety argument: the AI-safety standards, uncertainty and its decomposition, ensembles, calibration and conformal guarantees on real detections, explainability, the safety of end-to-end and foundation-model driving, and statistical validation.
 
-**8 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
+**8 notebooks** · each runs in Google Colab on CPU; real-data notebooks download the frames and records they need on demand.
 
 | # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|

@@ -76,7 +76,7 @@ and SOTIF causes (this document).
 | H-ID | Hazardous behaviour | Relevant scenario(s) | Severity / controllability notes | Cross-ref. HARA (ISO 26262) |
 |---|---|---|---|---|
 | H-[nn] | [...] | [...] | [...] | [HE-ID → SG-ID (ASIL)] |
-| *Example* H-01 | No or late braking for a crossing pedestrian | Urban pedestrian crossing, ≤ 60 km/h (the pedestrian-relevant sub-scope of the AEB item, which operates at 10–130 km/h) | Severe injury possible; driver may not react in time | HE-01 → SG-02 (ASIL B) |
+| *Example* H-01 | No or late braking for a crossing pedestrian | Urban pedestrian crossing, ≤ 60 km/h (the pedestrian-relevant sub-scope of the AEB item, which operates at 10–130 km/h) | Severe injury possible; driver may not react in time | HE-01 (ASIL A) → SG-02 (ASIL B) |
 | *Example* H-02 | Unintended emergency braking | Any traffic with following vehicle | Rear-end collision; following driver may not react | HE-03, HE-04 → SG-01 (ASIL D) |
 
 ---
