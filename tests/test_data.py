@@ -57,3 +57,17 @@ def test_attribution_and_cache(tmp_path, monkeypatch):
     monkeypatch.setenv("AVSAFETY_CACHE", str(tmp_path))
     assert D.cache_dir() == tmp_path
     assert "CC BY-NC-SA 3.0" in D.attribution("KITTI")
+
+
+OXTS_LINE = ("49.009348313921 8.4371337908929 114.45652008057 0.069565 0.018834 -1.4512818 -0.0078693 "
+             "0.082893912 0.082894 -0.075015 0.001163 -0.30049 0.25089 9.8202 -0.31117 0.26014 9.8128 "
+             "-0.0042093 0.016327 -0.0089452 -0.0045094 0.016301 -0.0087844 0.66468314459811 0.0 4 7 4 4 0 ")
+
+
+def test_parse_oxts_trailing_space_does_not_shift_columns():
+    df = D.parse_oxts(OXTS_LINE + "\n" + OXTS_LINE + "\n")
+    assert list(df.columns) == D.OXTS_COLUMNS and len(df) == 2
+    assert df["lat"].iloc[0] == pytest.approx(49.009348313921)
+    assert df["lon"].iloc[0] == pytest.approx(8.4371337908929)
+    assert df["vf"].iloc[0] == pytest.approx(0.082894)       # forward velocity, not the next column
+    assert df["orimode"].iloc[0] == 0
