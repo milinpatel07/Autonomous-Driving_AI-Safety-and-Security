@@ -7,11 +7,11 @@ Short working definitions. Where a standard defines the term, the definition par
 ADS — Automated driving system
 : Hardware and software that together perform the entire dynamic driving task on a sustained basis (SAE J3016 Levels 3–5).
 
-ASIL — Automotive Safety Integrity Level
-: One of four levels (A lowest … D highest) specifying the item's necessary requirements of ISO 26262 and safety measures to avoid unreasonable residual risk. Determined from severity, exposure and controllability in the HARA. "QM" means no ASIL is required.
-
 ASIL decomposition
 : Splitting a safety requirement into redundant requirements implemented by sufficiently independent elements, each with a lower ASIL, written e.g. B(D) + B(D) (ISO 26262-9).
+
+ASIL — Automotive Safety Integrity Level
+: One of four levels (A lowest … D highest) specifying the item's necessary requirements of ISO 26262 and safety measures to avoid unreasonable residual risk. Determined from severity, exposure and controllability in the HARA. "QM" means no ASIL is required.
 
 Attack feasibility
 : The ease of successfully carrying out an attack path, rated High / Medium / Low / Very Low (ISO/SAE 21434), e.g. from attack potential, attack vector or CVSS exploitability.
@@ -30,6 +30,9 @@ Controllability (C)
 
 DDT — Dynamic driving task
 : The real-time operational and tactical functions required to operate a vehicle in on-road traffic (SAE J3016).
+
+DMS — Driver monitoring system
+: A system that observes the driver's attention and readiness (e.g. gaze, head pose, hands on wheel) to support supervision, warnings and takeover in driver-assistance and Level 3 systems.
 
 Epistemic / aleatoric uncertainty
 : Uncertainty due to limited knowledge or data (reducible) versus inherent randomness or noise in the observations (irreducible).
@@ -76,6 +79,9 @@ Safety case
 Safety goal
 : A top-level safety requirement resulting from the HARA, at vehicle level, with an ASIL (ISO 26262).
 
+SGO — Standing General Order (NHTSA)
+: The US order requiring manufacturers and operators to report crashes involving automated driving systems and Level 2 driver-assistance systems; the reports are public but are not crash rates.
+
 SOTIF — Safety of the intended functionality
 : The absence of unreasonable risk due to hazards resulting from functional insufficiencies of the intended functionality or its implementation (ISO 21448:2022). Reasonably foreseeable misuse is within the scope of the analysis.
 
@@ -85,11 +91,20 @@ SPFM / LFM
 SPI — Safety performance indicator
 : A metric used to monitor and validate the claims of a safety case during operation (UL 4600).
 
+STPA — System-theoretic process analysis
+: A hazard analysis method that models the system as a control structure and identifies unsafe control actions and the scenarios that lead to them, including interactions between automation and humans.
+
 TARA — Threat analysis and risk assessment
 : The ISO/SAE 21434 clause 15 method: assets and damage scenarios → threat scenarios → impact → attack paths → feasibility → risk value → risk treatment.
+
+Transition demand
+: A request from an automated driving system (e.g. under UN R157) for the driver to take back control within a defined time; if the driver does not respond, the system performs a minimal risk manoeuvre.
 
 Triggering condition
 : A specific condition of a scenario that initiates a subsequent system reaction contributing to hazardous behaviour or to reasonably foreseeable misuse (ISO 21448).
 
 TTC — Time to collision
 : The time until two road users collide if they keep their current speeds and paths.
+
+UCA — Unsafe control action
+: In STPA, a control action that leads to a hazard when it is provided, not provided, provided too early or too late or in the wrong order, or stopped too soon or applied too long.
