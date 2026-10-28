@@ -4,19 +4,17 @@ Hazards caused by malfunctioning E/E systems: the ISO 26262 lifecycle, hazard an
 
 **5 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
 
-| # | Notebook | Level | Time | Open |
+| # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|
-| 01 | [ISO 26262: Functional Safety for Road Vehicles](01_iso26262_fundamentals.ipynb) | Beginner | ~45 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/01_iso26262_fundamentals.ipynb) |
-| 02 | [Hazard Analysis and Risk Assessment (HARA)](02_hara.ipynb) | Intermediate | ~60 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/02_hara.ipynb) |
-| 03 | [FMEA and FMEDA for Perception Hardware and Software](03_fmea_and_fmeda.ipynb) | Intermediate | ~50 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/03_fmea_and_fmeda.ipynb) |
-| 04 | [Fault Tree Analysis (FTA) and Dependent Failures](04_fault_tree_analysis.ipynb) | Intermediate | ~75 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/04_fault_tree_analysis.ipynb) |
-| 05 | [Verification and Validation for Functional Safety](05_verification_and_validation.ipynb) | Intermediate | ~50 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/05_verification_and_validation.ipynb) |
+| 01 | [ISO 26262: Functional Safety for Road Vehicles](01_iso26262_fundamentals.ipynb) | Beginner | ISO 26262:2018 (Parts 1–6, 9) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/01_iso26262_fundamentals.ipynb) |
+| 02 | [Hazard Analysis and Risk Assessment (HARA)](02_hara.ipynb) | Intermediate | ISO 26262-3:2018, ISO 26262-9:2018 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/02_hara.ipynb) |
+| 03 | [FMEA and FMEDA for Perception Hardware and Software](03_fmea_and_fmeda.ipynb) | Intermediate | ISO 26262-5:2018, ISO 26262-9:2018, AIAG & VDA FMEA Handbook (2019) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/03_fmea_and_fmeda.ipynb) |
+| 04 | [Fault Tree Analysis (FTA) and Dependent Failures](04_fault_tree_analysis.ipynb) | Intermediate | ISO 26262-9:2018, ISO 26262-5:2018, IEC 61025:2006 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/04_fault_tree_analysis.ipynb) |
+| 05 | [Verification and Validation for Functional Safety](05_verification_and_validation.ipynb) | Intermediate | ISO 26262-4:2018, ISO 26262-6:2018, ISO 26262-2:2018 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/05_verification_and_validation.ipynb) |
 
 ## What you will learn
 
 ### 01 · ISO 26262: Functional Safety for Road Vehicles
-
-*Standards:* ISO 26262:2018 (Parts 1–6, 9)
 
 - Describe the structure and key concepts of ISO 26262:2018
 - Outline the V-model and where each safety activity sits in it
@@ -27,8 +25,6 @@ Hazards caused by malfunctioning E/E systems: the ISO 26262 lifecycle, hazard an
 
 ### 02 · Hazard Analysis and Risk Assessment (HARA)
 
-*Standards:* ISO 26262-3:2018, ISO 26262-9:2018
-
 - Carry out the HARA steps of ISO 26262-3 (clause 6) for an automated emergency braking (AEB) function
 - Write an item definition at vehicle level and build an operational-situation catalogue with exposure rationale
 - Formulate hazards as vehicle-level malfunctioning behaviours, independent of their cause
@@ -38,8 +34,6 @@ Hazards caused by malfunctioning E/E systems: the ISO 26262 lifecycle, hazard an
 
 ### 03 · FMEA and FMEDA for Perception Hardware and Software
 
-*Standards:* ISO 26262-5:2018, ISO 26262-9:2018, AIAG & VDA FMEA Handbook (2019)
-
 - Place FMEA and FMEDA within ISO 26262 (inductive safety analysis; hardware metrics)
 - Build a design FMEA for a camera perception channel and trace failure effects to the HARA safety goals
 - Explain the pitfalls of the Risk Priority Number and apply the AIAG-VDA Action Priority (AP) lookup
@@ -47,8 +41,6 @@ Hazards caused by malfunctioning E/E systems: the ISO 26262 lifecycle, hazard an
 - Recognise which perception 'failure modes' are really SOTIF / ISO/PAS 8800 insufficiencies
 
 ### 04 · Fault Tree Analysis (FTA) and Dependent Failures
-
-*Standards:* ISO 26262-9:2018, ISO 26262-5:2018, IEC 61025:2006
 
 - Distinguish **deductive** (top-down, FTA) from **inductive** (bottom-up, FMEA) safety analyses and place both within ISO 26262-9:2018 clause 8.
 - Read and draw the standard **fault tree symbols** and manipulate fault trees with **Boolean algebra**.
@@ -59,8 +51,6 @@ Hazards caused by malfunctioning E/E systems: the ISO 26262 lifecycle, hazard an
 - Recognise where FTA reaches its limits for **machine-learning components**, whose performance insufficiencies have no meaningful failure rate.
 
 ### 05 · Verification and Validation for Functional Safety
-
-*Standards:* ISO 26262-4:2018, ISO 26262-6:2018, ISO 26262-2:2018
 
 - Distinguish verification, safety validation and confirmation measures in ISO 26262
 - Select software unit verification methods and structural-coverage metrics per ASIL (ISO 26262-6:2018 Tables 7 and 9)

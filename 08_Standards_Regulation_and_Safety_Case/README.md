@@ -4,18 +4,16 @@ Bringing it together: how the standards interlock, what type approval and regula
 
 **4 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
 
-| # | Notebook | Level | Time | Open |
+| # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|
-| 01 | [Standards Integration: How ISO 26262, ISO 21448, ISO/SAE 21434 and ISO/PAS 8800 Work Together](01_standards_integration.ipynb) | Intermediate | ~60 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/01_standards_integration.ipynb) |
-| 02 | [Automotive Regulation and Type Approval for Automated Driving](02_regulation_and_type_approval.ipynb) | Intermediate | ~60 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/02_regulation_and_type_approval.ipynb) |
-| 03 | [Standards Gaps and Open Problems in AV Safety](03_standards_gaps.ipynb) | Advanced | ~45 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb) |
-| 04 | [Safety Cases and Goal Structuring Notation (GSN)](04_safety_case_gsn.ipynb) | Advanced | ~80 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb) |
+| 01 | [Standards Integration: How ISO 26262, ISO 21448, ISO/SAE 21434 and ISO/PAS 8800 Work Together](01_standards_integration.ipynb) | Intermediate | ISO 26262:2018, ISO 21448:2022, ISO/SAE 21434:2021, ISO/PAS 8800:2024, ISO/TS 5083:2025, UL 4600 (3rd ed.), ISO 34502:2022, ISO 34503:2023 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/01_standards_integration.ipynb) |
+| 02 | [Automotive Regulation and Type Approval for Automated Driving](02_regulation_and_type_approval.ipynb) | Intermediate | UN R155, R156, R157, UN ADS Regulation (2026); Reg. (EU) 2018/858, 2019/2144, 2022/1426, 2024/1689; ISO/SAE 21434:2021, ISO 24089:2023 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/02_regulation_and_type_approval.ipynb) |
+| 03 | [Standards Gaps and Open Problems in AV Safety](03_standards_gaps.ipynb) | Advanced | ISO 26262:2018, ISO 21448:2022, ISO/SAE 21434:2021, ISO/PAS 8800:2024, ISO/TS 5083:2025, UL 4600 (3rd ed.) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb) |
+| 04 | [Safety Cases and Goal Structuring Notation (GSN)](04_safety_case_gsn.ipynb) | Advanced | GSN Community Standard v3 (2021), UL 4600 (3rd ed., 2023), ISO/TS 5083:2025, ISO/PAS 8800:2024 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb) |
 
 ## What you will learn
 
 ### 01 · Standards Integration: How ISO 26262, ISO 21448, ISO/SAE 21434 and ISO/PAS 8800 Work Together
-
-*Standards:* ISO 26262:2018, ISO 21448:2022, ISO/SAE 21434:2021, ISO/PAS 8800:2024, ISO/TS 5083:2025, UL 4600 (3rd ed.), ISO 34502:2022, ISO 34503:2023
 
 - Compare the scope, hazard source and key work products of the main AV safety and security documents
 - Explain where the standards interface: shared item definition, HARA ↔ SOTIF hazard evaluation ↔ TARA impact rating, and safety–security co-engineering
@@ -24,8 +22,6 @@ Bringing it together: how the standards interlock, what type approval and regula
 - Identify the real coordination points between the disciplines (updates, degradation, logging, diagnostics) and document them traceably
 
 ### 02 · Automotive Regulation and Type Approval for Automated Driving
-
-*Standards:* UN R155, R156, R157, UN ADS Regulation (2026); Reg. (EU) 2018/858, 2019/2144, 2022/1426, 2024/1689; ISO/SAE 21434:2021, ISO 24089:2023
 
 - Distinguish type approval (UNECE / EU / China) from self-certification (US) and name the actors involved
 - Place the main AV regulations on a dated global timeline and say what each requires
@@ -36,8 +32,6 @@ Bringing it together: how the standards interlock, what type approval and regula
 
 ### 03 · Standards Gaps and Open Problems in AV Safety
 
-*Standards:* ISO 26262:2018, ISO 21448:2022, ISO/SAE 21434:2021, ISO/PAS 8800:2024, ISO/TS 5083:2025, UL 4600 (3rd ed.)
-
 - Identify the limitations of the current standards for ML-based automated driving, and which gaps newer documents now address
 - Explain why ISO 26262's assumptions do not transfer directly to ML components
 - Describe the SOTIF 'unknown hazardous scenarios' (Area 3) problem and what ISO 21448 does and does not prescribe
@@ -45,8 +39,6 @@ Bringing it together: how the standards interlock, what type approval and regula
 - Separate published facts from opinion when reasoning about the future of standards
 
 ### 04 · Safety Cases and Goal Structuring Notation (GSN)
-
-*Standards:* GSN Community Standard v3 (2021), UL 4600 (3rd ed., 2023), ISO/TS 5083:2025, ISO/PAS 8800:2024
 
 - Explain what a **safety case** is in terms of **claims, arguments and evidence**, and why automated driving standards increasingly centre on it.
 - Name and draw the **GSN elements** of the GSN Community Standard (Version 3, 2021) and the two relationships *SupportedBy* and *InContextOf*.
