@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASIL Calculator</title>
+<meta name="description" content="Determine the ASIL of a hazardous event from Severity, Exposure and Controllability (ISO 26262-3:2018 Table 4), with ASIL decomposition options.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><a class="home" href="index.html">← Safety tools</a><span class="muted">ISO 26262-3:2018</span></header>
+  <h1>ASIL calculator</h1>
+  <p class="lead">Rate a hazardous event for Severity, Exposure and Controllability. The ASIL follows from
+  ISO 26262-3:2018 Table 4. Rate the <em>vehicle-level</em> malfunctioning behaviour in its worst credible
+  operational situation, without crediting the item's own safety mechanisms.</p>
+
+  <div class="grid two">
+    <section class="card" aria-labelledby="in-h">
+      <h2 id="in-h">Classification</h2>
+      <div class="field" role="group" aria-labelledby="s-l">
+        <span id="s-l" style="display:block;font-weight:600;margin-bottom:6px">Severity (S)</span>
+        <div class="seg" data-param="S"></div>
+        <small class="muted" id="S-desc"></small>
+      </div>
+      <div class="field" role="group" aria-labelledby="e-l" style="margin-top:14px">
+        <span id="e-l" style="display:block;font-weight:600;margin-bottom:6px">Exposure (E)</span>
+        <div class="seg" data-param="E"></div>
+        <small class="muted" id="E-desc"></small>
+      </div>
+      <div class="field" role="group" aria-labelledby="c-l" style="margin-top:14px">
+        <span id="c-l" style="display:block;font-weight:600;margin-bottom:6px">Controllability (C)</span>
+        <div class="seg" data-param="C"></div>
+        <small class="muted" id="C-desc"></small>
+      </div>
+    </section>
+
+    <section class="card" aria-live="polite" aria-labelledby="out-h">
+      <h2 id="out-h">Result</h2>
+      <div class="result">
+        <div id="badge" class="badge">–</div>
+        <div>
+          <div id="summary" style="font-weight:600"></div>
+          <div id="explain" class="muted" style="font-size:.9rem"></div>
+        </div>
+      </div>
+      <h2 style="margin-top:20px">Table 4 slice for the selected S</h2>
+      <div class="table-scroll"><table class="matrix" id="matrix" aria-label="ASIL matrix"></table></div>
+      <h2 style="margin-top:20px">ASIL decomposition (ISO 26262-9, clause 5)</h2>
+      <div id="decomp" class="muted"></div>
+    </section>
+  </div>
+
+  <div class="note">
+    <b>Scope reminder.</b> ISO 26262 covers hazards caused by malfunctioning behaviour of E/E systems
+    (random hardware and systematic faults). A pedestrian missed because of fog or an ML performance
+    limitation is a SOTIF topic (ISO 21448:2022) and an AI-safety topic (ISO/PAS 8800:2024), not an ASIL.
+    Learn more in <a href="https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/02_hara.ipynb">Notebook 03-02 · HARA</a>.
+  </div>
+  <footer>Tables mirror the tested Python package <code>avsafety</code>. Teaching aid, not a substitute for
+  the standard. MIT Licence · Milin Patel.</footer>
+</div>
+<script src="avsafety.js"></script>
+<script>
+(function () {
+  const D = {
+    S: { S0: "No injuries", S1: "Light and moderate injuries", S2: "Severe and life-threatening injuries (survival probable)", S3: "Life-threatening injuries (survival uncertain), fatal injuries" },
+    E: { E0: "Incredible", E1: "Very low probability", E2: "Low probability: < 1 % of average operating time, or a few times a year", E3: "Medium probability: 1–10 % of operating time, or once a month or more", E4: "High probability: > 10 % of operating time, or almost every drive" },
+    C: { C0: "Controllable in general", C1: "Simply controllable: ≥ 99 % of drivers or other traffic participants usually avoid the harm", C2: "Normally controllable: ≥ 90 % usually avoid the harm", C3: "Difficult to control or uncontrollable: < 90 % avoid the harm" },
+  };
+  const state = { S: "S3", E: "E4", C: "C2" };
+  const params = new URLSearchParams(location.search);
+  ["S", "E", "C"].forEach((k) => { const v = (params.get(k) || "").toUpperCase(); if (D[k][v]) state[k] = v; });
+
+  document.querySelectorAll(".seg").forEach((seg) => {
+    const k = seg.dataset.param;
+    Object.keys(D[k]).forEach((v) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.textContent = v; b.title = D[k][v];
+      b.addEventListener("click", () => { state[k] = v; render(); });
+      seg.appendChild(b);
+    });
+  });
+
+  function render() {
+    document.querySelectorAll(".seg").forEach((seg) => {
+      seg.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.textContent === state[seg.dataset.param])));
+    });
+    ["S", "E", "C"].forEach((k) => (document.getElementById(k + "-desc").textContent = state[k] + ": " + D[k][state[k]]));
+    const asil = AVSafety.determineAsil(state.S, state.E, state.C);
+    const badge = document.getElementById("badge");
+    badge.className = "badge lvl-" + asil;
+    badge.textContent = asil === "QM" ? "QM" : "ASIL " + asil;
+    document.getElementById("summary").textContent = `${state.S} · ${state.E} · ${state.C} → ${asil === "QM" ? "QM (no ASIL)" : "ASIL " + asil}`;
+    const zero = state.S === "S0" || state.E === "E0" || state.C === "C0";
+    document.getElementById("explain").textContent = zero
+      ? "A class of 0 means no ASIL is assigned; the hazard is handled by quality management."
+      : asil === "QM" ? "Risk is low enough that no ASIL is assigned; quality management applies."
+      : `A safety goal with ASIL ${asil} is required. Requirements, methods and independence of confirmation measures scale with the ASIL.`;
+
+    const sKey = state.S === "S0" ? "S1" : state.S;
+    const t = document.getElementById("matrix");
+    let html = "<tr><th></th><th>C1</th><th>C2</th><th>C3</th></tr>";
+    ["E1", "E2", "E3", "E4"].forEach((e) => {
+      html += `<tr><th>${e}</th>`;
+      AVSafety.ASIL_TABLE[sKey][e].forEach((a, i) => {
+        const hit = e === state.E && "C" + (i + 1) === state.C && state.S !== "S0";
+        html += `<td class="lvl-${a}${hit ? " hit" : ""}">${a}</td>`;
+      });
+      html += "</tr>";
+    });
+    t.innerHTML = html;
+    t.setAttribute("aria-label", `ASIL matrix for ${sKey}`);
+
+    const dec = document.getElementById("decomp");
+    if (asil === "QM") dec.textContent = "Not applicable for QM.";
+    else dec.innerHTML = "<ul class='plain'>" + AVSafety.decompositionOptions(asil).map(([a, b]) => `<li>${a} + ${b}</li>`).join("") +
+      "</ul><span style='font-size:.85rem'>Requires sufficiently independent elements, shown by dependent failure analysis. Hardware metrics and PMHF are still evaluated at the original ASIL.</span>";
+
+    const q = new URLSearchParams(state).toString();
+    history.replaceState(null, "", "?" + q);
+  }
+  render();
+})();
+</script>
+</body>
+</html>

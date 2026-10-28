@@ -1,0 +1,22 @@
+name: Content or factual error
+description: Something in a notebook, template or page is wrong or outdated
+labels: [content]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: File and cell (e.g. 03_Functional_Safety_ISO26262/02_hara.ipynb, cell 12)
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong and what should it say?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Standard clause, paper DOI, regulator page or other verifiable reference
