@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RSS Safe Distance</title>
+<meta name="description" content="Explore the Responsibility-Sensitive Safety (RSS) longitudinal safe distance and criticality metrics (TTC, THW, DRAC).">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><a class="home" href="index.html">← Safety tools</a><span class="muted">Shalev-Shwartz et al., 2017</span></header>
+  <h1>RSS safe distance explorer</h1>
+  <p class="lead">Responsibility-Sensitive Safety defines the minimum gap a following vehicle must keep so that it can
+  always stop, even if the lead vehicle brakes as hard as possible after the follower's response time. Move the
+  sliders to see the safety–usefulness trade-off.</p>
+
+  <div class="grid two">
+    <section class="card">
+      <h2>Scenario</h2>
+      <label class="field"><span>Ego (rear) speed: <output id="o-vr"></output></span><input type="range" id="vr" min="0" max="45" step="0.5" value="27.8"></label>
+      <label class="field"><span>Lead (front) speed: <output id="o-vf"></output></span><input type="range" id="vf" min="0" max="45" step="0.5" value="22.2"></label>
+      <label class="field"><span>Current gap: <output id="o-gap"></output></span><input type="range" id="gap" min="1" max="200" step="1" value="45"></label>
+      <h2 style="margin-top:8px">RSS parameters</h2>
+      <label class="field"><span>Response time ρ: <output id="o-rho"></output></span><input type="range" id="rho" min="0.1" max="2.5" step="0.05" value="0.5"></label>
+      <label class="field"><span>Ego max. acceleration during ρ: <output id="o-amax"></output></span><input type="range" id="amax" min="0" max="5" step="0.1" value="2"></label>
+      <label class="field"><span>Ego min. guaranteed braking: <output id="o-bmin"></output></span><input type="range" id="bmin" min="1" max="10" step="0.1" value="4"></label>
+      <label class="field"><span>Lead max. braking: <output id="o-bmax"></output></span><input type="range" id="bmax" min="1" max="12" step="0.1" value="8"></label>
+    </section>
+    <section class="card" aria-live="polite">
+      <h2>Assessment</h2>
+      <div class="kpi" id="kpis"></div>
+      <div id="verdict" class="note" style="margin-top:14px"></div>
+      <h2 style="margin-top:18px">Required gap vs ego speed (current speed difference kept)</h2>
+      <canvas id="chart" width="640" height="360" role="img" aria-label="Chart of RSS minimum distance versus speed compared with a 2-second headway"></canvas>
+      <p class="muted" style="font-size:.85rem">Solid: RSS minimum distance with the lead vehicle slower (or faster) by the current speed difference. Dashed: 2-second headway rule of thumb. Dot: current situation (green = safe, red = dangerous).</p>
+    </section>
+  </div>
+  <div class="note"><b>Formula.</b> d<sub>min</sub> = [ v<sub>r</sub>ρ + ½a<sub>max</sub>ρ² + (v<sub>r</sub>+ρa<sub>max</sub>)²/(2b<sub>min</sub>) − v<sub>f</sub>²/(2b<sub>max</sub>) ]<sub>+</sub>.
+  The parameters are assumptions that must be justified in the safety case (cf. IEEE 2846-2022). Learn more in
+  <a href="https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF_ISO21448/05_criticality_metrics_and_rss.ipynb">Notebook 04-05</a>.</div>
+  <footer>Formulas mirror the tested Python package <code>avsafety</code>. Teaching aid. MIT Licence · Milin Patel.</footer>
+</div>
+<script src="avsafety.js"></script>
+<script>
+(function () {
+  const A = AVSafety, $ = (id) => document.getElementById(id);
+  const ids = ["vr", "vf", "gap", "rho", "amax", "bmin", "bmax"];
+  const fmt = {
+    vr: (v) => `${v.toFixed(1)} m/s (${(v * 3.6).toFixed(0)} km/h)`, vf: (v) => `${v.toFixed(1)} m/s (${(v * 3.6).toFixed(0)} km/h)`,
+    gap: (v) => `${v.toFixed(0)} m`, rho: (v) => `${v.toFixed(2)} s`, amax: (v) => `${v.toFixed(1)} m/s²`,
+    bmin: (v) => `${v.toFixed(1)} m/s²`, bmax: (v) => `${v.toFixed(1)} m/s²`,
+  };
+  ids.forEach((id) => $(id).addEventListener("input", render));
+  window.addEventListener("resize", render);
+  const css = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const fmtT = (t) => (isFinite(t) ? t.toFixed(1) + " s" : "∞");
+
+  function render() {
+    const p = {}; ids.forEach((id) => { p[id] = parseFloat($(id).value); $("o-" + id).textContent = fmt[id](p[id]); });
+    const dmin = A.rssSafeLongitudinalDistance(p.vr, p.vf, p.rho, p.amax, p.bmin, p.bmax);
+    const ttc = A.timeToCollision(p.gap, p.vr, p.vf), thw = A.timeHeadway(p.gap, p.vr), dr = A.drac(p.gap, p.vr, p.vf);
+    $("kpis").innerHTML =
+      `<div><b>${dmin.toFixed(1)} m</b><span>RSS minimum gap</span></div>` +
+      `<div><b>${p.gap.toFixed(0)} m</b><span>Current gap</span></div>` +
+      `<div><b>${fmtT(ttc)}</b><span>Time to collision</span></div>` +
+      `<div><b>${fmtT(thw)}</b><span>Time headway</span></div>` +
+      `<div><b>${dr.toFixed(2)} m/s²</b><span>DRAC</span></div>`;
+    const safe = p.gap >= dmin;
+    $("verdict").innerHTML = safe
+      ? `<b>Safe longitudinal distance.</b> The gap exceeds the RSS minimum by ${(p.gap - dmin).toFixed(1)} m.`
+      : `<b>Dangerous situation.</b> The gap is ${(dmin - p.gap).toFixed(1)} m short; RSS's proper response is to brake with at least b<sub>min</sub> until safe.`;
+    draw(p, dmin);
+  }
+
+  function draw(p, dmin) {
+    const c = $("chart"), dpr = window.devicePixelRatio || 1, w = c.clientWidth || 640, h = Math.round(w * 0.56);
+    c.width = w * dpr; c.height = h * dpr; c.style.height = h + "px";
+    const g = c.getContext("2d"); g.scale(dpr, dpr);
+    const pad = { l: 46, r: 12, t: 12, b: 34 }, W = w - pad.l - pad.r, H = h - pad.t - pad.b;
+    const vmax = 45, speeds = Array.from({ length: 91 }, (_, i) => i * 0.5);
+    const dv = p.vr - p.vf;
+    const rss = speeds.map((v) => A.rssSafeLongitudinalDistance(v, Math.max(v - dv, 0), p.rho, p.amax, p.bmin, p.bmax));
+    const two = speeds.map((v) => 2 * v);
+    const dmaxPlot = Math.max(...rss, ...two, p.gap, dmin) * 1.08;
+    const X = (v) => pad.l + (v / vmax) * W, Y = (d) => pad.t + H - (d / dmaxPlot) * H;
+    const text = css("--text"), muted = css("--muted"), border = css("--border");
+    g.font = "12px system-ui, sans-serif"; g.strokeStyle = border; g.fillStyle = muted; g.lineWidth = 1;
+    for (let v = 0; v <= vmax; v += 5) { g.beginPath(); g.moveTo(X(v), pad.t); g.lineTo(X(v), pad.t + H); g.stroke(); g.fillText(String(v), X(v) - 6, h - 16); }
+    const step = Math.pow(10, Math.floor(Math.log10(dmaxPlot))) / (dmaxPlot / Math.pow(10, Math.floor(Math.log10(dmaxPlot))) < 3 ? 2 : 1);
+    for (let d = 0; d <= dmaxPlot; d += step) { g.beginPath(); g.moveTo(pad.l, Y(d)); g.lineTo(pad.l + W, Y(d)); g.stroke(); g.fillText(String(Math.round(d)), 6, Y(d) + 4); }
+    g.fillText("ego speed (m/s)", pad.l + W / 2 - 40, h - 2);
+    g.save(); g.translate(12, pad.t + H / 2 + 30); g.rotate(-Math.PI / 2); g.restore();
+    const line = (arr, color, dash) => { g.beginPath(); g.setLineDash(dash); g.strokeStyle = color; g.lineWidth = 2.5;
+      arr.forEach((d, i) => (i ? g.lineTo(X(speeds[i]), Y(d)) : g.moveTo(X(speeds[i]), Y(d)))); g.stroke(); g.setLineDash([]); };
+    line(two, muted, [6, 5]);
+    line(rss, css("--accent"), []);
+    g.beginPath(); g.fillStyle = p.gap >= dmin ? css("--a") : css("--d"); g.strokeStyle = text; g.lineWidth = 1.5;
+    g.arc(X(Math.min(p.vr, vmax)), Y(p.gap), 6, 0, 2 * Math.PI); g.fill(); g.stroke();
+    g.fillStyle = text; g.fillText("gap (m)", pad.l + 6, pad.t + 14);
+  }
+  render();
+})();
+</script>
+</body>
+</html>

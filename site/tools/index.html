@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AV Safety Tools</title>
+<meta name="description" content="Interactive, offline-capable calculators for autonomous-driving safety and security: ASIL, TARA risk and CAL, RSS safe distance, validation mileage.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><a class="home" href="https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security">Autonomous Driving: AI Safety and Security</a></header>
+  <h1>Interactive safety tools</h1>
+  <p class="lead">Small calculators that accompany the course notebooks. They run entirely in your browser, work on a phone,
+  and use the same tables and formulas as the tested Python package <code>avsafety</code>, which is checked against them in CI.</p>
+  <div class="tools">
+    <a class="card" href="asil.html"><h2>ASIL calculator</h2><p class="muted">Severity, exposure and controllability → ASIL, with the Table 4 slice and decomposition options. ISO 26262-3.</p></a>
+    <a class="card" href="tara.html"><h2>TARA risk calculator</h2><p class="muted">Impact and attack feasibility (attack potential, attack vector or CVSS v3.1) → risk value and CAL. ISO/SAE 21434.</p></a>
+    <a class="card" href="rss.html"><h2>RSS safe distance</h2><p class="muted">Responsibility-Sensitive Safety minimum gap with TTC, headway and DRAC, and the safety–usefulness trade-off.</p></a>
+    <a class="card" href="miles.html"><h2>How many miles?</h2><p class="muted">Failure-free distance needed to demonstrate a target rate with a given confidence, and the fleet-years it takes.</p></a>
+  </div>
+  <footer>Teaching aids, not a substitute for the standards. MIT Licence · Milin Patel · Hochschule Kempten.</footer>
+</div>
+</body>
+</html>
