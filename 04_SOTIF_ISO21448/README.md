@@ -1,6 +1,6 @@
 # Module 04 · SOTIF (ISO 21448)
 
-Hazards without a fault: functional insufficiencies, triggering conditions and reasonably foreseeable misuse. Scenario spaces, OOD monitoring as a safety measure, simulation-based validation, criticality metrics and RSS.
+Hazards without a fault: functional insufficiencies, triggering conditions and reasonably foreseeable misuse. Triggering conditions measured on real data, scenario spaces, OOD monitoring as a safety measure, simulation-based validation, criticality metrics and RSS.
 
 **5 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
 
@@ -27,6 +27,8 @@ Hazards without a fault: functional insufficiencies, triggering conditions and r
 
 - Build a triggering-condition catalogue structured by the PEGASUS **6-layer model** and keep out-of-scope causes apart
 - Link triggering conditions to **functional insufficiencies** (specification vs performance)
+- **Measure** a performance insufficiency of a real camera detector on real KITTI frames under physically based fog,
+- Turn the measurement into an industry-style **triggering-condition table** with measures and an **ODD restriction**
 - Use the scenario abstraction levels **functional → logical → concrete** and distinguish a scenario from the **ODD** (ISO 34503:2023)
 - Describe the **ISO 34502:2022** scenario-based safety evaluation framework and the role of **ASAM OpenSCENARIO / OpenODD**
 - Generate a scenario space, measure **n-wise coverage** and build a **pairwise test set** in Python
@@ -35,8 +37,9 @@ Hazards without a fault: functional insufficiencies, triggering conditions and r
 ### 03 · OOD Monitoring as a SOTIF Safety Measure
 
 - Place an out-of-distribution (OOD) monitor correctly in the ISO 21448 causal chain and activity flow
-- Set a monitor threshold **from a safety requirement** instead of an arbitrary percentile
-- Convert a false-positive rate into **false alarms per hour** and design a temporal filter
+- Extract runtime monitor signals from a **real detector** (scores, entropy, low-confidence boxes, energy, backbone
+- Set a monitor threshold **from a safety requirement** instead of an arbitrary percentile, and check it on held-out frames
+- Convert a false-positive rate into **false alarms per hour**, state what a small clean sample can and cannot show,
 - Treat the TPR/FPR trade-off as a **safety vs availability** decision and document it
 - Choose a fallback that fits the **level of automation** (L2 warning, L3 transition demand, L4 minimal risk manoeuvre)
 - State the limits: OOD is not the same as hazardous, and the monitor needs its own validation

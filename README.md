@@ -62,18 +62,19 @@ Expand a module to open any notebook directly in Colab:
 
 <!-- COURSE-TABLE:START -->
 <details>
-<summary><b>01 · Perception Systems</b> — 8 notebooks</summary>
+<summary><b>01 · Perception and Prediction</b> — 9 notebooks</summary>
 
 | # | Notebook | Level | Open |
 |---|---|---|---|
 | 01-01 | [SAE Levels of Driving Automation and the Operational Design Domain](01_Perception/01_sae_levels_and_odd.ipynb) | Beginner | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/01_Perception/01_sae_levels_and_odd.ipynb) |
 | 01-02 | [Sensor Modalities: Camera, LiDAR and Radar](01_Perception/02_sensor_modalities.ipynb) | Beginner | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/01_Perception/02_sensor_modalities.ipynb) |
 | 01-03 | [LiDAR Sensors and Point Clouds](01_Perception/03_lidar_point_clouds.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/01_Perception/03_lidar_point_clouds.ipynb) |
-| 01-04 | [Object Detection: from IoU to mAP with YOLO](01_Perception/04_object_detection.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/01_Perception/04_object_detection.ipynb) |
-| 01-05 | [Vulnerable Road User Detection: a Safety-Critical Case Study](01_Perception/05_vulnerable_road_user_detection.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/01_Perception/05_vulnerable_road_user_detection.ipynb) |
+| 01-04 | [Object Detection on Real Driving Images: from IoU to Per-Class AP on KITTI](01_Perception/04_object_detection.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/01_Perception/04_object_detection.ipynb) |
+| 01-05 | [Vulnerable Road User Detection on Real Data: Recall, Range and AEB](01_Perception/05_vulnerable_road_user_detection.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/01_Perception/05_vulnerable_road_user_detection.ipynb) |
 | 01-06 | [Sensor Fusion: Calibration, Association and Late Fusion](01_Perception/06_sensor_fusion.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/01_Perception/06_sensor_fusion.ipynb) |
 | 01-07 | [Multi-Object Tracking and State Estimation](01_Perception/07_multi_object_tracking.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/01_Perception/07_multi_object_tracking.ipynb) |
-| 01-08 | [Driving Datasets and 3D Detection Metrics](01_Perception/08_driving_datasets.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/01_Perception/08_driving_datasets.ipynb) |
+| 01-08 | [Driving Datasets: What KITTI Really Contains, and How to Specify Data for Safety](01_Perception/08_driving_datasets.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/01_Perception/08_driving_datasets.ipynb) |
+| 01-09 | [Trajectory Prediction on Real Highway Data](01_Perception/09_trajectory_prediction.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/01_Perception/09_trajectory_prediction.ipynb) |
 
 </details>
 
@@ -90,7 +91,7 @@ Expand a module to open any notebook directly in Colab:
 </details>
 
 <details>
-<summary><b>03 · Functional Safety (ISO 26262)</b> — 5 notebooks</summary>
+<summary><b>03 · Functional Safety (ISO 26262)</b> — 6 notebooks</summary>
 
 | # | Notebook | Level | Open |
 |---|---|---|---|
@@ -98,7 +99,8 @@ Expand a module to open any notebook directly in Colab:
 | 03-02 | [Hazard Analysis and Risk Assessment (HARA)](03_Functional_Safety_ISO26262/02_hara.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/02_hara.ipynb) |
 | 03-03 | [FMEA and FMEDA for Perception Hardware and Software](03_Functional_Safety_ISO26262/03_fmea_and_fmeda.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/03_fmea_and_fmeda.ipynb) |
 | 03-04 | [Fault Tree Analysis (FTA) and Dependent Failures](03_Functional_Safety_ISO26262/04_fault_tree_analysis.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/04_fault_tree_analysis.ipynb) |
-| 03-05 | [Verification and Validation for Functional Safety](03_Functional_Safety_ISO26262/06_verification_and_validation.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/06_verification_and_validation.ipynb) |
+| 03-05 | [STPA: System-Theoretic Process Analysis](03_Functional_Safety_ISO26262/05_stpa.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/05_stpa.ipynb) |
+| 03-06 | [Verification and Validation for Functional Safety](03_Functional_Safety_ISO26262/06_verification_and_validation.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/03_Functional_Safety_ISO26262/06_verification_and_validation.ipynb) |
 
 </details>
 
@@ -128,7 +130,7 @@ Expand a module to open any notebook directly in Colab:
 </details>
 
 <details>
-<summary><b>06 · AI Safety (ISO/PAS 8800)</b> — 7 notebooks</summary>
+<summary><b>06 · AI Safety (ISO/PAS 8800)</b> — 8 notebooks</summary>
 
 | # | Notebook | Level | Open |
 |---|---|---|---|
@@ -138,23 +140,27 @@ Expand a module to open any notebook directly in Colab:
 | 06-04 | [Calibration and Reliability of Classifier Confidence](06_AI_Safety_ISO_PAS_8800/04_calibration.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/04_calibration.ipynb) |
 | 06-05 | [Conformal Prediction: Distribution-Free Uncertainty Guarantees](06_AI_Safety_ISO_PAS_8800/05_conformal_prediction.ipynb) | Intermediate/Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/05_conformal_prediction.ipynb) |
 | 06-06 | [Explainability (XAI) for Perception: Methods, Sanity Checks and Limits as Safety Evidence](06_AI_Safety_ISO_PAS_8800/06_explainability.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/06_explainability.ipynb) |
-| 06-07 | [Statistical Safety Validation of ML-Based Perception and Automated Driving](06_AI_Safety_ISO_PAS_8800/08_statistical_safety_validation.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/08_statistical_safety_validation.ipynb) |
+| 06-07 | [End-to-End and Foundation-Model Driving: What Changes for Safety](06_AI_Safety_ISO_PAS_8800/07_end_to_end_and_foundation_models.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/07_end_to_end_and_foundation_models.ipynb) |
+| 06-08 | [Statistical Safety Validation of ML-Based Perception and Automated Driving](06_AI_Safety_ISO_PAS_8800/08_statistical_safety_validation.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/08_statistical_safety_validation.ipynb) |
 
 </details>
 
 <details>
-<summary><b>07 · Runtime Assurance and Operations</b> — 3 notebooks</summary>
+<summary><b>07 · Runtime Assurance and Operations</b> — 6 notebooks</summary>
 
 | # | Notebook | Level | Open |
 |---|---|---|---|
 | 07-01 | [ODD Specification and Runtime Monitoring](07_Runtime_Assurance_and_Operations/01_odd_and_runtime_monitoring.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Runtime_Assurance_and_Operations/01_odd_and_runtime_monitoring.ipynb) |
-| 07-02 | [V2X and Cooperative Driving](07_Runtime_Assurance_and_Operations/04_v2x_cooperative_driving.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Runtime_Assurance_and_Operations/04_v2x_cooperative_driving.ipynb) |
-| 07-03 | [Industry Deployment: Status, Evidence and Operations](07_Runtime_Assurance_and_Operations/06_industry_deployment.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Runtime_Assurance_and_Operations/06_industry_deployment.ipynb) |
+| 07-02 | [Safe Motion Planning and Fallback](07_Runtime_Assurance_and_Operations/02_safe_motion_planning_and_fallback.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Runtime_Assurance_and_Operations/02_safe_motion_planning_and_fallback.ipynb) |
+| 07-03 | [Human Factors: Supervision, Takeover and Misuse](07_Runtime_Assurance_and_Operations/03_human_factors_and_takeover.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Runtime_Assurance_and_Operations/03_human_factors_and_takeover.ipynb) |
+| 07-04 | [V2X and Cooperative Driving](07_Runtime_Assurance_and_Operations/04_v2x_cooperative_driving.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Runtime_Assurance_and_Operations/04_v2x_cooperative_driving.ipynb) |
+| 07-05 | [Field Safety Monitoring with Real Crash Reports](07_Runtime_Assurance_and_Operations/05_field_safety_monitoring.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Runtime_Assurance_and_Operations/05_field_safety_monitoring.ipynb) |
+| 07-06 | [Industry Deployment: Status, Evidence and Operations](07_Runtime_Assurance_and_Operations/06_industry_deployment.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/07_Runtime_Assurance_and_Operations/06_industry_deployment.ipynb) |
 
 </details>
 
 <details>
-<summary><b>08 · Standards, Regulation and Safety Case</b> — 4 notebooks</summary>
+<summary><b>08 · Standards, Regulation and Safety Case</b> — 5 notebooks</summary>
 
 | # | Notebook | Level | Open |
 |---|---|---|---|
@@ -162,6 +168,7 @@ Expand a module to open any notebook directly in Colab:
 | 08-02 | [Automotive Regulation and Type Approval for Automated Driving](08_Standards_Regulation_and_Safety_Case/02_regulation_and_type_approval.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/02_regulation_and_type_approval.ipynb) |
 | 08-03 | [Standards Gaps and Open Problems in AV Safety](08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb) |
 | 08-04 | [Safety Cases and Goal Structuring Notation (GSN)](08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb) |
+| 08-05 | [Capstone: Pedestrian AEB from Requirement to Release Decision](08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb) |
 
 </details>
 
