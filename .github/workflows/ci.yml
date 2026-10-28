@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  toolkit:
+    name: Toolkit tests and course linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install toolkit
+        run: pip install -e ".[test]"
+      - name: Unit tests (Python + browser-tool parity under Node)
+        run: pytest -q
+      - name: Course linter
+        run: python scripts/check_course.py
+      - name: Module READMEs are up to date with the notebook headers
+        run: python scripts/build_readmes.py --check
+
+  notebooks:
+    name: Execute notebooks (${{ matrix.module }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        module:
+          - 01_Perception
+          - 02_Failures_and_Robustness
+          - 03_Functional_Safety_ISO26262
+          - 04_SOTIF_ISO21448
+          - 05_Cybersecurity_ISO21434
+          - 06_AI_Safety_ISO_PAS_8800
+          - 07_Runtime_Assurance_and_Operations
+          - 08_Standards_Regulation_and_Safety_Case
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies (CPU-only PyTorch)
+        run: |
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements.txt
+      - name: Execute every notebook in the module
+        env:
+          MPLBACKEND: Agg
+        run: python scripts/execute_notebooks.py ${{ matrix.module }}/*.ipynb

@@ -1,0 +1,14 @@
+name: Suggest a topic
+description: Propose a new notebook, tool or improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Topic and why it matters for AV safety or security
+    validations:
+      required: true
+  - type: textarea
+    id: refs
+    attributes:
+      label: Key references

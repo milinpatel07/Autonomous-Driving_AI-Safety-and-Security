@@ -1,448 +1,454 @@
-# TARA Template: Threat Analysis and Risk Assessment (ISO/SAE 21434)
+# TARA Template: Threat Analysis and Risk Assessment (ISO/SAE 21434:2021)
 
-## Document Information
+This template follows the TARA methods of ISO/SAE 21434:2021 **clause 15** (steps 15.3–15.9). It also covers the concept-phase outputs of **clause 9** (cybersecurity goals, claims, concept) and the interface to the ISO 26262 HARA.
+The rating tables are the **informative examples** of Annexes E (CAL), F (impact), G (attack feasibility) and H (risk matrix). If your organisation uses its own tables, replace them and record the change in Section 0.
+
+The worked examples (*Example:* rows) come from the AEB TARA in
+[`05_Cybersecurity_ISO21434/02_tara.ipynb`](../05_Cybersecurity_ISO21434/02_tara.ipynb). They are illustrative and synthetic, and are not the result of a real assessment.
+
+Delete the example rows when you fill in the template.
+
+---
+
+## Document information
 
 | Field | Value |
 |-------|-------|
-| **System/Item Name** | [Enter system name] |
-| **Version** | [Version number] |
-| **Date** | [Date] |
-| **Prepared by** | [Name/Team] |
-| **Reviewed by** | [Name/Team] |
-| **Security Classification** | [Confidential/Restricted/Internal] |
-| **Status** | Draft / In Review / Approved |
+| **Item name** | [Enter item name] |
+| **Item definition reference** | [Document ID/version, shared with the HARA] |
+| **HARA reference** | [Document ID/version] |
+| **TARA version** | [Version number] |
+| **Date** | [YYYY-MM-DD] |
+| **Prepared by** | [Name/role] |
+| **Reviewed by** | [Name/role, independence level] |
+| **Information classification** | [Confidential/Restricted/Internal] |
+| **Status** | Draft / In review / Released |
 
 ---
 
-## 1. Item Definition
+## 0. Method description
 
-### 1.1 System Description
+Record the methods so that a reviewer, or an auditor following ISO/SAE PAS 5112, can reproduce every rating.
 
-**Item Name:** [System or component being analyzed]
-
-**Purpose:** [Brief description of functionality]
-
-**Connectivity:**
-- External interfaces: [List all external connections]
-- Communication protocols: [List protocols: CAN, Ethernet, V2X, etc.]
-- Update mechanisms: [OTA, diagnostic port, etc.]
-
-**Example:**
-```
-Item Name: Pedestrian Detection and AEB System
-Purpose: Detect pedestrians and automatically brake to prevent collisions
-Connectivity:
-  - External interfaces: Camera, LIDAR, V2X module, cloud backend
-  - Protocols: CAN-FD, Ethernet, DSRC/C-V2X, HTTPS
-  - Updates: OTA updates for ML models and firmware
-```
-
-### 1.2 System Architecture
-
-[Insert architecture diagram showing data flows and attack surfaces]
-
-**Key Components:**
-1. [Component]: [Description and security relevance]
-2. [Component]: [Description and security relevance]
+| Aspect | Choice used in this TARA |
+|---|---|
+| Impact rating | Annex F categories Safety, Financial, Operational, Privacy (SFOP), road-user perspective; optional additional stakeholder categories: [list] |
+| Feasibility method | Attack-potential (Annex G.2) / CVSS exploitability (G.3) / attack vector (G.4) — **select one primary method** |
+| Attack path aggregation | e.g. AND = factor-wise maximum over steps; OR = most feasible path (minimum attack potential) |
+| Attack vector convention | e.g. OBD-II diagnostic access = Local; physical-environment sensor attacks = Physical |
+| Risk matrix | Annex H example (Section 7) / organisation-specific: [reference] |
+| Risk treatment policy | e.g. risk ≥ 3 → Reduce; risk 2 with Severe safety impact → Reduce; otherwise Retain with claim |
+| Residual risk acceptance | e.g. residual risk ≤ 2 acceptable; higher values need documented acceptance by [role] |
+| CAL determination | Annex E example (impact × attack vector) / not used |
 
 ---
 
-## 2. Asset Identification
+## 1. Item definition (clause 9.3)
 
-Identify assets that require protection:
+The item definition should be **the same** as the one used for the ISO 26262 HARA.
 
-| Asset ID | Asset Name | Asset Type | Cybersecurity Property | Value/Criticality | Justification |
-|----------|------------|------------|----------------------|-------------------|---------------|
-| A-001 | [Name] | [Data/SW/HW/Function] | C / I / A | High/Medium/Low | [Why important] |
-| A-002 | | | | | |
+| Attribute | Content |
+|---|---|
+| Item / function | [Description] |
+| Boundary (included elements) | [ECUs, sensors, software, data] |
+| Interfaces (outside the boundary) | [Gateway, backend, other ECUs] |
+| External connectivity | [Cellular, Wi-Fi, Bluetooth, V2X, USB, OBD-II] |
+| Update mechanisms | [OTA, workshop reprogramming] |
+| Operating modes | [Active, degraded, diagnostic] |
+| Operational environment and assumptions | [e.g. gateway filters diagnostic traffic; backend operated under ISO/IEC 27001] |
 
-**Cybersecurity Properties:**
-- **C (Confidentiality)**: Prevent unauthorized disclosure
-- **I (Integrity)**: Prevent unauthorized modification
-- **A (Availability)**: Ensure authorized access when needed
+*Example:* AEB function (same item as the HARA in Module 03). Inside the boundary: front camera, front radar, perception ECU (DNN detector, fusion, AEB logic), its software, model weights and calibration data, and the CAN-FD link to the brake ECU. Interfaces: brake ECU, central gateway (diagnostics, OTA client), telematics unit, OEM backend.
 
-**Example:**
-| Asset ID | Asset Name | Asset Type | Cybersecurity Property | Value/Criticality | Justification |
-|----------|------------|------------|----------------------|-------------------|---------------|
-| A-001 | Camera sensor data | Data | **I** | Critical | False data → collision |
-| A-002 | ML model weights | Software | **I** | Critical | Poisoned model → failures |
-| A-003 | ECU firmware | Software | **I** | Critical | Malicious code → arbitrary behavior |
-| A-004 | V2X communication | Function | **I, A** | High | False messages → wrong decisions |
-| A-005 | OTA update channel | Function | **I** | Critical | Compromised updates → fleet-wide impact |
-| A-006 | User privacy data | Data | **C** | High | Regulatory compliance (GDPR) |
+### 1.1 Safety interface (from the HARA)
 
----
+| Safety goal | Description | ASIL | FTTI | Safe state |
+|---|---|---|---|---|
+| SG-xx | [from HARA] | [QM/A–D] | [ms] | [from HARA] |
 
-## 3. Threat Scenario Identification
+*Example (from the HARA in [Module 03, Notebook 02](../03_Functional_Safety_ISO26262/02_hara.ipynb): S/E/C of the hazardous event that determines each goal's ASIL, which is the maximum over the events it covers; ASIL per ISO 26262-3:2018 Table 4):*
 
-### 3.1 Threat Actors
-
-Identify potential attackers:
-
-| Actor Type | Motivation | Capability Level | Examples |
-|------------|------------|------------------|----------|
-| Script kiddie | Curiosity, fame | Low | Hobbyist using public exploits |
-| Skilled individual | Financial gain, revenge | Medium | Experienced hacker |
-| Organized crime | Financial gain | High | Ransomware groups |
-| Competitor | Corporate espionage | High | Industrial espionage |
-| Nation state | Strategic advantage | Very High | APT groups |
-| Insider threat | Various | Varies | Malicious employee/contractor |
-
-**Relevant actors for this system:** [List applicable threat actors]
-
-### 3.2 Attack Goals
-
-What might attackers want to achieve?
-
-- [ ] Cause safety hazard (injury/death)
-- [ ] Steal sensitive data (privacy breach)
-- [ ] Disable system (availability attack)
-- [ ] Take control of vehicle
-- [ ] Financial fraud
-- [ ] Reputation damage
-- [ ] Espionage (steal IP)
-- [ ] Other: [Specify]
+| Safety goal | Description | S/E/C | ASIL | FTTI |
+|---|---|---|---|---|
+| SG-01 | Avoid unintended AEB deceleration | S3/E4/C3 (HE-03) | D | 300 ms |
+| SG-02 | Avoid omission of AEB deceleration when a collision with a pedestrian or a stationary vehicle is imminent | S3/E3/C2 (HE-02; HE-01: S3/E2/C2) | B | 500 ms |
 
 ---
 
-## 4. Threat Scenarios
+## 2. Asset identification and damage scenarios (15.3)
 
-For each asset, identify threat scenarios:
+### 2.1 Assets
 
-| Threat ID | Asset ID | Threat Scenario | Attack Vector | Threat Actor | Attack Goal |
-|-----------|----------|-----------------|---------------|--------------|-------------|
-| T-001 | A-001 | [What attack] | [How executed] | [Who] | [Why] |
-| T-002 | | | | | |
+| Asset ID | Asset | Category | Cybersecurity properties | Rationale |
+|---|---|---|---|---|
+| A-xx | [Name] | Data / Software / Communication / Function / Hardware | C / I / A (+ authenticity, authorisation, non-repudiation if used) | [Why relevant] |
 
-**Example:**
-| Threat ID | Asset ID | Threat Scenario | Attack Vector | Threat Actor | Attack Goal |
-|-----------|----------|-----------------|---------------|--------------|-------------|
-| T-001 | A-001 | Camera feed spoofing via adversarial patch | Physical placement of patch in environment | Skilled individual | Cause collision |
-| T-002 | A-002 | Model poisoning via compromised OTA update | Network MITM attack or backend compromise | Organized crime | Fleet-wide disruption |
-| T-003 | A-003 | Firmware tampering via diagnostic port | Physical access to OBD-II port | Skilled individual | Vehicle theft enabler |
-| T-004 | A-004 | V2X message injection | Wireless attack, rogue V2X transmitter | Skilled individual | Cause wrong maneuvers |
-| T-005 | A-001 | Sensor blinding via laser attack | Directed energy weapon | Skilled individual | Disable detection |
+*Example:*
 
----
+| Asset ID | Asset | Category | Properties |
+|---|---|---|---|
+| A-01 | Camera video stream (camera → perception ECU) | Data | I, A |
+| A-02 | Perception DNN weights and configuration | Software | I |
+| A-03 | Object list / brake request on CAN-FD | Communication | I, A |
+| A-04 | Perception-ECU firmware | Software | I |
+| A-05 | Camera calibration parameters | Data | I |
+| A-06 | Recorded AEB event clips (camera images) | Data | C |
 
-## 5. Impact Rating
+### 2.2 Damage scenarios
 
-Rate the impact of successful attacks on four dimensions (Scale: 1-4):
+Describe the adverse consequence **for the road user** (driver, passengers, pedestrians, other traffic participants). Link it to a safety goal if it violates one.
 
-### 5.1 Impact Categories
+| DS ID | Damage scenario | Safety | Financial | Operational | Privacy | Impact (max) | Safety goal | Rationale |
+|---|---|---|---|---|---|---|---|---|
+| DS-xx | [Description] | [S/M/Mo/N] | | | | | [SG-xx / –] | [Why] |
 
-| Rating | Safety | Financial | Operational | Privacy |
-|--------|--------|-----------|-------------|---------|
-| **4 - Severe** | Fatalities probable | > $10M loss | Complete system failure | Massive data breach |
-| **3 - Major** | Serious injuries | $1M - $10M | Major degradation | Significant breach |
-| **2 - Moderate** | Minor injuries | $100K - $1M | Partial degradation | Limited breach |
-| **1 - Negligible** | No injuries | < $100K | Minor impact | No privacy impact |
+*Example:*
 
-### 5.2 Impact Assessment
-
-| Threat ID | Safety Impact | Financial Impact | Operational Impact | Privacy Impact | Overall Impact |
-|-----------|--------------|------------------|-------------------|----------------|----------------|
-| T-001 | [1-4] | [1-4] | [1-4] | [1-4] | [Max of all] |
-| T-002 | | | | | |
-
-**Example:**
-| Threat ID | Safety Impact | Financial Impact | Operational Impact | Privacy Impact | Overall Impact |
-|-----------|--------------|------------------|-------------------|----------------|----------------|
-| T-001 | 4 | 2 | 3 | 1 | **4** |
-| T-002 | 4 | 4 | 4 | 2 | **4** |
-| T-003 | 4 | 3 | 4 | 2 | **4** |
-| T-004 | 3 | 2 | 3 | 1 | **3** |
-| T-005 | 4 | 1 | 3 | 1 | **4** |
+| DS ID | Damage scenario | S | F | O | P | Impact | SG |
+|---|---|---|---|---|---|---|---|
+| DS-01 | Unintended emergency braking in following traffic → rear-end collision | Severe | Moderate | Moderate | Negligible | Severe | SG-01 |
+| DS-02 | No/late emergency braking for a pedestrian in the path → fatal collision | Severe | Major | Major | Negligible | Severe | SG-02 |
+| DS-03 | AEB unavailable (degraded mode, driver warned) | Negligible | Negligible | Major | Negligible | Major | – |
+| DS-04 | Recorded images of identifiable people disclosed | Negligible | Moderate | Negligible | Major | Major | – |
 
 ---
 
-## 6. Attack Feasibility Assessment
+## 3. Threat scenario identification (15.4)
 
-Rate feasibility based on five factors:
+A threat scenario states the **asset**, the compromised **cybersecurity property** and the **cause**, and links to damage scenarios.
+STRIDE may be used as a brainstorming heuristic. Threat actors and motivation are optional context; they do not replace the feasibility rating.
 
-### 6.1 Feasibility Factors
+| TS ID | Asset | Property | Cause (how) | STRIDE | Damage scenario(s) |
+|---|---|---|---|---|---|
+| TS-xx | A-xx | [I/C/A] | [Cause] | [S/T/R/I/D/E] | DS-xx |
 
-| Factor | Very Low (0) | Low (1) | Medium (4) | High (7) | Very High (10) |
-|--------|--------------|---------|------------|----------|----------------|
-| **Elapsed Time** | > 1 year | 6-12 months | 3-6 months | 1-3 months | < 1 month |
-| **Specialist Expertise** | Layman | Proficient | Expert | Multiple experts | Nation state |
-| **Knowledge of Item** | Public info | Restricted | Confidential | Strictly confidential | Top secret |
-| **Window of Opportunity** | Unlimited | Easy access | Moderate access | Difficult access | Very difficult |
-| **Equipment** | Standard | Specialized | Bespoke | Multiple bespoke | State-level resources |
+*Example:*
 
-### 6.2 Attack Feasibility Rating
+| TS ID | Asset | Property | Cause | Damage scenario(s) |
+|---|---|---|---|---|
+| TS-01 | A-03 | Integrity | Forged object-list/brake-request frames injected on CAN-FD | DS-01 |
+| TS-02 | A-02 | Integrity | Manipulated DNN weights installed through a malicious software update | DS-02 |
+| TS-03 | A-03 | Integrity | Physical adversarial patch suppresses pedestrian detections | DS-02 |
+| TS-04 | A-01 | Availability | Dazzling of the camera with a high-power light source | DS-02, DS-03 |
+| TS-05 | A-05 | Integrity | Calibration parameters rewritten via diagnostic services | DS-02 |
+| TS-06 | A-06 | Confidentiality | Event clips read out via diagnostic services | DS-04 |
+| TS-07 | A-03 | Availability | Flooding of the CAN-FD segment with high-priority frames | DS-03 |
 
-Sum the scores and determine overall feasibility:
-
-| Total Score | Feasibility Rating |
-|-------------|--------------------|
-| 0-9 | Very Low |
-| 10-17 | Low |
-| 18-24 | Medium |
-| 25-33 | High |
-| 34+ | Very High |
-
-### 6.3 Feasibility Analysis
-
-| Threat ID | Time | Expertise | Knowledge | Opportunity | Equipment | Total Score | Feasibility |
-|-----------|------|-----------|-----------|-------------|-----------|-------------|-------------|
-| T-001 | [0-10] | [0-10] | [0-10] | [0-10] | [0-10] | [Sum] | [Rating] |
-| T-002 | | | | | | | |
-
-**Example:**
-| Threat ID | Time | Expertise | Knowledge | Opportunity | Equipment | Total Score | Feasibility |
-|-----------|------|-----------|-----------|-------------|-----------|-------------|-------------|
-| T-001 | 4 (Medium) | 4 (Expert) | 1 (Public) | 0 (Unlimited) | 1 (Specialized patch) | **10** | **Low** |
-| T-002 | 7 (High) | 7 (Multiple experts) | 7 (Strictly confidential) | 7 (Difficult) | 7 (Multiple bespoke) | **35** | **Very High** |
-| T-003 | 4 (Medium) | 4 (Expert) | 4 (Confidential) | 4 (Moderate) | 4 (Bespoke tools) | **20** | **Medium** |
-| T-004 | 4 (Medium) | 4 (Expert) | 1 (Public) | 0 (Unlimited) | 4 (Bespoke radio) | **13** | **Low** |
-| T-005 | 1 (Low) | 4 (Expert) | 1 (Public) | 4 (Moderate) | 7 (Laser equipment) | **17** | **Low** |
+Note: physical-world sensor attacks (TS-03, TS-04) must also be analysed under ISO 21448 (SOTIF) and ISO/PAS 8800.
 
 ---
 
-## 7. Risk Determination
+## 4. Impact rating (15.5)
 
-Combine impact and feasibility to determine risk level:
+Rate each damage scenario in each category. The impact of a threat scenario is the worst impact of its linked damage scenarios.
+Impact is rated **without** the controls that this TARA will define.
 
-### 7.1 Risk Matrix
+| Rating | Safety (ISO 26262 S-class) | Financial (road user) | Operational | Privacy |
+|---|---|---|---|---|
+| **Severe** | S3: life-threatening or fatal injuries | Catastrophic consequences the road user might not overcome | Loss or impairment of a core vehicle function | Significant harm; highly sensitive, easily linkable data |
+| **Major** | S2: severe injuries, survival probable | Substantial consequences the road user can overcome | Loss or impairment of an important vehicle function | Serious harm |
+| **Moderate** | S1: light and moderate injuries | Inconvenient consequences, overcome with limited resources | Partial degradation of a vehicle function | Moderate harm |
+| **Negligible** | S0: no injuries | No or negligible consequences | No perceived impairment | No or negligible harm |
 
-|                | Very Low Feasibility | Low Feasibility | Medium Feasibility | High Feasibility | Very High Feasibility |
-|----------------|---------------------|-----------------|-------------------|------------------|-----------------------|
-| **Impact 4**   | Medium | High | High | Critical | Critical |
-| **Impact 3**   | Low | Medium | High | High | Critical |
-| **Impact 2**   | Low | Low | Medium | Medium | High |
-| **Impact 1**   | Negligible | Low | Low | Medium | Medium |
-
-### 7.2 Risk Assessment
-
-| Threat ID | Impact | Feasibility | Risk Level | Treatment Decision |
-|-----------|--------|-------------|------------|-------------------|
-| T-001 | [1-4] | [Very Low - Very High] | [Risk] | [Avoid/Reduce/Share/Retain] |
-| T-002 | | | | |
-
-**Risk Treatment Options:**
-- **Avoid**: Remove the functionality (eliminate risk)
-- **Reduce**: Implement mitigations (reduce likelihood or impact)
-- **Share**: Transfer risk (insurance, supplier responsibility)
-- **Retain**: Accept the risk (if within acceptable threshold)
-
-**Example:**
-| Threat ID | Impact | Feasibility | Risk Level | Treatment Decision |
-|-----------|--------|-------------|------------|-------------------|
-| T-001 | 4 | Low | **High** | **Reduce** (implement detection + sensor fusion) |
-| T-002 | 4 | Very High | **Critical** | **Reduce** (code signing + secure boot + HSM) |
-| T-003 | 4 | Medium | **High** | **Reduce** (port authentication + logging) |
-| T-004 | 3 | Low | **Medium** | **Reduce** (message authentication + plausibility checks) |
-| T-005 | 4 | Low | **High** | **Reduce** (redundant sensors + health monitoring) |
+Optional: add organisation-defined categories for other stakeholders, e.g. OEM recall cost or reputation, in **separate** columns. Do not mix them into the road-user rating.
 
 ---
 
-## 8. CAL (Cybersecurity Assurance Level) Determination
+## 5. Attack path analysis (15.6)
 
-Determine CAL based on risk level (simplified approach):
+List one or more attack paths per threat scenario (OR). Each path is a sequence of steps (AND). The entry step determines the attack vector.
+Attack trees are a common notation.
 
-| Risk Level | CAL | Description |
-|------------|-----|-------------|
-| Negligible | No CAL required | Standard quality processes |
-| Low | CAL 1 | Basic security measures |
-| Medium | CAL 2 | Moderate security assurance |
-| High | CAL 3 | High security assurance |
-| Critical | CAL 4 | Highest security assurance |
+| TS ID | Path ID | Step | Entry vector | Elapsed time | Expertise | Knowledge | Window | Equipment |
+|---|---|---|---|---|---|---|---|---|
+| TS-xx | AP-xx | 1. [Action] | [N/A/L/P] | | | | | |
+| | | 2. [Action] | | | | | | |
 
-### CAL Assignment
+*Example (TS-01; values are attack-potential points, Section 6):*
 
-| Threat ID | Risk Level | CAL | Justification |
-|-----------|------------|-----|---------------|
-| T-001 | High | **3** | Safety-critical, high impact |
-| T-002 | Critical | **4** | Fleet-wide safety impact |
-| T-003 | High | **3** | Direct vehicle control |
-| T-004 | Medium | **2** | Limited scope, detectable |
-| T-005 | High | **3** | Safety-critical sensor |
-
----
-
-## 9. Cybersecurity Goals and Requirements
-
-### 9.1 Cybersecurity Goals
-
-Derive high-level security goals from threat scenarios:
-
-| CG ID | Related Threat(s) | CAL | Cybersecurity Goal |
-|-------|-------------------|-----|-------------------|
-| CG-001 | T-001 | 3 | Prevent unauthorized manipulation of camera sensor data |
-| CG-002 | T-002 | 4 | Ensure integrity of ML model and firmware updates |
-| CG-003 | T-003 | 3 | Protect ECU firmware from tampering |
-| CG-004 | T-004 | 2 | Ensure authenticity and integrity of V2X messages |
-| CG-005 | T-005 | 3 | Detect and respond to sensor attacks |
-
-### 9.2 Cybersecurity Requirements
-
-Derive detailed requirements from cybersecurity goals:
-
-| CR ID | CG ID | CAL | Cybersecurity Requirement | Verification Method |
-|-------|-------|-----|---------------------------|---------------------|
-| CR-001.1 | CG-001 | 3 | System shall detect adversarial patterns in camera feed using anomaly detection | Penetration testing |
-| CR-001.2 | CG-001 | 3 | System shall use sensor fusion (camera + LIDAR) for cross-validation | Integration testing |
-| CR-001.3 | CG-001 | 3 | System shall monitor confidence scores and trigger alerts on anomalies | Runtime testing |
-| CR-002.1 | CG-002 | 4 | All OTA packages shall be signed using RSA-4096 or equivalent | Code review + testing |
-| CR-002.2 | CG-002 | 4 | ECU shall verify signature before installing updates | Negative testing |
-| CR-002.3 | CG-002 | 4 | Private signing keys shall be stored in HSM | Audit |
-| CR-002.4 | CG-002 | 4 | Secure boot shall verify firmware integrity on startup | Boot testing |
-| CR-003.1 | CG-003 | 3 | Diagnostic port access shall require authentication | Penetration testing |
-| CR-003.2 | CG-003 | 3 | All diagnostic activities shall be logged | Log review |
-| CR-004.1 | CG-004 | 2 | V2X messages shall be authenticated using PKI | Protocol testing |
-| CR-004.2 | CG-004 | 2 | System shall validate message plausibility using sensor data | Integration testing |
-| CR-005.1 | CG-005 | 3 | System shall monitor sensor health (saturation, dropout) | Fault injection |
-| CR-005.2 | CG-005 | 3 | Redundant sensors shall be used for critical detection | Failure mode testing |
+| Path | Step | Vector | ET | Ex | Kn | Win | Eq |
+|---|---|---|---|---|---|---|---|
+| AP-01a | 1. Remote code execution on the telematics unit | Network | 17 | 6 | 7 | 0 | 4 |
+| | 2. Bypass gateway routing to the AEB segment | | 4 | 6 | 7 | 0 | 0 |
+| | 3. Forge object-list frames | | 1 | 3 | 3 | 0 | 0 |
+| | **Aggregated (factor-wise max)** | | **17** | **6** | **7** | **0** | **4** → **34** |
+| AP-01b | 1. Splice a device into CAN-FD wiring at the radar connector | Physical | 1 | 3 | 3 | 4 | 4 |
+| | 2. Forge object-list frames | | 1 | 3 | 3 | 0 | 0 |
+| | **Aggregated** | | **1** | **3** | **3** | **4** | **4** → **15** |
 
 ---
 
-## 10. Verification and Validation
+## 6. Attack feasibility rating (15.7)
 
-### 10.1 Security Testing Plan
+### 6.1 Attack-potential approach (Annex G.2; values from ISO/IEC 18045)
 
-| Test Type | CAL 1 | CAL 2 | CAL 3 | CAL 4 |
-|-----------|-------|-------|-------|-------|
-| Vulnerability scan | ++ | ++ | ++ | ++ |
-| Penetration testing | + | ++ | ++ | ++ |
-| Fuzzing | + | + | ++ | ++ |
-| Code review | + | ++ | ++ | ++ |
-| Cryptographic validation | + | ++ | ++ | ++ |
-| Independent assessment | - | + | ++ | ++ |
+| Factor | Values |
+|---|---|
+| Elapsed time | ≤1 day **0** · ≤1 week **1** · ≤1 month **4** · ≤6 months **17** · >6 months **19** |
+| Specialist expertise | Layman **0** · Proficient **3** · Expert **6** · Multiple experts **8** |
+| Knowledge of the item | Public **0** · Restricted **3** · Confidential **7** · Strictly confidential **11** |
+| Window of opportunity | Unlimited **0** · Easy **1** · Moderate **4** · Difficult **10** |
+| Equipment | Standard **0** · Specialised **4** · Bespoke **7** · Multiple bespoke **9** |
 
-++ = Highly Recommended, + = Recommended, - = Optional
+| Attack potential (sum) | Attack feasibility |
+|---|---|
+| 0–13 | **High** |
+| 14–19 | **Medium** |
+| 20–24 | **Low** |
+| ≥ 25 | **Very Low** |
 
-### 10.2 Test Results
+A higher attack potential means a harder attack and a lower feasibility. There is no "Very High" class.
 
-| Test ID | Requirement(s) Tested | Test Method | Result | Issues Found |
-|---------|----------------------|-------------|--------|--------------|
-| TEST-001 | CR-001.1 | Penetration test with adversarial patches | [Pass/Fail] | [Issues] |
-| TEST-002 | CR-002.1, CR-002.2 | Negative testing with unsigned packages | [Pass/Fail] | [Issues] |
+### 6.2 Alternative approaches
 
----
+- **CVSS-based (G.3):** map the CVSS v3.1 *exploitability* sub-score: 2.96–3.89 High, 2.00–2.95 Medium, 1.06–1.99 Low, 0.12–1.05 Very Low.
+- **Attack-vector-based (G.4):** Network → High, Adjacent → Medium, Local → Low, Physical → Very Low. This method is coarse. It underrates physical-world sensor attacks, which need no access to the vehicle.
 
-## 11. Supply Chain Security
+### 6.3 Feasibility per threat scenario
 
-### 11.1 Supplier/Partner Security
+| TS ID | Most feasible path | Attack potential | Feasibility | Vector (best path) | Most remote vector (for CAL) |
+|---|---|---|---|---|---|
+| TS-xx | AP-xx | | | | |
 
-| Supplier/Partner | Component/Service | Security Requirements | Verification |
-|------------------|-------------------|----------------------|--------------|
-| [Name] | [Component] | [Requirements] | [How verified] |
+*Example:*
 
-**Example:**
-| Supplier/Partner | Component/Service | Security Requirements | Verification |
-|------------------|-------------------|----------------------|--------------|
-| Camera Vendor | Camera module | Secure firmware, tamper detection | Supplier audit |
-| Cloud Provider | OTA backend | ISO 27001, SOC 2 Type II | Certification review |
-| ML Model Provider | Pre-trained models | Provenance tracking, integrity checks | Contract + validation |
-
----
-
-## 12. Incident Response Plan
-
-### 12.1 Incident Detection
-
-- [ ] Security monitoring system deployed
-- [ ] Anomaly detection active
-- [ ] Log aggregation and analysis
-- [ ] Threat intelligence feeds integrated
-
-### 12.2 Response Procedures
-
-| Severity | Response Priority | Actions |
-|----------|-------------------|---------|
-| Critical | Immediate | [Specific actions] |
-| High | Urgent | [Specific actions] |
-| Medium | Standard | [Specific actions] |
-| Low | Routine | [Specific actions] |
-
-### 12.3 Communication Plan
-
-| Stakeholder | When to Notify | Method | Responsible Party |
-|-------------|---------------|--------|-------------------|
-| Internal security team | All incidents | [Email/SMS/etc.] | [Role] |
-| Management | High/Critical | [Method] | [Role] |
-| Customers | Safety impact | [Method] | [Role] |
-| Regulators | As required by law | [Method] | [Role] |
+| TS | Path | AP | Feasibility | Vector (best) | Most remote vector |
+|---|---|---|---|---|---|
+| TS-01 | AP-01b | 15 | Medium | Physical | Network |
+| TS-02 | AP-02b | 41 | Very Low | Local | Network |
+| TS-03 | AP-03a | 14 | Medium | Physical | Physical |
+| TS-04 | AP-04a | 7 | High | Physical | Physical |
+| TS-05 | AP-05a | 21 | Low | Local | Local |
+| TS-06 | AP-06a | 21 | Low | Local | Local |
+| TS-07 | AP-07a | 11 | High | Physical | Physical |
 
 ---
 
-## 13. Continuous Monitoring
+## 7. Risk value determination (15.8)
 
-### 13.1 Monitoring Metrics
+Example risk matrix (Annex H). The risk value runs from 1 (lowest) to 5 (highest).
 
-| Metric | Target | Current | Alert Threshold |
-|--------|--------|---------|-----------------|
-| Failed authentication attempts | [Target] | [Current] | [Threshold] |
-| Anomaly detection rate | [Target] | [Current] | [Threshold] |
-| Patch deployment time | [Target] | [Current] | [Threshold] |
-| Vulnerabilities open | [Target] | [Current] | [Threshold] |
+| Impact \ Feasibility | Very Low | Low | Medium | High |
+|---|---|---|---|---|
+| **Severe** | 2 | 3 | 4 | 5 |
+| **Major** | 1 | 2 | 3 | 4 |
+| **Moderate** | 1 | 2 | 2 | 3 |
+| **Negligible** | 1 | 1 | 1 | 1 |
 
-### 13.2 Update Triggers
+| TS ID | Impact | Feasibility | Risk value |
+|---|---|---|---|
+| TS-xx | | | |
 
-TARA shall be updated when:
-- [ ] New threat intelligence available
-- [ ] Vulnerability discovered
-- [ ] System architecture changes
-- [ ] New connectivity added
-- [ ] Security incident occurs
-- [ ] Annual review (minimum)
+*Example:* TS-01 Severe × Medium = 4; TS-02 Severe × Very Low = 2; TS-03 Severe × Medium = 4; TS-04 Severe × High = 5; TS-05 Severe × Low = 3; TS-06 Major × Low = 2; TS-07 Major × High = 4.
 
 ---
 
-## 14. Approval and Sign-off
+## 8. Risk treatment decision (15.9)
 
-### Assumptions and Limitations
-[List assumptions made during TARA]
+**Every** threat scenario gets a decision with a rationale.
 
-### Open Issues
-| Issue ID | Description | Owner | Target Date |
-|----------|-------------|-------|-------------|
+| Option | Meaning | Output |
+|---|---|---|
+| Avoid | Remove the activity or function that causes the risk | Design change |
+| Reduce | Apply controls | Cybersecurity goal (Section 9) |
+| Share | Transfer, e.g. by contract or insurance | Cybersecurity claim |
+| Retain | Accept the risk | Cybersecurity claim |
+
+| TS ID | Risk value | Decision | Rationale | Goal / claim ID |
+|---|---|---|---|---|
+| TS-xx | | | | |
+
+*Example (policy from Section 0):*
+
+| TS | Risk | Decision | Rationale | Goal/claim |
+|---|---|---|---|---|
+| TS-01 | 4 | Reduce | Risk ≥ 3 | CG-01 |
+| TS-02 | 2 | Reduce | Risk 2 with Severe safety impact | CG-02 |
+| TS-03 | 4 | Reduce | Risk ≥ 3 | CG-03 |
+| TS-04 | 5 | Reduce | Risk ≥ 3 | CG-04 |
+| TS-05 | 3 | Reduce | Risk ≥ 3 | CG-05 |
+| TS-06 | 2 | Retain | Within threshold; no Severe safety impact | CC-06 |
+| TS-07 | 4 | Reduce | Risk ≥ 3 | CG-07 |
+
+---
+
+## 9. Cybersecurity goals, claims and CAL (clause 9.4; Annex E)
+
+A **cybersecurity goal** is a concept-level requirement to protect an asset's property against a threat scenario. Express it in terms of the property and the threat, not as a specific mechanism.
+A **cybersecurity claim** documents why a retained or shared risk is acceptable.
+
+A **CAL** may be assigned to each goal to scale the rigour of assurance activities. The Annex E example (informative) uses **impact × attack vector**:
+
+| Impact \ Attack vector | Physical | Local | Adjacent | Network |
+|---|---|---|---|---|
+| **Severe** | CAL 2 | CAL 3 | CAL 4 | CAL 4 |
+| **Major** | CAL 1 | CAL 2 | CAL 3 | CAL 4 |
+| **Moderate** | CAL 1 | CAL 1 | CAL 2 | CAL 3 |
+| **Negligible** | – | – | – | – |
+
+A CAL is **not** a risk value and has **no** correspondence to an ASIL.
+
+| ID | Type | TS | Statement | CAL |
+|---|---|---|---|---|
+| CG-xx / CC-xx | Goal / claim | TS-xx | [Statement] | [1–4 / n/a] |
+
+*Example:*
+
+| ID | Type | TS | Statement | CAL |
+|---|---|---|---|---|
+| CG-01 | Goal | TS-01 | The integrity of the object list / brake request on CAN-FD shall be protected against forged frames injected on CAN-FD | 4 (Severe, Network) |
+| CG-02 | Goal | TS-02 | The integrity of the perception DNN weights shall be protected against manipulated software updates | 4 (Severe, Network) |
+| CG-03 | Goal | TS-03 | The integrity of the object list shall be protected against physical adversarial patches | 2 (Severe, Physical) |
+| CG-04 | Goal | TS-04 | The availability of the camera video stream shall be protected against dazzling (detect and degrade) | 2 (Severe, Physical) |
+| CG-05 | Goal | TS-05 | The integrity of the camera calibration parameters shall be protected against modification via diagnostic services | 3 (Severe, Local) |
+| CC-06 | Claim | TS-06 | Risk value 2 retained; re-evaluated by cybersecurity monitoring (cl. 8) | n/a |
+| CG-07 | Goal | TS-07 | The availability of the object list / brake request shall be protected against bus flooding | 1 (Major, Physical) |
+
+---
+
+## 10. Cybersecurity concept, controls and residual risk (clause 9.5)
+
+Refine each goal into cybersecurity requirements allocated to architecture elements. Then re-rate the feasibility (and the impact, if a control changes the damage scenario) to obtain the residual risk.
+
+| Req ID | Goal | Requirement | Allocated to | Verification method (cl. 10) |
+|---|---|---|---|---|
+| CR-xx.y | CG-xx | [Requirement] | [Element] | [Test/analysis/review] |
+
+| TS ID | Controls | Effect on feasibility/impact | Residual risk | Acceptable? / approved by |
+|---|---|---|---|---|
+| TS-xx | | | | |
+
+*Example:*
+
+| TS | Controls | Effect | Residual |
+|---|---|---|---|
+| TS-01 | AUTOSAR SecOC (truncated CMAC + freshness, keys in HSM); plausibility check in brake ECU | Knowledge → strictly confidential; AP 15 → 26 (Very Low) | 2 |
+| TS-02 | Signed packages (ISO 24089 / UN R156 process), secure boot, HSM-protected signing keys | Already Very Low | 2 |
+| TS-03 | AEB requires confirmation by the independent radar channel; perception plausibility monitor | AP 14 → 36 (Very Low) | 2 |
+| TS-04 | Blinding detection → degraded mode with driver warning | Damage scenario DS-02 → DS-03 (impact Major); feasibility unchanged (High) | 4: needs documented acceptance or further measures |
+| TS-05 | UDS Authentication 0x29 (ISO 14229-1:2020, certificate-based) replaces 0x27 seed/key | AP 21 → 29 (Very Low) | 2 |
+| TS-07 | Dedicated AEB segment not reachable from bumper connectors; bus-load monitoring | Window → difficult; AP 11 → 17 (Medium) | 3: needs documented acceptance or further measures |
+
+**Match controls to threats.** Link authentication (MAC or signature) protects data **in transit**. It does **not** detect physical-world manipulation of the scene, such as adversarial patches or dazzling. Those need diverse sensing, plausibility checks and robust or monitored ML.
+
+---
+
+## 11. Safety–security interface
+
+| Item | Content |
+|---|---|
+| Damage scenarios violating safety goals | [DS-xx → SG-xx] |
+| Threat scenarios with potential safety impact (to be communicated to the safety team) | [TS list per SG] |
+| Security controls credited in the safety concept | [Control, ASIL, independence argument] |
+| Safety mechanisms relied on by security | [e.g. none; note that E2E CRC/counters do not provide authenticity] |
+| Timing of security controls vs FTTI | [Detection + reaction time ≤ FTTI?] |
+| Interface agreement / communication channel | [Reference; ISO 26262-2:2018 Annex E, ISO/SAE 21434 cl. 5] |
+
+*Example:* SG-02 can be violated by TS-02, TS-03, TS-04 and TS-05. Camera blinding detection (3 frames × 33 ms) plus transition to degraded mode (50 ms) takes 149 ms, within the 500 ms FTTI. A backend VSOC response (hours) is **not** a safety mechanism.
+
+---
+
+## 12. Verification (clause 10) and validation (clause 11)
+
+| Activity | Purpose | Applied to |
+|---|---|---|
+| Requirements-based testing | Verify cybersecurity specifications | All CR |
+| Interface testing / fuzzing | Robustness of external and internal interfaces | Interfaces in scope |
+| Static analysis, code review | Detect implementation weaknesses | Software in scope |
+| Vulnerability scanning | Known vulnerabilities in components (SBOM-based) | All software components |
+| Penetration testing | Validate that the goals are achieved at vehicle level (cl. 11) | Item / vehicle |
+
+How rigour can scale with CAL (illustrative; organisation-defined, following the idea of ISO/SAE 21434 Annex E, informative):
+
+| Activity | CAL 1 | CAL 2 | CAL 3 | CAL 4 |
+|---|---|---|---|---|
+| Penetration testing depth | Basic | Grey-box | Grey-box, extended | White-box, extended |
+| Fuzzing | Optional | Recommended | Required | Required, coverage-guided |
+| Independence of review/testing | Same team | Different person | Different team | Independent organisation |
+
+| Test ID | Requirement(s) | Method | Result | Open findings |
+|---|---|---|---|---|
+| T-xx | CR-xx.y | [Method] | [Pass/Fail] | [IDs] |
+
+**Release criterion:** base it on **open** (unremediated) findings, e.g. no open critical or high findings. Remaining findings each need a documented risk assessment (cl. 8.6).
+
+---
+
+## 13. Distributed cybersecurity activities (clause 7)
+
+| Supplier / partner | Component or service | Responsibilities (cybersecurity interface agreement, Annex C) | Evidence |
+|---|---|---|---|
+| [Name] | [Component] | [Who performs TARA, testing, vulnerability management, incident response] | [Audit, work products] |
+
+*Example:* camera supplier (secure firmware update, vulnerability reporting); ML model supplier (provenance and integrity of weights, training-data governance); OTA backend operator (key management, ISO/IEC 27001 certification).
+
+---
+
+## 14. Continual activities (clause 8) and operations (clause 13)
+
+| Activity | Description | Owner |
+|---|---|---|
+| Cybersecurity monitoring (8.3) | Collect threat intelligence, vulnerability databases, field data (VSOC) | [Role] |
+| Event evaluation (8.4) | Decide whether an event affects this item | [Role] |
+| Vulnerability analysis (8.5) | Analyse weaknesses, e.g. with CVSS and attack paths | [Role] |
+| Vulnerability management (8.6) | Remediate or document the risk | [Role] |
+| Incident response (13.3) | Response plan, communication, remediation | [Role] |
+| Updates (13.4) | Secure update per UN R156 / ISO 24089 | [Role] |
+
+**TARA update triggers:**
+- [ ] New or changed interface or connectivity
+- [ ] Architecture or software change affecting assets
+- [ ] New vulnerability or threat intelligence relevant to the item (cl. 8)
+- [ ] Security incident in the field or at a comparable product
+- [ ] Organisation-defined periodic review (interval: [ ]), e.g. to keep the UN R155 CSMS evidence current
+- [ ] Change of end-of-support date (cl. 14)
+
+---
+
+## 15. Assumptions, open issues and approval
+
+### Assumptions
+
+| ID | Assumption | Validated by |
+|---|---|---|
+| AS-xx | [e.g. gateway blocks diagnostic write services while the vehicle is moving] | [Reference] |
+
+### Open issues
+
+| ID | Description | Owner | Target date |
+|---|---|---|---|
 | | | | |
 
-### Review History
+### Review history
+
 | Date | Reviewer | Comments | Status |
-|------|----------|----------|--------|
+|---|---|---|---|
 | | | | |
 
 ### Approval
+
 | Role | Name | Signature | Date |
-|------|------|-----------|------|
-| Cybersecurity Manager | | | |
-| Chief Information Security Officer | | | |
-| Product Security Lead | | | |
+|---|---|---|---|
+| Cybersecurity manager (item) | | | |
+| Functional safety manager (interface review) | | | |
+| Product owner / project manager | | | |
 
 ---
 
-## Notes and Best Practices
+## Notes and common mistakes
 
-### Tips for TARA:
-
-1. **Think like an attacker**: Consider all possible attack vectors
-2. **Don't underestimate feasibility**: Attacks get easier over time
-3. **Consider supply chain**: Attacks often come through partners
-4. **Defense in depth**: Multiple layers of security
-5. **Update regularly**: Threat landscape evolves constantly
-6. **Integration is key**: Link with ISO 26262 HARA
-
-### Common Mistakes:
-
-- ❌ Focusing only on network attacks (physical access matters!)
-- ❌ Ignoring insider threats
-- ❌ Underestimating nation-state capabilities
-- ❌ Not considering attack combinations
-- ❌ Weak cryptography choices
-- ❌ Insufficient monitoring and logging
-
-### Integration with ISO 26262:
-
-- Security vulnerabilities can cause safety hazards
-- TARA should reference HARA hazards
-- CAL should align with ASIL where applicable
-- Combined safety-security analysis recommended
+1. **Follow the order of clause 15.** Damage scenarios come with the assets, and impact is rated *before* attack path analysis.
+2. **Feasibility direction.** Layman, public information, standard equipment and an unlimited window mean **high** feasibility.
+3. **Road-user perspective.** Do not rate impact by OEM financial loss.
+4. **Every threat scenario gets a treatment decision**, including retained risks, which need a claim.
+5. **CAL ≠ risk, CAL ≠ ASIL.** Do not derive a CAL from the risk value, and do not "align" it with the ASIL.
+6. **Physical-world sensor attacks** are cheap and need no vehicle access. The attack-vector method and CVSS underrate them, so prefer the attack-potential method.
+7. **E2E protection (CRC/counter) is not authentication.** Use a keyed MAC (e.g. SecOC) against forgery.
+8. **V2X signatures are not encryption**, and a valid signature does not make the content true.
+9. Keep normative statements traceable to the standard's clause numbers. Mark informative examples as such.
 
 ---
 
-**Template Version:** 1.0
-**Last Updated:** 2025
-**Reference Standard:** ISO/SAE 21434:2021
+**Template version:** 2.0 (October 2026)
+**Reference standards:** ISO/SAE 21434:2021; ISO 26262:2018; UN R155, UN R156; ISO 24089:2023; ISO/SAE PAS 5112:2022
+**Companion notebook:** [`05_Cybersecurity_ISO21434/02_tara.ipynb`](../05_Cybersecurity_ISO21434/02_tara.ipynb)
+**Author:** Milin Patel · Hochschule Kempten · MIT Licence

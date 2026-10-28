@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validation Mileage Calculator</title>
+<meta name="description" content="How many failure-free miles are needed to demonstrate a failure rate statistically? Interactive version of the RAND 'Driving to Safety' argument.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><a class="home" href="index.html">← Safety tools</a><span class="muted">Kalra &amp; Paddock, RAND RR-1478 (2016)</span></header>
+  <h1>How many miles to show it is safe?</h1>
+  <p class="lead">If failures follow a Poisson process, observing <i>k</i> failures in <i>n</i> miles demonstrates a rate
+  below λ with confidence <i>C</i> only when <i>n</i> ≥ χ²<sub>C, 2(k+1)</sub> / (2λ). With zero failures this is
+  <i>n</i> = −ln(1−C)/λ. The numbers explain why road testing alone cannot validate an automated driving system.</p>
+
+  <div class="grid two">
+    <section class="card">
+      <h2>Target</h2>
+      <label class="field"><span>Benchmark event</span>
+        <select id="preset">
+          <option value="1.09e-8" selected>Fatalities: 1.09 per 100 M miles (US human drivers, 2013, as used by RAND)</option>
+          <option value="7.7e-7">Injuries: ≈ 77 reported injuries per 100 M miles (US, 2013, BTS)</option>
+          <option value="custom">Custom rate…</option>
+        </select>
+      </label>
+      <label class="field" id="custom-wrap" hidden><span>Rate (events per 100 million miles)</span>
+        <input type="number" id="custom" value="1.09" min="0.001" step="0.01" inputmode="decimal"></label>
+      <label class="field"><span>Required improvement over the benchmark: <output id="o-imp"></output></span>
+        <input type="range" id="imp" min="0" max="90" step="5" value="0">
+        <small>0 % = show "no worse than" the benchmark. Showing a rate 20 % lower means the target λ is 0.8 × benchmark.</small></label>
+      <label class="field"><span>Confidence: <output id="o-conf"></output></span>
+        <input type="range" id="conf" min="0.5" max="0.999" step="0.001" value="0.95"></label>
+      <label class="field"><span>Failures observed during testing: <output id="o-k"></output></span>
+        <input type="range" id="k" min="0" max="20" step="1" value="0"></label>
+      <h2>Fleet</h2>
+      <label class="field"><span>Vehicles: <output id="o-fleet"></output></span><input type="range" id="fleet" min="1" max="5000" step="1" value="100"></label>
+      <label class="field"><span>Miles per vehicle per year: <output id="o-mpy"></output></span>
+        <input type="range" id="mpy" min="10000" max="219000" step="1000" value="219000">
+        <small>219,000 = 24 h/day at 25 mph, the RAND assumption.</small></label>
+    </section>
+    <section class="card" aria-live="polite">
+      <h2>Result</h2>
+      <div class="kpi" id="kpis"></div>
+      <h2 style="margin-top:18px">Miles needed vs confidence</h2>
+      <canvas id="chart" width="640" height="360" role="img" aria-label="Required miles versus confidence level"></canvas>
+      <div class="note">This is a <em>demonstration</em> bound for a test fleet. RAND's "billions of miles" figure for showing a
+      relative improvement also uses statistical power; that calculation is in
+      <a href="https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/07_statistical_safety_validation.ipynb">Notebook 06-07</a>. The way out is a
+      combination of simulation, scenario-based testing (ISO 34502), formal methods and field monitoring.</div>
+    </section>
+  </div>
+  <footer>Formulas mirror the tested Python package <code>avsafety</code>. Teaching aid. MIT Licence · Milin Patel.</footer>
+</div>
+<script src="avsafety.js"></script>
+<script>
+(function () {
+  const A = AVSafety, $ = (id) => document.getElementById(id);
+  const css = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const big = (x) => x >= 1e9 ? (x / 1e9).toFixed(2) + " bn" : x >= 1e6 ? (x / 1e6).toFixed(0) + " M" : Math.round(x).toLocaleString("en-GB");
+  ["preset", "custom", "imp", "conf", "k", "fleet", "mpy"].forEach((id) => $(id).addEventListener("input", render));
+  window.addEventListener("resize", render);
+  function rate() {
+    const base = $("preset").value === "custom" ? parseFloat($("custom").value) / 1e8 : parseFloat($("preset").value);
+    return base * (1 - parseFloat($("imp").value) / 100);
+  }
+  function render() {
+    $("custom-wrap").hidden = $("preset").value !== "custom";
+    const lam = rate(), C = parseFloat($("conf").value), k = parseInt($("k").value, 10);
+    const fleet = parseInt($("fleet").value, 10), mpy = parseInt($("mpy").value, 10);
+    $("o-imp").textContent = $("imp").value + " %"; $("o-conf").textContent = (C * 100).toFixed(1) + " %";
+    $("o-k").textContent = k; $("o-fleet").textContent = fleet.toLocaleString("en-GB"); $("o-mpy").textContent = mpy.toLocaleString("en-GB");
+    if (!(lam > 0)) { $("kpis").innerHTML = "<div><b>–</b><span>Enter a positive rate</span></div>"; return; }
+    const n = A.milesToDemonstrate(lam, C, k), yrs = A.fleetYears(n, fleet, mpy);
+    $("kpis").innerHTML =
+      `<div><b>${big(n)}</b><span>miles with ≤ ${k} failure${k === 1 ? "" : "s"}</span></div>` +
+      `<div><b>${yrs < 1 ? (yrs * 12).toFixed(1) + " months" : yrs.toFixed(1) + " years"}</b><span>with ${fleet.toLocaleString("en-GB")} vehicles</span></div>` +
+      `<div><b>${(lam * 1e8).toPrecision(3)}</b><span>target rate per 100 M miles</span></div>`;
+    draw(lam, k, C);
+  }
+  function draw(lam, k, Csel) {
+    const c = $("chart"), dpr = window.devicePixelRatio || 1, w = c.clientWidth || 640, h = Math.round(w * 0.56);
+    c.width = w * dpr; c.height = h * dpr; c.style.height = h + "px";
+    const g = c.getContext("2d"); g.scale(dpr, dpr);
+    const pad = { l: 56, r: 12, t: 12, b: 34 }, W = w - pad.l - pad.r, H = h - pad.t - pad.b;
+    const cs = Array.from({ length: 100 }, (_, i) => 0.5 + (i / 99) * 0.499);
+    const ns = cs.map((C) => A.milesToDemonstrate(lam, C, k));
+    const lo = Math.floor(Math.log10(Math.min(...ns))), hi = Math.ceil(Math.log10(Math.max(...ns)));
+    const X = (C) => pad.l + ((C - 0.5) / 0.499) * W, Y = (n) => pad.t + H - ((Math.log10(n) - lo) / Math.max(hi - lo, 1)) * H;
+    g.font = "12px system-ui, sans-serif"; g.strokeStyle = css("--border"); g.fillStyle = css("--muted"); g.lineWidth = 1;
+    for (let e = lo; e <= hi; e++) { g.beginPath(); g.moveTo(pad.l, Y(10 ** e)); g.lineTo(pad.l + W, Y(10 ** e)); g.stroke(); g.fillText("1e" + e, 8, Y(10 ** e) + 4); }
+    [0.5, 0.6, 0.7, 0.8, 0.9, 0.99].forEach((C) => { g.beginPath(); g.moveTo(X(C), pad.t); g.lineTo(X(C), pad.t + H); g.stroke(); g.fillText(Math.round(C * 100) + "%", X(C) - 10, h - 16); });
+    g.fillText("confidence", pad.l + W / 2 - 28, h - 2);
+    g.beginPath(); g.strokeStyle = css("--accent"); g.lineWidth = 2.5;
+    ns.forEach((n, i) => (i ? g.lineTo(X(cs[i]), Y(n)) : g.moveTo(X(cs[i]), Y(n)))); g.stroke();
+    const nSel = A.milesToDemonstrate(lam, Csel, k);
+    g.beginPath(); g.fillStyle = css("--d"); g.arc(X(Csel), Y(nSel), 6, 0, 2 * Math.PI); g.fill();
+    g.fillStyle = css("--text"); g.fillText("miles (log scale)", pad.l + 6, pad.t + 14);
+  }
+  render();
+})();
+</script>
+</body>
+</html>
