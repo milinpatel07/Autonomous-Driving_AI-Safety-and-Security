@@ -77,7 +77,7 @@ Safety goal
 : A top-level safety requirement resulting from the HARA, at vehicle level, with an ASIL (ISO 26262).
 
 SOTIF — Safety of the intended functionality
-: The absence of unreasonable risk due to hazards resulting from functional insufficiencies of the intended functionality or from reasonably foreseeable misuse (ISO 21448).
+: The absence of unreasonable risk due to hazards resulting from functional insufficiencies of the intended functionality or its implementation (ISO 21448:2022). Reasonably foreseeable misuse is within the scope of the analysis.
 
 SPFM / LFM
 : Single-point fault metric and latent fault metric: ISO 26262-5 hardware architectural metrics with ASIL-dependent targets (e.g. ≥ 99 % and ≥ 90 % for ASIL D).
