@@ -4,21 +4,19 @@ Making machine-learning components trustworthy enough for a safety argument: the
 
 **7 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
 
-| # | Notebook | Level | Time | Open |
+| # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|
-| 01 | [AI Safety Standards for Automated Driving: ISO/PAS 8800 and Related Standards](01_ai_safety_standards.ipynb) | Intermediate | ~75 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/01_ai_safety_standards.ipynb) |
-| 02 | [Uncertainty Types in Deep Learning](02_uncertainty_types.ipynb) | Intermediate | ~60 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/02_uncertainty_types.ipynb) |
-| 03 | [Monte Carlo Dropout and Deep Ensembles](03_mc_dropout_and_deep_ensembles.ipynb) | Intermediate | ~60 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/03_mc_dropout_and_deep_ensembles.ipynb) |
-| 04 | [Calibration and Reliability of Classifier Confidence](04_calibration.ipynb) | Intermediate | ~60 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/04_calibration.ipynb) |
-| 05 | [Conformal Prediction: Distribution-Free Uncertainty Guarantees](05_conformal_prediction.ipynb) | Intermediate/Advanced | ~70 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/05_conformal_prediction.ipynb) |
-| 06 | [Explainability (XAI) for Perception: Methods, Sanity Checks and Limits as Safety Evidence](06_explainability.ipynb) | Intermediate | ~75 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/06_explainability.ipynb) |
-| 07 | [Statistical Safety Validation of ML-Based Perception and Automated Driving](07_statistical_safety_validation.ipynb) | Intermediate | ~75 min | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/07_statistical_safety_validation.ipynb) |
+| 01 | [AI Safety Standards for Automated Driving: ISO/PAS 8800 and Related Standards](01_ai_safety_standards.ipynb) | Intermediate | ISO/PAS 8800:2024, ISO/IEC TR 5469:2024, ISO/TS 5083:2025, UL 4600 (3rd ed., 2023) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/01_ai_safety_standards.ipynb) |
+| 02 | [Uncertainty Types in Deep Learning](02_uncertainty_types.ipynb) | Intermediate | ISO 21448:2022, ISO/PAS 8800:2024 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/02_uncertainty_types.ipynb) |
+| 03 | [Monte Carlo Dropout and Deep Ensembles](03_mc_dropout_and_deep_ensembles.ipynb) | Intermediate | ISO/PAS 8800:2024, ISO 21448:2022 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/03_mc_dropout_and_deep_ensembles.ipynb) |
+| 04 | [Calibration and Reliability of Classifier Confidence](04_calibration.ipynb) | Intermediate | ISO/PAS 8800:2024, ISO 21448:2022 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/04_calibration.ipynb) |
+| 05 | [Conformal Prediction: Distribution-Free Uncertainty Guarantees](05_conformal_prediction.ipynb) | Intermediate/Advanced | ISO/PAS 8800:2024, ISO 21448:2022 (SOTIF) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/05_conformal_prediction.ipynb) |
+| 06 | [Explainability (XAI) for Perception: Methods, Sanity Checks and Limits as Safety Evidence](06_explainability.ipynb) | Intermediate | ISO/PAS 8800:2024, ISO/IEC TR 5469:2024 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/06_explainability.ipynb) |
+| 07 | [Statistical Safety Validation of ML-Based Perception and Automated Driving](07_statistical_safety_validation.ipynb) | Intermediate | ISO 21448:2022, ISO/PAS 8800:2024, ISO 34502:2022, ISO/TS 5083:2025, UL 4600 (3rd ed., 2023) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/07_statistical_safety_validation.ipynb) |
 
 ## What you will learn
 
 ### 01 · AI Safety Standards for Automated Driving: ISO/PAS 8800 and Related Standards
-
-*Standards:* ISO/PAS 8800:2024, ISO/IEC TR 5469:2024, ISO/TS 5083:2025, UL 4600 (3rd ed., 2023)
 
 - Explain why machine-learning (ML) components need safety guidance beyond ISO 26262 and ISO 21448.
 - Describe the scope and structure of **ISO/PAS 8800:2024** *Road vehicles — Safety and artificial intelligence*: AI safety lifecycle, AI system / AI component / AI model, AI safety requirements, data-related considerations, verification and validation, safety analysis, assurance argument, and measures during operation.
@@ -28,8 +26,6 @@ Making machine-learning components trustworthy enough for a safety argument: the
 - Explain why field monitoring of an ML component relies on label-free proxies plus periodic labelled audits.
 
 ### 02 · Uncertainty Types in Deep Learning
-
-*Standards:* ISO 21448:2022, ISO/PAS 8800:2024
 
 - Distinguish **aleatoric** (data) and **epistemic** (model/knowledge) uncertainty, and know their limits as concepts.
 - Use the two standard decompositions consistently:
@@ -41,8 +37,6 @@ Making machine-learning components trustworthy enough for a safety argument: the
 
 ### 03 · Monte Carlo Dropout and Deep Ensembles
 
-*Standards:* ISO/PAS 8800:2024, ISO 21448:2022
-
 - Implement **Monte Carlo (MC) dropout** correctly: dropout active at test time, *every other layer (e.g. BatchNorm) in evaluation mode*.
 - Implement a **deep ensemble** and compute the entropy / mutual-information decomposition from both methods.
 - Evaluate uncertainty properly: accuracy, NLL and Brier score on a **held-out in-distribution (ID) test set**, and OOD detection with **AUROC** and **FPR at 95 % TPR** on near and far OOD sets.
@@ -51,8 +45,6 @@ Making machine-learning components trustworthy enough for a safety argument: the
 
 ### 04 · Calibration and Reliability of Classifier Confidence
 
-*Standards:* ISO/PAS 8800:2024, ISO 21448:2022
-
 - Define calibration precisely (top-label confidence vs observed accuracy).
 - Measure it with a **reliability diagram**, **expected calibration error (ECE)** and the proper scoring rules **NLL** and **Brier score**, each with a **bootstrap confidence interval**.
 - Fit **temperature scaling** correctly (minimise validation NLL over $T>0$), plus Platt scaling and isotonic regression, using a strict train / validation / test protocol.
@@ -60,8 +52,6 @@ Making machine-learning components trustworthy enough for a safety argument: the
 - Use calibrated probabilities for **expected-cost decisions** and see how calibration degrades under **distribution shift**.
 
 ### 05 · Conformal Prediction: Distribution-Free Uncertainty Guarantees
-
-*Standards:* ISO/PAS 8800:2024, ISO 21448:2022 (SOTIF)
 
 - State the finite-sample coverage guarantee of **split conformal prediction** and explain why it is *distribution-free* and needs only **exchangeability**, not a correct model.
 - Build prediction **sets** for classification with two score functions — **LAC** (least-ambiguous, one minus the softmax probability of a class) and **APS** (adaptive) — and compare their set sizes.
@@ -72,8 +62,6 @@ Making machine-learning components trustworthy enough for a safety argument: the
 
 ### 06 · Explainability (XAI) for Perception: Methods, Sanity Checks and Limits as Safety Evidence
 
-*Standards:* ISO/PAS 8800:2024, ISO/IEC TR 5469:2024
-
 - Understand where explainability supports safety work: debugging, safety analysis of AI errors, incident investigation and communication; and where it does not.
 - Implement **gradient saliency**, **Grad-CAM**, **integrated gradients**, **occlusion sensitivity** and **Shapley values** from scratch on a small CNN, and state precisely what each one computes.
 - Check the **additivity** property of Shapley values ($f(x) = \phi_0 + \sum_i\phi_i$) and the **completeness** property of integrated gradients numerically.
@@ -82,8 +70,6 @@ Making machine-learning components trustworthy enough for a safety argument: the
 - Explain why post-hoc explanations are, at best, supporting evidence in an ISO/PAS 8800 assurance argument.
 
 ### 07 · Statistical Safety Validation of ML-Based Perception and Automated Driving
-
-*Standards:* ISO 21448:2022, ISO/PAS 8800:2024, ISO 34502:2022, ISO/TS 5083:2025, UL 4600 (3rd ed., 2023)
 
 - Explain why "drive until it is safe" does not work, and reproduce the **RAND "Driving to Safety"** numbers exactly.
 - Distinguish **functional, logical and concrete scenarios** (Menzel et al., 2018) from the **PEGASUS 6-layer model** of scenario content (Scholtes et al., 2021).
