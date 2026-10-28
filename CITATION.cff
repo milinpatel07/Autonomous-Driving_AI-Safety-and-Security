@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this course or toolkit, please cite it as below."
+title: "Autonomous Driving: AI Safety and Security — an open course"
+type: software
+version: 2.0.0
+authors:
+  - family-names: Patel
+    given-names: Milin
+    affiliation: "Hochschule Kempten – University of Applied Sciences"
+license: MIT
+repository-code: "https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security"
+url: "https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/"
+abstract: >-
+  An open, runnable course on the safety and security of automated driving: perception, failure analysis,
+  functional safety (ISO 26262), SOTIF (ISO 21448), cybersecurity (ISO/SAE 21434), AI safety (ISO/PAS 8800),
+  runtime assurance, regulation and safety cases. 40 Jupyter notebooks, professional templates, interactive
+  browser tools and the tested Python toolkit avsafety.
+keywords:
+  - autonomous driving
+  - automated driving systems
+  - functional safety
+  - ISO 26262
+  - SOTIF
+  - ISO 21448
+  - ISO/SAE 21434
+  - ISO/PAS 8800
+  - AI safety
+  - uncertainty quantification
+  - safety case
