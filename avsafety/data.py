@@ -19,6 +19,7 @@ network is unreachable, so notebooks can explain what happened.
 from __future__ import annotations
 
 import hashlib
+import http.client
 import io
 import json
 import os
@@ -82,7 +83,7 @@ class _HTTPRangeFile(io.RawIOBase):
         self.url, self.timeout, self.pos = url, timeout, 0
         try:
             head = urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=timeout)
-        except (urllib.error.URLError, OSError) as exc:
+        except (urllib.error.URLError, http.client.HTTPException, OSError) as exc:
             raise DataUnavailable(f"cannot reach {url}: {exc}") from None
         self.size = int(head.headers["Content-Length"])
 
@@ -109,7 +110,7 @@ class _HTTPRangeFile(io.RawIOBase):
             try:
                 data = urllib.request.urlopen(req, timeout=self.timeout).read()
                 break
-            except (urllib.error.URLError, OSError) as exc:
+            except (urllib.error.URLError, http.client.HTTPException, OSError) as exc:
                 if attempt == 2:
                     raise DataUnavailable(f"download failed for {self.url}: {exc}") from None
         buffer[: len(data)] = data
@@ -142,7 +143,7 @@ def _fetch_url(url: str, filename: str) -> Path:
         try:
             with urllib.request.urlopen(url, timeout=120) as resp:
                 _atomic_write(target, resp.read())
-        except (urllib.error.URLError, OSError) as exc:
+        except (urllib.error.URLError, http.client.HTTPException, OSError) as exc:
             raise DataUnavailable(f"cannot download {url}: {exc}") from None
     return target
 
