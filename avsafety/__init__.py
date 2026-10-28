@@ -12,8 +12,9 @@ sotif       criticality metrics (TTC, THW, DRAC), RSS longitudinal safe distance
 validation  statistical validation (zero-failure miles, Poisson confidence bounds)
 uq          calibration (ECE, Brier, NLL), temperature scaling, split conformal prediction
 coverage    scenario / ODD coverage (n-wise combinatorial coverage)
+data        real public datasets on demand: KITTI, NHTSA SGO crash reports, NGSIM
 """
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
-from . import coverage, iso21434, iso26262, sotif, uq, validation  # noqa: F401
+from . import coverage, data, iso21434, iso26262, sotif, uq, validation  # noqa: F401
