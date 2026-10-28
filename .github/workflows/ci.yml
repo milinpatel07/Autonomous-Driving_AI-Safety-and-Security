@@ -28,6 +28,8 @@ jobs:
         run: pytest -q
       - name: Course linter
         run: python scripts/check_course.py
+      - name: Module READMEs are up to date with the notebook headers
+        run: python scripts/build_readmes.py --check
 
   notebooks:
     name: Execute notebooks (${{ matrix.module }})
