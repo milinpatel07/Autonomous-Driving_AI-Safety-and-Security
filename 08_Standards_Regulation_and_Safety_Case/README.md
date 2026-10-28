@@ -2,7 +2,7 @@
 
 Bringing it together: how the standards interlock, what type approval and regulation require, where the standards still have gaps, how to argue safety with a structured safety case, and a capstone that takes a pedestrian AEB function from requirement to release decision.
 
-**5 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
+**5 notebooks** · each runs in Google Colab on CPU; real-data notebooks download the frames and records they need on demand.
 
 | # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|

@@ -107,10 +107,18 @@ def clean_title(t: str) -> str:
     return re.sub(r"\s+", " ", t).strip()
 
 
+def uses_real_data(notebooks: list[Path]) -> bool:
+    """True if any notebook calls an avsafety.data loader (KITTI, NGSIM, NHTSA)."""
+    pattern = re.compile(r"\b(kitti_object|kitti_object_labels_all|kitti_tracking|ngsim|nhtsa_sgo)\(")
+    return any(pattern.search(nb.read_text(encoding="utf-8")) for nb in notebooks)
+
+
 def module_readme(folder: str, notebooks: list[Path], n: int) -> str:
     name, intro = MODULES[folder]
     out = [f"# Module {folder[:2]} · {name}", "", intro, "",
-           f"**{len(notebooks)} notebooks** · each runs in Google Colab on CPU, without dataset downloads.", "",
+           f"**{len(notebooks)} notebooks** · each runs in Google Colab on CPU"
+           + ("; real-data notebooks download the frames and records they need on demand." if uses_real_data(notebooks)
+              else ", without dataset downloads."), "",
            "| # | Notebook | Level | Standards | Open |", "|---|---|---|---|---|"]
     details = []
     for nb in notebooks:

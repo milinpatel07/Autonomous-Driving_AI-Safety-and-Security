@@ -2,7 +2,7 @@
 
 How an automated vehicle senses, understands and anticipates its surroundings — and where that can fail. From SAE levels and the operational design domain through real camera images and LiDAR scans (KITTI) to detection, fusion, tracking, the datasets the field is built on, and trajectory prediction on real highway traffic (NGSIM).
 
-**9 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
+**9 notebooks** · each runs in Google Colab on CPU; real-data notebooks download the frames and records they need on demand.
 
 | # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|
@@ -86,7 +86,7 @@ How an automated vehicle senses, understands and anticipates its surroundings �
 ### 08 · Driving Datasets: What KITTI Really Contains, and How to Specify Data for Safety
 
 - Read dataset statistics critically: scenes vs sensor frames vs annotated keyframes vs boxes, sensors, licences
-- Analyse all 51,865 KITTI object labels: class imbalance, long tail, distance, occlusion, truncation and objects per frame
+- Analyse all 51,865 KITTI label lines (40,570 objects): class imbalance, long tail, distance, occlusion, truncation and objects per frame
 - Identify what a dataset does **not** contain (night, rain, distant VRUs) and quantify how many samples a recall claim would need
 - Compare KITTI with nuScenes, Waymo Open, Argoverse 2 and ONCE using published, verified figures
 - Decide whether a dataset licence allows industrial use

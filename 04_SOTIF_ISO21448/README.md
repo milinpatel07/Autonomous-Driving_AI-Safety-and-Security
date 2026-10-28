@@ -2,7 +2,7 @@
 
 Hazards without a fault: functional insufficiencies, triggering conditions and reasonably foreseeable misuse. Triggering conditions measured on real data, scenario spaces, OOD monitoring as a safety measure, simulation-based validation, criticality metrics and RSS.
 
-**5 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
+**5 notebooks** · each runs in Google Colab on CPU; real-data notebooks download the frames and records they need on demand.
 
 | # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|
