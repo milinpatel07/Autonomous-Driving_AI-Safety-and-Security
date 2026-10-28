@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "avsafety"
+version = "1.0.0"
+description = "Tested reference implementations for autonomous-driving safety and security (ISO 26262, ISO 21448, ISO/SAE 21434, ISO/PAS 8800)"
+readme = "avsafety/README.md"
+license = { text = "MIT" }
+authors = [{ name = "Milin Patel" }]
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.23", "scipy>=1.9"]
+keywords = ["autonomous driving", "functional safety", "ISO 26262", "SOTIF", "ISO 21448", "ISO/SAE 21434", "TARA", "ISO/PAS 8800", "uncertainty", "conformal prediction"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering",
+  "Intended Audience :: Education",
+  "Intended Audience :: Science/Research",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security"
+
+[tool.setuptools]
+packages = ["avsafety"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
