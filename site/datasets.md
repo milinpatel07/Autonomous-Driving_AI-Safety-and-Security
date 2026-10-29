@@ -2,7 +2,7 @@
 title: Data and licences
 ---
 
-The perception, prediction, cybersecurity and field-monitoring notebooks, the benchmark and the observatory use **real public data**. Nothing is stored in the
+The perception, prediction, cybersecurity and field-monitoring notebooks, the benchmark and the field-safety statistics use public datasets. Nothing is stored in the
 repository: the `avsafety.data` loaders download exactly what a notebook needs and cache it locally
 (`~/.cache/avsafety`). KITTI frames are read straight out of the official archives with HTTP range requests, so a
 notebook fetches a few dozen frames instead of tens of gigabytes.

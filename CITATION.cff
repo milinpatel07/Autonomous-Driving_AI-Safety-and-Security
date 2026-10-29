@@ -15,7 +15,7 @@ abstract: >-
   An open, runnable course on the safety and security of automated driving: perception, failure analysis,
   functional safety (ISO 26262), SOTIF (ISO 21448), cybersecurity (ISO/SAE 21434), AI safety (ISO/PAS 8800),
   runtime assurance, regulation and safety cases. 50 Jupyter notebooks, many on real public data, a safety case kept
-  as code and re-evaluated in CI, an open SOTIF perception benchmark, a field-safety observatory, professional
+  as code and re-evaluated in CI, a SOTIF perception benchmark, field-safety statistics,
   templates, interactive browser tools and the tested Python toolkit avsafety.
 keywords:
   - autonomous driving

@@ -8,7 +8,7 @@ in [MAINTAINING.md](MAINTAINING.md#releases-and-versions); the `avsafety` toolki
 
 ## [4.0.0] — 2026-10-29
 
-From course to living infrastructure; 50 notebooks and a German edition of six.
+Safety case as code, SOTIF perception benchmark, field-safety statistics, browser edition and German edition; 50 notebooks.
 
 ### Added
 - A safety case kept as code (`avsafety.assurance`, `safety_case/`, `scripts/safety_case.py`): the capstone's

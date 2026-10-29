@@ -30,7 +30,7 @@ validation.miles_to_demonstrate(1.09e-8, 0.95)       # ≈ 2.75e8 miles (Kalra &
 | `validation` | zero-failure miles, Poisson confidence bounds | Kalra & Paddock 2016 |
 | `uq` | ECE, Brier, NLL, temperature scaling, split conformal | Guo et al. 2017; Angelopoulos & Bates 2021 |
 | `coverage` | n-wise scenario / ODD coverage | ISO 34502:2022, ISO 34503:2023 |
-| `data` | real public data on demand: KITTI object and tracking frames (camera, LiDAR, labels, calibration), NGSIM trajectories, NHTSA crash reports, ROAD CAN intrusion logs, VeReMi Extension V2X messages | see [Data and licences](datasets.md) |
+| `data` | public datasets on demand: KITTI object and tracking frames (camera, LiDAR, labels, calibration), NGSIM trajectories, NHTSA crash reports, ROAD CAN intrusion logs, VeReMi Extension V2X messages | see [Data and licences](datasets.md) |
 | `perturb` | physically based perturbations: Koschmieder fog from LiDAR depth, low light (shot and read noise), lens dirt, LiDAR fog | Koschmieder 1924 via Sakaridis et al. 2018 |
 | `bench` | SOTIF perception benchmark: versioned split, evaluation, confidence intervals, triggering-condition table, release verdict; CLI `python -m avsafety.bench` | [benchmark](benchmark.md) |
 | `assurance` | safety case as code: GSN argument in YAML, evidence records, acceptance criteria, staleness, status propagation, rendering | [safety case](safety-case.md); GSN Community Standard v3 |

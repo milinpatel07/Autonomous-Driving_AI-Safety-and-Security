@@ -10,53 +10,71 @@
   <a href="CITATION.cff"><img src="https://img.shields.io/badge/cite-CITATION.cff-7b5ea7" alt="Cite this repository"></a>
 </p>
 
-**An open, runnable course on the safety and security of automated driving** — from how a vehicle perceives the
-world and predicts what others will do, to how you argue that it is safe and secure enough to deploy. Fifty
-Jupyter notebooks cover perception and prediction, real-world failures, **ISO 26262**, **ISO 21448 (SOTIF)**,
-**ISO/SAE 21434**, **ISO/PAS 8800**, runtime assurance, regulation and safety cases. Every notebook opens in Google
-Colab with one click and runs on a CPU, and 24 of them [run in your browser with no account](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/run-in-browser).
-The perception, prediction, security and field-safety notebooks work on **real public data** (KITTI, NGSIM, NHTSA,
-ROAD CAN logs) and the simulated VeReMi V2X benchmark, fetched a few files at a time.
+An open course on the safety and security of automated driving, from perception and prediction to the safety
+case and the release decision. Fifty Jupyter notebooks cover perception and prediction, failure analysis,
+functional safety (**ISO 26262**), safety of the intended functionality (**ISO 21448**), cybersecurity
+(**ISO/SAE 21434**), safety of AI components (**ISO/PAS 8800**), runtime assurance, regulation and safety cases.
+Each notebook runs on a CPU in Google Colab; 24 of them also
+[run in the browser without an account](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/run-in-browser).
 
 <p align="center">
   <a href="https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/"><b>Website</b></a> ·
-  <a href="#the-course"><b>Course</b></a> ·
-  <a href="#living-evidence"><b>Living evidence</b></a> ·
-  <a href="#interactive-tools"><b>Interactive tools</b></a> ·
+  <a href="#course-structure"><b>Course</b></a> ·
+  <a href="#learning-paths"><b>Learning paths</b></a> ·
+  <a href="#safety-case-benchmark-and-field-data"><b>Safety case, benchmark, field data</b></a> ·
   <a href="#the-avsafety-toolkit"><b>Toolkit</b></a> ·
   <a href="templates/"><b>Templates</b></a> ·
-  <a href="#learning-paths"><b>Learning paths</b></a> ·
-  <a href="https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/industry/"><b>For industry</b></a> ·
-  <a href="#for-instructors"><b>For instructors</b></a>
+  <a href="#for-instructors"><b>Teaching</b></a>
 </p>
 
-## Why this course
+## Motivation
 
-- **Real data, not cartoons.** Detection, LiDAR, fusion, tracking and SOTIF triggering conditions are evaluated on real KITTI camera images and LiDAR scans against ground truth; prediction uses real NGSIM highway trajectories; intrusion detection uses real CAN-bus attack logs; field monitoring uses NHTSA's crash reports.
-- **A living course.** The capstone's safety case is kept as code and re-evaluated by CI whenever its evidence changes; an open SOTIF benchmark rates any detector against a declared requirement; a field-safety observatory refreshes the public crash data every month.
-- **For academia and industry.** Every notebook ends with an *In industry* section naming the work product it feeds (HARA, FMEDA, FTA, STPA, SOTIF analysis, TARA, safety case), who owns it and what assessors look for.
-- **End to end.** A recurring worked example, an automatic emergency braking (AEB) function that protects pedestrians, links the modules: from detection and tracking through HARA, fault trees, SOTIF and TARA to a GSN safety case and a release decision in the capstone.
-- **Correct and sourced.** Every notebook has been checked against the standards and public primary sources where available (NTSB, NHTSA, UNECE, EUR-Lex, peer-reviewed papers); items that could not be verified are flagged in the reference registry. Normative tables are implemented once in a tested toolkit, time-sensitive facts are dated, and every clause the course cites is registered with its source in [`references/normative.yaml`](references/normative.yaml) and checked for consistency in CI.
-- **Runnable, tested and maintained.** Continuous integration executes every notebook and runs the toolkit's unit tests on each change; monthly jobs watch the cited regulations and datasets for new versions and re-run the course against the live sources ([MAINTAINING.md](MAINTAINING.md)).
-- **Hands-on.** You build things: a LiDAR object pipeline, a Kalman tracker, a trajectory predictor, a fault-tree engine, an STPA analysis, a TARA pipeline, a CAN intrusion detector, a V2X misbehaviour detector, conformal prediction sets, a safety-shielded motion planner and a safety case that updates itself.
+The standards for automated driving specify which analyses and evidence a safety case needs: hazard analysis,
+safety goals, triggering conditions, threat analysis, validation targets, field monitoring. They do not show how
+to produce that evidence for a perception system, how to check it, or how to keep it valid when the system or its
+data change. Teaching material usually stops at definitions and worked tables. This course fills that gap with
+executable analyses on public data, connected by one worked example from the sensor to the release decision.
+
+## Approach
+
+- **Public data.** Detection, LiDAR processing, fusion, tracking and SOTIF triggering conditions are evaluated on
+  KITTI camera images and LiDAR scans against ground truth; prediction uses NGSIM highway trajectories; intrusion
+  detection uses the ROAD CAN-bus attack logs; field monitoring uses NHTSA crash reports. The V2X notebook uses the
+  simulated VeReMi benchmark and says so. Synthetic data is used only where it is the appropriate choice and is
+  labelled.
+- **One worked example.** A pedestrian automatic emergency braking (AEB) function links the modules: detection and
+  tracking, HARA, fault trees, SOTIF analysis and TARA lead to a GSN safety case and a release decision in the
+  capstone.
+- **Engineering work products.** Each notebook ends with an *In industry* section: the work product it supports
+  (HARA, FMEDA, FTA, STPA, SOTIF analysis, TARA, safety case), who usually owns it and what assessors check.
+- **Traceable sources.** Normative tables and formulas are implemented once in a tested toolkit. Every clause the
+  course cites is recorded with its source and verification status in
+  [`references/normative.yaml`](references/normative.yaml) and checked for consistency in CI; statements that could
+  not be verified against a primary source are marked as such, and time-sensitive facts are dated.
+- **Tested and maintained.** CI executes every notebook and runs the unit tests on each change. Monthly jobs check
+  the cited regulations and datasets for new versions and re-run the course against the live sources
+  ([MAINTAINING.md](MAINTAINING.md)).
+- **Exercises.** Learners implement the methods themselves: a LiDAR object pipeline, a Kalman tracker, a trajectory
+  predictor, a fault-tree evaluator, an STPA, a TARA, CAN and V2X intrusion detectors, conformal prediction, a
+  safety-shielded motion planner and a safety case maintained as code.
 
 <p align="center">
-  <img src="assets/real-data-kitti.jpg" alt="A real KITTI frame: LiDAR points projected onto the camera image and 3D boxes around pedestrians, cyclists and cars, with a bird's-eye view of the same scan" width="100%">
-  <br><sub>A real KITTI frame as used in the notebooks: LiDAR projected onto the camera image (coloured by distance), annotated 3D boxes for pedestrians, cyclists and cars, and the same scan from above. Data: KITTI, CC BY-NC-SA 3.0.</sub>
+  <img src="assets/real-data-kitti.jpg" alt="A KITTI frame: LiDAR points projected onto the camera image and 3D boxes around pedestrians, cyclists and cars, with a bird's-eye view of the same scan" width="100%">
+  <br><sub>A KITTI frame as used in the notebooks: LiDAR projected onto the camera image (coloured by distance), annotated 3D boxes for pedestrians, cyclists and cars, and the same scan from above. Data: KITTI, CC BY-NC-SA 3.0.</sub>
 </p>
 
 <p align="center">
   <img src="assets/standards-map.svg" alt="Which standard covers which source of harm: malfunctions → ISO 26262; functional insufficiencies → ISO 21448; ML-specific insufficiencies → ISO/PAS 8800; attacks → ISO/SAE 21434; all feed the safety case (ISO/TS 5083, UL 4600)" width="100%">
 </p>
 
-## The course
+## Course structure
 
 | Module | Focus | Notebooks |
 |---|---|---|
 | [01 · Perception and Prediction](01_Perception/README.md) | SAE levels, ODD, real camera and LiDAR data, detection, VRUs, fusion, tracking, datasets, trajectory prediction | 9 |
 | [02 · Failures and Robustness](02_Failures_and_Robustness/README.md) | incident investigations, corner cases, OOD detection, adversarial attacks | 4 |
 | [03 · Functional Safety (ISO 26262)](03_Functional_Safety_ISO26262/README.md) | lifecycle, HARA, FMEA/FMEDA, fault tree analysis, STPA, V&V | 6 |
-| [04 · SOTIF (ISO 21448)](04_SOTIF_ISO21448/README.md) | triggering conditions measured on real data, scenarios, OOD monitoring, simulation, RSS, an open SOTIF benchmark | 6 |
+| [04 · SOTIF (ISO 21448)](04_SOTIF_ISO21448/README.md) | triggering conditions measured on real data, scenarios, OOD monitoring, simulation, RSS, a SOTIF perception benchmark | 6 |
 | [05 · Cybersecurity (ISO/SAE 21434)](05_Cybersecurity_ISO21434/README.md) | framework, TARA, attack surfaces, CAN intrusion detection on real attack logs, V2X misbehaviour detection | 5 |
 | [06 · AI Safety (ISO/PAS 8800)](06_AI_Safety_ISO_PAS_8800/README.md) | uncertainty, ensembles, calibration and conformal prediction on real detections, XAI, end-to-end and foundation models, statistical validation | 8 |
 | [07 · Runtime Assurance and Operations](07_Runtime_Assurance_and_Operations/README.md) | runtime ODD monitoring, safe planning and fallback, human factors and takeover, V2X, field monitoring with NHTSA data, deployment | 6 |
@@ -175,7 +193,7 @@ Expand a module to open any notebook directly in Colab:
 | 08-03 | [Standards Gaps and Open Problems in AV Safety](08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb) |
 | 08-04 | [Safety Cases and Goal Structuring Notation (GSN)](08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb) |
 | 08-05 | [Capstone: Pedestrian AEB from Requirement to Release Decision](08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb) |
-| 08-06 | [Continuous Assurance: A Safety Case That Updates Itself](08_Standards_Regulation_and_Safety_Case/06_continuous_assurance.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/06_continuous_assurance.ipynb) |
+| 08-06 | [Continuous Assurance: Maintaining the Safety Case as Code](08_Standards_Regulation_and_Safety_Case/06_continuous_assurance.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/06_continuous_assurance.ipynb) |
 
 </details>
 
@@ -198,15 +216,15 @@ The [industry map](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-a
 engineering work product (HARA, FMEDA, FTA, STPA, SOTIF analysis, TARA, safety case …) to the notebooks and tools
 that support it.
 
-## Living evidence
+## Safety case, benchmark and field data
 
-Three parts of the course are kept current by code rather than by hand:
+Three artefacts are generated from code and checked automatically rather than maintained by hand:
 
-| | What it is | How it stays current |
+| | Content | How it is kept current |
 |---|---|---|
-| [**A safety case that updates itself**](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/safety-case) | The capstone's pedestrian-AEB safety argument as code ([`safety_case/`](safety_case/README.md), `avsafety.assurance`): every claim is linked to the notebook and metric that produce its evidence | CI re-runs the producing notebooks on each change and reports any claim whose status flips; evidence from changed code is marked stale ([08-06](08_Standards_Regulation_and_Safety_Case/06_continuous_assurance.ipynb)) |
-| [**Open SOTIF perception benchmark**](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/benchmark) | Any camera detector on 120 real KITTI frames under physically modelled fog, low light and lens dirt: recall with confidence intervals, a triggering-condition table, the supported speed and a release verdict against a declared requirement; optional LiDAR track on SOTIF-PCOD | Versioned split; results submitted by pull request are validated against a schema ([04-06](04_SOTIF_ISO21448/06_sotif_benchmark.ipynb), [`benchmark/`](benchmark/README.md)) |
-| [**Field-safety observatory**](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/observatory) | NHTSA Standing General Order crash reports for ADS and Level 2 ADAS, California DMV disengagements and published exposure, with the caveats needed to read them | Rebuilt from the official files every month (`scripts/observatory.py`, run by the website workflow) |
+| [**Safety case as code**](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/safety-case) | The capstone's pedestrian-AEB safety argument as code ([`safety_case/`](safety_case/README.md), `avsafety.assurance`): every claim is linked to the notebook and metric that produce its evidence | CI re-runs the producing notebooks on each change and reports any claim whose status flips; evidence from changed code is marked stale ([08-06](08_Standards_Regulation_and_Safety_Case/06_continuous_assurance.ipynb)) |
+| [**SOTIF perception benchmark**](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/benchmark) | Any camera detector on 120 KITTI frames under physically modelled fog, low light and lens dirt: recall with confidence intervals, a triggering-condition table, the supported speed and a release verdict against a declared requirement; optional LiDAR track on SOTIF-PCOD | Versioned split; results submitted by pull request are validated against a schema ([04-06](04_SOTIF_ISO21448/06_sotif_benchmark.ipynb), [`benchmark/`](benchmark/README.md)) |
+| [**Field-safety statistics**](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/observatory) | NHTSA Standing General Order crash reports for ADS and Level 2 ADAS, California DMV disengagements and published exposure, with the caveats needed to read them | Rebuilt from the official files every month (`scripts/observatory.py`, run by the website workflow) |
 
 ```bash
 python -m avsafety.bench --model torchvision:fasterrcnn_mobilenet_v3_large_fpn --out results.json   # benchmark a detector
@@ -251,7 +269,7 @@ iso21434.cvss31_base_score("CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H")  # 9.
 sotif.rss_safe_longitudinal_distance(v_rear=25.0, v_front=20.0)  # metres
 validation.miles_to_demonstrate(1.09e-8, confidence=0.95)        # ≈ 275 million miles
 
-from avsafety import data                                        # real public data, fetched on demand
+from avsafety import data                                        # public datasets, fetched on demand
 frame = data.kitti_object(4747)        # camera image, LiDAR scan, 3D labels and calibration of one KITTI frame
 crashes = data.nhtsa_sgo("ADS")        # NHTSA Standing General Order crash reports
 ```
@@ -264,7 +282,7 @@ reports, ROAD CAN logs and VeReMi V2X messages.
 
 ## Templates
 
-Professional, editable templates with worked examples that match the notebooks:
+Editable templates with worked examples that match the notebooks:
 [HARA (ISO 26262)](templates/HARA_Template.md) ·
 [SOTIF analysis (ISO 21448)](templates/SOTIF_Analysis_Template.md) ·
 [TARA (ISO/SAE 21434)](templates/TARA_Template.md)
@@ -295,7 +313,7 @@ jupyter lab
 The notebooks need Python 3.9 or later and run on a CPU. For local GPU acceleration, install PyTorch following the
 [official instructions](https://pytorch.org/get-started/locally/).
 
-## Research behind the course
+## Research background
 
 The course draws on the author's research on SOTIF, uncertainty and assurance of ML-based perception at
 Hochschule Kempten, for example:

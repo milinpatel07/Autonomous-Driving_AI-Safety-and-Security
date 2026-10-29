@@ -4,7 +4,7 @@ Small, tested reference implementations of the normative tables and formulas use
 throughout the *Autonomous Driving: AI Safety and Security* course.
 
 ```bash
-pip install "avsafety[data] @ git+https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security.git"
+pip install "avsafety[data,assurance,bench] @ git+https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security.git"
 ```
 
 ```python
@@ -27,7 +27,11 @@ validation.miles_to_demonstrate(1.09e-8, 0.95)         # ~2.75e8 (RAND, 2016)
 | `validation` | zero-failure miles, Poisson confidence bounds | Kalra & Paddock, RAND 2016 |
 | `uq` | ECE, Brier, NLL, temperature scaling, split conformal | Guo et al. 2017; Angelopoulos & Bates 2021 |
 | `coverage` | n-wise scenario/ODD coverage | ISO 34502:2022, ISO 34503:2023 |
-| `data` | real public data on demand: KITTI object and tracking frames (camera, LiDAR, labels, calibration), NGSIM trajectories, NHTSA crash reports | KITTI (CC BY-NC-SA 3.0), US DOT, NHTSA |
+| `data` | public datasets on demand: KITTI object and tracking frames (camera, LiDAR, labels, calibration), NGSIM trajectories, NHTSA crash reports, ROAD CAN intrusion logs, VeReMi Extension V2X messages | KITTI (CC BY-NC-SA 3.0), US DOT, NHTSA, ROAD and VeReMi (CC BY 4.0) |
+| `perturb` | fog from LiDAR depth (Koschmieder), low light (shot and read noise), lens dirt, LiDAR fog | Sakaridis et al. 2018 |
+| `bench` | SOTIF perception benchmark: versioned split, evaluation, confidence intervals, release verdict; `python -m avsafety.bench` | course benchmark spec v1 |
+| `assurance` | safety case as code: GSN argument (YAML), evidence records, acceptance criteria, staleness, status propagation | GSN Community Standard v3 |
+| `exercises` | auto-checked exercises; expected answers computed by the modules above | — |
 
 ISO/SAE 21434 Annexes E, G and H are informative; organisations may define their own rating
 schemes. These functions implement the examples given in the standard. Not a substitute for

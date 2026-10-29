@@ -4,7 +4,7 @@
 version: 1
 project:
   title: "Autonomous Driving: AI Safety and Security"
-  description: "An open course on the safety and security of automated driving — perception and prediction on real data, ISO 26262, ISO 21448 (SOTIF), ISO/SAE 21434, ISO/PAS 8800, runtime assurance, regulation and safety cases: 50 runnable notebooks, a safety case that updates itself, an open SOTIF benchmark, a field-safety observatory, interactive tools and a tested toolkit."
+  description: "An open course on the safety and security of automated driving — perception and prediction on real data, ISO 26262, ISO 21448 (SOTIF), ISO/SAE 21434, ISO/PAS 8800, runtime assurance, regulation and safety cases: 50 runnable notebooks, a safety case maintained as code, a SOTIF perception benchmark, field-safety statistics, calculators and a tested Python toolkit."
   keywords: [autonomous driving, functional safety, ISO 26262, SOTIF, ISO 21448, ISO/SAE 21434, ISO/PAS 8800, UL 4600, uncertainty, safety case]
   authors:
     - name: Milin Patel
@@ -119,7 +119,7 @@ project:
         - file: de/06_AI_Safety_ISO_PAS_8800/01_ai_safety_standards.ipynb
         - file: de/08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb
         - file: de/GLOSSAR.md
-    - title: "Living evidence"
+    - title: "Safety case, benchmark and field data"
       children:
         - file: site/safety-case.md
         - file: site/benchmark.md
@@ -145,14 +145,14 @@ site:
   nav:
     - title: Course
       url: /learning-paths
-    - title: Run in browser
-      url: /run-in-browser
     - title: Industry
       url: /industry
-    - title: Teach
+    - title: Teaching
       url: /teaching
-    - title: Observatory
+    - title: Field data
       url: /observatory
+    - title: Browser edition
+      url: /run-in-browser
     - title: Tools
       url: /interactive-tools
     - title: GitHub

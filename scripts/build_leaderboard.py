@@ -70,8 +70,8 @@ def render(results: list[tuple[Path, dict]]) -> str:
     lines = [
         "---", "title: SOTIF perception benchmark", "---", "",
         "<!-- Built from benchmark/results/*.json by scripts/build_leaderboard.py; do not edit by hand. -->", "",
-        "An open, reproducible **SOTIF triggering-condition report** for camera object detectors: 120 real KITTI frames "
-        "(spec v1), evaluated in clear air and under physically grounded fog, low light and lens dirt. Each entry is "
+        "A reproducible **SOTIF triggering-condition report** for camera object detectors: 120 KITTI frames "
+        "(spec v1), evaluated in clear air and under physically modelled fog, low light and lens dirt. Each entry is "
         "a complete report — recall by distance, occlusion and truncation with confidence intervals, false positives "
         "per frame, a triggering-condition table, the speed limit the evidence supports, and a release verdict "
         "against the course's AEB pedestrian requirement PR-01. How to run it and how to submit: "

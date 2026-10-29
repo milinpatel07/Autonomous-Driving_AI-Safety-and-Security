@@ -6,7 +6,7 @@
   produce its evidence, re-evaluated by CI on every change (`avsafety.assurance`, `safety_case/`, notebook 08-06)
 - An open SOTIF perception benchmark on real KITTI frames under physically modelled fog, low light and lens dirt,
   with a release verdict against a declared requirement and an optional SOTIF-PCOD LiDAR track (notebook 04-06)
-- A field-safety observatory rebuilt monthly from NHTSA crash reports, California DMV data and published exposure
+- Field-safety statistics rebuilt monthly from NHTSA crash reports, California DMV data and published exposure
 - Real CAN-bus attack logs (ROAD) in 05-04 and V2X misbehaviour detection on VeReMi Extension (new 05-05)
 - A registry of every normative reference with its source, a consistency checker, monthly watches of the cited
   regulations and datasets, and a monthly re-run of the whole course against the live sources
