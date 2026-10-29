@@ -112,6 +112,15 @@ def test_release_with_perfect_detector_is_release():
     assert tct["clear"]["v_max_kmh"] == 60 and tct["fog_25"]["verdict"] == "does not meet"
 
 
+def test_declared_odd_condition_without_evidence_prevents_release():
+    rep = _synthetic_report(1.0, 1.0)                     # evaluates clear and fog_25 only
+    req = B.Requirement(odd_conditions=("clear", "low_light_64"))
+    rel = rep.release(req)
+    assert rel["verdict"] != "RELEASE"
+    assert rel["not_evaluated"] == ["low_light_64"] and rel["restricted_odd_kmh"]["low_light_64"] is None
+    assert any("not evaluated" in r for r in rel["reasons"])
+
+
 def test_release_restricted_when_only_near_range_is_good():
     rep = _synthetic_report(1.0, 0.0, near_m=20.0)
     req = B.Requirement(odd_conditions=("clear",), lateral_m=None)
