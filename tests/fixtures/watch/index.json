@@ -1,0 +1,33 @@
+{
+ "GET https://isopublicstorageprod.blob.core.windows.net/opendata/_latest/iso_deliverables_metadata/json/iso_deliverables_metadata.jsonl": {
+  "status": 200,
+  "body": "iso_open_data.jsonl"
+ },
+ "GET https://publications.europa.eu/webapi/rdf/sparql?query=PREFIX+cdm%3A+%3Chttp%3A%2F%2Fpublications.europa.eu%2Fontology%2Fcdm%23%3E+SELECT+DISTINCT+%3Fc+WHERE+%7B+%3Ft+cdm%3Aresource_legal_id_celex+%2232022R1426%22%5E%5E%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23string%3E+.+%7B+%3Fa+cdm%3Aresource_legal_amends_resource_legal+%3Ft+%7D+UNION+%7B+%3Fa+cdm%3Aact_consolidated_consolidates_resource_legal+%3Ft+%7D+%3Fa+cdm%3Aresource_legal_id_celex+%3Fc+%7D&format=application%2Fsparql-results%2Bjson": {
+  "status": 200,
+  "body": "cellar_32022R1426.json"
+ },
+ "GET https://globalautoregs.com/rules/247/texts": {
+  "status": 200,
+  "body": "globalautoregs_r157_texts.html"
+ },
+ "HEAD https://s3.eu-central-1.amazonaws.com/avg-kitti/data_object_label_2.zip": {
+  "status": 200,
+  "headers": {
+   "etag": "\"c846a1608cbba1e555ac56280ebca4a1\"",
+   "last-modified": "Fri, 11 May 2018 14:46:21 GMT",
+   "content-length": "5601213"
+  }
+ },
+ "GET https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/SGO-2021-01_Incident_Reports_ADS.csv": {
+  "status": 206,
+  "body": "sgo_ads_head.csv"
+ },
+ "GET https://zenodo.org/api/records/10462796": {
+  "status": 200,
+  "body": "zenodo_10462796.json"
+ },
+ "GET https://unece.org/transport/vehicle-regulations-wp29/standards/addenda-1958-agreement-regulations-141-160": {
+  "status": 403
+ }
+}

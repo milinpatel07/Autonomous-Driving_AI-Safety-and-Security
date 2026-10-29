@@ -1,0 +1,2338 @@
+kind,incident_month,dimension,category,crashes
+ADAS,2021-07,partner,passenger vehicle,3
+ADAS,2021-07,partner,"pedestrian, cyclist or other VRU",2
+ADAS,2021-07,partner,fixed object,6
+ADAS,2021-07,partner,other,4
+ADAS,2021-07,partner,unknown,7
+ADAS,2021-08,partner,passenger vehicle,12
+ADAS,2021-08,partner,heavy truck or bus,2
+ADAS,2021-08,partner,fixed object,9
+ADAS,2021-08,partner,unknown,8
+ADAS,2021-09,partner,passenger vehicle,14
+ADAS,2021-09,partner,heavy truck or bus,4
+ADAS,2021-09,partner,fixed object,10
+ADAS,2021-09,partner,other,1
+ADAS,2021-09,partner,unknown,12
+ADAS,2021-10,partner,passenger vehicle,8
+ADAS,2021-10,partner,heavy truck or bus,1
+ADAS,2021-10,partner,fixed object,10
+ADAS,2021-10,partner,other,2
+ADAS,2021-10,partner,unknown,23
+ADAS,2021-11,partner,passenger vehicle,10
+ADAS,2021-11,partner,heavy truck or bus,1
+ADAS,2021-11,partner,fixed object,11
+ADAS,2021-11,partner,other,5
+ADAS,2021-11,partner,unknown,17
+ADAS,2021-12,partner,passenger vehicle,8
+ADAS,2021-12,partner,heavy truck or bus,1
+ADAS,2021-12,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2021-12,partner,fixed object,15
+ADAS,2021-12,partner,other,4
+ADAS,2021-12,partner,unknown,15
+ADAS,2022-01,partner,passenger vehicle,7
+ADAS,2022-01,partner,fixed object,8
+ADAS,2022-01,partner,other,3
+ADAS,2022-01,partner,unknown,9
+ADAS,2022-02,partner,passenger vehicle,11
+ADAS,2022-02,partner,heavy truck or bus,2
+ADAS,2022-02,partner,fixed object,9
+ADAS,2022-02,partner,other,2
+ADAS,2022-02,partner,unknown,18
+ADAS,2022-03,partner,passenger vehicle,4
+ADAS,2022-03,partner,"pedestrian, cyclist or other VRU",2
+ADAS,2022-03,partner,fixed object,9
+ADAS,2022-03,partner,other,2
+ADAS,2022-03,partner,unknown,13
+ADAS,2022-04,partner,passenger vehicle,15
+ADAS,2022-04,partner,heavy truck or bus,1
+ADAS,2022-04,partner,motorcycle,1
+ADAS,2022-04,partner,fixed object,10
+ADAS,2022-04,partner,other,4
+ADAS,2022-04,partner,unknown,11
+ADAS,2022-05,partner,passenger vehicle,21
+ADAS,2022-05,partner,heavy truck or bus,1
+ADAS,2022-05,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2022-05,partner,fixed object,8
+ADAS,2022-05,partner,other,10
+ADAS,2022-05,partner,unknown,12
+ADAS,2022-06,partner,passenger vehicle,15
+ADAS,2022-06,partner,heavy truck or bus,1
+ADAS,2022-06,partner,fixed object,6
+ADAS,2022-06,partner,other,4
+ADAS,2022-06,partner,unknown,18
+ADAS,2022-07,partner,passenger vehicle,15
+ADAS,2022-07,partner,heavy truck or bus,1
+ADAS,2022-07,partner,motorcycle,2
+ADAS,2022-07,partner,fixed object,15
+ADAS,2022-07,partner,other,5
+ADAS,2022-07,partner,unknown,23
+ADAS,2022-08,partner,passenger vehicle,9
+ADAS,2022-08,partner,heavy truck or bus,1
+ADAS,2022-08,partner,motorcycle,1
+ADAS,2022-08,partner,fixed object,12
+ADAS,2022-08,partner,other,3
+ADAS,2022-08,partner,unknown,11
+ADAS,2022-09,partner,passenger vehicle,18
+ADAS,2022-09,partner,heavy truck or bus,2
+ADAS,2022-09,partner,fixed object,6
+ADAS,2022-09,partner,other,2
+ADAS,2022-09,partner,unknown,12
+ADAS,2022-10,partner,passenger vehicle,12
+ADAS,2022-10,partner,fixed object,10
+ADAS,2022-10,partner,other,10
+ADAS,2022-10,partner,unknown,16
+ADAS,2022-11,partner,passenger vehicle,19
+ADAS,2022-11,partner,heavy truck or bus,3
+ADAS,2022-11,partner,fixed object,20
+ADAS,2022-11,partner,other,7
+ADAS,2022-11,partner,unknown,7
+ADAS,2022-12,partner,passenger vehicle,26
+ADAS,2022-12,partner,fixed object,24
+ADAS,2022-12,partner,other,7
+ADAS,2022-12,partner,unknown,8
+ADAS,2023-01,partner,passenger vehicle,17
+ADAS,2023-01,partner,heavy truck or bus,4
+ADAS,2023-01,partner,fixed object,20
+ADAS,2023-01,partner,other,3
+ADAS,2023-01,partner,unknown,10
+ADAS,2023-02,partner,passenger vehicle,11
+ADAS,2023-02,partner,heavy truck or bus,1
+ADAS,2023-02,partner,fixed object,12
+ADAS,2023-02,partner,other,4
+ADAS,2023-02,partner,unknown,7
+ADAS,2023-03,partner,passenger vehicle,16
+ADAS,2023-03,partner,heavy truck or bus,1
+ADAS,2023-03,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2023-03,partner,fixed object,23
+ADAS,2023-03,partner,other,7
+ADAS,2023-03,partner,unknown,12
+ADAS,2023-04,partner,passenger vehicle,23
+ADAS,2023-04,partner,heavy truck or bus,2
+ADAS,2023-04,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2023-04,partner,fixed object,6
+ADAS,2023-04,partner,other,4
+ADAS,2023-04,partner,unknown,9
+ADAS,2023-05,partner,passenger vehicle,21
+ADAS,2023-05,partner,heavy truck or bus,1
+ADAS,2023-05,partner,fixed object,15
+ADAS,2023-05,partner,other,3
+ADAS,2023-05,partner,unknown,13
+ADAS,2023-06,partner,passenger vehicle,12
+ADAS,2023-06,partner,heavy truck or bus,1
+ADAS,2023-06,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2023-06,partner,fixed object,9
+ADAS,2023-06,partner,other,3
+ADAS,2023-06,partner,unknown,20
+ADAS,2023-07,partner,passenger vehicle,18
+ADAS,2023-07,partner,heavy truck or bus,5
+ADAS,2023-07,partner,fixed object,16
+ADAS,2023-07,partner,other,3
+ADAS,2023-07,partner,unknown,14
+ADAS,2023-08,partner,passenger vehicle,12
+ADAS,2023-08,partner,heavy truck or bus,3
+ADAS,2023-08,partner,motorcycle,1
+ADAS,2023-08,partner,fixed object,14
+ADAS,2023-08,partner,other,4
+ADAS,2023-08,partner,unknown,7
+ADAS,2023-09,partner,passenger vehicle,24
+ADAS,2023-09,partner,heavy truck or bus,2
+ADAS,2023-09,partner,fixed object,14
+ADAS,2023-09,partner,other,6
+ADAS,2023-09,partner,unknown,7
+ADAS,2023-10,partner,passenger vehicle,18
+ADAS,2023-10,partner,heavy truck or bus,2
+ADAS,2023-10,partner,fixed object,7
+ADAS,2023-10,partner,other,7
+ADAS,2023-10,partner,unknown,14
+ADAS,2023-11,partner,passenger vehicle,13
+ADAS,2023-11,partner,heavy truck or bus,2
+ADAS,2023-11,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2023-11,partner,fixed object,14
+ADAS,2023-11,partner,other,6
+ADAS,2023-11,partner,unknown,16
+ADAS,2023-12,partner,passenger vehicle,24
+ADAS,2023-12,partner,heavy truck or bus,1
+ADAS,2023-12,partner,fixed object,24
+ADAS,2023-12,partner,other,7
+ADAS,2023-12,partner,unknown,17
+ADAS,2024-01,partner,passenger vehicle,13
+ADAS,2024-01,partner,heavy truck or bus,1
+ADAS,2024-01,partner,fixed object,12
+ADAS,2024-01,partner,other,2
+ADAS,2024-01,partner,unknown,7
+ADAS,2024-02,partner,passenger vehicle,13
+ADAS,2024-02,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2024-02,partner,fixed object,9
+ADAS,2024-02,partner,other,5
+ADAS,2024-02,partner,unknown,7
+ADAS,2024-03,partner,passenger vehicle,22
+ADAS,2024-03,partner,heavy truck or bus,3
+ADAS,2024-03,partner,fixed object,13
+ADAS,2024-03,partner,other,2
+ADAS,2024-03,partner,unknown,11
+ADAS,2024-04,partner,passenger vehicle,19
+ADAS,2024-04,partner,motorcycle,1
+ADAS,2024-04,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2024-04,partner,fixed object,11
+ADAS,2024-04,partner,other,5
+ADAS,2024-04,partner,unknown,23
+ADAS,2024-05,partner,passenger vehicle,17
+ADAS,2024-05,partner,heavy truck or bus,1
+ADAS,2024-05,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2024-05,partner,fixed object,11
+ADAS,2024-05,partner,other,7
+ADAS,2024-05,partner,unknown,37
+ADAS,2024-06,partner,passenger vehicle,11
+ADAS,2024-06,partner,heavy truck or bus,3
+ADAS,2024-06,partner,fixed object,18
+ADAS,2024-06,partner,other,6
+ADAS,2024-06,partner,unknown,29
+ADAS,2024-07,partner,passenger vehicle,8
+ADAS,2024-07,partner,heavy truck or bus,5
+ADAS,2024-07,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2024-07,partner,fixed object,13
+ADAS,2024-07,partner,other,6
+ADAS,2024-07,partner,unknown,43
+ADAS,2024-08,partner,passenger vehicle,7
+ADAS,2024-08,partner,heavy truck or bus,2
+ADAS,2024-08,partner,fixed object,21
+ADAS,2024-08,partner,other,2
+ADAS,2024-08,partner,unknown,38
+ADAS,2024-09,partner,passenger vehicle,19
+ADAS,2024-09,partner,heavy truck or bus,1
+ADAS,2024-09,partner,fixed object,11
+ADAS,2024-09,partner,other,4
+ADAS,2024-09,partner,unknown,42
+ADAS,2024-10,partner,passenger vehicle,15
+ADAS,2024-10,partner,fixed object,24
+ADAS,2024-10,partner,other,7
+ADAS,2024-10,partner,unknown,50
+ADAS,2024-11,partner,passenger vehicle,24
+ADAS,2024-11,partner,fixed object,21
+ADAS,2024-11,partner,other,10
+ADAS,2024-11,partner,unknown,37
+ADAS,2024-12,partner,passenger vehicle,16
+ADAS,2024-12,partner,heavy truck or bus,2
+ADAS,2024-12,partner,fixed object,25
+ADAS,2024-12,partner,other,8
+ADAS,2024-12,partner,unknown,43
+ADAS,2025-01,partner,passenger vehicle,12
+ADAS,2025-01,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2025-01,partner,fixed object,12
+ADAS,2025-01,partner,other,4
+ADAS,2025-01,partner,unknown,30
+ADAS,2025-02,partner,passenger vehicle,13
+ADAS,2025-02,partner,heavy truck or bus,2
+ADAS,2025-02,partner,fixed object,16
+ADAS,2025-02,partner,other,11
+ADAS,2025-02,partner,unknown,34
+ADAS,2025-03,partner,passenger vehicle,26
+ADAS,2025-03,partner,heavy truck or bus,2
+ADAS,2025-03,partner,fixed object,18
+ADAS,2025-03,partner,other,14
+ADAS,2025-03,partner,unknown,31
+ADAS,2025-04,partner,passenger vehicle,28
+ADAS,2025-04,partner,heavy truck or bus,1
+ADAS,2025-04,partner,motorcycle,1
+ADAS,2025-04,partner,fixed object,17
+ADAS,2025-04,partner,other,8
+ADAS,2025-04,partner,unknown,43
+ADAS,2025-05,partner,passenger vehicle,29
+ADAS,2025-05,partner,heavy truck or bus,1
+ADAS,2025-05,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2025-05,partner,fixed object,25
+ADAS,2025-05,partner,other,9
+ADAS,2025-05,partner,unknown,44
+ADAS,2025-06,partner,passenger vehicle,31
+ADAS,2025-06,partner,heavy truck or bus,3
+ADAS,2025-06,partner,fixed object,12
+ADAS,2025-06,partner,other,9
+ADAS,2025-06,partner,unknown,47
+ADAS,2025-07,partner,passenger vehicle,16
+ADAS,2025-07,partner,motorcycle,1
+ADAS,2025-07,partner,fixed object,21
+ADAS,2025-07,partner,other,7
+ADAS,2025-07,partner,unknown,48
+ADAS,2025-08,partner,passenger vehicle,18
+ADAS,2025-08,partner,heavy truck or bus,1
+ADAS,2025-08,partner,fixed object,18
+ADAS,2025-08,partner,other,4
+ADAS,2025-08,partner,unknown,41
+ADAS,2025-09,partner,passenger vehicle,30
+ADAS,2025-09,partner,heavy truck or bus,2
+ADAS,2025-09,partner,motorcycle,1
+ADAS,2025-09,partner,fixed object,16
+ADAS,2025-09,partner,other,13
+ADAS,2025-09,partner,unknown,43
+ADAS,2025-10,partner,passenger vehicle,28
+ADAS,2025-10,partner,heavy truck or bus,2
+ADAS,2025-10,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2025-10,partner,fixed object,26
+ADAS,2025-10,partner,other,11
+ADAS,2025-10,partner,unknown,65
+ADAS,2025-11,partner,passenger vehicle,25
+ADAS,2025-11,partner,heavy truck or bus,2
+ADAS,2025-11,partner,motorcycle,1
+ADAS,2025-11,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2025-11,partner,fixed object,16
+ADAS,2025-11,partner,other,11
+ADAS,2025-11,partner,unknown,61
+ADAS,2025-12,partner,passenger vehicle,26
+ADAS,2025-12,partner,heavy truck or bus,4
+ADAS,2025-12,partner,"pedestrian, cyclist or other VRU",3
+ADAS,2025-12,partner,fixed object,27
+ADAS,2025-12,partner,other,7
+ADAS,2025-12,partner,unknown,63
+ADAS,2026-01,partner,passenger vehicle,27
+ADAS,2026-01,partner,heavy truck or bus,2
+ADAS,2026-01,partner,fixed object,24
+ADAS,2026-01,partner,other,8
+ADAS,2026-01,partner,unknown,59
+ADAS,2026-02,partner,passenger vehicle,21
+ADAS,2026-02,partner,heavy truck or bus,5
+ADAS,2026-02,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2026-02,partner,fixed object,22
+ADAS,2026-02,partner,other,7
+ADAS,2026-02,partner,unknown,71
+ADAS,2026-03,partner,passenger vehicle,33
+ADAS,2026-03,partner,heavy truck or bus,4
+ADAS,2026-03,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2026-03,partner,fixed object,31
+ADAS,2026-03,partner,other,9
+ADAS,2026-03,partner,unknown,77
+ADAS,2026-04,partner,passenger vehicle,43
+ADAS,2026-04,partner,heavy truck or bus,3
+ADAS,2026-04,partner,motorcycle,1
+ADAS,2026-04,partner,fixed object,24
+ADAS,2026-04,partner,other,5
+ADAS,2026-04,partner,unknown,105
+ADAS,2026-05,partner,passenger vehicle,56
+ADAS,2026-05,partner,heavy truck or bus,2
+ADAS,2026-05,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2026-05,partner,fixed object,28
+ADAS,2026-05,partner,other,10
+ADAS,2026-05,partner,unknown,124
+ADAS,2026-06,partner,passenger vehicle,47
+ADAS,2026-06,partner,heavy truck or bus,2
+ADAS,2026-06,partner,motorcycle,1
+ADAS,2026-06,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2026-06,partner,fixed object,45
+ADAS,2026-06,partner,other,13
+ADAS,2026-06,partner,unknown,118
+ADAS,2026-07,partner,passenger vehicle,42
+ADAS,2026-07,partner,heavy truck or bus,3
+ADAS,2026-07,partner,motorcycle,1
+ADAS,2026-07,partner,"pedestrian, cyclist or other VRU",2
+ADAS,2026-07,partner,fixed object,52
+ADAS,2026-07,partner,other,11
+ADAS,2026-07,partner,unknown,153
+ADAS,2026-08,partner,passenger vehicle,44
+ADAS,2026-08,partner,heavy truck or bus,2
+ADAS,2026-08,partner,motorcycle,2
+ADAS,2026-08,partner,"pedestrian, cyclist or other VRU",1
+ADAS,2026-08,partner,fixed object,41
+ADAS,2026-08,partner,other,14
+ADAS,2026-08,partner,unknown,128
+ADAS,2026-09,partner,passenger vehicle,20
+ADAS,2026-09,partner,heavy truck or bus,1
+ADAS,2026-09,partner,fixed object,15
+ADAS,2026-09,partner,other,2
+ADAS,2026-09,partner,unknown,45
+ADS,2021-07,partner,passenger vehicle,9
+ADS,2021-07,partner,"pedestrian, cyclist or other VRU",1
+ADS,2021-07,partner,other,1
+ADS,2021-08,partner,passenger vehicle,8
+ADS,2021-08,partner,"pedestrian, cyclist or other VRU",2
+ADS,2021-08,partner,other,2
+ADS,2021-09,partner,passenger vehicle,9
+ADS,2021-09,partner,fixed object,1
+ADS,2021-10,partner,passenger vehicle,11
+ADS,2021-10,partner,"pedestrian, cyclist or other VRU",1
+ADS,2021-10,partner,fixed object,1
+ADS,2021-11,partner,passenger vehicle,13
+ADS,2021-11,partner,fixed object,1
+ADS,2021-12,partner,passenger vehicle,8
+ADS,2022-01,partner,passenger vehicle,8
+ADS,2022-01,partner,heavy truck or bus,1
+ADS,2022-01,partner,motorcycle,1
+ADS,2022-01,partner,"pedestrian, cyclist or other VRU",1
+ADS,2022-02,partner,passenger vehicle,9
+ADS,2022-02,partner,heavy truck or bus,1
+ADS,2022-02,partner,"pedestrian, cyclist or other VRU",2
+ADS,2022-03,partner,passenger vehicle,12
+ADS,2022-03,partner,"pedestrian, cyclist or other VRU",2
+ADS,2022-03,partner,other,1
+ADS,2022-03,partner,unknown,1
+ADS,2022-04,partner,passenger vehicle,14
+ADS,2022-04,partner,motorcycle,1
+ADS,2022-04,partner,fixed object,2
+ADS,2022-04,partner,other,2
+ADS,2022-05,partner,passenger vehicle,8
+ADS,2022-05,partner,heavy truck or bus,3
+ADS,2022-05,partner,motorcycle,1
+ADS,2022-05,partner,other,2
+ADS,2022-06,partner,passenger vehicle,8
+ADS,2022-06,partner,"pedestrian, cyclist or other VRU",4
+ADS,2022-06,partner,other,2
+ADS,2022-07,partner,passenger vehicle,11
+ADS,2022-07,partner,other,4
+ADS,2022-08,partner,passenger vehicle,17
+ADS,2022-08,partner,heavy truck or bus,1
+ADS,2022-08,partner,"pedestrian, cyclist or other VRU",1
+ADS,2022-08,partner,fixed object,1
+ADS,2022-08,partner,other,1
+ADS,2022-09,partner,passenger vehicle,6
+ADS,2022-09,partner,heavy truck or bus,1
+ADS,2022-09,partner,motorcycle,1
+ADS,2022-09,partner,"pedestrian, cyclist or other VRU",2
+ADS,2022-09,partner,other,1
+ADS,2022-10,partner,passenger vehicle,5
+ADS,2022-10,partner,fixed object,1
+ADS,2022-10,partner,other,2
+ADS,2022-11,partner,passenger vehicle,7
+ADS,2022-11,partner,heavy truck or bus,1
+ADS,2022-11,partner,"pedestrian, cyclist or other VRU",1
+ADS,2022-12,partner,passenger vehicle,11
+ADS,2022-12,partner,motorcycle,1
+ADS,2022-12,partner,fixed object,1
+ADS,2022-12,partner,other,1
+ADS,2023-01,partner,passenger vehicle,5
+ADS,2023-01,partner,motorcycle,1
+ADS,2023-01,partner,fixed object,1
+ADS,2023-01,partner,other,1
+ADS,2023-02,partner,passenger vehicle,11
+ADS,2023-02,partner,heavy truck or bus,3
+ADS,2023-02,partner,"pedestrian, cyclist or other VRU",1
+ADS,2023-02,partner,fixed object,1
+ADS,2023-03,partner,passenger vehicle,11
+ADS,2023-03,partner,heavy truck or bus,4
+ADS,2023-03,partner,fixed object,2
+ADS,2023-03,partner,other,5
+ADS,2023-04,partner,passenger vehicle,15
+ADS,2023-04,partner,heavy truck or bus,1
+ADS,2023-04,partner,other,3
+ADS,2023-05,partner,passenger vehicle,12
+ADS,2023-05,partner,heavy truck or bus,1
+ADS,2023-05,partner,"pedestrian, cyclist or other VRU",3
+ADS,2023-05,partner,fixed object,1
+ADS,2023-05,partner,other,5
+ADS,2023-06,partner,passenger vehicle,14
+ADS,2023-06,partner,heavy truck or bus,3
+ADS,2023-06,partner,"pedestrian, cyclist or other VRU",1
+ADS,2023-06,partner,other,5
+ADS,2023-07,partner,passenger vehicle,24
+ADS,2023-07,partner,heavy truck or bus,1
+ADS,2023-07,partner,"pedestrian, cyclist or other VRU",2
+ADS,2023-07,partner,other,2
+ADS,2023-08,partner,passenger vehicle,33
+ADS,2023-08,partner,heavy truck or bus,9
+ADS,2023-08,partner,"pedestrian, cyclist or other VRU",4
+ADS,2023-08,partner,fixed object,1
+ADS,2023-08,partner,other,4
+ADS,2023-09,partner,passenger vehicle,24
+ADS,2023-09,partner,heavy truck or bus,6
+ADS,2023-09,partner,other,4
+ADS,2023-10,partner,passenger vehicle,20
+ADS,2023-10,partner,heavy truck or bus,3
+ADS,2023-10,partner,motorcycle,1
+ADS,2023-10,partner,"pedestrian, cyclist or other VRU",2
+ADS,2023-10,partner,fixed object,1
+ADS,2023-10,partner,other,4
+ADS,2023-11,partner,passenger vehicle,7
+ADS,2023-11,partner,heavy truck or bus,1
+ADS,2023-11,partner,other,3
+ADS,2023-12,partner,passenger vehicle,17
+ADS,2023-12,partner,heavy truck or bus,2
+ADS,2023-12,partner,motorcycle,1
+ADS,2023-12,partner,other,1
+ADS,2024-01,partner,passenger vehicle,16
+ADS,2024-01,partner,heavy truck or bus,2
+ADS,2024-01,partner,motorcycle,1
+ADS,2024-01,partner,other,4
+ADS,2024-02,partner,passenger vehicle,12
+ADS,2024-02,partner,heavy truck or bus,4
+ADS,2024-02,partner,motorcycle,1
+ADS,2024-02,partner,"pedestrian, cyclist or other VRU",1
+ADS,2024-02,partner,fixed object,3
+ADS,2024-02,partner,other,1
+ADS,2024-03,partner,passenger vehicle,22
+ADS,2024-03,partner,heavy truck or bus,1
+ADS,2024-03,partner,fixed object,2
+ADS,2024-03,partner,other,3
+ADS,2024-04,partner,passenger vehicle,14
+ADS,2024-04,partner,heavy truck or bus,2
+ADS,2024-04,partner,motorcycle,2
+ADS,2024-04,partner,fixed object,1
+ADS,2024-04,partner,other,2
+ADS,2024-05,partner,passenger vehicle,25
+ADS,2024-05,partner,heavy truck or bus,3
+ADS,2024-05,partner,motorcycle,2
+ADS,2024-05,partner,"pedestrian, cyclist or other VRU",1
+ADS,2024-05,partner,fixed object,3
+ADS,2024-05,partner,other,6
+ADS,2024-06,partner,passenger vehicle,29
+ADS,2024-06,partner,heavy truck or bus,2
+ADS,2024-06,partner,motorcycle,1
+ADS,2024-06,partner,fixed object,1
+ADS,2024-06,partner,other,8
+ADS,2024-07,partner,passenger vehicle,32
+ADS,2024-07,partner,heavy truck or bus,2
+ADS,2024-07,partner,motorcycle,1
+ADS,2024-07,partner,"pedestrian, cyclist or other VRU",3
+ADS,2024-07,partner,other,2
+ADS,2024-08,partner,passenger vehicle,30
+ADS,2024-08,partner,heavy truck or bus,3
+ADS,2024-08,partner,motorcycle,1
+ADS,2024-08,partner,"pedestrian, cyclist or other VRU",1
+ADS,2024-08,partner,fixed object,6
+ADS,2024-08,partner,other,5
+ADS,2024-09,partner,passenger vehicle,44
+ADS,2024-09,partner,heavy truck or bus,3
+ADS,2024-09,partner,"pedestrian, cyclist or other VRU",2
+ADS,2024-09,partner,fixed object,3
+ADS,2024-09,partner,other,8
+ADS,2024-10,partner,passenger vehicle,55
+ADS,2024-10,partner,heavy truck or bus,6
+ADS,2024-10,partner,"pedestrian, cyclist or other VRU",1
+ADS,2024-10,partner,fixed object,2
+ADS,2024-10,partner,other,3
+ADS,2024-11,partner,passenger vehicle,48
+ADS,2024-11,partner,heavy truck or bus,4
+ADS,2024-11,partner,"pedestrian, cyclist or other VRU",3
+ADS,2024-11,partner,fixed object,1
+ADS,2024-11,partner,other,14
+ADS,2024-12,partner,passenger vehicle,57
+ADS,2024-12,partner,heavy truck or bus,8
+ADS,2024-12,partner,"pedestrian, cyclist or other VRU",3
+ADS,2024-12,partner,fixed object,3
+ADS,2024-12,partner,other,10
+ADS,2025-01,partner,passenger vehicle,59
+ADS,2025-01,partner,heavy truck or bus,4
+ADS,2025-01,partner,motorcycle,1
+ADS,2025-01,partner,"pedestrian, cyclist or other VRU",1
+ADS,2025-01,partner,fixed object,3
+ADS,2025-01,partner,other,10
+ADS,2025-02,partner,passenger vehicle,62
+ADS,2025-02,partner,heavy truck or bus,5
+ADS,2025-02,partner,"pedestrian, cyclist or other VRU",3
+ADS,2025-02,partner,other,8
+ADS,2025-03,partner,passenger vehicle,64
+ADS,2025-03,partner,heavy truck or bus,5
+ADS,2025-03,partner,motorcycle,1
+ADS,2025-03,partner,other,7
+ADS,2025-04,partner,passenger vehicle,76
+ADS,2025-04,partner,heavy truck or bus,8
+ADS,2025-04,partner,motorcycle,3
+ADS,2025-04,partner,"pedestrian, cyclist or other VRU",1
+ADS,2025-04,partner,fixed object,2
+ADS,2025-04,partner,other,6
+ADS,2025-05,partner,passenger vehicle,78
+ADS,2025-05,partner,heavy truck or bus,12
+ADS,2025-05,partner,"pedestrian, cyclist or other VRU",3
+ADS,2025-05,partner,fixed object,2
+ADS,2025-05,partner,other,15
+ADS,2025-06,partner,passenger vehicle,46
+ADS,2025-06,partner,heavy truck or bus,7
+ADS,2025-06,partner,"pedestrian, cyclist or other VRU",5
+ADS,2025-06,partner,fixed object,5
+ADS,2025-06,partner,other,9
+ADS,2025-07,partner,passenger vehicle,41
+ADS,2025-07,partner,heavy truck or bus,12
+ADS,2025-07,partner,"pedestrian, cyclist or other VRU",2
+ADS,2025-07,partner,fixed object,6
+ADS,2025-07,partner,other,5
+ADS,2025-08,partner,passenger vehicle,40
+ADS,2025-08,partner,heavy truck or bus,8
+ADS,2025-08,partner,motorcycle,2
+ADS,2025-08,partner,fixed object,6
+ADS,2025-08,partner,other,5
+ADS,2025-09,partner,passenger vehicle,40
+ADS,2025-09,partner,heavy truck or bus,10
+ADS,2025-09,partner,motorcycle,3
+ADS,2025-09,partner,"pedestrian, cyclist or other VRU",3
+ADS,2025-09,partner,fixed object,3
+ADS,2025-09,partner,other,8
+ADS,2025-10,partner,passenger vehicle,64
+ADS,2025-10,partner,heavy truck or bus,15
+ADS,2025-10,partner,"pedestrian, cyclist or other VRU",1
+ADS,2025-10,partner,fixed object,4
+ADS,2025-10,partner,other,13
+ADS,2025-11,partner,passenger vehicle,74
+ADS,2025-11,partner,heavy truck or bus,20
+ADS,2025-11,partner,motorcycle,2
+ADS,2025-11,partner,"pedestrian, cyclist or other VRU",1
+ADS,2025-11,partner,fixed object,5
+ADS,2025-11,partner,other,10
+ADS,2025-12,partner,passenger vehicle,70
+ADS,2025-12,partner,heavy truck or bus,19
+ADS,2025-12,partner,motorcycle,2
+ADS,2025-12,partner,"pedestrian, cyclist or other VRU",2
+ADS,2025-12,partner,fixed object,7
+ADS,2025-12,partner,other,9
+ADS,2026-01,partner,passenger vehicle,86
+ADS,2026-01,partner,heavy truck or bus,13
+ADS,2026-01,partner,motorcycle,1
+ADS,2026-01,partner,"pedestrian, cyclist or other VRU",1
+ADS,2026-01,partner,fixed object,8
+ADS,2026-01,partner,other,9
+ADS,2026-02,partner,passenger vehicle,77
+ADS,2026-02,partner,heavy truck or bus,7
+ADS,2026-02,partner,"pedestrian, cyclist or other VRU",1
+ADS,2026-02,partner,fixed object,2
+ADS,2026-02,partner,other,5
+ADS,2026-03,partner,passenger vehicle,112
+ADS,2026-03,partner,heavy truck or bus,17
+ADS,2026-03,partner,"pedestrian, cyclist or other VRU",1
+ADS,2026-03,partner,fixed object,5
+ADS,2026-03,partner,other,10
+ADS,2026-04,partner,passenger vehicle,101
+ADS,2026-04,partner,heavy truck or bus,16
+ADS,2026-04,partner,motorcycle,2
+ADS,2026-04,partner,"pedestrian, cyclist or other VRU",1
+ADS,2026-04,partner,fixed object,7
+ADS,2026-04,partner,other,14
+ADS,2026-05,partner,passenger vehicle,85
+ADS,2026-05,partner,heavy truck or bus,11
+ADS,2026-05,partner,motorcycle,2
+ADS,2026-05,partner,"pedestrian, cyclist or other VRU",1
+ADS,2026-05,partner,fixed object,4
+ADS,2026-05,partner,other,15
+ADS,2026-06,partner,passenger vehicle,92
+ADS,2026-06,partner,heavy truck or bus,17
+ADS,2026-06,partner,motorcycle,1
+ADS,2026-06,partner,"pedestrian, cyclist or other VRU",5
+ADS,2026-06,partner,fixed object,4
+ADS,2026-06,partner,other,10
+ADS,2026-07,partner,passenger vehicle,81
+ADS,2026-07,partner,heavy truck or bus,19
+ADS,2026-07,partner,"pedestrian, cyclist or other VRU",4
+ADS,2026-07,partner,fixed object,7
+ADS,2026-07,partner,other,9
+ADS,2026-08,partner,passenger vehicle,64
+ADS,2026-08,partner,heavy truck or bus,11
+ADS,2026-08,partner,"pedestrian, cyclist or other VRU",1
+ADS,2026-08,partner,fixed object,21
+ADS,2026-08,partner,other,6
+ADS,2026-09,partner,passenger vehicle,9
+ADS,2026-09,partner,motorcycle,1
+ADS,2026-09,partner,"pedestrian, cyclist or other VRU",1
+ADS,2026-09,partner,fixed object,1
+ADAS,2021-07,road,street,1
+ADAS,2021-07,road,intersection,3
+ADAS,2021-07,road,highway or freeway,11
+ADAS,2021-07,road,unknown,7
+ADAS,2021-08,road,street,5
+ADAS,2021-08,road,intersection,5
+ADAS,2021-08,road,highway or freeway,18
+ADAS,2021-08,road,unknown,3
+ADAS,2021-09,road,street,8
+ADAS,2021-09,road,intersection,3
+ADAS,2021-09,road,highway or freeway,21
+ADAS,2021-09,road,rural road,1
+ADAS,2021-09,road,unknown,8
+ADAS,2021-10,road,street,7
+ADAS,2021-10,road,intersection,2
+ADAS,2021-10,road,highway or freeway,19
+ADAS,2021-10,road,unknown,16
+ADAS,2021-11,road,street,7
+ADAS,2021-11,road,intersection,8
+ADAS,2021-11,road,highway or freeway,13
+ADAS,2021-11,road,parking area,1
+ADAS,2021-11,road,rural road,1
+ADAS,2021-11,road,unknown,14
+ADAS,2021-12,road,street,6
+ADAS,2021-12,road,intersection,6
+ADAS,2021-12,road,highway or freeway,20
+ADAS,2021-12,road,parking area,2
+ADAS,2021-12,road,rural road,1
+ADAS,2021-12,road,unknown,9
+ADAS,2022-01,road,street,2
+ADAS,2022-01,road,intersection,7
+ADAS,2022-01,road,highway or freeway,13
+ADAS,2022-01,road,rural road,3
+ADAS,2022-01,road,unknown,2
+ADAS,2022-02,road,street,3
+ADAS,2022-02,road,intersection,7
+ADAS,2022-02,road,highway or freeway,20
+ADAS,2022-02,road,rural road,3
+ADAS,2022-02,road,unknown,9
+ADAS,2022-03,road,street,5
+ADAS,2022-03,road,intersection,2
+ADAS,2022-03,road,highway or freeway,19
+ADAS,2022-03,road,rural road,1
+ADAS,2022-03,road,unknown,3
+ADAS,2022-04,road,street,4
+ADAS,2022-04,road,intersection,7
+ADAS,2022-04,road,highway or freeway,25
+ADAS,2022-04,road,rural road,3
+ADAS,2022-04,road,unknown,3
+ADAS,2022-05,road,street,9
+ADAS,2022-05,road,intersection,4
+ADAS,2022-05,road,highway or freeway,31
+ADAS,2022-05,road,rural road,1
+ADAS,2022-05,road,unknown,8
+ADAS,2022-06,road,street,9
+ADAS,2022-06,road,intersection,7
+ADAS,2022-06,road,highway or freeway,21
+ADAS,2022-06,road,unknown,7
+ADAS,2022-07,road,street,1
+ADAS,2022-07,road,intersection,3
+ADAS,2022-07,road,highway or freeway,41
+ADAS,2022-07,road,parking area,1
+ADAS,2022-07,road,rural road,4
+ADAS,2022-07,road,unknown,11
+ADAS,2022-08,road,street,4
+ADAS,2022-08,road,highway or freeway,26
+ADAS,2022-08,road,rural road,2
+ADAS,2022-08,road,unknown,5
+ADAS,2022-09,road,street,7
+ADAS,2022-09,road,intersection,1
+ADAS,2022-09,road,highway or freeway,26
+ADAS,2022-09,road,rural road,3
+ADAS,2022-09,road,unknown,3
+ADAS,2022-10,road,street,9
+ADAS,2022-10,road,intersection,3
+ADAS,2022-10,road,highway or freeway,26
+ADAS,2022-10,road,rural road,6
+ADAS,2022-10,road,unknown,4
+ADAS,2022-11,road,street,9
+ADAS,2022-11,road,intersection,2
+ADAS,2022-11,road,highway or freeway,42
+ADAS,2022-11,road,rural road,1
+ADAS,2022-11,road,other,1
+ADAS,2022-11,road,unknown,1
+ADAS,2022-12,road,street,5
+ADAS,2022-12,road,intersection,9
+ADAS,2022-12,road,highway or freeway,45
+ADAS,2022-12,road,rural road,2
+ADAS,2022-12,road,unknown,4
+ADAS,2023-01,road,street,4
+ADAS,2023-01,road,intersection,11
+ADAS,2023-01,road,highway or freeway,35
+ADAS,2023-01,road,rural road,1
+ADAS,2023-01,road,unknown,3
+ADAS,2023-02,road,street,1
+ADAS,2023-02,road,intersection,4
+ADAS,2023-02,road,highway or freeway,25
+ADAS,2023-02,road,rural road,1
+ADAS,2023-02,road,unknown,4
+ADAS,2023-03,road,street,6
+ADAS,2023-03,road,intersection,2
+ADAS,2023-03,road,highway or freeway,45
+ADAS,2023-03,road,rural road,2
+ADAS,2023-03,road,unknown,5
+ADAS,2023-04,road,street,5
+ADAS,2023-04,road,intersection,11
+ADAS,2023-04,road,highway or freeway,24
+ADAS,2023-04,road,rural road,1
+ADAS,2023-04,road,unknown,4
+ADAS,2023-05,road,street,6
+ADAS,2023-05,road,intersection,7
+ADAS,2023-05,road,highway or freeway,31
+ADAS,2023-05,road,rural road,4
+ADAS,2023-05,road,other,1
+ADAS,2023-05,road,unknown,4
+ADAS,2023-06,road,street,9
+ADAS,2023-06,road,intersection,10
+ADAS,2023-06,road,highway or freeway,16
+ADAS,2023-06,road,unknown,11
+ADAS,2023-07,road,street,8
+ADAS,2023-07,road,intersection,5
+ADAS,2023-07,road,highway or freeway,35
+ADAS,2023-07,road,rural road,1
+ADAS,2023-07,road,unknown,7
+ADAS,2023-08,road,street,5
+ADAS,2023-08,road,intersection,6
+ADAS,2023-08,road,highway or freeway,23
+ADAS,2023-08,road,unknown,7
+ADAS,2023-09,road,street,5
+ADAS,2023-09,road,intersection,10
+ADAS,2023-09,road,highway or freeway,32
+ADAS,2023-09,road,rural road,2
+ADAS,2023-09,road,unknown,4
+ADAS,2023-10,road,street,5
+ADAS,2023-10,road,intersection,5
+ADAS,2023-10,road,highway or freeway,25
+ADAS,2023-10,road,rural road,5
+ADAS,2023-10,road,unknown,8
+ADAS,2023-11,road,street,5
+ADAS,2023-11,road,intersection,5
+ADAS,2023-11,road,highway or freeway,30
+ADAS,2023-11,road,rural road,4
+ADAS,2023-11,road,unknown,8
+ADAS,2023-12,road,street,10
+ADAS,2023-12,road,intersection,6
+ADAS,2023-12,road,highway or freeway,44
+ADAS,2023-12,road,parking area,1
+ADAS,2023-12,road,rural road,1
+ADAS,2023-12,road,other,1
+ADAS,2023-12,road,unknown,10
+ADAS,2024-01,road,street,6
+ADAS,2024-01,road,intersection,3
+ADAS,2024-01,road,highway or freeway,18
+ADAS,2024-01,road,rural road,1
+ADAS,2024-01,road,other,1
+ADAS,2024-01,road,unknown,6
+ADAS,2024-02,road,street,3
+ADAS,2024-02,road,intersection,4
+ADAS,2024-02,road,highway or freeway,19
+ADAS,2024-02,road,rural road,5
+ADAS,2024-02,road,unknown,4
+ADAS,2024-03,road,street,7
+ADAS,2024-03,road,intersection,9
+ADAS,2024-03,road,highway or freeway,26
+ADAS,2024-03,road,rural road,1
+ADAS,2024-03,road,unknown,8
+ADAS,2024-04,road,street,14
+ADAS,2024-04,road,intersection,10
+ADAS,2024-04,road,highway or freeway,26
+ADAS,2024-04,road,rural road,1
+ADAS,2024-04,road,unknown,9
+ADAS,2024-05,road,street,14
+ADAS,2024-05,road,intersection,7
+ADAS,2024-05,road,highway or freeway,32
+ADAS,2024-05,road,rural road,1
+ADAS,2024-05,road,unknown,20
+ADAS,2024-06,road,street,11
+ADAS,2024-06,road,intersection,2
+ADAS,2024-06,road,highway or freeway,35
+ADAS,2024-06,road,rural road,1
+ADAS,2024-06,road,unknown,18
+ADAS,2024-07,road,street,11
+ADAS,2024-07,road,intersection,2
+ADAS,2024-07,road,highway or freeway,31
+ADAS,2024-07,road,parking area,1
+ADAS,2024-07,road,rural road,2
+ADAS,2024-07,road,other,1
+ADAS,2024-07,road,unknown,28
+ADAS,2024-08,road,street,9
+ADAS,2024-08,road,intersection,2
+ADAS,2024-08,road,highway or freeway,21
+ADAS,2024-08,road,parking area,1
+ADAS,2024-08,road,rural road,6
+ADAS,2024-08,road,unknown,31
+ADAS,2024-09,road,street,7
+ADAS,2024-09,road,intersection,6
+ADAS,2024-09,road,highway or freeway,33
+ADAS,2024-09,road,parking area,3
+ADAS,2024-09,road,rural road,6
+ADAS,2024-09,road,unknown,22
+ADAS,2024-10,road,street,14
+ADAS,2024-10,road,intersection,11
+ADAS,2024-10,road,highway or freeway,35
+ADAS,2024-10,road,parking area,1
+ADAS,2024-10,road,rural road,1
+ADAS,2024-10,road,other,1
+ADAS,2024-10,road,unknown,33
+ADAS,2024-11,road,street,7
+ADAS,2024-11,road,intersection,14
+ADAS,2024-11,road,highway or freeway,37
+ADAS,2024-11,road,parking area,1
+ADAS,2024-11,road,rural road,3
+ADAS,2024-11,road,unknown,30
+ADAS,2024-12,road,street,10
+ADAS,2024-12,road,intersection,6
+ADAS,2024-12,road,highway or freeway,35
+ADAS,2024-12,road,parking area,1
+ADAS,2024-12,road,rural road,1
+ADAS,2024-12,road,unknown,41
+ADAS,2025-01,road,street,3
+ADAS,2025-01,road,intersection,3
+ADAS,2025-01,road,highway or freeway,19
+ADAS,2025-01,road,parking area,1
+ADAS,2025-01,road,rural road,1
+ADAS,2025-01,road,other,1
+ADAS,2025-01,road,unknown,31
+ADAS,2025-02,road,street,6
+ADAS,2025-02,road,intersection,6
+ADAS,2025-02,road,highway or freeway,23
+ADAS,2025-02,road,rural road,3
+ADAS,2025-02,road,unknown,38
+ADAS,2025-03,road,street,14
+ADAS,2025-03,road,intersection,4
+ADAS,2025-03,road,highway or freeway,42
+ADAS,2025-03,road,parking area,1
+ADAS,2025-03,road,unknown,30
+ADAS,2025-04,road,street,16
+ADAS,2025-04,road,intersection,7
+ADAS,2025-04,road,highway or freeway,39
+ADAS,2025-04,road,parking area,2
+ADAS,2025-04,road,unknown,34
+ADAS,2025-05,road,street,11
+ADAS,2025-05,road,intersection,14
+ADAS,2025-05,road,highway or freeway,48
+ADAS,2025-05,road,parking area,1
+ADAS,2025-05,road,rural road,2
+ADAS,2025-05,road,unknown,33
+ADAS,2025-06,road,street,14
+ADAS,2025-06,road,intersection,9
+ADAS,2025-06,road,highway or freeway,40
+ADAS,2025-06,road,parking area,1
+ADAS,2025-06,road,rural road,2
+ADAS,2025-06,road,unknown,36
+ADAS,2025-07,road,street,10
+ADAS,2025-07,road,intersection,12
+ADAS,2025-07,road,highway or freeway,33
+ADAS,2025-07,road,rural road,3
+ADAS,2025-07,road,unknown,35
+ADAS,2025-08,road,street,7
+ADAS,2025-08,road,intersection,9
+ADAS,2025-08,road,highway or freeway,38
+ADAS,2025-08,road,parking area,2
+ADAS,2025-08,road,rural road,1
+ADAS,2025-08,road,unknown,25
+ADAS,2025-09,road,street,11
+ADAS,2025-09,road,intersection,13
+ADAS,2025-09,road,highway or freeway,44
+ADAS,2025-09,road,parking area,1
+ADAS,2025-09,road,rural road,1
+ADAS,2025-09,road,unknown,35
+ADAS,2025-10,road,street,12
+ADAS,2025-10,road,intersection,15
+ADAS,2025-10,road,highway or freeway,56
+ADAS,2025-10,road,parking area,1
+ADAS,2025-10,road,rural road,2
+ADAS,2025-10,road,unknown,47
+ADAS,2025-11,road,street,11
+ADAS,2025-11,road,intersection,18
+ADAS,2025-11,road,highway or freeway,44
+ADAS,2025-11,road,unknown,44
+ADAS,2025-12,road,street,17
+ADAS,2025-12,road,intersection,15
+ADAS,2025-12,road,highway or freeway,45
+ADAS,2025-12,road,parking area,1
+ADAS,2025-12,road,rural road,2
+ADAS,2025-12,road,unknown,50
+ADAS,2026-01,road,street,14
+ADAS,2026-01,road,intersection,10
+ADAS,2026-01,road,highway or freeway,40
+ADAS,2026-01,road,parking area,3
+ADAS,2026-01,road,rural road,2
+ADAS,2026-01,road,unknown,51
+ADAS,2026-02,road,street,14
+ADAS,2026-02,road,intersection,13
+ADAS,2026-02,road,highway or freeway,42
+ADAS,2026-02,road,rural road,2
+ADAS,2026-02,road,other,1
+ADAS,2026-02,road,unknown,55
+ADAS,2026-03,road,street,15
+ADAS,2026-03,road,intersection,14
+ADAS,2026-03,road,highway or freeway,66
+ADAS,2026-03,road,parking area,1
+ADAS,2026-03,road,rural road,2
+ADAS,2026-03,road,unknown,57
+ADAS,2026-04,road,street,18
+ADAS,2026-04,road,intersection,11
+ADAS,2026-04,road,highway or freeway,70
+ADAS,2026-04,road,parking area,2
+ADAS,2026-04,road,rural road,6
+ADAS,2026-04,road,unknown,74
+ADAS,2026-05,road,street,27
+ADAS,2026-05,road,intersection,22
+ADAS,2026-05,road,highway or freeway,71
+ADAS,2026-05,road,parking area,4
+ADAS,2026-05,road,rural road,11
+ADAS,2026-05,road,other,1
+ADAS,2026-05,road,unknown,85
+ADAS,2026-06,road,street,20
+ADAS,2026-06,road,intersection,21
+ADAS,2026-06,road,highway or freeway,87
+ADAS,2026-06,road,parking area,1
+ADAS,2026-06,road,rural road,6
+ADAS,2026-06,road,other,1
+ADAS,2026-06,road,unknown,91
+ADAS,2026-07,road,street,30
+ADAS,2026-07,road,intersection,27
+ADAS,2026-07,road,highway or freeway,89
+ADAS,2026-07,road,parking area,8
+ADAS,2026-07,road,rural road,11
+ADAS,2026-07,road,unknown,99
+ADAS,2026-08,road,street,23
+ADAS,2026-08,road,intersection,30
+ADAS,2026-08,road,highway or freeway,88
+ADAS,2026-08,road,parking area,6
+ADAS,2026-08,road,rural road,2
+ADAS,2026-08,road,other,1
+ADAS,2026-08,road,unknown,82
+ADAS,2026-09,road,street,7
+ADAS,2026-09,road,intersection,14
+ADAS,2026-09,road,highway or freeway,23
+ADAS,2026-09,road,parking area,2
+ADAS,2026-09,road,rural road,2
+ADAS,2026-09,road,unknown,35
+ADS,2021-07,road,street,9
+ADS,2021-07,road,intersection,2
+ADS,2021-08,road,street,7
+ADS,2021-08,road,intersection,4
+ADS,2021-08,road,parking area,1
+ADS,2021-09,road,street,4
+ADS,2021-09,road,intersection,5
+ADS,2021-09,road,parking area,1
+ADS,2021-10,road,street,6
+ADS,2021-10,road,intersection,7
+ADS,2021-11,road,street,3
+ADS,2021-11,road,intersection,10
+ADS,2021-11,road,highway or freeway,1
+ADS,2021-12,road,street,4
+ADS,2021-12,road,intersection,3
+ADS,2021-12,road,other,1
+ADS,2022-01,road,street,3
+ADS,2022-01,road,intersection,8
+ADS,2022-02,road,street,4
+ADS,2022-02,road,intersection,7
+ADS,2022-02,road,highway or freeway,1
+ADS,2022-03,road,street,4
+ADS,2022-03,road,intersection,10
+ADS,2022-03,road,parking area,1
+ADS,2022-03,road,other,1
+ADS,2022-04,road,street,6
+ADS,2022-04,road,intersection,9
+ADS,2022-04,road,highway or freeway,1
+ADS,2022-04,road,parking area,2
+ADS,2022-04,road,unknown,1
+ADS,2022-05,road,street,4
+ADS,2022-05,road,intersection,7
+ADS,2022-05,road,highway or freeway,2
+ADS,2022-05,road,parking area,1
+ADS,2022-06,road,street,7
+ADS,2022-06,road,intersection,6
+ADS,2022-06,road,parking area,1
+ADS,2022-07,road,street,5
+ADS,2022-07,road,intersection,6
+ADS,2022-07,road,highway or freeway,2
+ADS,2022-07,road,parking area,2
+ADS,2022-08,road,street,10
+ADS,2022-08,road,intersection,7
+ADS,2022-08,road,highway or freeway,2
+ADS,2022-08,road,parking area,2
+ADS,2022-09,road,street,5
+ADS,2022-09,road,intersection,4
+ADS,2022-09,road,highway or freeway,1
+ADS,2022-09,road,parking area,1
+ADS,2022-10,road,street,3
+ADS,2022-10,road,intersection,2
+ADS,2022-10,road,highway or freeway,3
+ADS,2022-11,road,street,5
+ADS,2022-11,road,intersection,3
+ADS,2022-11,road,highway or freeway,1
+ADS,2022-12,road,street,8
+ADS,2022-12,road,intersection,4
+ADS,2022-12,road,highway or freeway,1
+ADS,2022-12,road,parking area,1
+ADS,2023-01,road,street,4
+ADS,2023-01,road,intersection,3
+ADS,2023-01,road,parking area,1
+ADS,2023-02,road,street,6
+ADS,2023-02,road,intersection,6
+ADS,2023-02,road,highway or freeway,4
+ADS,2023-03,road,street,10
+ADS,2023-03,road,intersection,9
+ADS,2023-03,road,highway or freeway,2
+ADS,2023-03,road,parking area,1
+ADS,2023-04,road,street,8
+ADS,2023-04,road,intersection,10
+ADS,2023-04,road,highway or freeway,1
+ADS,2023-05,road,street,15
+ADS,2023-05,road,intersection,4
+ADS,2023-05,road,highway or freeway,1
+ADS,2023-05,road,parking area,2
+ADS,2023-06,road,street,12
+ADS,2023-06,road,intersection,7
+ADS,2023-06,road,highway or freeway,3
+ADS,2023-06,road,parking area,1
+ADS,2023-07,road,street,13
+ADS,2023-07,road,intersection,15
+ADS,2023-07,road,highway or freeway,1
+ADS,2023-08,road,street,23
+ADS,2023-08,road,intersection,25
+ADS,2023-08,road,highway or freeway,2
+ADS,2023-08,road,other,1
+ADS,2023-09,road,street,20
+ADS,2023-09,road,intersection,11
+ADS,2023-09,road,highway or freeway,2
+ADS,2023-09,road,parking area,1
+ADS,2023-10,road,street,18
+ADS,2023-10,road,intersection,11
+ADS,2023-10,road,highway or freeway,1
+ADS,2023-10,road,parking area,1
+ADS,2023-11,road,street,2
+ADS,2023-11,road,intersection,6
+ADS,2023-11,road,highway or freeway,1
+ADS,2023-11,road,parking area,2
+ADS,2023-12,road,street,9
+ADS,2023-12,road,intersection,10
+ADS,2023-12,road,highway or freeway,1
+ADS,2023-12,road,parking area,1
+ADS,2024-01,road,street,6
+ADS,2024-01,road,intersection,14
+ADS,2024-01,road,highway or freeway,1
+ADS,2024-01,road,parking area,2
+ADS,2024-02,road,street,12
+ADS,2024-02,road,intersection,8
+ADS,2024-02,road,highway or freeway,2
+ADS,2024-03,road,street,16
+ADS,2024-03,road,intersection,11
+ADS,2024-03,road,highway or freeway,1
+ADS,2024-04,road,street,7
+ADS,2024-04,road,intersection,9
+ADS,2024-04,road,highway or freeway,1
+ADS,2024-04,road,parking area,4
+ADS,2024-05,road,street,16
+ADS,2024-05,road,intersection,11
+ADS,2024-05,road,highway or freeway,4
+ADS,2024-05,road,parking area,9
+ADS,2024-06,road,street,21
+ADS,2024-06,road,intersection,14
+ADS,2024-06,road,highway or freeway,2
+ADS,2024-06,road,parking area,4
+ADS,2024-07,road,street,24
+ADS,2024-07,road,intersection,10
+ADS,2024-07,road,parking area,6
+ADS,2024-08,road,street,32
+ADS,2024-08,road,intersection,7
+ADS,2024-08,road,highway or freeway,1
+ADS,2024-08,road,parking area,6
+ADS,2024-09,road,street,40
+ADS,2024-09,road,intersection,14
+ADS,2024-09,road,highway or freeway,4
+ADS,2024-09,road,parking area,1
+ADS,2024-09,road,rural road,1
+ADS,2024-10,road,street,47
+ADS,2024-10,road,intersection,14
+ADS,2024-10,road,highway or freeway,2
+ADS,2024-10,road,parking area,4
+ADS,2024-11,road,street,48
+ADS,2024-11,road,intersection,18
+ADS,2024-11,road,parking area,3
+ADS,2024-11,road,unknown,1
+ADS,2024-12,road,street,56
+ADS,2024-12,road,intersection,18
+ADS,2024-12,road,parking area,7
+ADS,2025-01,road,street,51
+ADS,2025-01,road,intersection,18
+ADS,2025-01,road,highway or freeway,2
+ADS,2025-01,road,parking area,6
+ADS,2025-01,road,other,1
+ADS,2025-02,road,street,50
+ADS,2025-02,road,intersection,21
+ADS,2025-02,road,highway or freeway,1
+ADS,2025-02,road,parking area,5
+ADS,2025-02,road,other,1
+ADS,2025-03,road,street,56
+ADS,2025-03,road,intersection,16
+ADS,2025-03,road,highway or freeway,1
+ADS,2025-03,road,parking area,4
+ADS,2025-04,road,street,55
+ADS,2025-04,road,intersection,28
+ADS,2025-04,road,highway or freeway,2
+ADS,2025-04,road,parking area,11
+ADS,2025-05,road,street,75
+ADS,2025-05,road,intersection,25
+ADS,2025-05,road,highway or freeway,3
+ADS,2025-05,road,parking area,7
+ADS,2025-06,road,street,47
+ADS,2025-06,road,intersection,17
+ADS,2025-06,road,parking area,8
+ADS,2025-07,road,street,35
+ADS,2025-07,road,intersection,25
+ADS,2025-07,road,parking area,6
+ADS,2025-08,road,street,39
+ADS,2025-08,road,intersection,17
+ADS,2025-08,road,highway or freeway,1
+ADS,2025-08,road,parking area,4
+ADS,2025-09,road,street,35
+ADS,2025-09,road,intersection,24
+ADS,2025-09,road,highway or freeway,2
+ADS,2025-09,road,parking area,6
+ADS,2025-10,road,street,67
+ADS,2025-10,road,intersection,19
+ADS,2025-10,road,highway or freeway,2
+ADS,2025-10,road,parking area,9
+ADS,2025-11,road,street,72
+ADS,2025-11,road,intersection,31
+ADS,2025-11,road,parking area,9
+ADS,2025-12,road,street,70
+ADS,2025-12,road,intersection,28
+ADS,2025-12,road,highway or freeway,2
+ADS,2025-12,road,parking area,9
+ADS,2026-01,road,street,88
+ADS,2026-01,road,intersection,16
+ADS,2026-01,road,highway or freeway,4
+ADS,2026-01,road,parking area,10
+ADS,2026-02,road,street,71
+ADS,2026-02,road,intersection,18
+ADS,2026-02,road,highway or freeway,1
+ADS,2026-02,road,parking area,2
+ADS,2026-03,road,street,123
+ADS,2026-03,road,intersection,13
+ADS,2026-03,road,highway or freeway,2
+ADS,2026-03,road,parking area,7
+ADS,2026-04,road,street,104
+ADS,2026-04,road,intersection,19
+ADS,2026-04,road,highway or freeway,8
+ADS,2026-04,road,parking area,8
+ADS,2026-04,road,other,2
+ADS,2026-05,road,street,89
+ADS,2026-05,road,intersection,19
+ADS,2026-05,road,highway or freeway,1
+ADS,2026-05,road,parking area,8
+ADS,2026-05,road,other,1
+ADS,2026-06,road,street,92
+ADS,2026-06,road,intersection,18
+ADS,2026-06,road,highway or freeway,1
+ADS,2026-06,road,parking area,17
+ADS,2026-06,road,unknown,1
+ADS,2026-07,road,street,89
+ADS,2026-07,road,intersection,16
+ADS,2026-07,road,highway or freeway,4
+ADS,2026-07,road,parking area,10
+ADS,2026-07,road,other,1
+ADS,2026-08,road,street,62
+ADS,2026-08,road,intersection,23
+ADS,2026-08,road,highway or freeway,3
+ADS,2026-08,road,parking area,15
+ADS,2026-09,road,street,7
+ADS,2026-09,road,intersection,3
+ADS,2026-09,road,highway or freeway,2
+ADAS,2021-07,severity,no injury reported,1
+ADAS,2021-07,severity,minor,2
+ADAS,2021-07,severity,moderate,1
+ADAS,2021-07,severity,fatal,1
+ADAS,2021-07,severity,unknown,17
+ADAS,2021-08,severity,no injury reported,3
+ADAS,2021-08,severity,minor,3
+ADAS,2021-08,severity,moderate,1
+ADAS,2021-08,severity,unknown,24
+ADAS,2021-09,severity,no injury reported,4
+ADAS,2021-09,severity,minor,1
+ADAS,2021-09,severity,moderate,2
+ADAS,2021-09,severity,fatal,1
+ADAS,2021-09,severity,unknown,33
+ADAS,2021-10,severity,minor,4
+ADAS,2021-10,severity,moderate,2
+ADAS,2021-10,severity,unknown,38
+ADAS,2021-11,severity,no injury reported,8
+ADAS,2021-11,severity,minor,1
+ADAS,2021-11,severity,moderate,5
+ADAS,2021-11,severity,serious,2
+ADAS,2021-11,severity,unknown,28
+ADAS,2021-12,severity,no injury reported,4
+ADAS,2021-12,severity,minor,2
+ADAS,2021-12,severity,moderate,3
+ADAS,2021-12,severity,fatal,1
+ADAS,2021-12,severity,unknown,34
+ADAS,2022-01,severity,no injury reported,5
+ADAS,2022-01,severity,minor,1
+ADAS,2022-01,severity,fatal,1
+ADAS,2022-01,severity,unknown,20
+ADAS,2022-02,severity,no injury reported,11
+ADAS,2022-02,severity,minor,1
+ADAS,2022-02,severity,moderate,4
+ADAS,2022-02,severity,serious,1
+ADAS,2022-02,severity,unknown,25
+ADAS,2022-03,severity,no injury reported,5
+ADAS,2022-03,severity,minor,3
+ADAS,2022-03,severity,moderate,2
+ADAS,2022-03,severity,fatal,1
+ADAS,2022-03,severity,unknown,19
+ADAS,2022-04,severity,no injury reported,1
+ADAS,2022-04,severity,minor,3
+ADAS,2022-04,severity,fatal,1
+ADAS,2022-04,severity,unknown,37
+ADAS,2022-05,severity,no injury reported,5
+ADAS,2022-05,severity,minor,2
+ADAS,2022-05,severity,moderate,2
+ADAS,2022-05,severity,serious,2
+ADAS,2022-05,severity,fatal,2
+ADAS,2022-05,severity,unknown,40
+ADAS,2022-06,severity,no injury reported,3
+ADAS,2022-06,severity,minor,2
+ADAS,2022-06,severity,moderate,1
+ADAS,2022-06,severity,fatal,1
+ADAS,2022-06,severity,unknown,37
+ADAS,2022-07,severity,no injury reported,5
+ADAS,2022-07,severity,minor,3
+ADAS,2022-07,severity,fatal,3
+ADAS,2022-07,severity,unknown,50
+ADAS,2022-08,severity,minor,1
+ADAS,2022-08,severity,fatal,2
+ADAS,2022-08,severity,unknown,34
+ADAS,2022-09,severity,no injury reported,3
+ADAS,2022-09,severity,fatal,2
+ADAS,2022-09,severity,unknown,35
+ADAS,2022-10,severity,minor,3
+ADAS,2022-10,severity,serious,1
+ADAS,2022-10,severity,unknown,44
+ADAS,2022-11,severity,no injury reported,2
+ADAS,2022-11,severity,moderate,1
+ADAS,2022-11,severity,serious,2
+ADAS,2022-11,severity,unknown,51
+ADAS,2022-12,severity,no injury reported,3
+ADAS,2022-12,severity,minor,4
+ADAS,2022-12,severity,moderate,1
+ADAS,2022-12,severity,serious,1
+ADAS,2022-12,severity,unknown,56
+ADAS,2023-01,severity,no injury reported,3
+ADAS,2023-01,severity,minor,1
+ADAS,2023-01,severity,fatal,1
+ADAS,2023-01,severity,unknown,49
+ADAS,2023-02,severity,no injury reported,3
+ADAS,2023-02,severity,minor,1
+ADAS,2023-02,severity,fatal,1
+ADAS,2023-02,severity,unknown,30
+ADAS,2023-03,severity,no injury reported,3
+ADAS,2023-03,severity,minor,2
+ADAS,2023-03,severity,moderate,1
+ADAS,2023-03,severity,serious,1
+ADAS,2023-03,severity,fatal,1
+ADAS,2023-03,severity,unknown,52
+ADAS,2023-04,severity,no injury reported,2
+ADAS,2023-04,severity,minor,1
+ADAS,2023-04,severity,moderate,1
+ADAS,2023-04,severity,fatal,1
+ADAS,2023-04,severity,unknown,40
+ADAS,2023-05,severity,no injury reported,1
+ADAS,2023-05,severity,minor,1
+ADAS,2023-05,severity,serious,1
+ADAS,2023-05,severity,unknown,50
+ADAS,2023-06,severity,no injury reported,4
+ADAS,2023-06,severity,minor,1
+ADAS,2023-06,severity,serious,2
+ADAS,2023-06,severity,fatal,3
+ADAS,2023-06,severity,unknown,36
+ADAS,2023-07,severity,fatal,3
+ADAS,2023-07,severity,unknown,53
+ADAS,2023-08,severity,no injury reported,1
+ADAS,2023-08,severity,serious,3
+ADAS,2023-08,severity,fatal,1
+ADAS,2023-08,severity,unknown,36
+ADAS,2023-09,severity,no injury reported,3
+ADAS,2023-09,severity,minor,2
+ADAS,2023-09,severity,serious,2
+ADAS,2023-09,severity,unknown,46
+ADAS,2023-10,severity,no injury reported,4
+ADAS,2023-10,severity,minor,1
+ADAS,2023-10,severity,moderate,1
+ADAS,2023-10,severity,unknown,42
+ADAS,2023-11,severity,no injury reported,2
+ADAS,2023-11,severity,minor,1
+ADAS,2023-11,severity,moderate,2
+ADAS,2023-11,severity,serious,1
+ADAS,2023-11,severity,fatal,1
+ADAS,2023-11,severity,unknown,45
+ADAS,2023-12,severity,no injury reported,5
+ADAS,2023-12,severity,minor,5
+ADAS,2023-12,severity,serious,1
+ADAS,2023-12,severity,fatal,1
+ADAS,2023-12,severity,unknown,61
+ADAS,2024-01,severity,no injury reported,1
+ADAS,2024-01,severity,minor,2
+ADAS,2024-01,severity,serious,1
+ADAS,2024-01,severity,unknown,31
+ADAS,2024-02,severity,no injury reported,2
+ADAS,2024-02,severity,minor,3
+ADAS,2024-02,severity,moderate,1
+ADAS,2024-02,severity,serious,1
+ADAS,2024-02,severity,fatal,1
+ADAS,2024-02,severity,unknown,27
+ADAS,2024-03,severity,no injury reported,6
+ADAS,2024-03,severity,minor,1
+ADAS,2024-03,severity,moderate,1
+ADAS,2024-03,severity,fatal,1
+ADAS,2024-03,severity,unknown,42
+ADAS,2024-04,severity,no injury reported,8
+ADAS,2024-04,severity,serious,1
+ADAS,2024-04,severity,fatal,1
+ADAS,2024-04,severity,unknown,50
+ADAS,2024-05,severity,no injury reported,7
+ADAS,2024-05,severity,minor,3
+ADAS,2024-05,severity,moderate,1
+ADAS,2024-05,severity,serious,1
+ADAS,2024-05,severity,fatal,1
+ADAS,2024-05,severity,unknown,61
+ADAS,2024-06,severity,no injury reported,12
+ADAS,2024-06,severity,minor,5
+ADAS,2024-06,severity,unknown,50
+ADAS,2024-07,severity,no injury reported,6
+ADAS,2024-07,severity,minor,3
+ADAS,2024-07,severity,moderate,2
+ADAS,2024-07,severity,serious,4
+ADAS,2024-07,severity,fatal,1
+ADAS,2024-07,severity,unknown,60
+ADAS,2024-08,severity,no injury reported,9
+ADAS,2024-08,severity,minor,1
+ADAS,2024-08,severity,moderate,1
+ADAS,2024-08,severity,serious,1
+ADAS,2024-08,severity,fatal,1
+ADAS,2024-08,severity,unknown,57
+ADAS,2024-09,severity,no injury reported,13
+ADAS,2024-09,severity,minor,3
+ADAS,2024-09,severity,moderate,1
+ADAS,2024-09,severity,serious,2
+ADAS,2024-09,severity,fatal,2
+ADAS,2024-09,severity,unknown,56
+ADAS,2024-10,severity,no injury reported,18
+ADAS,2024-10,severity,moderate,1
+ADAS,2024-10,severity,unknown,77
+ADAS,2024-11,severity,no injury reported,12
+ADAS,2024-11,severity,serious,1
+ADAS,2024-11,severity,unknown,79
+ADAS,2024-12,severity,no injury reported,9
+ADAS,2024-12,severity,minor,6
+ADAS,2024-12,severity,fatal,2
+ADAS,2024-12,severity,unknown,77
+ADAS,2025-01,severity,no injury reported,9
+ADAS,2025-01,severity,minor,1
+ADAS,2025-01,severity,serious,1
+ADAS,2025-01,severity,fatal,2
+ADAS,2025-01,severity,unknown,46
+ADAS,2025-02,severity,no injury reported,8
+ADAS,2025-02,severity,minor,4
+ADAS,2025-02,severity,moderate,1
+ADAS,2025-02,severity,serious,2
+ADAS,2025-02,severity,unknown,61
+ADAS,2025-03,severity,no injury reported,16
+ADAS,2025-03,severity,minor,5
+ADAS,2025-03,severity,moderate,2
+ADAS,2025-03,severity,serious,3
+ADAS,2025-03,severity,unknown,65
+ADAS,2025-04,severity,no injury reported,9
+ADAS,2025-04,severity,minor,1
+ADAS,2025-04,severity,moderate,1
+ADAS,2025-04,severity,serious,1
+ADAS,2025-04,severity,fatal,4
+ADAS,2025-04,severity,unknown,82
+ADAS,2025-05,severity,no injury reported,14
+ADAS,2025-05,severity,minor,4
+ADAS,2025-05,severity,serious,4
+ADAS,2025-05,severity,unknown,87
+ADAS,2025-06,severity,no injury reported,7
+ADAS,2025-06,severity,minor,3
+ADAS,2025-06,severity,moderate,1
+ADAS,2025-06,severity,serious,2
+ADAS,2025-06,severity,unknown,89
+ADAS,2025-07,severity,no injury reported,3
+ADAS,2025-07,severity,minor,5
+ADAS,2025-07,severity,moderate,1
+ADAS,2025-07,severity,serious,1
+ADAS,2025-07,severity,fatal,3
+ADAS,2025-07,severity,unknown,80
+ADAS,2025-08,severity,no injury reported,3
+ADAS,2025-08,severity,minor,4
+ADAS,2025-08,severity,moderate,2
+ADAS,2025-08,severity,fatal,1
+ADAS,2025-08,severity,unknown,72
+ADAS,2025-09,severity,no injury reported,9
+ADAS,2025-09,severity,minor,4
+ADAS,2025-09,severity,serious,1
+ADAS,2025-09,severity,fatal,2
+ADAS,2025-09,severity,unknown,89
+ADAS,2025-10,severity,no injury reported,4
+ADAS,2025-10,severity,minor,9
+ADAS,2025-10,severity,moderate,1
+ADAS,2025-10,severity,serious,1
+ADAS,2025-10,severity,fatal,3
+ADAS,2025-10,severity,unknown,115
+ADAS,2025-11,severity,no injury reported,13
+ADAS,2025-11,severity,minor,3
+ADAS,2025-11,severity,fatal,1
+ADAS,2025-11,severity,unknown,100
+ADAS,2025-12,severity,no injury reported,5
+ADAS,2025-12,severity,minor,5
+ADAS,2025-12,severity,moderate,1
+ADAS,2025-12,severity,serious,2
+ADAS,2025-12,severity,fatal,2
+ADAS,2025-12,severity,unknown,115
+ADAS,2026-01,severity,no injury reported,2
+ADAS,2026-01,severity,minor,1
+ADAS,2026-01,severity,moderate,1
+ADAS,2026-01,severity,serious,1
+ADAS,2026-01,severity,fatal,1
+ADAS,2026-01,severity,unknown,114
+ADAS,2026-02,severity,no injury reported,1
+ADAS,2026-02,severity,minor,4
+ADAS,2026-02,severity,moderate,2
+ADAS,2026-02,severity,serious,1
+ADAS,2026-02,severity,fatal,1
+ADAS,2026-02,severity,unknown,118
+ADAS,2026-03,severity,no injury reported,7
+ADAS,2026-03,severity,minor,3
+ADAS,2026-03,severity,moderate,2
+ADAS,2026-03,severity,serious,1
+ADAS,2026-03,severity,fatal,1
+ADAS,2026-03,severity,unknown,141
+ADAS,2026-04,severity,no injury reported,1
+ADAS,2026-04,severity,minor,1
+ADAS,2026-04,severity,moderate,2
+ADAS,2026-04,severity,serious,2
+ADAS,2026-04,severity,unknown,175
+ADAS,2026-05,severity,no injury reported,3
+ADAS,2026-05,severity,minor,6
+ADAS,2026-05,severity,serious,3
+ADAS,2026-05,severity,fatal,2
+ADAS,2026-05,severity,unknown,207
+ADAS,2026-06,severity,no injury reported,5
+ADAS,2026-06,severity,minor,4
+ADAS,2026-06,severity,moderate,2
+ADAS,2026-06,severity,serious,1
+ADAS,2026-06,severity,fatal,2
+ADAS,2026-06,severity,unknown,213
+ADAS,2026-07,severity,no injury reported,7
+ADAS,2026-07,severity,minor,8
+ADAS,2026-07,severity,serious,2
+ADAS,2026-07,severity,fatal,5
+ADAS,2026-07,severity,unknown,242
+ADAS,2026-08,severity,no injury reported,7
+ADAS,2026-08,severity,minor,6
+ADAS,2026-08,severity,serious,2
+ADAS,2026-08,severity,fatal,1
+ADAS,2026-08,severity,unknown,216
+ADAS,2026-09,severity,no injury reported,3
+ADAS,2026-09,severity,minor,1
+ADAS,2026-09,severity,serious,1
+ADAS,2026-09,severity,unknown,78
+ADS,2021-07,severity,no injury reported,9
+ADS,2021-07,severity,minor,2
+ADS,2021-08,severity,no injury reported,11
+ADS,2021-08,severity,unknown,1
+ADS,2021-09,severity,no injury reported,10
+ADS,2021-10,severity,no injury reported,12
+ADS,2021-10,severity,minor,1
+ADS,2021-11,severity,no injury reported,10
+ADS,2021-11,severity,minor,1
+ADS,2021-11,severity,unknown,3
+ADS,2021-12,severity,no injury reported,8
+ADS,2022-01,severity,no injury reported,9
+ADS,2022-01,severity,minor,2
+ADS,2022-02,severity,no injury reported,12
+ADS,2022-03,severity,no injury reported,9
+ADS,2022-03,severity,minor,3
+ADS,2022-03,severity,moderate,2
+ADS,2022-03,severity,serious,1
+ADS,2022-03,severity,unknown,1
+ADS,2022-04,severity,no injury reported,18
+ADS,2022-04,severity,minor,1
+ADS,2022-05,severity,no injury reported,11
+ADS,2022-05,severity,minor,1
+ADS,2022-05,severity,moderate,1
+ADS,2022-05,severity,unknown,1
+ADS,2022-06,severity,no injury reported,9
+ADS,2022-06,severity,minor,3
+ADS,2022-06,severity,moderate,1
+ADS,2022-06,severity,unknown,1
+ADS,2022-07,severity,no injury reported,12
+ADS,2022-07,severity,minor,2
+ADS,2022-07,severity,unknown,1
+ADS,2022-08,severity,no injury reported,19
+ADS,2022-08,severity,minor,2
+ADS,2022-09,severity,no injury reported,9
+ADS,2022-09,severity,minor,1
+ADS,2022-09,severity,unknown,1
+ADS,2022-10,severity,no injury reported,8
+ADS,2022-11,severity,no injury reported,9
+ADS,2022-12,severity,no injury reported,13
+ADS,2022-12,severity,unknown,1
+ADS,2023-01,severity,no injury reported,8
+ADS,2023-02,severity,no injury reported,15
+ADS,2023-02,severity,minor,1
+ADS,2023-03,severity,no injury reported,20
+ADS,2023-03,severity,minor,2
+ADS,2023-04,severity,no injury reported,19
+ADS,2023-05,severity,no injury reported,17
+ADS,2023-05,severity,minor,5
+ADS,2023-06,severity,no injury reported,17
+ADS,2023-06,severity,minor,2
+ADS,2023-06,severity,moderate,2
+ADS,2023-06,severity,unknown,2
+ADS,2023-07,severity,no injury reported,25
+ADS,2023-07,severity,minor,3
+ADS,2023-07,severity,unknown,1
+ADS,2023-08,severity,no injury reported,41
+ADS,2023-08,severity,minor,6
+ADS,2023-08,severity,moderate,2
+ADS,2023-08,severity,serious,1
+ADS,2023-08,severity,unknown,1
+ADS,2023-09,severity,no injury reported,34
+ADS,2023-10,severity,no injury reported,27
+ADS,2023-10,severity,minor,1
+ADS,2023-10,severity,moderate,1
+ADS,2023-10,severity,serious,1
+ADS,2023-10,severity,unknown,1
+ADS,2023-11,severity,no injury reported,9
+ADS,2023-11,severity,minor,1
+ADS,2023-11,severity,serious,1
+ADS,2023-12,severity,no injury reported,18
+ADS,2023-12,severity,minor,3
+ADS,2024-01,severity,no injury reported,20
+ADS,2024-01,severity,unknown,3
+ADS,2024-02,severity,no injury reported,17
+ADS,2024-02,severity,minor,4
+ADS,2024-02,severity,unknown,1
+ADS,2024-03,severity,no injury reported,24
+ADS,2024-03,severity,minor,4
+ADS,2024-04,severity,no injury reported,17
+ADS,2024-04,severity,minor,3
+ADS,2024-04,severity,moderate,1
+ADS,2024-05,severity,no injury reported,32
+ADS,2024-05,severity,minor,4
+ADS,2024-05,severity,moderate,1
+ADS,2024-05,severity,serious,1
+ADS,2024-05,severity,unknown,2
+ADS,2024-06,severity,no injury reported,38
+ADS,2024-06,severity,minor,1
+ADS,2024-06,severity,moderate,2
+ADS,2024-07,severity,no injury reported,34
+ADS,2024-07,severity,minor,3
+ADS,2024-07,severity,unknown,3
+ADS,2024-08,severity,no injury reported,43
+ADS,2024-08,severity,minor,1
+ADS,2024-08,severity,moderate,1
+ADS,2024-08,severity,unknown,1
+ADS,2024-09,severity,no injury reported,56
+ADS,2024-09,severity,minor,2
+ADS,2024-09,severity,moderate,1
+ADS,2024-09,severity,unknown,1
+ADS,2024-10,severity,no injury reported,64
+ADS,2024-10,severity,minor,2
+ADS,2024-10,severity,serious,1
+ADS,2024-11,severity,no injury reported,62
+ADS,2024-11,severity,minor,6
+ADS,2024-11,severity,moderate,2
+ADS,2024-12,severity,no injury reported,73
+ADS,2024-12,severity,minor,5
+ADS,2024-12,severity,moderate,2
+ADS,2024-12,severity,unknown,1
+ADS,2025-01,severity,no injury reported,69
+ADS,2025-01,severity,minor,7
+ADS,2025-01,severity,moderate,1
+ADS,2025-01,severity,fatal,1
+ADS,2025-02,severity,no injury reported,66
+ADS,2025-02,severity,minor,7
+ADS,2025-02,severity,moderate,3
+ADS,2025-02,severity,serious,1
+ADS,2025-02,severity,unknown,1
+ADS,2025-03,severity,no injury reported,70
+ADS,2025-03,severity,minor,7
+ADS,2025-04,severity,no injury reported,92
+ADS,2025-04,severity,minor,4
+ADS,2025-05,severity,no injury reported,103
+ADS,2025-05,severity,minor,7
+ADS,2025-06,severity,no injury reported,66
+ADS,2025-06,severity,minor,5
+ADS,2025-06,severity,moderate,1
+ADS,2025-07,severity,no injury reported,53
+ADS,2025-07,severity,minor,10
+ADS,2025-07,severity,moderate,1
+ADS,2025-07,severity,unknown,2
+ADS,2025-08,severity,no injury reported,52
+ADS,2025-08,severity,minor,8
+ADS,2025-08,severity,moderate,1
+ADS,2025-09,severity,no injury reported,58
+ADS,2025-09,severity,minor,7
+ADS,2025-09,severity,fatal,1
+ADS,2025-09,severity,unknown,1
+ADS,2025-10,severity,no injury reported,85
+ADS,2025-10,severity,minor,8
+ADS,2025-10,severity,moderate,1
+ADS,2025-10,severity,unknown,3
+ADS,2025-11,severity,no injury reported,98
+ADS,2025-11,severity,minor,10
+ADS,2025-11,severity,moderate,1
+ADS,2025-11,severity,unknown,3
+ADS,2025-12,severity,no injury reported,100
+ADS,2025-12,severity,minor,9
+ADS,2026-01,severity,no injury reported,102
+ADS,2026-01,severity,minor,14
+ADS,2026-01,severity,unknown,2
+ADS,2026-02,severity,no injury reported,82
+ADS,2026-02,severity,minor,7
+ADS,2026-02,severity,moderate,1
+ADS,2026-02,severity,unknown,2
+ADS,2026-03,severity,no injury reported,133
+ADS,2026-03,severity,minor,11
+ADS,2026-03,severity,unknown,1
+ADS,2026-04,severity,no injury reported,125
+ADS,2026-04,severity,minor,13
+ADS,2026-04,severity,moderate,2
+ADS,2026-04,severity,unknown,1
+ADS,2026-05,severity,no injury reported,105
+ADS,2026-05,severity,minor,7
+ADS,2026-05,severity,moderate,3
+ADS,2026-05,severity,unknown,3
+ADS,2026-06,severity,no injury reported,118
+ADS,2026-06,severity,minor,5
+ADS,2026-06,severity,moderate,1
+ADS,2026-06,severity,serious,1
+ADS,2026-06,severity,unknown,4
+ADS,2026-07,severity,no injury reported,107
+ADS,2026-07,severity,minor,7
+ADS,2026-07,severity,moderate,2
+ADS,2026-07,severity,serious,3
+ADS,2026-07,severity,unknown,1
+ADS,2026-08,severity,no injury reported,86
+ADS,2026-08,severity,minor,14
+ADS,2026-08,severity,fatal,1
+ADS,2026-08,severity,unknown,2
+ADS,2026-09,severity,no injury reported,9
+ADS,2026-09,severity,minor,3
+ADAS,2021-07,movement,proceeding straight,10
+ADAS,2021-07,movement,turning,1
+ADAS,2021-07,movement,"lane change, merge or entering",1
+ADAS,2021-07,movement,lane or road departure,4
+ADAS,2021-07,movement,unknown,6
+ADAS,2021-08,movement,stopped or parked,1
+ADAS,2021-08,movement,proceeding straight,17
+ADAS,2021-08,movement,turning,2
+ADAS,2021-08,movement,"lane change, merge or entering",1
+ADAS,2021-08,movement,lane or road departure,2
+ADAS,2021-08,movement,other,3
+ADAS,2021-08,movement,unknown,5
+ADAS,2021-09,movement,stopped or parked,3
+ADAS,2021-09,movement,proceeding straight,17
+ADAS,2021-09,movement,"lane change, merge or entering",2
+ADAS,2021-09,movement,lane or road departure,5
+ADAS,2021-09,movement,backing or parking,1
+ADAS,2021-09,movement,other,1
+ADAS,2021-09,movement,unknown,12
+ADAS,2021-10,movement,stopped or parked,1
+ADAS,2021-10,movement,proceeding straight,13
+ADAS,2021-10,movement,lane or road departure,7
+ADAS,2021-10,movement,other,1
+ADAS,2021-10,movement,unknown,22
+ADAS,2021-11,movement,stopped or parked,4
+ADAS,2021-11,movement,proceeding straight,16
+ADAS,2021-11,movement,turning,2
+ADAS,2021-11,movement,"lane change, merge or entering",1
+ADAS,2021-11,movement,lane or road departure,4
+ADAS,2021-11,movement,other,2
+ADAS,2021-11,movement,unknown,15
+ADAS,2021-12,movement,stopped or parked,1
+ADAS,2021-12,movement,proceeding straight,25
+ADAS,2021-12,movement,turning,1
+ADAS,2021-12,movement,"lane change, merge or entering",1
+ADAS,2021-12,movement,lane or road departure,4
+ADAS,2021-12,movement,backing or parking,1
+ADAS,2021-12,movement,unknown,11
+ADAS,2022-01,movement,stopped or parked,1
+ADAS,2022-01,movement,proceeding straight,13
+ADAS,2022-01,movement,turning,3
+ADAS,2022-01,movement,"lane change, merge or entering",1
+ADAS,2022-01,movement,lane or road departure,3
+ADAS,2022-01,movement,other,1
+ADAS,2022-01,movement,unknown,5
+ADAS,2022-02,movement,stopped or parked,1
+ADAS,2022-02,movement,proceeding straight,22
+ADAS,2022-02,movement,turning,3
+ADAS,2022-02,movement,lane or road departure,1
+ADAS,2022-02,movement,other,3
+ADAS,2022-02,movement,unknown,12
+ADAS,2022-03,movement,proceeding straight,18
+ADAS,2022-03,movement,turning,1
+ADAS,2022-03,movement,other,1
+ADAS,2022-03,movement,unknown,10
+ADAS,2022-04,movement,proceeding straight,22
+ADAS,2022-04,movement,turning,3
+ADAS,2022-04,movement,"lane change, merge or entering",1
+ADAS,2022-04,movement,lane or road departure,1
+ADAS,2022-04,movement,other,3
+ADAS,2022-04,movement,unknown,12
+ADAS,2022-05,movement,proceeding straight,34
+ADAS,2022-05,movement,"lane change, merge or entering",2
+ADAS,2022-05,movement,lane or road departure,3
+ADAS,2022-05,movement,backing or parking,1
+ADAS,2022-05,movement,other,2
+ADAS,2022-05,movement,unknown,11
+ADAS,2022-06,movement,proceeding straight,34
+ADAS,2022-06,movement,turning,2
+ADAS,2022-06,movement,lane or road departure,2
+ADAS,2022-06,movement,other,1
+ADAS,2022-06,movement,unknown,5
+ADAS,2022-07,movement,proceeding straight,39
+ADAS,2022-07,movement,turning,2
+ADAS,2022-07,movement,lane or road departure,8
+ADAS,2022-07,movement,other,3
+ADAS,2022-07,movement,unknown,9
+ADAS,2022-08,movement,stopped or parked,1
+ADAS,2022-08,movement,proceeding straight,26
+ADAS,2022-08,movement,turning,1
+ADAS,2022-08,movement,lane or road departure,3
+ADAS,2022-08,movement,unknown,6
+ADAS,2022-09,movement,proceeding straight,29
+ADAS,2022-09,movement,turning,1
+ADAS,2022-09,movement,"lane change, merge or entering",2
+ADAS,2022-09,movement,lane or road departure,1
+ADAS,2022-09,movement,backing or parking,1
+ADAS,2022-09,movement,other,2
+ADAS,2022-09,movement,unknown,4
+ADAS,2022-10,movement,proceeding straight,44
+ADAS,2022-10,movement,"lane change, merge or entering",1
+ADAS,2022-10,movement,unknown,3
+ADAS,2022-11,movement,proceeding straight,49
+ADAS,2022-11,movement,"lane change, merge or entering",1
+ADAS,2022-11,movement,other,4
+ADAS,2022-11,movement,unknown,2
+ADAS,2022-12,movement,stopped or parked,1
+ADAS,2022-12,movement,proceeding straight,55
+ADAS,2022-12,movement,turning,3
+ADAS,2022-12,movement,"lane change, merge or entering",2
+ADAS,2022-12,movement,lane or road departure,2
+ADAS,2022-12,movement,other,1
+ADAS,2022-12,movement,unknown,1
+ADAS,2023-01,movement,proceeding straight,42
+ADAS,2023-01,movement,turning,3
+ADAS,2023-01,movement,"lane change, merge or entering",1
+ADAS,2023-01,movement,other,6
+ADAS,2023-01,movement,unknown,2
+ADAS,2023-02,movement,stopped or parked,1
+ADAS,2023-02,movement,proceeding straight,28
+ADAS,2023-02,movement,lane or road departure,2
+ADAS,2023-02,movement,other,2
+ADAS,2023-02,movement,unknown,2
+ADAS,2023-03,movement,stopped or parked,1
+ADAS,2023-03,movement,proceeding straight,53
+ADAS,2023-03,movement,"lane change, merge or entering",1
+ADAS,2023-03,movement,other,1
+ADAS,2023-03,movement,unknown,4
+ADAS,2023-04,movement,stopped or parked,1
+ADAS,2023-04,movement,proceeding straight,35
+ADAS,2023-04,movement,"lane change, merge or entering",2
+ADAS,2023-04,movement,lane or road departure,2
+ADAS,2023-04,movement,other,4
+ADAS,2023-04,movement,unknown,1
+ADAS,2023-05,movement,stopped or parked,1
+ADAS,2023-05,movement,proceeding straight,45
+ADAS,2023-05,movement,turning,1
+ADAS,2023-05,movement,"lane change, merge or entering",1
+ADAS,2023-05,movement,lane or road departure,2
+ADAS,2023-05,movement,other,2
+ADAS,2023-05,movement,unknown,1
+ADAS,2023-06,movement,proceeding straight,32
+ADAS,2023-06,movement,"lane change, merge or entering",1
+ADAS,2023-06,movement,lane or road departure,1
+ADAS,2023-06,movement,other,5
+ADAS,2023-06,movement,unknown,7
+ADAS,2023-07,movement,proceeding straight,39
+ADAS,2023-07,movement,lane or road departure,8
+ADAS,2023-07,movement,other,3
+ADAS,2023-07,movement,unknown,6
+ADAS,2023-08,movement,proceeding straight,32
+ADAS,2023-08,movement,lane or road departure,3
+ADAS,2023-08,movement,other,3
+ADAS,2023-08,movement,unknown,3
+ADAS,2023-09,movement,proceeding straight,34
+ADAS,2023-09,movement,turning,1
+ADAS,2023-09,movement,"lane change, merge or entering",1
+ADAS,2023-09,movement,lane or road departure,9
+ADAS,2023-09,movement,other,5
+ADAS,2023-09,movement,unknown,3
+ADAS,2023-10,movement,proceeding straight,39
+ADAS,2023-10,movement,lane or road departure,3
+ADAS,2023-10,movement,other,3
+ADAS,2023-10,movement,unknown,3
+ADAS,2023-11,movement,proceeding straight,41
+ADAS,2023-11,movement,"lane change, merge or entering",1
+ADAS,2023-11,movement,other,6
+ADAS,2023-11,movement,unknown,4
+ADAS,2023-12,movement,proceeding straight,61
+ADAS,2023-12,movement,turning,1
+ADAS,2023-12,movement,"lane change, merge or entering",1
+ADAS,2023-12,movement,lane or road departure,2
+ADAS,2023-12,movement,other,6
+ADAS,2023-12,movement,unknown,2
+ADAS,2024-01,movement,proceeding straight,26
+ADAS,2024-01,movement,"lane change, merge or entering",3
+ADAS,2024-01,movement,lane or road departure,1
+ADAS,2024-01,movement,other,4
+ADAS,2024-01,movement,unknown,1
+ADAS,2024-02,movement,proceeding straight,24
+ADAS,2024-02,movement,"lane change, merge or entering",1
+ADAS,2024-02,movement,other,5
+ADAS,2024-02,movement,unknown,5
+ADAS,2024-03,movement,stopped or parked,1
+ADAS,2024-03,movement,proceeding straight,35
+ADAS,2024-03,movement,turning,2
+ADAS,2024-03,movement,lane or road departure,3
+ADAS,2024-03,movement,other,5
+ADAS,2024-03,movement,unknown,5
+ADAS,2024-04,movement,proceeding straight,33
+ADAS,2024-04,movement,turning,3
+ADAS,2024-04,movement,"lane change, merge or entering",1
+ADAS,2024-04,movement,lane or road departure,2
+ADAS,2024-04,movement,other,10
+ADAS,2024-04,movement,unknown,11
+ADAS,2024-05,movement,stopped or parked,1
+ADAS,2024-05,movement,proceeding straight,17
+ADAS,2024-05,movement,turning,9
+ADAS,2024-05,movement,"lane change, merge or entering",1
+ADAS,2024-05,movement,lane or road departure,1
+ADAS,2024-05,movement,other,3
+ADAS,2024-05,movement,unknown,42
+ADAS,2024-06,movement,proceeding straight,27
+ADAS,2024-06,movement,lane or road departure,2
+ADAS,2024-06,movement,other,3
+ADAS,2024-06,movement,unknown,35
+ADAS,2024-07,movement,stopped or parked,1
+ADAS,2024-07,movement,proceeding straight,13
+ADAS,2024-07,movement,turning,4
+ADAS,2024-07,movement,"lane change, merge or entering",1
+ADAS,2024-07,movement,lane or road departure,11
+ADAS,2024-07,movement,other,1
+ADAS,2024-07,movement,unknown,45
+ADAS,2024-08,movement,proceeding straight,17
+ADAS,2024-08,movement,turning,3
+ADAS,2024-08,movement,lane or road departure,5
+ADAS,2024-08,movement,other,1
+ADAS,2024-08,movement,unknown,44
+ADAS,2024-09,movement,stopped or parked,1
+ADAS,2024-09,movement,proceeding straight,20
+ADAS,2024-09,movement,turning,2
+ADAS,2024-09,movement,"lane change, merge or entering",1
+ADAS,2024-09,movement,lane or road departure,4
+ADAS,2024-09,movement,other,3
+ADAS,2024-09,movement,unknown,46
+ADAS,2024-10,movement,stopped or parked,1
+ADAS,2024-10,movement,proceeding straight,23
+ADAS,2024-10,movement,turning,5
+ADAS,2024-10,movement,lane or road departure,7
+ADAS,2024-10,movement,other,2
+ADAS,2024-10,movement,unknown,58
+ADAS,2024-11,movement,stopped or parked,2
+ADAS,2024-11,movement,proceeding straight,31
+ADAS,2024-11,movement,turning,5
+ADAS,2024-11,movement,"lane change, merge or entering",1
+ADAS,2024-11,movement,lane or road departure,11
+ADAS,2024-11,movement,backing or parking,1
+ADAS,2024-11,movement,unknown,41
+ADAS,2024-12,movement,proceeding straight,21
+ADAS,2024-12,movement,turning,3
+ADAS,2024-12,movement,lane or road departure,18
+ADAS,2024-12,movement,other,3
+ADAS,2024-12,movement,unknown,49
+ADAS,2025-01,movement,proceeding straight,11
+ADAS,2025-01,movement,turning,1
+ADAS,2025-01,movement,"lane change, merge or entering",2
+ADAS,2025-01,movement,lane or road departure,9
+ADAS,2025-01,movement,other,2
+ADAS,2025-01,movement,unknown,34
+ADAS,2025-02,movement,stopped or parked,2
+ADAS,2025-02,movement,proceeding straight,19
+ADAS,2025-02,movement,turning,6
+ADAS,2025-02,movement,lane or road departure,10
+ADAS,2025-02,movement,other,2
+ADAS,2025-02,movement,unknown,37
+ADAS,2025-03,movement,stopped or parked,1
+ADAS,2025-03,movement,proceeding straight,24
+ADAS,2025-03,movement,turning,3
+ADAS,2025-03,movement,"lane change, merge or entering",3
+ADAS,2025-03,movement,lane or road departure,14
+ADAS,2025-03,movement,other,7
+ADAS,2025-03,movement,unknown,39
+ADAS,2025-04,movement,stopped or parked,1
+ADAS,2025-04,movement,proceeding straight,29
+ADAS,2025-04,movement,turning,3
+ADAS,2025-04,movement,"lane change, merge or entering",2
+ADAS,2025-04,movement,lane or road departure,10
+ADAS,2025-04,movement,backing or parking,1
+ADAS,2025-04,movement,other,3
+ADAS,2025-04,movement,unknown,49
+ADAS,2025-05,movement,proceeding straight,26
+ADAS,2025-05,movement,turning,9
+ADAS,2025-05,movement,"lane change, merge or entering",2
+ADAS,2025-05,movement,lane or road departure,19
+ADAS,2025-05,movement,other,6
+ADAS,2025-05,movement,unknown,47
+ADAS,2025-06,movement,stopped or parked,1
+ADAS,2025-06,movement,proceeding straight,34
+ADAS,2025-06,movement,turning,2
+ADAS,2025-06,movement,"lane change, merge or entering",1
+ADAS,2025-06,movement,lane or road departure,13
+ADAS,2025-06,movement,other,3
+ADAS,2025-06,movement,unknown,48
+ADAS,2025-07,movement,proceeding straight,19
+ADAS,2025-07,movement,turning,10
+ADAS,2025-07,movement,lane or road departure,12
+ADAS,2025-07,movement,other,1
+ADAS,2025-07,movement,unknown,51
+ADAS,2025-08,movement,stopped or parked,1
+ADAS,2025-08,movement,proceeding straight,22
+ADAS,2025-08,movement,turning,1
+ADAS,2025-08,movement,lane or road departure,16
+ADAS,2025-08,movement,backing or parking,1
+ADAS,2025-08,movement,other,4
+ADAS,2025-08,movement,unknown,37
+ADAS,2025-09,movement,stopped or parked,3
+ADAS,2025-09,movement,proceeding straight,37
+ADAS,2025-09,movement,turning,7
+ADAS,2025-09,movement,"lane change, merge or entering",1
+ADAS,2025-09,movement,lane or road departure,9
+ADAS,2025-09,movement,backing or parking,1
+ADAS,2025-09,movement,other,4
+ADAS,2025-09,movement,unknown,43
+ADAS,2025-10,movement,stopped or parked,4
+ADAS,2025-10,movement,proceeding straight,31
+ADAS,2025-10,movement,turning,8
+ADAS,2025-10,movement,lane or road departure,18
+ADAS,2025-10,movement,other,2
+ADAS,2025-10,movement,unknown,70
+ADAS,2025-11,movement,stopped or parked,1
+ADAS,2025-11,movement,proceeding straight,32
+ADAS,2025-11,movement,turning,6
+ADAS,2025-11,movement,lane or road departure,17
+ADAS,2025-11,movement,other,3
+ADAS,2025-11,movement,unknown,58
+ADAS,2025-12,movement,stopped or parked,3
+ADAS,2025-12,movement,proceeding straight,26
+ADAS,2025-12,movement,turning,8
+ADAS,2025-12,movement,"lane change, merge or entering",2
+ADAS,2025-12,movement,lane or road departure,23
+ADAS,2025-12,movement,other,1
+ADAS,2025-12,movement,unknown,67
+ADAS,2026-01,movement,proceeding straight,25
+ADAS,2026-01,movement,turning,6
+ADAS,2026-01,movement,"lane change, merge or entering",1
+ADAS,2026-01,movement,lane or road departure,25
+ADAS,2026-01,movement,other,2
+ADAS,2026-01,movement,unknown,61
+ADAS,2026-02,movement,proceeding straight,26
+ADAS,2026-02,movement,turning,6
+ADAS,2026-02,movement,"lane change, merge or entering",1
+ADAS,2026-02,movement,lane or road departure,26
+ADAS,2026-02,movement,unknown,68
+ADAS,2026-03,movement,stopped or parked,1
+ADAS,2026-03,movement,proceeding straight,41
+ADAS,2026-03,movement,turning,8
+ADAS,2026-03,movement,lane or road departure,26
+ADAS,2026-03,movement,backing or parking,1
+ADAS,2026-03,movement,other,3
+ADAS,2026-03,movement,unknown,75
+ADAS,2026-04,movement,stopped or parked,2
+ADAS,2026-04,movement,proceeding straight,32
+ADAS,2026-04,movement,turning,7
+ADAS,2026-04,movement,"lane change, merge or entering",1
+ADAS,2026-04,movement,lane or road departure,33
+ADAS,2026-04,movement,other,2
+ADAS,2026-04,movement,unknown,104
+ADAS,2026-05,movement,stopped or parked,2
+ADAS,2026-05,movement,proceeding straight,42
+ADAS,2026-05,movement,turning,12
+ADAS,2026-05,movement,"lane change, merge or entering",1
+ADAS,2026-05,movement,lane or road departure,32
+ADAS,2026-05,movement,backing or parking,2
+ADAS,2026-05,movement,other,1
+ADAS,2026-05,movement,unknown,129
+ADAS,2026-06,movement,proceeding straight,46
+ADAS,2026-06,movement,turning,10
+ADAS,2026-06,movement,"lane change, merge or entering",3
+ADAS,2026-06,movement,lane or road departure,48
+ADAS,2026-06,movement,other,2
+ADAS,2026-06,movement,unknown,118
+ADAS,2026-07,movement,stopped or parked,2
+ADAS,2026-07,movement,proceeding straight,55
+ADAS,2026-07,movement,turning,17
+ADAS,2026-07,movement,"lane change, merge or entering",3
+ADAS,2026-07,movement,lane or road departure,35
+ADAS,2026-07,movement,other,1
+ADAS,2026-07,movement,unknown,151
+ADAS,2026-08,movement,stopped or parked,1
+ADAS,2026-08,movement,proceeding straight,37
+ADAS,2026-08,movement,turning,13
+ADAS,2026-08,movement,lane or road departure,54
+ADAS,2026-08,movement,other,1
+ADAS,2026-08,movement,unknown,126
+ADAS,2026-09,movement,stopped or parked,1
+ADAS,2026-09,movement,proceeding straight,15
+ADAS,2026-09,movement,turning,9
+ADAS,2026-09,movement,lane or road departure,11
+ADAS,2026-09,movement,unknown,47
+ADS,2021-07,movement,stopped or parked,3
+ADS,2021-07,movement,proceeding straight,5
+ADS,2021-07,movement,turning,3
+ADS,2021-08,movement,stopped or parked,2
+ADS,2021-08,movement,proceeding straight,6
+ADS,2021-08,movement,turning,2
+ADS,2021-08,movement,"lane change, merge or entering",1
+ADS,2021-08,movement,backing or parking,1
+ADS,2021-09,movement,stopped or parked,5
+ADS,2021-09,movement,proceeding straight,1
+ADS,2021-09,movement,turning,3
+ADS,2021-09,movement,backing or parking,1
+ADS,2021-10,movement,stopped or parked,6
+ADS,2021-10,movement,proceeding straight,3
+ADS,2021-10,movement,turning,2
+ADS,2021-10,movement,"lane change, merge or entering",2
+ADS,2021-11,movement,stopped or parked,11
+ADS,2021-11,movement,proceeding straight,3
+ADS,2021-12,movement,stopped or parked,5
+ADS,2021-12,movement,proceeding straight,3
+ADS,2022-01,movement,stopped or parked,4
+ADS,2022-01,movement,proceeding straight,6
+ADS,2022-01,movement,turning,1
+ADS,2022-02,movement,stopped or parked,8
+ADS,2022-02,movement,proceeding straight,4
+ADS,2022-03,movement,stopped or parked,8
+ADS,2022-03,movement,proceeding straight,6
+ADS,2022-03,movement,"lane change, merge or entering",1
+ADS,2022-03,movement,unknown,1
+ADS,2022-04,movement,stopped or parked,5
+ADS,2022-04,movement,proceeding straight,8
+ADS,2022-04,movement,turning,2
+ADS,2022-04,movement,other,3
+ADS,2022-04,movement,unknown,1
+ADS,2022-05,movement,stopped or parked,6
+ADS,2022-05,movement,proceeding straight,4
+ADS,2022-05,movement,turning,3
+ADS,2022-05,movement,other,1
+ADS,2022-06,movement,stopped or parked,4
+ADS,2022-06,movement,proceeding straight,4
+ADS,2022-06,movement,turning,3
+ADS,2022-06,movement,backing or parking,1
+ADS,2022-06,movement,other,2
+ADS,2022-07,movement,stopped or parked,6
+ADS,2022-07,movement,proceeding straight,7
+ADS,2022-07,movement,turning,2
+ADS,2022-08,movement,stopped or parked,9
+ADS,2022-08,movement,proceeding straight,9
+ADS,2022-08,movement,turning,1
+ADS,2022-08,movement,lane or road departure,1
+ADS,2022-08,movement,other,1
+ADS,2022-09,movement,stopped or parked,5
+ADS,2022-09,movement,proceeding straight,3
+ADS,2022-09,movement,backing or parking,1
+ADS,2022-09,movement,other,2
+ADS,2022-10,movement,stopped or parked,1
+ADS,2022-10,movement,proceeding straight,5
+ADS,2022-10,movement,turning,2
+ADS,2022-11,movement,stopped or parked,3
+ADS,2022-11,movement,proceeding straight,1
+ADS,2022-11,movement,turning,1
+ADS,2022-11,movement,"lane change, merge or entering",3
+ADS,2022-11,movement,backing or parking,1
+ADS,2022-12,movement,stopped or parked,7
+ADS,2022-12,movement,proceeding straight,3
+ADS,2022-12,movement,turning,2
+ADS,2022-12,movement,"lane change, merge or entering",1
+ADS,2022-12,movement,other,1
+ADS,2023-01,movement,stopped or parked,1
+ADS,2023-01,movement,proceeding straight,6
+ADS,2023-01,movement,turning,1
+ADS,2023-02,movement,stopped or parked,5
+ADS,2023-02,movement,proceeding straight,6
+ADS,2023-02,movement,turning,2
+ADS,2023-02,movement,"lane change, merge or entering",3
+ADS,2023-03,movement,stopped or parked,5
+ADS,2023-03,movement,proceeding straight,11
+ADS,2023-03,movement,turning,3
+ADS,2023-03,movement,"lane change, merge or entering",3
+ADS,2023-04,movement,stopped or parked,10
+ADS,2023-04,movement,proceeding straight,7
+ADS,2023-04,movement,turning,1
+ADS,2023-04,movement,other,1
+ADS,2023-05,movement,stopped or parked,9
+ADS,2023-05,movement,proceeding straight,11
+ADS,2023-05,movement,turning,1
+ADS,2023-05,movement,backing or parking,1
+ADS,2023-06,movement,stopped or parked,9
+ADS,2023-06,movement,proceeding straight,10
+ADS,2023-06,movement,turning,2
+ADS,2023-06,movement,"lane change, merge or entering",1
+ADS,2023-06,movement,other,1
+ADS,2023-07,movement,stopped or parked,9
+ADS,2023-07,movement,proceeding straight,14
+ADS,2023-07,movement,turning,2
+ADS,2023-07,movement,backing or parking,2
+ADS,2023-07,movement,other,2
+ADS,2023-08,movement,stopped or parked,22
+ADS,2023-08,movement,proceeding straight,21
+ADS,2023-08,movement,turning,1
+ADS,2023-08,movement,"lane change, merge or entering",1
+ADS,2023-08,movement,lane or road departure,1
+ADS,2023-08,movement,backing or parking,3
+ADS,2023-08,movement,other,2
+ADS,2023-09,movement,stopped or parked,16
+ADS,2023-09,movement,proceeding straight,14
+ADS,2023-09,movement,turning,1
+ADS,2023-09,movement,"lane change, merge or entering",3
+ADS,2023-10,movement,stopped or parked,11
+ADS,2023-10,movement,proceeding straight,16
+ADS,2023-10,movement,turning,2
+ADS,2023-10,movement,lane or road departure,1
+ADS,2023-10,movement,other,1
+ADS,2023-11,movement,stopped or parked,6
+ADS,2023-11,movement,proceeding straight,4
+ADS,2023-11,movement,turning,1
+ADS,2023-12,movement,stopped or parked,7
+ADS,2023-12,movement,proceeding straight,13
+ADS,2023-12,movement,turning,1
+ADS,2024-01,movement,stopped or parked,14
+ADS,2024-01,movement,proceeding straight,6
+ADS,2024-01,movement,turning,1
+ADS,2024-01,movement,other,2
+ADS,2024-02,movement,stopped or parked,9
+ADS,2024-02,movement,proceeding straight,9
+ADS,2024-02,movement,turning,3
+ADS,2024-02,movement,"lane change, merge or entering",1
+ADS,2024-03,movement,stopped or parked,12
+ADS,2024-03,movement,proceeding straight,12
+ADS,2024-03,movement,turning,2
+ADS,2024-03,movement,lane or road departure,2
+ADS,2024-04,movement,stopped or parked,9
+ADS,2024-04,movement,proceeding straight,8
+ADS,2024-04,movement,turning,3
+ADS,2024-04,movement,backing or parking,1
+ADS,2024-05,movement,stopped or parked,17
+ADS,2024-05,movement,proceeding straight,13
+ADS,2024-05,movement,turning,5
+ADS,2024-05,movement,"lane change, merge or entering",1
+ADS,2024-05,movement,backing or parking,3
+ADS,2024-05,movement,unknown,1
+ADS,2024-06,movement,stopped or parked,22
+ADS,2024-06,movement,proceeding straight,11
+ADS,2024-06,movement,turning,4
+ADS,2024-06,movement,"lane change, merge or entering",3
+ADS,2024-06,movement,other,1
+ADS,2024-07,movement,stopped or parked,25
+ADS,2024-07,movement,proceeding straight,6
+ADS,2024-07,movement,turning,2
+ADS,2024-07,movement,"lane change, merge or entering",2
+ADS,2024-07,movement,lane or road departure,2
+ADS,2024-07,movement,backing or parking,1
+ADS,2024-07,movement,other,2
+ADS,2024-08,movement,stopped or parked,28
+ADS,2024-08,movement,proceeding straight,14
+ADS,2024-08,movement,turning,1
+ADS,2024-08,movement,lane or road departure,1
+ADS,2024-08,movement,backing or parking,2
+ADS,2024-09,movement,stopped or parked,43
+ADS,2024-09,movement,proceeding straight,12
+ADS,2024-09,movement,turning,3
+ADS,2024-09,movement,"lane change, merge or entering",2
+ADS,2024-10,movement,stopped or parked,43
+ADS,2024-10,movement,proceeding straight,16
+ADS,2024-10,movement,turning,7
+ADS,2024-10,movement,"lane change, merge or entering",1
+ADS,2024-11,movement,stopped or parked,47
+ADS,2024-11,movement,proceeding straight,16
+ADS,2024-11,movement,turning,4
+ADS,2024-11,movement,"lane change, merge or entering",2
+ADS,2024-11,movement,other,1
+ADS,2024-12,movement,stopped or parked,56
+ADS,2024-12,movement,proceeding straight,18
+ADS,2024-12,movement,turning,6
+ADS,2024-12,movement,other,1
+ADS,2025-01,movement,stopped or parked,44
+ADS,2025-01,movement,proceeding straight,26
+ADS,2025-01,movement,turning,5
+ADS,2025-01,movement,"lane change, merge or entering",1
+ADS,2025-01,movement,other,2
+ADS,2025-02,movement,stopped or parked,45
+ADS,2025-02,movement,proceeding straight,21
+ADS,2025-02,movement,turning,7
+ADS,2025-02,movement,"lane change, merge or entering",3
+ADS,2025-02,movement,other,2
+ADS,2025-03,movement,stopped or parked,58
+ADS,2025-03,movement,proceeding straight,16
+ADS,2025-03,movement,turning,3
+ADS,2025-04,movement,stopped or parked,69
+ADS,2025-04,movement,proceeding straight,18
+ADS,2025-04,movement,turning,4
+ADS,2025-04,movement,"lane change, merge or entering",1
+ADS,2025-04,movement,lane or road departure,1
+ADS,2025-04,movement,backing or parking,2
+ADS,2025-04,movement,other,1
+ADS,2025-05,movement,stopped or parked,64
+ADS,2025-05,movement,proceeding straight,28
+ADS,2025-05,movement,turning,9
+ADS,2025-05,movement,"lane change, merge or entering",4
+ADS,2025-05,movement,lane or road departure,1
+ADS,2025-05,movement,backing or parking,2
+ADS,2025-05,movement,other,2
+ADS,2025-06,movement,stopped or parked,39
+ADS,2025-06,movement,proceeding straight,26
+ADS,2025-06,movement,turning,3
+ADS,2025-06,movement,"lane change, merge or entering",2
+ADS,2025-06,movement,backing or parking,1
+ADS,2025-06,movement,other,1
+ADS,2025-07,movement,stopped or parked,37
+ADS,2025-07,movement,proceeding straight,18
+ADS,2025-07,movement,turning,10
+ADS,2025-07,movement,other,1
+ADS,2025-08,movement,stopped or parked,33
+ADS,2025-08,movement,proceeding straight,21
+ADS,2025-08,movement,turning,1
+ADS,2025-08,movement,"lane change, merge or entering",4
+ADS,2025-08,movement,lane or road departure,1
+ADS,2025-08,movement,backing or parking,1
+ADS,2025-09,movement,stopped or parked,29
+ADS,2025-09,movement,proceeding straight,28
+ADS,2025-09,movement,turning,6
+ADS,2025-09,movement,"lane change, merge or entering",3
+ADS,2025-09,movement,backing or parking,1
+ADS,2025-10,movement,stopped or parked,56
+ADS,2025-10,movement,proceeding straight,32
+ADS,2025-10,movement,turning,5
+ADS,2025-10,movement,"lane change, merge or entering",2
+ADS,2025-10,movement,backing or parking,1
+ADS,2025-10,movement,other,1
+ADS,2025-11,movement,stopped or parked,62
+ADS,2025-11,movement,proceeding straight,41
+ADS,2025-11,movement,turning,4
+ADS,2025-11,movement,"lane change, merge or entering",3
+ADS,2025-11,movement,backing or parking,2
+ADS,2025-12,movement,stopped or parked,63
+ADS,2025-12,movement,proceeding straight,27
+ADS,2025-12,movement,turning,11
+ADS,2025-12,movement,"lane change, merge or entering",6
+ADS,2025-12,movement,backing or parking,1
+ADS,2025-12,movement,other,1
+ADS,2026-01,movement,stopped or parked,56
+ADS,2026-01,movement,proceeding straight,39
+ADS,2026-01,movement,turning,9
+ADS,2026-01,movement,"lane change, merge or entering",1
+ADS,2026-01,movement,lane or road departure,3
+ADS,2026-01,movement,backing or parking,7
+ADS,2026-01,movement,other,3
+ADS,2026-02,movement,stopped or parked,52
+ADS,2026-02,movement,proceeding straight,29
+ADS,2026-02,movement,turning,6
+ADS,2026-02,movement,"lane change, merge or entering",4
+ADS,2026-02,movement,backing or parking,1
+ADS,2026-03,movement,stopped or parked,67
+ADS,2026-03,movement,proceeding straight,55
+ADS,2026-03,movement,turning,9
+ADS,2026-03,movement,"lane change, merge or entering",9
+ADS,2026-03,movement,lane or road departure,2
+ADS,2026-03,movement,backing or parking,2
+ADS,2026-03,movement,unknown,1
+ADS,2026-04,movement,stopped or parked,71
+ADS,2026-04,movement,proceeding straight,51
+ADS,2026-04,movement,turning,12
+ADS,2026-04,movement,"lane change, merge or entering",4
+ADS,2026-04,movement,backing or parking,1
+ADS,2026-04,movement,other,2
+ADS,2026-05,movement,stopped or parked,57
+ADS,2026-05,movement,proceeding straight,45
+ADS,2026-05,movement,turning,9
+ADS,2026-05,movement,"lane change, merge or entering",6
+ADS,2026-05,movement,lane or road departure,1
+ADS,2026-06,movement,stopped or parked,63
+ADS,2026-06,movement,proceeding straight,42
+ADS,2026-06,movement,turning,12
+ADS,2026-06,movement,"lane change, merge or entering",8
+ADS,2026-06,movement,backing or parking,4
+ADS,2026-07,movement,stopped or parked,52
+ADS,2026-07,movement,proceeding straight,51
+ADS,2026-07,movement,turning,4
+ADS,2026-07,movement,"lane change, merge or entering",9
+ADS,2026-07,movement,lane or road departure,1
+ADS,2026-07,movement,backing or parking,3
+ADS,2026-08,movement,stopped or parked,45
+ADS,2026-08,movement,proceeding straight,35
+ADS,2026-08,movement,turning,11
+ADS,2026-08,movement,"lane change, merge or entering",4
+ADS,2026-08,movement,backing or parking,6
+ADS,2026-08,movement,other,2
+ADS,2026-09,movement,stopped or parked,3
+ADS,2026-09,movement,proceeding straight,5
+ADS,2026-09,movement,turning,1
+ADS,2026-09,movement,"lane change, merge or entering",1
+ADS,2026-09,movement,lane or road departure,2

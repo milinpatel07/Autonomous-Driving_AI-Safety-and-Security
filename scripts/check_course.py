@@ -32,7 +32,7 @@ LEFTOVERS = [
     (re.compile(r"ISO/PAS 21448:2019"), "superseded by ISO 21448:2022"),
 ]
 # A deprecated name may appear when the text explains that it was superseded.
-CONTEXT_OK = re.compile(r"supersed|replac|pre-standard|predecessor|withdrawn|not \"?ISO/IEC 8800|no \"?ISO/IEC 8800|formerly", re.I)
+CONTEXT_OK = re.compile(r"supersed|replac|pre-standard|predecessor|withdrawn|not \"?ISO/IEC 8800|no \"?ISO/IEC 8800|formerly|ersetzt|Vorläufer", re.I)
 
 
 def leftover_hits(text: str):
@@ -46,6 +46,7 @@ def leftover_hits(text: str):
 
 
 MODULE_DIRS = sorted(p for p in ROOT.iterdir() if p.is_dir() and re.match(r"\d\d_", p.name))
+TRANSLATION_DIRS = sorted(p for p in (ROOT / "de").glob("[0-9][0-9]_*") if p.is_dir()) if (ROOT / "de").is_dir() else []
 
 
 def cell_source(cell) -> str:
@@ -75,6 +76,13 @@ def check_links(text: str, base: Path, where: str, errors: list[str]) -> None:
             errors.append(f"{where}: broken relative link -> {target}")
 
 
+SITE = "https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security"
+LITE = re.compile(r"\[!\[Run in browser\]\([^)]*\)\]\(" + re.escape(SITE) + r"/lite/notebooks/index\.html\?path=([^)\s]+)\)")
+_RUN_IN_BROWSER = ROOT / "site" / "run-in-browser.md"
+IN_BROWSER = set(re.findall(r"lite/notebooks/index\.html\?path=([^)\s]+)\)",
+                            _RUN_IN_BROWSER.read_text(encoding="utf-8"))) if _RUN_IN_BROWSER.exists() else set()
+
+
 def check_notebook(path: Path, errors: list[str]) -> None:
     rel = path.relative_to(ROOT).as_posix()
     nb = json.loads(path.read_text(encoding="utf-8"))
@@ -90,6 +98,11 @@ def check_notebook(path: Path, errors: list[str]) -> None:
         errors.append(f"{rel}: header lacks an Open-in-Colab badge for {REPO}")
     elif m.group(1) != "main" or m.group(2) != rel:
         errors.append(f"{rel}: Colab badge points to {m.group(1)}/{m.group(2)}")
+    found = LITE.findall(header)
+    if rel in IN_BROWSER and found != [rel]:
+        errors.append(f"{rel}: header needs exactly one 'Run in browser' badge pointing to this notebook")
+    if rel not in IN_BROWSER and found:
+        errors.append(f"{rel}: 'Run in browser' badge on a notebook that is not in the browser edition")
     for i, cell in enumerate(cells):
         src = cell_source(cell)
         if cell.get("cell_type") == "code" and not parses(src):
@@ -102,7 +115,7 @@ def check_notebook(path: Path, errors: list[str]) -> None:
 
 def main() -> int:
     errors: list[str] = []
-    notebooks = sorted(p for d in MODULE_DIRS for p in d.glob("*.ipynb"))
+    notebooks = sorted(p for d in MODULE_DIRS + TRANSLATION_DIRS for p in d.glob("*.ipynb"))
     for nb in notebooks:
         check_notebook(nb, errors)
     for md in sorted(ROOT.glob("*.md")) + sorted(ROOT.glob("*/*.md")):

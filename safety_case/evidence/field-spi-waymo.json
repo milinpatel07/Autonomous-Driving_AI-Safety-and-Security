@@ -1,0 +1,35 @@
+{
+  "schema": "avsafety.evidence/1",
+  "id": "field-spi-waymo",
+  "title": "SPIs, Waymo rider-only operation in four areas, 12 months",
+  "values": {
+    "exposure_million_miles": 166.739,
+    "injury_events": 100,
+    "injury_rate": 0.59974,
+    "injury_low": 0.487972,
+    "injury_high": 0.729444,
+    "injury_threshold": 1.87588,
+    "vru_events": 11,
+    "vru_rate": 0.0659714,
+    "vru_low": 0.0329327,
+    "vru_high": 0.118041,
+    "vru_threshold": 0.1
+  },
+  "units": {
+    "injury_high": "per 10^6 RO miles",
+    "vru_high": "per 10^6 RO miles"
+  },
+  "n": null,
+  "confidence": 0.95,
+  "producer": {
+    "notebook": "07_Runtime_Assurance_and_Operations/05_field_safety_monitoring.ipynb",
+    "code_hash": "sha256:b9c9830c48f3e137",
+    "avsafety_version": "1.2.0"
+  },
+  "recorded_at": "2026-10-29T08:47:12Z",
+  "dataset": {
+    "name": "NHTSA SGO 2021-01 ADS reports; Waymo Safety Impact Data Hub (data through June 2026)",
+    "licence": "NHTSA: public US government data; Waymo hub: published for research and reproduction"
+  },
+  "data_until": "2026-06-30"
+}

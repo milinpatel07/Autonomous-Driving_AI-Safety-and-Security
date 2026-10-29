@@ -4,7 +4,7 @@
 version: 1
 project:
   title: "Autonomous Driving: AI Safety and Security"
-  description: "An open course on the safety and security of automated driving — perception and prediction on real data, ISO 26262, ISO 21448 (SOTIF), ISO/SAE 21434, ISO/PAS 8800, runtime assurance, regulation and safety cases: 47 runnable notebooks, templates, interactive tools and a tested toolkit."
+  description: "An open course on the safety and security of automated driving — perception and prediction on real data, ISO 26262, ISO 21448 (SOTIF), ISO/SAE 21434, ISO/PAS 8800, runtime assurance, regulation and safety cases: 50 runnable notebooks, a safety case that updates itself, an open SOTIF benchmark, a field-safety observatory, interactive tools and a tested toolkit."
   keywords: [autonomous driving, functional safety, ISO 26262, SOTIF, ISO 21448, ISO/SAE 21434, ISO/PAS 8800, UL 4600, uncertainty, safety case]
   authors:
     - name: Milin Patel
@@ -21,9 +21,19 @@ project:
     - "README.md"
     - "CODE_OF_CONDUCT.md"
     - ".github/**"
+    - "MAINTAINING.md"
+    - "CHANGELOG.md"
+    - "classroom/**"
+    - "paper/**"
+    - "benchmark/**"
+    - "safety_case/**"
+    - "references/**"
+    - "lite/**"
+    - "scripts/**"
   toc:
     - file: site/index.md
     - file: site/learning-paths.md
+    - file: site/teaching.md
     - file: site/industry.md
     - title: "01 · Perception and Prediction"
       file: 01_Perception/README.md
@@ -61,6 +71,7 @@ project:
         - file: 04_SOTIF_ISO21448/03_ood_monitoring_as_safety_measure.ipynb
         - file: 04_SOTIF_ISO21448/04_simulation_based_validation.ipynb
         - file: 04_SOTIF_ISO21448/05_criticality_metrics_and_rss.ipynb
+        - file: 04_SOTIF_ISO21448/06_sotif_benchmark.ipynb
     - title: "05 · Cybersecurity (ISO/SAE 21434)"
       file: 05_Cybersecurity_ISO21434/README.md
       children:
@@ -68,6 +79,7 @@ project:
         - file: 05_Cybersecurity_ISO21434/02_tara.ipynb
         - file: 05_Cybersecurity_ISO21434/03_attack_surface_analysis.ipynb
         - file: 05_Cybersecurity_ISO21434/04_can_bus_intrusion_detection.ipynb
+        - file: 05_Cybersecurity_ISO21434/05_v2x_misbehaviour_detection.ipynb
     - title: "06 · AI Safety (ISO/PAS 8800)"
       file: 06_AI_Safety_ISO_PAS_8800/README.md
       children:
@@ -96,8 +108,25 @@ project:
         - file: 08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb
         - file: 08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb
         - file: 08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb
+        - file: 08_Standards_Regulation_and_Safety_Case/06_continuous_assurance.ipynb
+    - title: "Deutsche Ausgabe"
+      file: de/README.md
+      children:
+        - file: de/01_Perception/01_sae_levels_and_odd.ipynb
+        - file: de/03_Functional_Safety_ISO26262/02_hara.ipynb
+        - file: de/04_SOTIF_ISO21448/01_sotif_fundamentals.ipynb
+        - file: de/05_Cybersecurity_ISO21434/02_tara.ipynb
+        - file: de/06_AI_Safety_ISO_PAS_8800/01_ai_safety_standards.ipynb
+        - file: de/08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb
+        - file: de/GLOSSAR.md
+    - title: "Living evidence"
+      children:
+        - file: site/safety-case.md
+        - file: site/benchmark.md
+        - file: site/observatory.md
     - title: "Toolbox"
       children:
+        - file: site/run-in-browser.md
         - file: site/interactive-tools.md
         - file: site/toolkit.md
         - file: site/datasets.md
@@ -105,6 +134,7 @@ project:
         - file: templates/SOTIF_Analysis_Template.md
         - file: templates/TARA_Template.md
         - file: site/standards-map.md
+        - file: site/references.md
         - file: site/glossary.md
     - file: site/about.md
 site:
@@ -115,8 +145,14 @@ site:
   nav:
     - title: Course
       url: /learning-paths
+    - title: Run in browser
+      url: /run-in-browser
     - title: Industry
       url: /industry
+    - title: Teach
+      url: /teaching
+    - title: Observatory
+      url: /observatory
     - title: Tools
       url: /interactive-tools
     - title: GitHub

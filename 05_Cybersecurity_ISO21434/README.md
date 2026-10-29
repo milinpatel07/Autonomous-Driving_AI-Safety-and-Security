@@ -1,8 +1,8 @@
 # Module 05 · Cybersecurity (ISO/SAE 21434)
 
-Protecting the vehicle over its lifecycle: the ISO/SAE 21434 framework, threat analysis and risk assessment (TARA), attack surfaces and hands-on intrusion detection on the CAN bus.
+Protecting the vehicle over its lifecycle: the ISO/SAE 21434 framework, threat analysis and risk assessment (TARA), attack surfaces, intrusion detection on real CAN-bus attack logs and misbehaviour detection on V2X benchmark data.
 
-**4 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
+**5 notebooks** · each runs in Google Colab on CPU; real-data notebooks download the frames and records they need on demand.
 
 | # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|
@@ -10,6 +10,7 @@ Protecting the vehicle over its lifecycle: the ISO/SAE 21434 framework, threat a
 | 02 | [Threat Analysis and Risk Assessment (TARA)](02_tara.ipynb) | Intermediate | ISO/SAE 21434:2021 (cl. 9, 15; Annexes E–H), ISO 26262-3:2018 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/05_Cybersecurity_ISO21434/02_tara.ipynb) |
 | 03 | [Attack Surface Analysis for Autonomous Vehicles](03_attack_surface_analysis.ipynb) | Intermediate | ISO/SAE 21434:2021 (cl. 15.6, Annex G), CVSS v3.1, ISO 14229-1:2020, IEEE 1609.2 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/05_Cybersecurity_ISO21434/03_attack_surface_analysis.ipynb) |
 | 04 | [CAN Bus Security and Intrusion Detection](04_can_bus_intrusion_detection.ipynb) | Advanced | ISO/SAE 21434:2021, UN R155, ISO 11898-1:2024, AUTOSAR SecOC | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/05_Cybersecurity_ISO21434/04_can_bus_intrusion_detection.ipynb) |
+| 05 | [V2X Misbehaviour Detection](05_v2x_misbehaviour_detection.ipynb) | Advanced | ISO/SAE 21434:2021, UN R155, ETSI TS 103 759, ETSI TR 103 460, ETSI TS 103 097, IEEE 1609.2-2022, ETSI EN 302 637-2 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/05_Cybersecurity_ISO21434/05_v2x_misbehaviour_detection.ipynb) |
 
 ## What you will learn
 
@@ -40,10 +41,18 @@ Protecting the vehicle over its lifecycle: the ISO/SAE 21434 framework, threat a
 ### 04 · CAN Bus Security and Intrusion Detection
 
 - Explain the CAN 2.0 frame format, bitwise arbitration and the three properties that make the bus hard to defend: **broadcast**, **priority by identifier** and **no sender authentication**.
-- Generate realistic synthetic CAN traffic (per-ECU clocks, jitter, event-driven frames, counters and checksums) so that a *known-ground-truth* stream is available for testing detectors.
-- Implement three families of intrusion detection from first principles — **timing/frequency**, **payload/semantic plausibility** and **unsupervised ML** (Isolation Forest, identifier entropy) — plus a clock-skew fingerprint in the spirit of CIDS.
-- Evaluate detectors the way a vehicle programme must: precision/recall/F1, ROC, **detection latency** and **false alarms per hour of driving**.
-- Quantify the cost of prevention with AUTOSAR SecOC (truncated MAC, freshness value) on classic CAN versus CAN FD, and relate the analysis to an ISO/SAE 21434 TARA and the UN R155 Annex 5 threat list.
+- Load and inspect **real in-vehicle CAN traffic with physically verified attacks** (the ROAD dataset of Oak Ridge National Laboratory) and reconstruct frame-level ground truth from the published metadata.
+- Implement and tune four intrusion detectors — **per-identifier frequency**, **identifier entropy**, **signal-level payload plausibility** and a **learned window classifier** — on benign training traffic only, or with an honest capture-level split.
+- Evaluate them per attack type (fuzzing, targeted injection, masquerade) the way a vehicle programme must: **detection rate, detection delay and false alarms per hour**, including a confidence bound when no false alarm is observed.
+- Quantify the cost of prevention with AUTOSAR SecOC on the real bus, and answer the questions an ISO/SAE 21434 / UN R155 reviewer asks about an intrusion-detection claim.
+
+### 05 · V2X Misbehaviour Detection
+
+- Explain why a correctly **signed** V2X message can still be **false**, and how falsified position or speed reaches cooperative perception and an AEB function.
+- Load the **VeReMi Extension** benchmark (simulated, with labelled attacks), and state what simulation-based benchmark data can and cannot show.
+- Implement the classic local plausibility checks — acceptance range (ART), sudden appearance (SAW), speed plausibility, position–speed consistency, beacon frequency and a **Kalman-filter** consistency test — and a **learned** detector built on them.
+- Evaluate detectors per attack type with a **time-separated** split: detection per attacker, false-positive rate per genuine sender, detection latency and compute cost.
+- Show what **on-board sensor cross-checks** add for attacks that are internally consistent, and place local detection in the ETSI misbehaviour-reporting chain and in the TARA of [notebook 2](02_tara.ipynb).
 
 ---
 

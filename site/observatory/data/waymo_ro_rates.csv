@@ -1,0 +1,25 @@
+area,outcome,crashes,ro_miles_million,rate_per_million_miles,ci95_low,ci95_high
+all areas with published miles,police-reported crash,396,271.327,1.4595,1.3193,1.6106
+all areas with published miles,any-injury-reported crash,184,271.327,0.6781,0.5837,0.7835
+all areas with published miles,air-bag deployment (any vehicle),82,271.327,0.3022,0.2404,0.3751
+all areas with published miles,suspected serious injury or worse,3,271.327,0.0111,0.0023,0.0323
+Atlanta,police-reported crash,17,8.624,1.9712,1.1483,3.1562
+Atlanta,any-injury-reported crash,7,8.624,0.8117,0.3263,1.6724
+Atlanta,air-bag deployment (any vehicle),2,8.624,0.2319,0.0281,0.8377
+Atlanta,suspected serious injury or worse,0,8.624,0.0,0.0,0.4277
+Austin,police-reported crash,25,21.064,1.1869,0.7681,1.752
+Austin,any-injury-reported crash,11,21.064,0.5222,0.2607,0.9344
+Austin,air-bag deployment (any vehicle),5,21.064,0.2374,0.0771,0.5539
+Austin,suspected serious injury or worse,0,21.064,0.0,0.0,0.1751
+Los Angeles,police-reported crash,80,67.098,1.1923,0.9454,1.4839
+Los Angeles,any-injury-reported crash,58,67.098,0.8644,0.6564,1.1174
+Los Angeles,air-bag deployment (any vehicle),19,67.098,0.2832,0.1705,0.4422
+Los Angeles,suspected serious injury or worse,0,67.098,0.0,0.0,0.055
+Phoenix,police-reported crash,153,92.121,1.6609,1.4081,1.9459
+Phoenix,any-injury-reported crash,53,92.121,0.5753,0.431,0.7525
+Phoenix,air-bag deployment (any vehicle),30,92.121,0.3257,0.2197,0.4649
+Phoenix,suspected serious injury or worse,1,92.121,0.0109,0.0003,0.0605
+SF Bay Area,police-reported crash,121,82.42,1.4681,1.2182,1.7542
+SF Bay Area,any-injury-reported crash,55,82.42,0.6673,0.5027,0.8686
+SF Bay Area,air-bag deployment (any vehicle),26,82.42,0.3155,0.2061,0.4622
+SF Bay Area,suspected serious injury or worse,2,82.42,0.0243,0.0029,0.0877

@@ -1,0 +1,26 @@
+{
+  "schema": "avsafety.evidence/1",
+  "id": "aeb-conformal",
+  "title": "Conformal recall threshold (section 5)",
+  "values": {
+    "alpha": 0.1,
+    "tau_conf": 0.0,
+    "heldout_recall": 0.866667,
+    "heldout_recall_min": 0.810557,
+    "n_cal": 57,
+    "fp_per_frame_at_tau_conf": 21.75
+  },
+  "units": {},
+  "n": 45,
+  "confidence": 0.9,
+  "producer": {
+    "notebook": "08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb",
+    "code_hash": "sha256:2def87cb6e6261ba",
+    "avsafety_version": "1.2.0"
+  },
+  "recorded_at": "2026-10-29T08:47:49Z",
+  "dataset": {
+    "name": "KITTI object detection, 40 training frames (left camera)",
+    "licence": "CC BY-NC-SA 3.0"
+  }
+}
