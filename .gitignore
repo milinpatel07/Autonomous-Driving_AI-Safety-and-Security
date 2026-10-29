@@ -31,6 +31,7 @@ Thumbs.db
 
 # Data and model files
 data/
+!site/observatory/data/
 *.pth
 *.pkl
 *.h5
@@ -46,3 +47,4 @@ avsafety.egg-info/
 # Jupyter Book / MyST build
 _build/
 node_modules/
+.avcache/

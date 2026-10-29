@@ -40,12 +40,14 @@ MODULES = {
         "SOTIF (ISO 21448)",
         "Hazards without a fault: functional insufficiencies, triggering conditions and reasonably foreseeable misuse. "
         "Triggering conditions measured on real data, scenario spaces, OOD monitoring as a safety measure, "
-        "simulation-based validation, criticality metrics and RSS.",
+        "simulation-based validation, criticality metrics and RSS, and an open SOTIF benchmark that evaluates any "
+        "detector against a declared requirement.",
     ),
     "05_Cybersecurity_ISO21434": (
         "Cybersecurity (ISO/SAE 21434)",
         "Protecting the vehicle over its lifecycle: the ISO/SAE 21434 framework, threat analysis and risk "
-        "assessment (TARA), attack surfaces and hands-on intrusion detection on the CAN bus.",
+        "assessment (TARA), attack surfaces, intrusion detection on real CAN-bus attack logs and misbehaviour "
+        "detection on V2X benchmark data.",
     ),
     "06_AI_Safety_ISO_PAS_8800": (
         "AI Safety (ISO/PAS 8800)",
@@ -63,7 +65,8 @@ MODULES = {
         "Standards, Regulation and Safety Case",
         "Bringing it together: how the standards interlock, what type approval and regulation require, where the "
         "standards still have gaps, how to argue safety with a structured safety case, and a capstone that takes "
-        "a pedestrian AEB function from requirement to release decision.",
+        "a pedestrian AEB function from requirement to release decision, and a safety case kept as code that CI "
+        "re-evaluates whenever its evidence changes.",
     ),
 }
 
@@ -109,7 +112,7 @@ def clean_title(t: str) -> str:
 
 def uses_real_data(notebooks: list[Path]) -> bool:
     """True if any notebook calls an avsafety.data loader (KITTI, NGSIM, NHTSA)."""
-    pattern = re.compile(r"\b(kitti_object|kitti_object_labels_all|kitti_tracking|ngsim|nhtsa_sgo)\(")
+    pattern = re.compile(r"\b(kitti_object|kitti_object_labels_all|kitti_tracking|ngsim|nhtsa_sgo|can_ids|veremi)\(")
     return any(pattern.search(nb.read_text(encoding="utf-8")) for nb in notebooks)
 
 

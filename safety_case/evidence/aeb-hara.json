@@ -1,0 +1,25 @@
+{
+  "schema": "avsafety.evidence/1",
+  "id": "aeb-hara",
+  "title": "HARA summary and safety goals (section 2)",
+  "values": {
+    "sg01_asil": "D",
+    "sg02_asil": "B",
+    "sg01_ftti_ms": 300,
+    "sg02_ftti_ms": 500,
+    "uncovered_events": 0
+  },
+  "units": {},
+  "n": null,
+  "confidence": null,
+  "producer": {
+    "notebook": "08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb",
+    "code_hash": "sha256:2def87cb6e6261ba",
+    "avsafety_version": "1.2.0"
+  },
+  "recorded_at": "2026-10-29T08:47:49Z",
+  "dataset": {
+    "name": "none (analysis with illustrative ratings and rates)",
+    "licence": "n/a"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "avsafety.evidence/1",
+  "id": "aeb-calibration",
+  "title": "Person-score calibration (section 5)",
+  "values": {
+    "ece_raw": 0.0335841,
+    "ece_after": 0.0217984,
+    "temperature": 0.881342
+  },
+  "units": {},
+  "n": 426,
+  "confidence": null,
+  "producer": {
+    "notebook": "08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb",
+    "code_hash": "sha256:2def87cb6e6261ba",
+    "avsafety_version": "1.2.0"
+  },
+  "recorded_at": "2026-10-29T08:47:49Z",
+  "dataset": {
+    "name": "KITTI object detection, 40 training frames (left camera)",
+    "licence": "CC BY-NC-SA 3.0"
+  }
+}

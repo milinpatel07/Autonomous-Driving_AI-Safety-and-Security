@@ -1,0 +1,68 @@
+name: SOTIF benchmark
+
+# Manually triggered: evaluates one detector on the full v1 benchmark and uploads the result as an artifact.
+# Fast checks of submitted result files (schema, spec hash, leaderboard up to date) run in the CI workflow.
+
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: "torchvision:<model name> (e.g. torchvision:ssdlite320_mobilenet_v3_large) or module:function"
+        required: true
+        default: "torchvision:fasterrcnn_mobilenet_v3_large_fpn"
+      name:
+        description: "Display name of the submission"
+        required: false
+        default: ""
+      threshold:
+        description: "Declared operating score threshold"
+        required: true
+        default: "0.5"
+      requirement:
+        description: "Requirement preset (PR-01, TC-04-02) or path to a JSON file in the repository"
+        required: true
+        default: "PR-01"
+
+permissions:
+  contents: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install CPU-only PyTorch and the toolkit
+        run: |
+          pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[data]" pandas
+      - name: Cache KITTI frames and model weights
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/avsafety
+            ~/.cache/torch
+          key: benchmark-v1-${{ hashFiles('benchmark/spec_v1.json') }}
+      - name: Run the benchmark
+        env:
+          MODEL: ${{ inputs.model }}
+          NAME: ${{ inputs.name }}
+          THRESHOLD: ${{ inputs.threshold }}
+          REQUIREMENT: ${{ inputs.requirement }}
+        run: |
+          mkdir -p out
+          if [[ "$MODEL" == torchvision:* ]]; then SRC=(--model "$MODEL"); else SRC=(--callable "$MODEL"); fi
+          ARGS=("${SRC[@]}" --threshold "$THRESHOLD" --requirement "$REQUIREMENT" --threads 2
+                --out out/result.json --markdown out/report.md --html out/report.html)
+          if [ -n "$NAME" ]; then ARGS+=(--name "$NAME"); fi
+          python -m avsafety.bench "${ARGS[@]}"
+          python -m avsafety.bench --validate out/result.json
+          cat out/report.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sotif-benchmark-result
+          path: out/

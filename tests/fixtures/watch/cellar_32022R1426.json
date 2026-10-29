@@ -1,0 +1,6 @@
+
+{ "head": { "link": [], "vars": ["c"] },
+  "results": { "distinct": false, "ordered": true, "bindings": [
+    { "c": { "type": "literal", "datatype": "http://www.w3.org/2001/XMLSchema#string", "value": "32026R0481" }},
+    { "c": { "type": "literal", "datatype": "http://www.w3.org/2001/XMLSchema#string", "value": "02022R1426-20220826" }},
+    { "c": { "type": "literal", "datatype": "http://www.w3.org/2001/XMLSchema#string", "value": "02022R1426-20260324" }} ] } }

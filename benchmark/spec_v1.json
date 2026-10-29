@@ -1,0 +1,280 @@
+{
+ "name": "SOTIF perception benchmark (KITTI camera track)",
+ "spec_version": "1",
+ "dataset": {
+  "name": "KITTI object detection benchmark, training split (left colour camera, Velodyne HDL-64E)",
+  "licence": "CC BY-NC-SA 3.0 (non-commercial)",
+  "citation": "Geiger, Lenz, Urtasun (2012), CVPR, https://doi.org/10.1109/CVPR.2012.6248074"
+ },
+ "frame_rule": {
+  "description": "All KITTI object training frames with at least 2 'Pedestrian' labels whose distance sqrt(x^2 + z^2) is <= 40 m form the pool; 120 frames are drawn without replacement with numpy.random.default_rng(21448).choice(pool, 120, replace=False) and sorted.",
+  "min_pedestrians": 2,
+  "max_distance_m": 40.0,
+  "pool_size": 708,
+  "n_frames": 120,
+  "seed": 21448
+ },
+ "frames": [
+  134,
+  145,
+  189,
+  251,
+  287,
+  311,
+  342,
+  412,
+  436,
+  462,
+  464,
+  780,
+  874,
+  928,
+  937,
+  1046,
+  1070,
+  1207,
+  1221,
+  1252,
+  1409,
+  1426,
+  1433,
+  1468,
+  1487,
+  1525,
+  1558,
+  1611,
+  1682,
+  1912,
+  1958,
+  2133,
+  2149,
+  2161,
+  2175,
+  2440,
+  2536,
+  2725,
+  2775,
+  2851,
+  2870,
+  2889,
+  2915,
+  2920,
+  2943,
+  3074,
+  3133,
+  3146,
+  3171,
+  3267,
+  3294,
+  3298,
+  3367,
+  3390,
+  3437,
+  3438,
+  3466,
+  3511,
+  3550,
+  3555,
+  3628,
+  3632,
+  3668,
+  3753,
+  3765,
+  3784,
+  3800,
+  3876,
+  4002,
+  4014,
+  4028,
+  4177,
+  4400,
+  4488,
+  4619,
+  4897,
+  4968,
+  5031,
+  5075,
+  5085,
+  5131,
+  5245,
+  5286,
+  5287,
+  5336,
+  5434,
+  5523,
+  5608,
+  5617,
+  5670,
+  5688,
+  5813,
+  5824,
+  5980,
+  5988,
+  6070,
+  6082,
+  6083,
+  6088,
+  6139,
+  6174,
+  6189,
+  6213,
+  6334,
+  6427,
+  6486,
+  6511,
+  6528,
+  6749,
+  6752,
+  6761,
+  6785,
+  6980,
+  7070,
+  7129,
+  7189,
+  7254,
+  7260,
+  7265,
+  7406
+ ],
+ "classes": {
+  "pedestrian": {
+   "kitti": [
+    "Pedestrian"
+   ],
+   "ignore": [
+    "Person_sitting",
+    "Cyclist"
+   ]
+  },
+  "cyclist": {
+   "kitti": [
+    "Cyclist"
+   ],
+   "ignore": []
+  },
+  "car": {
+   "kitti": [
+    "Car"
+   ],
+   "ignore": [
+    "Van",
+    "Truck"
+   ]
+  }
+ },
+ "population": {
+  "min_height_px": 25.0,
+  "max_truncation": 0.5,
+  "occlusion_levels": [
+   0,
+   1,
+   2
+  ]
+ },
+ "matching": {
+  "rule": "2d_iou",
+  "iou": 0.5,
+  "order": "descending score, one-to-one, best IoU among free labels",
+  "ignore_iou": 0.5,
+  "dontcare_ioa": 0.5,
+  "note": "A detection matched to a label outside the population, overlapping an 'ignore' class (IoU >= 0.5) or covered by a DontCare region (>= 50 % of its area) is neither TP nor FP."
+ },
+ "distance_bands_m": [
+  [
+   0,
+   10
+  ],
+  [
+   10,
+   20
+  ],
+  [
+   20,
+   30
+  ],
+  [
+   30,
+   40
+  ],
+  [
+   40,
+   null
+  ]
+ ],
+ "truncation_bins": [
+  [
+   0.0,
+   0.15
+  ],
+  [
+   0.15,
+   0.3
+  ],
+  [
+   0.3,
+   0.5
+  ]
+ ],
+ "conditions": [
+  {
+   "id": "clear",
+   "type": "clear",
+   "label": "clear (original image)"
+  },
+  {
+   "id": "fog_200",
+   "type": "fog",
+   "visibility_m": 200,
+   "airlight": 0.8,
+   "label": "fog, V = 200 m"
+  },
+  {
+   "id": "fog_100",
+   "type": "fog",
+   "visibility_m": 100,
+   "airlight": 0.8,
+   "label": "fog, V = 100 m"
+  },
+  {
+   "id": "fog_50",
+   "type": "fog",
+   "visibility_m": 50,
+   "airlight": 0.8,
+   "label": "fog, V = 50 m"
+  },
+  {
+   "id": "fog_25",
+   "type": "fog",
+   "visibility_m": 25,
+   "airlight": 0.8,
+   "label": "fog, V = 25 m"
+  },
+  {
+   "id": "low_light_64",
+   "type": "low_light",
+   "light_factor": 0.015625,
+   "full_well_e": 4000.0,
+   "read_noise_e": 4.0,
+   "label": "low light, k = 1/64"
+  },
+  {
+   "id": "low_light_256",
+   "type": "low_light",
+   "light_factor": 0.00390625,
+   "full_well_e": 4000.0,
+   "read_noise_e": 4.0,
+   "label": "low light, k = 1/256"
+  },
+  {
+   "id": "lens_dirt_25",
+   "type": "lens_dirt",
+   "coverage": 0.25,
+   "label": "lens dirt, 25 % covered"
+  }
+ ],
+ "randomness": "stochastic conditions use numpy.random.default_rng(frame_index), one fresh generator per frame and condition",
+ "score_threshold_policy": "One operating threshold for all classes and conditions, declared with the submission before evaluation (default 0.5). Detections with score >= 0.05 are stored so that the report can be recomputed at the declared threshold.",
+ "min_stored_score": 0.05,
+ "confidence": 0.95,
+ "interval": "clopper-pearson"
+}

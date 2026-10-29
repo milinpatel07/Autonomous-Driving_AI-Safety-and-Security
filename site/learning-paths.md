@@ -8,16 +8,16 @@ work needs. Notebook numbers are module-notebook, e.g. 03-02 is the HARA noteboo
 ::::{grid} 1 1 2 2
 
 :::{card} Complete course
-All eight modules in order, 01 → 08, ending with the capstone 08-05. For students and for engineers new to AV safety.
+All eight modules in order, 01 → 08, ending with the capstone 08-05 and continuous assurance 08-06. For students and for engineers new to AV safety.
 :::
 
 :::{card} Functional safety engineer
-03-01 → 03-02 HARA → 03-03 FMEA/FMEDA → 03-04 FTA → 03-05 STPA → 03-06 V&V → 08-04 Safety case → 08-05 Capstone.
+03-01 → 03-02 HARA → 03-03 FMEA/FMEDA → 03-04 FTA → 03-05 STPA → 03-06 V&V → 08-04 Safety case → 08-05 Capstone → 08-06 Continuous assurance.
 :::
 
 :::{card} SOTIF / perception safety engineer
 01-04 Detection → 01-05 VRU → 04-01 SOTIF → 04-02 Triggering conditions (real data) → 04-03 OOD monitoring →
-04-05 RSS → 06-08 Statistical validation.
+04-05 RSS → 04-06 SOTIF benchmark → 06-08 Statistical validation.
 :::
 
 :::{card} ML / perception engineer
@@ -26,7 +26,7 @@ Uncertainty, calibration, conformal → 06-07 End-to-end and foundation models.
 :::
 
 :::{card} Security engineer
-05-01 → 05-02 TARA → 05-03 Attack surface → 05-04 CAN intrusion detection → 02-04 Adversarial attacks →
+05-01 → 05-02 TARA → 05-03 Attack surface → 05-04 CAN intrusion detection → 05-05 V2X misbehaviour → 02-04 Adversarial attacks →
 07-04 V2X → 08-01 Standards integration.
 :::
 
@@ -37,7 +37,7 @@ Uncertainty, calibration, conformal → 06-07 End-to-end and foundation models.
 
 :::{card} Manager, assessor, regulator
 01-01 SAE levels and ODD → 02-01 Incident case studies → 08-01 Standards integration → 08-02 Regulation →
-07-05 Field monitoring → 08-04 Safety case → 08-05 Capstone.
+07-05 Field monitoring → 08-04 Safety case → 08-05 Capstone → 08-06 Continuous assurance.
 :::
 
 :::{card} Short introduction
@@ -48,7 +48,8 @@ Uncertainty, calibration, conformal → 06-07 End-to-end and foundation models.
 ## Prerequisites
 
 - Python basics (NumPy, pandas, Matplotlib). Every notebook explains its code.
-- No GPU and no local install: use the **Open in Colab** badge at the top of each notebook. Real-data notebooks
+- Lecturers: see [Teaching with this course](teaching.md).
+- No GPU and no local install: use the **Open in Colab** badge at the top of each notebook, or [run the lighter notebooks in your browser](run-in-browser.md) without an account. Real-data notebooks
   install the course toolkit and download the frames they need automatically.
 - Standards are paywalled; the notebooks explain their concepts and cite clause numbers so that you can follow up
   with the official texts. See also the [industry map](industry.md).

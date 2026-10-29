@@ -1,0 +1,157 @@
+name: Canary
+
+# Monthly: does the course still run for a newcomer today? Every notebook is executed with an empty data
+# cache (all datasets and model weights fetched from the live sources) and with the newest dependency
+# versions that requirements.txt allows; all external links are checked. Any failure opens (or updates)
+# one issue labelled "course-rot".
+
+on:
+  schedule:
+    - cron: "41 5 10 * *"     # 05:41 UTC on the 10th of every month
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: canary
+  cancel-in-progress: false
+
+jobs:
+  notebooks:
+    name: Notebooks (${{ matrix.module }}, cold cache, latest dependencies)
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        module:
+          - 01_Perception
+          - 02_Failures_and_Robustness
+          - 03_Functional_Safety_ISO26262
+          - 04_SOTIF_ISO21448
+          - 05_Cybersecurity_ISO21434
+          - 06_AI_Safety_ISO_PAS_8800
+          - 07_Runtime_Assurance_and_Operations
+          - 08_Standards_Regulation_and_Safety_Case
+    env:
+      AVSAFETY_CACHE: /tmp/avsafety-cold-cache
+      TORCH_HOME: /tmp/torch-cold-cache
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install the newest compatible dependencies (no pip cache, no data cache)
+        run: |
+          pip install --no-cache-dir --upgrade pip
+          pip install --no-cache-dir --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install --no-cache-dir --upgrade --upgrade-strategy eager -r requirements.txt
+          pip install --no-cache-dir --upgrade --upgrade-strategy eager -e ".[data]"
+          pip freeze > versions.txt
+      - name: Execute every notebook of the module
+        id: run
+        run: |
+          set +e
+          python scripts/execute_notebooks.py --timeout 1800 ${{ matrix.module }}/*.ipynb 2>&1 | tee run.log
+          status=${PIPESTATUS[0]}
+          { echo "module=${{ matrix.module }}"; echo "status=$status"; } > status.txt
+          grep -E "FAILED|executed successfully" run.log >> status.txt
+          exit $status
+      - name: Keep log, status and versions
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: canary-${{ matrix.module }}
+          path: |
+            status.txt
+            run.log
+            versions.txt
+          retention-days: 30
+
+  links:
+    name: External links
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check links (polite, sequential)
+        run: |
+          set +e
+          python scripts/check_links.py --report links.md
+          status=$?
+          cat links.md >> "$GITHUB_STEP_SUMMARY"
+          exit $status
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: canary-links
+          path: links.md
+          retention-days: 30
+
+  report:
+    name: Open or update the course-rot issue
+    needs: [notebooks, links]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: canary-*
+          path: results
+      - uses: actions/github-script@v7
+        env:
+          NOTEBOOKS: ${{ needs.notebooks.result }}
+          LINKS: ${{ needs.links.result }}
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const label = 'course-rot';
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const today = new Date().toISOString().slice(0, 10);
+            const failed = [];
+            const lines = [];
+            for (const dir of fs.readdirSync('results').sort()) {
+              const status = path.join('results', dir, 'status.txt');
+              if (!fs.existsSync(status)) continue;
+              const text = fs.readFileSync(status, 'utf8').trim().split('\n');
+              const module = text[0].replace('module=', '');
+              if (text[1] !== 'status=0') {
+                failed.push(module);
+                lines.push(`### ${module}`, '```', ...text.slice(2), '```');
+              }
+            }
+            const linksFile = path.join('results', 'canary-links', 'links.md');
+            const linksBroken = process.env.LINKS === 'failure';
+            if (linksBroken && fs.existsSync(linksFile)) lines.push(fs.readFileSync(linksFile, 'utf8'));
+            const notebooksBroken = process.env.NOTEBOOKS !== 'success';
+            if (notebooksBroken && !failed.length) failed.push('notebook job did not complete');
+            const open = await github.paginate(github.rest.issues.listForRepo,
+              { ...context.repo, state: 'open', labels: label, per_page: 100 });
+            if (!notebooksBroken && !linksBroken) {
+              if (open.length) await github.rest.issues.createComment({ ...context.repo,
+                issue_number: open[0].number, body: `The canary of ${today} passed ([run](${runUrl})).` });
+              return;
+            }
+            const what = [failed.length ? `notebooks in ${failed.join(', ')}` : null,
+                          linksBroken ? 'broken external links' : null].filter(Boolean).join('; ');
+            const title = `Course rot detected: ${what}`.slice(0, 250);
+            const body = [`The monthly canary of ${today} failed ([run](${runUrl})). It ran every notebook with an ` +
+              'empty data cache against the live sources and the newest dependency versions allowed by ' +
+              'requirements.txt (the `versions.txt` artifact lists them), and checked all external links. ' +
+              'See MAINTAINING.md, *Monthly routine*.', '', ...lines].join('\n').slice(0, 65000);
+            try {
+              await github.rest.issues.createLabel({ ...context.repo, name: label, color: 'd93f0b',
+                description: 'The canary found notebooks or links that no longer work' });
+            } catch (e) { if (e.status !== 422) throw e; }
+            if (open.length) {
+              await github.rest.issues.update({ ...context.repo, issue_number: open[0].number, title, body });
+            } else {
+              await github.rest.issues.create({ ...context.repo, title, body, labels: [label] });
+            }

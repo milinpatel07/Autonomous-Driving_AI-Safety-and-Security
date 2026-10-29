@@ -1,0 +1,24 @@
+{
+  "schema": "avsafety.evidence/1",
+  "id": "poisson-interval-coverage",
+  "title": "Monte Carlo coverage of the exact (Garwood) Poisson interval",
+  "values": {
+    "simulated_coverage": 0.96265,
+    "nominal_coverage": 0.95,
+    "true_rate_per_mile": 3e-07,
+    "miles_zero_failure_human_rate": 274838000.0
+  },
+  "units": {},
+  "n": 20000,
+  "confidence": 0.95,
+  "producer": {
+    "notebook": "06_AI_Safety_ISO_PAS_8800/08_statistical_safety_validation.ipynb",
+    "code_hash": "sha256:3db79bbe27f33406",
+    "avsafety_version": "1.2.0"
+  },
+  "recorded_at": "2026-10-29T08:46:26Z",
+  "dataset": {
+    "name": "none (Monte Carlo analysis)",
+    "licence": "n/a"
+  }
+}

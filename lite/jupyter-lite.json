@@ -1,0 +1,13 @@
+{
+  "jupyter-lite-schema-version": 0,
+  "jupyter-config-data": {
+    "appName": "AV Safety and Security (in your browser)",
+    "defaultKernelName": "python",
+    "exposeAppInBrowser": true,
+    "litePluginSettings": {
+      "@jupyterlite/pyodide-kernel-extension:kernel": {
+        "disablePyPIFallback": true
+      }
+    }
+  }
+}

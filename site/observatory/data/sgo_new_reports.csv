@@ -1,0 +1,219 @@
+kind,report_id,version,entity,incident_month,state,road,partner,severity
+ADAS,945-16481,1,Nissan North,2026-07,VA,highway or freeway,unknown,unknown
+ADAS,13781-16466,1,Tesla,2026-08,OR,unknown,unknown,unknown
+ADAS,13781-16467,1,Tesla,2026-08,TX,highway or freeway,unknown,unknown
+ADAS,13781-16468,1,Tesla,2026-08,CA,highway or freeway,unknown,unknown
+ADAS,13781-16469,1,Tesla,2026-08,TX,highway or freeway,fixed object,unknown
+ADAS,13781-16470,1,Tesla,2026-08,NY,unknown,unknown,unknown
+ADAS,13781-16471,1,Tesla,2026-08,CA,highway or freeway,fixed object,unknown
+ADAS,13781-16472,1,Tesla,2026-08,GA,intersection,passenger vehicle,unknown
+ADAS,13781-16473,1,Tesla,2026-08,CA,unknown,unknown,unknown
+ADAS,13781-16474,1,Tesla,2026-08,FL,unknown,unknown,unknown
+ADAS,13781-16475,1,Tesla,2026-08,FL,highway or freeway,fixed object,unknown
+ADAS,13781-16476,1,Tesla,2026-08,FL,highway or freeway,fixed object,unknown
+ADAS,13781-16477,1,Tesla,2026-08,FL,unknown,unknown,unknown
+ADAS,13781-16478,1,Tesla,2026-08,CA,highway or freeway,unknown,unknown
+ADAS,13781-16479,1,Tesla,2026-08,CA,unknown,unknown,unknown
+ADAS,13781-16480,1,Tesla,2026-08,WA,unknown,unknown,unknown
+ADAS,13781-16482,1,Tesla,2026-08,UT,intersection,passenger vehicle,unknown
+ADAS,13781-16483,1,Tesla,2026-08,VA,highway or freeway,other,unknown
+ADAS,13781-16484,1,Tesla,2026-08,GA,street,unknown,unknown
+ADAS,13781-16501,1,Tesla,2026-08,FL,highway or freeway,passenger vehicle,unknown
+ADAS,13781-16502,1,Tesla,2026-08,CA,parking area,unknown,unknown
+ADAS,13781-16503,2,Tesla,2026-08,NY,unknown,unknown,serious
+ADAS,13781-16504,1,Tesla,2026-08,TX,unknown,unknown,unknown
+ADAS,13781-16505,1,Tesla,2026-08,TX,intersection,passenger vehicle,unknown
+ADAS,13781-16506,1,Tesla,2026-08,TX,intersection,"pedestrian, cyclist or other VRU",no injury reported
+ADAS,13781-16507,1,Tesla,2026-08,PA,unknown,unknown,unknown
+ADAS,13781-16508,1,Tesla,2026-08,PA,highway or freeway,unknown,unknown
+ADAS,13781-16509,1,Tesla,2026-08,CA,unknown,unknown,unknown
+ADAS,13781-16510,1,Tesla,2026-08,TX,unknown,unknown,unknown
+ADAS,13781-16511,1,Tesla,2026-08,CA,intersection,passenger vehicle,unknown
+ADAS,13781-16515,1,Tesla,2026-08,MA,highway or freeway,unknown,unknown
+ADAS,13781-16516,1,Tesla,2026-08,TX,unknown,unknown,unknown
+ADAS,13781-16517,1,Tesla,2026-08,FL,unknown,unknown,unknown
+ADAS,13781-16518,1,Tesla,2026-08,FL,unknown,unknown,unknown
+ADAS,13781-16519,1,Tesla,2026-08,NY,unknown,unknown,unknown
+ADAS,13781-16520,1,Tesla,2026-08,CA,intersection,passenger vehicle,unknown
+ADAS,13781-16521,1,Tesla,2026-08,MO,highway or freeway,fixed object,unknown
+ADAS,13781-16522,1,Tesla,2026-08,GA,highway or freeway,fixed object,unknown
+ADAS,13781-16523,1,Tesla,2026-08,GA,unknown,unknown,unknown
+ADAS,13781-16525,1,Tesla,2026-08,CA,unknown,unknown,unknown
+ADAS,13781-16526,1,Tesla,2026-08,OH,highway or freeway,passenger vehicle,unknown
+ADAS,13781-16527,1,Tesla,2026-08,CA,unknown,unknown,unknown
+ADAS,13781-16528,1,Tesla,2026-08,NC,intersection,passenger vehicle,unknown
+ADAS,13781-16529,1,Tesla,2026-08,CA,unknown,unknown,unknown
+ADAS,13781-16530,1,Tesla,2026-08,VA,intersection,passenger vehicle,unknown
+ADAS,13781-16531,1,Tesla,2026-08,AR,unknown,unknown,unknown
+ADAS,13781-16532,1,Tesla,2026-08,CA,highway or freeway,fixed object,unknown
+ADAS,13781-16533,1,Tesla,2026-08,CA,intersection,fixed object,unknown
+ADAS,13781-16534,1,Tesla,2026-08,FL,highway or freeway,fixed object,unknown
+ADAS,13781-16536,1,Tesla,2026-08,AZ,highway or freeway,unknown,unknown
+ADAS,13781-16537,1,Tesla,2026-08,CA,unknown,unknown,unknown
+ADAS,13781-16538,1,Tesla,2026-08,CA,highway or freeway,fixed object,unknown
+ADAS,13781-16539,1,Tesla,2026-08,UT,highway or freeway,heavy truck or bus,unknown
+ADAS,13781-16540,1,Tesla,2026-08,NC,highway or freeway,unknown,unknown
+ADAS,13781-16541,1,Tesla,2026-08,NC,highway or freeway,fixed object,unknown
+ADAS,13781-16542,1,Tesla,2026-08,WA,highway or freeway,fixed object,unknown
+ADAS,13781-16547,1,Tesla,2026-08,FL,highway or freeway,fixed object,unknown
+ADAS,33257-16411,1,VinFast Auto,2026-08,CA,highway or freeway,passenger vehicle,no injury reported
+ADAS,502-16459,1,Ford,2026-08,TX,highway or freeway,unknown,unknown
+ADAS,753-16535,1,Kia,2026-08,TX,highway or freeway,passenger vehicle,minor
+ADAS,13781-16512,1,Tesla,2026-09,CA,unknown,unknown,unknown
+ADAS,13781-16513,1,Tesla,2026-09,NV,street,passenger vehicle,unknown
+ADAS,13781-16514,1,Tesla,2026-09,CT,highway or freeway,fixed object,unknown
+ADAS,13781-16524,1,Tesla,2026-09,UT,intersection,passenger vehicle,minor
+ADAS,13781-16561,1,Tesla,2026-09,MD,unknown,unknown,unknown
+ADAS,13781-16562,1,Tesla,2026-09,MD,intersection,other,unknown
+ADAS,13781-16563,1,Tesla,2026-09,GA,unknown,unknown,unknown
+ADAS,13781-16564,1,Tesla,2026-09,MO,highway or freeway,passenger vehicle,unknown
+ADAS,13781-16565,1,Tesla,2026-09,NV,street,passenger vehicle,unknown
+ADAS,13781-16566,1,Tesla,2026-09,FL,intersection,passenger vehicle,unknown
+ADAS,13781-16567,1,Tesla,2026-09,NJ,intersection,passenger vehicle,unknown
+ADAS,13781-16568,1,Tesla,2026-09,CA,unknown,unknown,unknown
+ADAS,13781-16569,1,Tesla,2026-09,CA,highway or freeway,passenger vehicle,unknown
+ADAS,13781-16570,1,Tesla,2026-09,MD,unknown,unknown,unknown
+ADAS,13781-16571,1,Tesla,2026-09,OH,unknown,unknown,unknown
+ADAS,13781-16572,1,Tesla,2026-09,TN,unknown,unknown,unknown
+ADAS,13781-16573,1,Tesla,2026-09,CA,unknown,unknown,unknown
+ADAS,13781-16574,1,Tesla,2026-09,VA,intersection,passenger vehicle,unknown
+ADAS,13781-16583,1,Tesla,2026-09,FL,highway or freeway,passenger vehicle,no injury reported
+ADAS,13781-16584,1,Tesla,2026-09,CA,unknown,unknown,unknown
+ADAS,13781-16585,1,Tesla,2026-09,CA,highway or freeway,unknown,unknown
+ADAS,13781-16586,1,Tesla,2026-09,NC,highway or freeway,unknown,unknown
+ADAS,13781-16587,1,Tesla,2026-09,FL,highway or freeway,fixed object,unknown
+ADAS,13781-16588,1,Tesla,2026-09,TN,intersection,passenger vehicle,unknown
+ADAS,13781-16589,1,Tesla,2026-09,TX,intersection,fixed object,unknown
+ADAS,13781-16593,1,Tesla,2026-09,TN,unknown,unknown,unknown
+ADAS,13781-16594,1,Tesla,2026-09,GA,unknown,unknown,unknown
+ADAS,13781-16595,1,Tesla,2026-09,TX,parking area,unknown,unknown
+ADAS,13781-16596,1,Tesla,2026-09,CT,unknown,unknown,unknown
+ADAS,13781-16597,1,Tesla,2026-09,MN,highway or freeway,unknown,unknown
+ADAS,13781-16598,1,Tesla,2026-09,TX,intersection,passenger vehicle,unknown
+ADAS,13781-16599,1,Tesla,2026-09,TX,highway or freeway,passenger vehicle,unknown
+ADAS,13781-16600,1,Tesla,2026-09,CT,unknown,unknown,unknown
+ADAS,13781-16601,1,Tesla,2026-09,OR,parking area,fixed object,unknown
+ADAS,13781-16602,1,Tesla,2026-09,CA,street,fixed object,unknown
+ADAS,13781-16604,1,Tesla,2026-09,CA,highway or freeway,fixed object,unknown
+ADAS,13781-16605,1,Tesla,2026-09,PA,intersection,passenger vehicle,unknown
+ADAS,13781-16606,1,Tesla,2026-09,OH,unknown,unknown,unknown
+ADAS,13781-16607,1,Tesla,2026-09,CA,highway or freeway,fixed object,unknown
+ADAS,13781-16608,1,Tesla,2026-09,TX,intersection,fixed object,unknown
+ADAS,13781-16609,1,Tesla,2026-09,LA,unknown,unknown,unknown
+ADAS,13781-16610,1,Tesla,2026-09,FL,unknown,unknown,unknown
+ADAS,13781-16611,1,Tesla,2026-09,CA,highway or freeway,unknown,unknown
+ADAS,13781-16612,1,Tesla,2026-09,MA,highway or freeway,other,unknown
+ADAS,13781-16613,1,Tesla,2026-09,VA,highway or freeway,fixed object,unknown
+ADAS,13781-16614,1,Tesla,2026-09,WA,unknown,passenger vehicle,no injury reported
+ADAS,13781-16615,1,Tesla,2026-09,CA,intersection,passenger vehicle,unknown
+ADAS,13781-16616,1,Tesla,2026-09,UT,unknown,unknown,unknown
+ADAS,13781-16617,1,Tesla,2026-09,SC,unknown,unknown,unknown
+ADAS,13781-16618,1,Tesla,2026-09,CA,street,unknown,unknown
+ADAS,13781-16619,1,Tesla,2026-09,PA,highway or freeway,unknown,unknown
+ADAS,13781-16620,1,Tesla,2026-09,CA,rural road,fixed object,unknown
+ADAS,13781-16621,1,Tesla,2026-09,CA,street,passenger vehicle,unknown
+ADAS,13781-16622,1,Tesla,2026-09,TX,highway or freeway,passenger vehicle,unknown
+ADAS,13781-16623,1,Tesla,2026-09,CA,unknown,unknown,unknown
+ADAS,13781-16624,1,Tesla,2026-09,CA,unknown,unknown,unknown
+ADAS,13781-16625,1,Tesla,2026-09,IA,highway or freeway,unknown,unknown
+ADAS,13781-16628,1,Tesla,2026-09,IA,highway or freeway,unknown,unknown
+ADAS,13781-16629,1,Tesla,2026-09,TX,unknown,unknown,unknown
+ADAS,13781-16630,1,Tesla,2026-09,HI,unknown,unknown,unknown
+ADAS,13781-16631,1,Tesla,2026-09,NC,unknown,unknown,unknown
+ADAS,13781-16632,1,Tesla,2026-09,CT,unknown,unknown,serious
+ADAS,13781-16633,1,Tesla,2026-09,IA,highway or freeway,fixed object,unknown
+ADAS,13781-16634,1,Tesla,2026-09,TX,unknown,unknown,unknown
+ADAS,13781-16635,1,Tesla,2026-09,VA,highway or freeway,fixed object,unknown
+ADAS,13781-16637,1,Tesla,2026-09,SC,unknown,unknown,unknown
+ADAS,13781-16638,1,Tesla,2026-09,CA,unknown,unknown,unknown
+ADAS,13781-16639,1,Tesla,2026-09,SC,highway or freeway,unknown,unknown
+ADAS,13781-16640,1,Tesla,2026-09,NY,unknown,unknown,unknown
+ADAS,13781-16642,1,Tesla,2026-09,FL,unknown,unknown,unknown
+ADAS,13781-16643,1,Tesla,2026-09,MD,intersection,fixed object,unknown
+ADAS,13781-16685,1,Tesla,2026-09,CA,intersection,passenger vehicle,unknown
+ADAS,13781-16686,1,Tesla,2026-09,TX,unknown,unknown,unknown
+ADAS,13781-16687,1,Tesla,2026-09,NJ,intersection,fixed object,unknown
+ADAS,13781-16688,1,Tesla,2026-09,NC,unknown,unknown,unknown
+ADAS,13781-16689,1,Tesla,2026-09,PA,unknown,unknown,unknown
+ADAS,13781-16690,1,Tesla,2026-09,OK,highway or freeway,fixed object,unknown
+ADAS,13781-16691,1,Tesla,2026-09,FL,street,passenger vehicle,unknown
+ADAS,13781-16692,1,Tesla,2026-09,NC,unknown,unknown,unknown
+ADAS,13781-16693,1,Tesla,2026-09,CA,unknown,unknown,unknown
+ADAS,502-16559,1,Ford,2026-09,OR,street,unknown,unknown
+ADAS,502-16641,1,Ford,2026-09,OH,highway or freeway,unknown,unknown
+ADAS,540-16560,1,General Motors,2026-09,GA,highway or freeway,passenger vehicle,no injury reported
+ADAS,540-16590,1,General Motors,2026-09,LA,rural road,heavy truck or bus,unknown
+ADS,13781-16671,1,Tesla,2026-08,TX,parking area,fixed object,no injury reported
+ADS,13781-16672,1,Tesla,2026-08,TX,parking area,fixed object,no injury reported
+ADS,13781-16673,1,Tesla,2026-08,TX,intersection,passenger vehicle,no injury reported
+ADS,13781-16674,1,Tesla,2026-08,FL,parking area,fixed object,no injury reported
+ADS,13781-16675,1,Tesla,2026-08,TX,street,fixed object,no injury reported
+ADS,13781-16676,1,Tesla,2026-08,TX,intersection,passenger vehicle,no injury reported
+ADS,13781-16677,1,Tesla,2026-08,TX,street,fixed object,no injury reported
+ADS,13781-16678,1,Tesla,2026-08,TX,street,passenger vehicle,no injury reported
+ADS,13781-16679,1,Tesla,2026-08,TX,parking area,fixed object,no injury reported
+ADS,30270-16117,1,Waymo,2026-08,CA,intersection,heavy truck or bus,no injury reported
+ADS,30270-16124,1,Waymo,2026-08,CA,street,passenger vehicle,no injury reported
+ADS,30270-16132,1,Waymo,2026-08,CA,street,passenger vehicle,no injury reported
+ADS,30270-16133,1,Waymo,2026-08,CA,street,passenger vehicle,no injury reported
+ADS,30270-16271,1,Waymo,2026-08,CA,street,passenger vehicle,no injury reported
+ADS,30270-16293,1,Waymo,2026-08,GA,street,passenger vehicle,no injury reported
+ADS,30270-16299,1,Waymo,2026-08,GA,intersection,passenger vehicle,no injury reported
+ADS,30270-16300,1,Waymo,2026-08,CA,street,passenger vehicle,no injury reported
+ADS,30270-16344,1,Waymo,2026-08,TX,street,passenger vehicle,no injury reported
+ADS,30270-16345,1,Waymo,2026-08,TX,street,passenger vehicle,no injury reported
+ADS,30270-16346,1,Waymo,2026-08,TX,intersection,passenger vehicle,no injury reported
+ADS,30270-16347,1,Waymo,2026-08,AZ,parking area,fixed object,no injury reported
+ADS,30270-16348,1,Waymo,2026-08,CA,parking area,other,no injury reported
+ADS,30270-16356,1,Waymo,2026-08,TX,intersection,passenger vehicle,no injury reported
+ADS,30270-16358,1,Waymo,2026-08,AZ,intersection,passenger vehicle,no injury reported
+ADS,30270-16373,1,Waymo,2026-08,AZ,street,passenger vehicle,no injury reported
+ADS,30270-16374,1,Waymo,2026-08,CA,street,heavy truck or bus,no injury reported
+ADS,30270-16448,1,Waymo,2026-08,TX,street,passenger vehicle,no injury reported
+ADS,30270-16452,1,Waymo,2026-08,CO,street,passenger vehicle,minor
+ADS,30270-16453,1,Waymo,2026-08,AZ,street,passenger vehicle,no injury reported
+ADS,30270-16454,1,Waymo,2026-08,CA,street,other,no injury reported
+ADS,30270-16456,1,Waymo,2026-08,CA,street,passenger vehicle,no injury reported
+ADS,30270-16458,1,Waymo,2026-08,CA,street,heavy truck or bus,no injury reported
+ADS,30270-16461,1,Waymo,2026-08,FL,parking area,other,no injury reported
+ADS,30270-16464,1,Waymo,2026-08,CA,street,passenger vehicle,no injury reported
+ADS,30270-16489,1,Waymo,2026-08,CA,intersection,passenger vehicle,no injury reported
+ADS,30270-16490,1,Waymo,2026-08,FL,street,passenger vehicle,no injury reported
+ADS,30270-16493,1,Waymo,2026-08,CA,street,passenger vehicle,no injury reported
+ADS,30270-16496,1,Waymo,2026-08,GA,street,passenger vehicle,no injury reported
+ADS,30270-16498,1,Waymo,2026-08,TX,parking area,passenger vehicle,no injury reported
+ADS,30270-16553,1,Waymo,2026-08,NV,street,passenger vehicle,no injury reported
+ADS,30270-16556,1,Waymo,2026-08,CA,street,passenger vehicle,minor
+ADS,30270-16645,1,Waymo,2026-08,CA,street,passenger vehicle,no injury reported
+ADS,30270-16646,1,Waymo,2026-08,PA,street,passenger vehicle,no injury reported
+ADS,30270-16647,1,Waymo,2026-08,TX,street,passenger vehicle,no injury reported
+ADS,30330-16576,1,TORC Robotics,2026-08,TX,intersection,passenger vehicle,no injury reported
+ADS,30410-16407,1,Motional,2026-08,NV,street,fixed object,no injury reported
+ADS,30413-16664,1,May Mobility,2026-08,TX,intersection,passenger vehicle,no injury reported
+ADS,30413-16665,1,May Mobility,2026-08,GA,intersection,passenger vehicle,minor
+ADS,30451-16656,1,Gatik AI,2026-08,AZ,street,fixed object,no injury reported
+ADS,30451-16657,1,Gatik AI,2026-08,AZ,street,fixed object,no injury reported
+ADS,30610-16575,1,Zoox,2026-08,NV,street,heavy truck or bus,no injury reported
+ADS,30610-16696,1,Zoox,2026-08,CA,street,passenger vehicle,minor
+ADS,30610-16698,1,Zoox,2026-08,TX,parking area,fixed object,minor
+ADS,30610-16699,1,Zoox,2026-08,NV,street,passenger vehicle,no injury reported
+ADS,30610-16700,1,Zoox,2026-08,CA,street,heavy truck or bus,no injury reported
+ADS,30610-16701,1,Zoox,2026-08,CA,intersection,passenger vehicle,no injury reported
+ADS,30634-16662,1,PlusAI,2026-08,TX,highway or freeway,other,no injury reported
+ADS,31101-16263,1,Avride,2026-08,TX,intersection,passenger vehicle,no injury reported
+ADS,31101-16494,1,Avride,2026-08,TX,intersection,passenger vehicle,no injury reported
+ADS,33504-16549,1,Waabi,2026-08,TX,highway or freeway,heavy truck or bus,minor
+ADS,33504-16695,1,Waabi,2026-08,TX,highway or freeway,passenger vehicle,no injury reported
+ADS,35021-16694,1,MOIA,2026-08,CA,intersection,fixed object,no injury reported
+ADS,30270-16491,1,Waymo,2026-09,AZ,street,passenger vehicle,no injury reported
+ADS,30270-16497,1,Waymo,2026-09,CA,street,passenger vehicle,no injury reported
+ADS,30270-16500,1,Waymo,2026-09,CA,street,passenger vehicle,no injury reported
+ADS,30270-16548,1,Waymo,2026-09,FL,highway or freeway,motorcycle,no injury reported
+ADS,30270-16551,1,Waymo,2026-09,CA,intersection,passenger vehicle,no injury reported
+ADS,30270-16552,1,Waymo,2026-09,TX,highway or freeway,fixed object,minor
+ADS,30270-16554,1,Waymo,2026-09,AZ,street,passenger vehicle,no injury reported
+ADS,30270-16577,1,Waymo,2026-09,CA,street,passenger vehicle,no injury reported
+ADS,30270-16579,1,Waymo,2026-09,CA,street,passenger vehicle,no injury reported
+ADS,30270-16663,1,Waymo,2026-09,CA,intersection,passenger vehicle,minor
+ADS,30410-16557,1,Motional,2026-09,NV,intersection,"pedestrian, cyclist or other VRU",minor
+ADS,30610-16648,1,Zoox,2026-09,NV,street,passenger vehicle,no injury reported

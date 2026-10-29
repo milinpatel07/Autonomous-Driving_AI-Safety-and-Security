@@ -1,0 +1,2 @@
+avsafety @ git+https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security.git@main
+pytest>=7
