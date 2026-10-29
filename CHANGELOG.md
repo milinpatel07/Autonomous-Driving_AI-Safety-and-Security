@@ -6,6 +6,11 @@ in [MAINTAINING.md](MAINTAINING.md#releases-and-versions); the `avsafety` toolki
 
 ## [Unreleased]
 
+### Added
+- Lecture slides (`slides/`, `scripts/build_slides.py`): a course overview and a Module 04 (SOTIF) deck in
+  Markdown, built to HTML, PDF and image-based PowerPoint and published on the website. Figures are taken from
+  the committed notebook outputs by cell id; CI checks that every reference resolves.
+
 ## [4.0.0] — 2026-10-29
 
 Safety case as code, SOTIF perception benchmark, field-safety statistics, browser edition and German edition; 50 notebooks.

@@ -34,6 +34,16 @@ checked exercises, P = HARA/TARA project, F = final project, E = written or oral
 | 07 Runtime Assurance and Operations | specify an ODD monitor and a fallback, and define safety performance indicators from field data (NHTSA reports) | F, E |
 | 08 Standards, Regulation and Safety Case | map work products across ISO 26262, ISO 21448, ISO/SAE 21434 and ISO/PAS 8800, place them in the type-approval context, and build a GSN safety argument that leads to a defensible release decision | P, F |
 
+## Lecture slides
+
+[Lecture slides](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/slides/) accompany
+the notebooks: a course overview and one deck per module, as HTML, PDF and PowerPoint. Each slide has a
+one-sentence message as its title and a figure from a notebook as its evidence; the speaker notes give the
+explanation, questions for the class and common mistakes, and the footer names the notebook behind the figure.
+Every module deck starts with the background it assumes and ends with what it hands to the next module. The
+Markdown sources are in [`slides/`](https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/tree/main/slides)
+and can be adapted. Available now: the overview and Module 04 (SOTIF).
+
 ## One-semester course (14 weeks)
 
 Designed for 5 ECTS: per week a 90-minute lecture and a 90-minute lab, plus self-study and the project (about

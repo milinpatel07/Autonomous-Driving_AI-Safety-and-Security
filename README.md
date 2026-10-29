@@ -250,7 +250,8 @@ notebook. The [teaching guide](https://milinpatel07.github.io/Autonomous-Driving
 gives assessable learning outcomes per module, the schedule, an assessment design with a rubric for the capstone, and
 how institutions can certify results. Notebooks in Modules 03, 04 and 05 contain auto-checked exercises
 (`avsafety.exercises`), and [`classroom/`](classroom/README.md) is an autograded assignment template whose tests
-compute every reference answer with the toolkit.
+compute every reference answer with the toolkit. [Lecture slides](slides/README.md) (HTML, PDF, PowerPoint) show the
+notebooks' results with speaker notes; the overview and Module 04 are available, the other modules follow.
 
 ## The avsafety toolkit
 

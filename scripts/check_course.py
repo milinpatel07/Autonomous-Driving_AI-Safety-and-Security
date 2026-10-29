@@ -122,7 +122,8 @@ def main() -> int:
         if "_build" in md.parts or "node_modules" in md.parts:
             continue
         text = md.read_text(encoding="utf-8")
-        check_links(text, md.parent, md.relative_to(ROOT).as_posix(), errors)
+        if not (md.parent.name == "slides" and md.name[:2].isdigit()):  # decks: scripts/build_slides.py --check
+            check_links(text, md.parent, md.relative_to(ROOT).as_posix(), errors)
         for pattern, why in LEFTOVERS[2:4]:
             if pattern.search(text):
                 errors.append(f"{md.relative_to(ROOT)}: {why}")
