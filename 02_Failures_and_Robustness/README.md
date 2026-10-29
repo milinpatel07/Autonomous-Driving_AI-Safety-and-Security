@@ -2,7 +2,7 @@
 
 What goes wrong in the real world and why: documented incidents and their investigations, corner cases, out-of-distribution inputs and adversarial attacks on perception.
 
-**4 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
+**4 notebooks** · each runs in Google Colab on CPU; real-data notebooks download the frames and records they need on demand.
 
 | # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|
@@ -25,8 +25,8 @@ What goes wrong in the real world and why: documented incidents and their invest
 ### 02 · Corner Cases and Edge Cases
 
 - Distinguish edge cases from corner cases, and the test-engineering from the perception (ML) usage of "corner case"
-- Explain the long-tail problem and why rare scenarios matter for validation effort
-- Identify and organise corner cases using corner-case levels and the ISO 34502 disturbance categories
+- Explain the long-tail problem and measure it in a real dataset (KITTI)
+- Mine real corner cases from dataset labels, organise them by corner-case level and ISO 34502 disturbance
 - Quantify combinatorial explosion and reduce it with pairwise (combinatorial) testing
 - Separate in-ODD corner cases from ODD-exit conditions and prioritise testing consistently
 - Relate corner cases to ISO 21448 triggering conditions and functional insufficiencies
@@ -49,4 +49,4 @@ What goes wrong in the real world and why: documented incidents and their invest
 
 ---
 
-← [Module 01 · Perception Systems](../01_Perception/README.md) · [Course home](../README.md) · [Module 03 · Functional Safety (ISO 26262)](../03_Functional_Safety_ISO26262/README.md) →
+← [Module 01 · Perception and Prediction](../01_Perception/README.md) · [Course home](../README.md) · [Module 03 · Functional Safety (ISO 26262)](../03_Functional_Safety_ISO26262/README.md) →

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "avsafety"
-version = "1.0.0"
+version = "1.1.0"
 description = "Tested reference implementations for autonomous-driving safety and security (ISO 26262, ISO 21448, ISO/SAE 21434, ISO/PAS 8800)"
 readme = "avsafety/README.md"
 license = { text = "MIT" }
@@ -21,7 +21,8 @@ classifiers = [
 ]
 
 [project.optional-dependencies]
-test = ["pytest>=7"]
+data = ["pillow>=9", "pandas>=1.5"]
+test = ["pytest>=7", "pillow>=9", "pandas>=1.5"]
 
 [project.urls]
 Homepage = "https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security"

@@ -1,8 +1,8 @@
 # Module 08 · Standards, Regulation and Safety Case
 
-Bringing it together: how the standards interlock, what type approval and regulation require, where the standards still have gaps, and how to argue safety with a structured safety case.
+Bringing it together: how the standards interlock, what type approval and regulation require, where the standards still have gaps, how to argue safety with a structured safety case, and a capstone that takes a pedestrian AEB function from requirement to release decision.
 
-**4 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
+**5 notebooks** · each runs in Google Colab on CPU; real-data notebooks download the frames and records they need on demand.
 
 | # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|
@@ -10,6 +10,7 @@ Bringing it together: how the standards interlock, what type approval and regula
 | 02 | [Automotive Regulation and Type Approval for Automated Driving](02_regulation_and_type_approval.ipynb) | Intermediate | UN R155, R156, R157, UN ADS Regulation (2026); Reg. (EU) 2018/858, 2019/2144, 2022/1426, 2024/1689; ISO/SAE 21434:2021, ISO 24089:2023 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/02_regulation_and_type_approval.ipynb) |
 | 03 | [Standards Gaps and Open Problems in AV Safety](03_standards_gaps.ipynb) | Advanced | ISO 26262:2018, ISO 21448:2022, ISO/SAE 21434:2021, ISO/PAS 8800:2024, ISO/TS 5083:2025, UL 4600 (3rd ed.) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb) |
 | 04 | [Safety Cases and Goal Structuring Notation (GSN)](04_safety_case_gsn.ipynb) | Advanced | GSN Community Standard v3 (2021), UL 4600 (3rd ed., 2023), ISO/TS 5083:2025, ISO/PAS 8800:2024 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb) |
+| 05 | [Capstone: Pedestrian AEB from Requirement to Release Decision](05_capstone_aeb_from_requirement_to_release.ipynb) | Advanced | ISO 26262:2018, ISO 21448:2022, ISO/SAE 21434:2021, ISO/PAS 8800:2024, UL 4600 (3rd ed.) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb) |
 
 ## What you will learn
 
@@ -46,6 +47,15 @@ Bringing it together: how the standards interlock, what type approval and regula
 - Summarise what **UL 4600**, **ISO/TS 5083:2025**, **ISO/PAS 8800:2024** and **AMLAS** expect of an assurance argument.
 - Build, validate and render a GSN argument in Python for *"the AEB pedestrian function is acceptably safe within its ODD"*, combining ISO 26262, ISO 21448, ISO/PAS 8800 and ISO/SAE 21434 evidence.
 - Automate routine checks: undeveloped goals, type errors, stale evidence and open defeaters.
+
+### 05 · Capstone: Pedestrian AEB from Requirement to Release Decision
+
+- Trace one function, pedestrian automated emergency braking (AEB), from item definition and HARA through the functional safety concept to a release decision, reusing the course's work products instead of re-deriving them.
+- Derive a quantitative perception requirement from vehicle dynamics and verify it on **real KITTI images with a real detector**, including recall by distance and occlusion.
+- Turn measured performance insufficiencies into SOTIF measures: an ODD restriction computed from the data, and triggering conditions handed to the validation plan.
+- Use calibration and split conformal prediction as evidence, and state what each does and does not guarantee.
+- Combine the TARA, the validation target and scenario coverage into a GSN-shaped evidence table.
+- Compute a release checklist and decision (*release / release with ODD restriction / do not release*), and explain why the evidence in a notebook can never be enough on its own.
 
 ---
 

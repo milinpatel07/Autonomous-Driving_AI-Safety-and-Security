@@ -1,8 +1,8 @@
 # Module 06 · AI Safety (ISO/PAS 8800)
 
-Making machine-learning components trustworthy enough for a safety argument: the AI-safety standards, uncertainty and its decomposition, ensembles, calibration, conformal guarantees, explainability and statistical validation.
+Making machine-learning components trustworthy enough for a safety argument: the AI-safety standards, uncertainty and its decomposition, ensembles, calibration and conformal guarantees on real detections, explainability, the safety of end-to-end and foundation-model driving, and statistical validation.
 
-**7 notebooks** · each runs in Google Colab on CPU, without dataset downloads.
+**8 notebooks** · each runs in Google Colab on CPU; real-data notebooks download the frames and records they need on demand.
 
 | # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|
@@ -12,7 +12,8 @@ Making machine-learning components trustworthy enough for a safety argument: the
 | 04 | [Calibration and Reliability of Classifier Confidence](04_calibration.ipynb) | Intermediate | ISO/PAS 8800:2024, ISO 21448:2022 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/04_calibration.ipynb) |
 | 05 | [Conformal Prediction: Distribution-Free Uncertainty Guarantees](05_conformal_prediction.ipynb) | Intermediate/Advanced | ISO/PAS 8800:2024, ISO 21448:2022 (SOTIF) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/05_conformal_prediction.ipynb) |
 | 06 | [Explainability (XAI) for Perception: Methods, Sanity Checks and Limits as Safety Evidence](06_explainability.ipynb) | Intermediate | ISO/PAS 8800:2024, ISO/IEC TR 5469:2024 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/06_explainability.ipynb) |
-| 07 | [Statistical Safety Validation of ML-Based Perception and Automated Driving](07_statistical_safety_validation.ipynb) | Intermediate | ISO 21448:2022, ISO/PAS 8800:2024, ISO 34502:2022, ISO/TS 5083:2025, UL 4600 (3rd ed., 2023) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/07_statistical_safety_validation.ipynb) |
+| 07 | [End-to-End and Foundation-Model Driving: What Changes for Safety](07_end_to_end_and_foundation_models.ipynb) | Advanced | ISO/PAS 8800:2024, ISO 21448:2022, ISO/TS 5083:2025, UL 4600 (3rd ed., 2023) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/07_end_to_end_and_foundation_models.ipynb) |
+| 08 | [Statistical Safety Validation of ML-Based Perception and Automated Driving](08_statistical_safety_validation.ipynb) | Intermediate | ISO 21448:2022, ISO/PAS 8800:2024, ISO 34502:2022, ISO/TS 5083:2025, UL 4600 (3rd ed., 2023) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/06_AI_Safety_ISO_PAS_8800/08_statistical_safety_validation.ipynb) |
 
 ## What you will learn
 
@@ -50,6 +51,7 @@ Making machine-learning components trustworthy enough for a safety argument: the
 - Fit **temperature scaling** correctly (minimise validation NLL over $T>0$), plus Platt scaling and isotonic regression, using a strict train / validation / test protocol.
 - Explain what calibration does and does not change (accuracy, ranking, thresholded decisions).
 - Use calibrated probabilities for **expected-cost decisions** and see how calibration degrades under **distribution shift**.
+- Measure and recalibrate the confidence of a **real object detector on KITTI images**: state the matching rule, use a frame-level bootstrap, analyse slices, and relate the result to the AEB safety goals.
 
 ### 05 · Conformal Prediction: Distribution-Free Uncertainty Guarantees
 
@@ -59,6 +61,7 @@ Making machine-learning components trustworthy enough for a safety argument: the
 - Verify empirical coverage over many random splits, and see where **conditional** (class-wise) coverage fails — motivating **Mondrian/class-conditional** conformal.
 - Show that **distribution shift breaks exchangeability** with a synthetic "fog" shift, and recover coverage with **weighted** and **adaptive (ACI)** conformal prediction.
 - Connect prediction-set *size* to a conservative safety behaviour and to a **SOTIF / ISO/PAS 8800** assurance argument.
+- Conformalise a **real monocular distance estimate** on KITTI labels, check coverage per distance band and per class (Mondrian), and see coverage collapse for occluded and truncated objects.
 
 ### 06 · Explainability (XAI) for Perception: Methods, Sanity Checks and Limits as Safety Evidence
 
@@ -67,9 +70,18 @@ Making machine-learning components trustworthy enough for a safety argument: the
 - Check the **additivity** property of Shapley values ($f(x) = \phi_0 + \sum_i\phi_i$) and the **completeness** property of integrated gradients numerically.
 - Run the **model-randomisation sanity check** (Adebayo et al., 2018) and a localisation check against known object masks.
 - Use XAI to uncover a **shortcut** (a spurious feature) that a test-set accuracy figure would hide.
+- Explain detections of a **real object detector on KITTI images** (pedestrian and car) with gradient saliency, Grad-CAM and whole-detector occlusion, and run the randomisation sanity check on it.
 - Explain why post-hoc explanations are, at best, supporting evidence in an ISO/PAS 8800 assurance argument.
 
-### 07 · Statistical Safety Validation of ML-Based Perception and Automated Driving
+### 07 · End-to-End and Foundation-Model Driving: What Changes for Safety
+
+- Distinguish **modular**, **monolithic end-to-end**, **modular end-to-end**, **vision-language(-action)** and **world-model** approaches to automated driving, using verified and dated examples.
+- Explain the safety-relevant failure modes these approaches add or sharpen: **compounding error under covariate shift**, **causal confusion**, **shortcut learning**, **distribution shift**, **hallucination** and the **loss of intermediate interfaces** for monitoring.
+- Train a small **imitation-learning driving policy** on real lead-vehicle speed profiles from NGSIM and **demonstrate** behaviour-cloning failure, its repair with **DAgger**, and **causal confusion** from a nuisance input.
+- Wrap a learned policy with an **RSS-based runtime shield** and a lateral **Simplex** monitor, and quantify what it fixes and what it cannot.
+- State what evidence **ISO/PAS 8800**, **ISO 21448** and **UL 4600** would require for a learned driving policy, and name the main open problems as of October 2026.
+
+### 08 · Statistical Safety Validation of ML-Based Perception and Automated Driving
 
 - Explain why "drive until it is safe" does not work, and reproduce the **RAND "Driving to Safety"** numbers exactly.
 - Distinguish **functional, logical and concrete scenarios** (Menzel et al., 2018) from the **PEGASUS 6-layer model** of scenario content (Scholtes et al., 2021).

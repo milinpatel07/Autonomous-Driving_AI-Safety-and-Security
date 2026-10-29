@@ -19,10 +19,11 @@ SITE = "https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security
 
 MODULES = {
     "01_Perception": (
-        "Perception Systems",
-        "How an automated vehicle senses and understands its surroundings — and where that understanding can fail. "
-        "From SAE levels and the operational design domain through cameras, LiDAR and radar to detection, fusion, "
-        "tracking and the datasets the field is built on.",
+        "Perception and Prediction",
+        "How an automated vehicle senses, understands and anticipates its surroundings — and where that can fail. "
+        "From SAE levels and the operational design domain through real camera images and LiDAR scans (KITTI) to "
+        "detection, fusion, tracking, the datasets the field is built on, and trajectory prediction on real "
+        "highway traffic (NGSIM).",
     ),
     "02_Failures_and_Robustness": (
         "Failures and Robustness",
@@ -32,12 +33,14 @@ MODULES = {
     "03_Functional_Safety_ISO26262": (
         "Functional Safety (ISO 26262)",
         "Hazards caused by malfunctioning E/E systems: the ISO 26262 lifecycle, hazard analysis and risk "
-        "assessment (HARA), FMEA/FMEDA and hardware metrics, fault tree analysis, and verification and validation.",
+        "assessment (HARA), FMEA/FMEDA and hardware metrics, fault tree analysis, system-theoretic process analysis "
+        "(STPA), and verification and validation.",
     ),
     "04_SOTIF_ISO21448": (
         "SOTIF (ISO 21448)",
         "Hazards without a fault: functional insufficiencies, triggering conditions and reasonably foreseeable misuse. "
-        "Scenario spaces, OOD monitoring as a safety measure, simulation-based validation, criticality metrics and RSS.",
+        "Triggering conditions measured on real data, scenario spaces, OOD monitoring as a safety measure, "
+        "simulation-based validation, criticality metrics and RSS.",
     ),
     "05_Cybersecurity_ISO21434": (
         "Cybersecurity (ISO/SAE 21434)",
@@ -47,18 +50,20 @@ MODULES = {
     "06_AI_Safety_ISO_PAS_8800": (
         "AI Safety (ISO/PAS 8800)",
         "Making machine-learning components trustworthy enough for a safety argument: the AI-safety standards, "
-        "uncertainty and its decomposition, ensembles, calibration, conformal guarantees, explainability and "
-        "statistical validation.",
+        "uncertainty and its decomposition, ensembles, calibration and conformal guarantees on real detections, "
+        "explainability, the safety of end-to-end and foundation-model driving, and statistical validation.",
     ),
     "07_Runtime_Assurance_and_Operations": (
         "Runtime Assurance and Operations",
-        "Safety after start of production: monitoring the ODD at runtime and falling back to a minimal risk "
-        "condition, cooperative driving with V2X, and how automated driving is being deployed today.",
+        "Safety in operation: monitoring the ODD at runtime, safe motion planning and fallback, the human driver "
+        "in supervision and takeover, cooperative driving with V2X, field safety monitoring with real NHTSA crash "
+        "reports, and how automated driving is being deployed today.",
     ),
     "08_Standards_Regulation_and_Safety_Case": (
         "Standards, Regulation and Safety Case",
         "Bringing it together: how the standards interlock, what type approval and regulation require, where the "
-        "standards still have gaps, and how to argue safety with a structured safety case.",
+        "standards still have gaps, how to argue safety with a structured safety case, and a capstone that takes "
+        "a pedestrian AEB function from requirement to release decision.",
     ),
 }
 
@@ -102,10 +107,18 @@ def clean_title(t: str) -> str:
     return re.sub(r"\s+", " ", t).strip()
 
 
+def uses_real_data(notebooks: list[Path]) -> bool:
+    """True if any notebook calls an avsafety.data loader (KITTI, NGSIM, NHTSA)."""
+    pattern = re.compile(r"\b(kitti_object|kitti_object_labels_all|kitti_tracking|ngsim|nhtsa_sgo)\(")
+    return any(pattern.search(nb.read_text(encoding="utf-8")) for nb in notebooks)
+
+
 def module_readme(folder: str, notebooks: list[Path], n: int) -> str:
     name, intro = MODULES[folder]
     out = [f"# Module {folder[:2]} · {name}", "", intro, "",
-           f"**{len(notebooks)} notebooks** · each runs in Google Colab on CPU, without dataset downloads.", "",
+           f"**{len(notebooks)} notebooks** · each runs in Google Colab on CPU"
+           + ("; real-data notebooks download the frames and records they need on demand." if uses_real_data(notebooks)
+              else ", without dataset downloads."), "",
            "| # | Notebook | Level | Standards | Open |", "|---|---|---|---|---|"]
     details = []
     for nb in notebooks:
