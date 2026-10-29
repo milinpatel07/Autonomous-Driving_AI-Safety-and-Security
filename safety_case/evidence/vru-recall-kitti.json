@@ -1,0 +1,27 @@
+{
+  "schema": "avsafety.evidence/1",
+  "id": "vru-recall-kitti",
+  "title": "VRU recall of the COCO-pretrained detector on 40 KITTI frames",
+  "values": {
+    "recall_at_0_5": 0.404814,
+    "recall_ci_low": 0.35946,
+    "recall_ci_high": 0.451408,
+    "max_recall_any_threshold": 0.556075,
+    "n_evaluable": 428
+  },
+  "units": {
+    "max_recall_any_threshold": "fraction of evaluable VRUs"
+  },
+  "n": 457,
+  "confidence": 0.95,
+  "producer": {
+    "notebook": "01_Perception/05_vulnerable_road_user_detection.ipynb",
+    "code_hash": "sha256:79d36fe940c986e0",
+    "avsafety_version": "1.2.0"
+  },
+  "recorded_at": "2026-10-29T08:35:27Z",
+  "dataset": {
+    "name": "KITTI object detection, 40 training frames (left camera)",
+    "licence": "CC BY-NC-SA 3.0"
+  }
+}

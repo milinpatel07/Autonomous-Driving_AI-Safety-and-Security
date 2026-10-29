@@ -1,0 +1,127 @@
+kind,incident_month,reports,crashes,regime
+ADS,2021-07,15,11,original / 1st amended order
+ADS,2021-08,22,12,original / 1st amended order
+ADS,2021-09,19,10,original / 1st amended order
+ADS,2021-10,25,13,original / 1st amended order
+ADS,2021-11,29,14,original / 1st amended order
+ADS,2021-12,17,8,original / 1st amended order
+ADS,2022-01,18,11,original / 1st amended order
+ADS,2022-02,16,12,original / 1st amended order
+ADS,2022-03,22,16,original / 1st amended order
+ADS,2022-04,27,19,original / 1st amended order
+ADS,2022-05,24,14,original / 1st amended order
+ADS,2022-06,24,14,original / 1st amended order
+ADS,2022-07,27,15,original / 1st amended order
+ADS,2022-08,39,21,original / 1st amended order
+ADS,2022-09,21,11,original / 1st amended order
+ADS,2022-10,12,8,original / 1st amended order
+ADS,2022-11,13,9,original / 1st amended order
+ADS,2022-12,24,14,original / 1st amended order
+ADS,2023-01,10,8,original / 1st amended order
+ADS,2023-02,23,16,original / 1st amended order
+ADS,2023-03,39,22,original / 1st amended order
+ADS,2023-04,30,19,original / 1st amended order
+ADS,2023-05,34,22,2nd amended order
+ADS,2023-06,37,23,2nd amended order
+ADS,2023-07,51,29,2nd amended order
+ADS,2023-08,82,51,2nd amended order
+ADS,2023-09,52,34,2nd amended order
+ADS,2023-10,45,31,2nd amended order
+ADS,2023-11,16,11,2nd amended order
+ADS,2023-12,24,21,2nd amended order
+ADS,2024-01,25,23,2nd amended order
+ADS,2024-02,27,22,2nd amended order
+ADS,2024-03,32,28,2nd amended order
+ADS,2024-04,24,21,2nd amended order
+ADS,2024-05,45,40,2nd amended order
+ADS,2024-06,47,41,2nd amended order
+ADS,2024-07,41,40,2nd amended order
+ADS,2024-08,51,46,2nd amended order
+ADS,2024-09,69,60,2nd amended order
+ADS,2024-10,70,67,2nd amended order
+ADS,2024-11,74,70,2nd amended order
+ADS,2024-12,87,81,2nd amended order
+ADS,2025-01,83,78,2nd amended order
+ADS,2025-02,85,78,2nd amended order
+ADS,2025-03,79,77,2nd amended order
+ADS,2025-04,98,96,2nd amended order
+ADS,2025-05,112,110,2nd amended order
+ADS,2025-06,73,72,3rd amended order
+ADS,2025-07,66,66,3rd amended order
+ADS,2025-08,61,61,3rd amended order
+ADS,2025-09,67,67,3rd amended order
+ADS,2025-10,97,97,3rd amended order
+ADS,2025-11,112,112,3rd amended order
+ADS,2025-12,109,109,3rd amended order
+ADS,2026-01,118,118,3rd amended order
+ADS,2026-02,92,92,3rd amended order
+ADS,2026-03,145,145,3rd amended order
+ADS,2026-04,141,141,3rd amended order
+ADS,2026-05,118,118,3rd amended order
+ADS,2026-06,129,129,3rd amended order
+ADS,2026-07,120,120,3rd amended order
+ADS,2026-08,103,103,3rd amended order
+ADS,2026-09,12,12,3rd amended order
+ADAS,2021-07,22,22,original / 1st amended order
+ADAS,2021-08,31,31,original / 1st amended order
+ADAS,2021-09,42,41,original / 1st amended order
+ADAS,2021-10,44,44,original / 1st amended order
+ADAS,2021-11,44,44,original / 1st amended order
+ADAS,2021-12,44,44,original / 1st amended order
+ADAS,2022-01,28,27,original / 1st amended order
+ADAS,2022-02,42,42,original / 1st amended order
+ADAS,2022-03,30,30,original / 1st amended order
+ADAS,2022-04,43,42,original / 1st amended order
+ADAS,2022-05,53,53,original / 1st amended order
+ADAS,2022-06,44,44,original / 1st amended order
+ADAS,2022-07,61,61,original / 1st amended order
+ADAS,2022-08,37,37,original / 1st amended order
+ADAS,2022-09,41,40,original / 1st amended order
+ADAS,2022-10,48,48,original / 1st amended order
+ADAS,2022-11,57,56,original / 1st amended order
+ADAS,2022-12,65,65,original / 1st amended order
+ADAS,2023-01,54,54,original / 1st amended order
+ADAS,2023-02,35,35,original / 1st amended order
+ADAS,2023-03,60,60,original / 1st amended order
+ADAS,2023-04,45,45,original / 1st amended order
+ADAS,2023-05,53,53,2nd amended order
+ADAS,2023-06,46,46,2nd amended order
+ADAS,2023-07,56,56,2nd amended order
+ADAS,2023-08,41,41,2nd amended order
+ADAS,2023-09,53,53,2nd amended order
+ADAS,2023-10,48,48,2nd amended order
+ADAS,2023-11,53,52,2nd amended order
+ADAS,2023-12,74,73,2nd amended order
+ADAS,2024-01,35,35,2nd amended order
+ADAS,2024-02,36,35,2nd amended order
+ADAS,2024-03,52,51,2nd amended order
+ADAS,2024-04,60,60,2nd amended order
+ADAS,2024-05,74,74,2nd amended order
+ADAS,2024-06,68,67,2nd amended order
+ADAS,2024-07,76,76,2nd amended order
+ADAS,2024-08,70,70,2nd amended order
+ADAS,2024-09,77,77,2nd amended order
+ADAS,2024-10,96,96,2nd amended order
+ADAS,2024-11,92,92,2nd amended order
+ADAS,2024-12,94,94,2nd amended order
+ADAS,2025-01,60,59,2nd amended order
+ADAS,2025-02,76,76,2nd amended order
+ADAS,2025-03,91,91,2nd amended order
+ADAS,2025-04,98,98,2nd amended order
+ADAS,2025-05,109,109,2nd amended order
+ADAS,2025-06,102,102,3rd amended order
+ADAS,2025-07,93,93,3rd amended order
+ADAS,2025-08,83,82,3rd amended order
+ADAS,2025-09,106,105,3rd amended order
+ADAS,2025-10,133,133,3rd amended order
+ADAS,2025-11,117,117,3rd amended order
+ADAS,2025-12,130,130,3rd amended order
+ADAS,2026-01,120,120,3rd amended order
+ADAS,2026-02,127,127,3rd amended order
+ADAS,2026-03,156,155,3rd amended order
+ADAS,2026-04,181,181,3rd amended order
+ADAS,2026-05,223,221,3rd amended order
+ADAS,2026-06,227,227,3rd amended order
+ADAS,2026-07,267,264,3rd amended order
+ADAS,2026-08,232,232,3rd amended order
+ADAS,2026-09,84,83,3rd amended order

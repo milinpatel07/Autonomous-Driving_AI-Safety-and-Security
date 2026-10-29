@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Problem set 1 (one point per question)",
+    "type": "python",
+    "setup": "pip install -q -r requirements.txt",
+    "run": "python -m pytest -q",
+    "timeout": 300,
+    "points": 8
+  }
+]

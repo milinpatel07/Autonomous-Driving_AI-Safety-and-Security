@@ -1,0 +1,1444 @@
+# Normative and regulatory references of the course.
+#
+# One entry per clause, paragraph, table, annex or article that a notebook, template or site page cites.
+# scripts/check_references.py maps every citation in the course to an entry here and fails when the same
+# fact is cited with two different paragraph numbers. Verification methods:
+#   official-text     checked against the published text (regulation PDF, Official Journal, statute)
+#   official-summary  checked against an official table of contents, abstract, catalogue or data dictionary
+#                     (the full text is paywalled or could not be retrieved)
+#   secondary         checked against a named secondary source only
+#   unverified        not yet checked; the checker reports these entries
+# `used_in` is computed (python scripts/check_references.py --update-used-in); do not edit it by hand.
+# `watch` tells scripts/watch_sources.py how to detect a new edition, amendment or data release.
+schema: 1
+
+documents:
+  # ---------------------------------------------------------------- UN Regulations (1958 Agreement)
+  UNR157:
+    short: UN R157
+    title: UN Regulation No. 157 — Automated Lane Keeping Systems (ALKS)
+    edition: >-
+      01 series of amendments, E/ECE/TRANS/505/Rev.3/Add.156/Amend.4 (3 March 2023; authentic text
+      ECE/TRANS/WP.29/2022/59/Rev.1; in force 4 January 2023)
+    url: https://unece.org/transport/vehicle-regulations-wp29/standards/addenda-1958-agreement-regulations-141-160
+    verification:
+      method: official-text
+      checked: "2026-10-29"
+      note: >-
+        Paragraph numbers checked in the UNECE documentation copy of Amend.4 mirrored at
+        https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf, and compared with the original text
+        (Supplement 1, Amend.1, https://www.marklines.com/statics/unece/pdf_202207/R157am1e_0.pdf). Later
+        documentation versions exist (Amendment 5, Revision 1 and Revision 1/Amendments 1-2 per
+        globalautoregs.com, as of October 2026); the UNECE PDFs of those returned HTTP 403 to automated
+        clients and were not compared.
+    watch:
+      - {method: regex-page, url: "https://unece.org/transport/vehicle-regulations-wp29/standards/addenda-1958-agreement-regulations-141-160", pattern: 'R157[^"<>]{0,40}\.pdf'}
+      - {method: regex-page, url: "https://globalautoregs.com/rules/247/texts", pattern: '>\s*((?:Revision \d+(?: \| Amendment \d+)?)|Amendment \d+)\s*<'}
+      - {method: regex-page, url: "https://globalautoregs.com/rules/247/modifications", pattern: '>\s*((?:Original text|\d{2} series of amendments|Supplement \d+[^<]{0,40}))\s*<'}
+  UNR155:
+    short: UN R155
+    title: UN Regulation No. 155 — Cyber security and cyber security management system
+    edition: Original version, entry into force 22 January 2021 (OJ L 82, 9.3.2021, published as [2021/387])
+    url: https://eur-lex.europa.eu/eli/reg/2021/387/oj
+    verification:
+      method: official-text
+      checked: "2026-10-29"
+      note: >-
+        Text read from the Official Journal publication through the EU Publications Office (CELEX 42021X0387).
+        A 2024 supplement extended the scope to L-category vehicles; it does not change the paragraphs cited.
+    watch:
+      - {method: regex-page, url: "https://unece.org/transport/vehicle-regulations-wp29/standards/addenda-1958-agreement-regulations-141-160", pattern: 'R155[^"<>]{0,40}\.pdf'}
+      - {method: regex-page, url: "https://globalautoregs.com/rules/226/modifications", pattern: '>\s*((?:Original text|\d{2} series of amendments|Supplement \d+[^<]{0,40}))\s*<'}
+  UNR156:
+    short: UN R156
+    title: UN Regulation No. 156 — Software update and software update management system
+    edition: >-
+      Original version, entry into force 22 January 2021 (OJ L 82, 9.3.2021, [2021/388]); a 01 series of
+      amendments has since been adopted (globalautoregs.com, as of October 2026)
+    url: https://eur-lex.europa.eu/eli/reg/2021/388/oj
+    verification:
+      method: official-text
+      checked: "2026-10-29"
+      note: Title and OJ reference read through the EU Publications Office (CELEX 42021X0388). The course cites it only as a whole.
+    locators: none
+    watch:
+      - {method: regex-page, url: "https://globalautoregs.com/rules/235/modifications", pattern: '>\s*((?:Original text|\d{2} series of amendments|Supplement \d+[^<]{0,40}))\s*<'}
+
+  # ---------------------------------------------------------------- EU law
+  EU2024/1689:
+    short: AI Act
+    title: Regulation (EU) 2024/1689 — Artificial Intelligence Act
+    edition: OJ L, 12.7.2024; amended by Regulation (EU) 2026/1744 (Digital Omnibus on AI)
+    url: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification:
+      method: official-text
+      checked: "2026-10-29"
+      note: Original text (CELEX 32024R1689) and amending act (CELEX 32026R1744) read through the EU Publications Office.
+    watch:
+      - {method: eu-cellar, celex: "32024R1689"}
+  EU2026/1744:
+    short: Reg. (EU) 2026/1744
+    title: Regulation (EU) 2026/1744 — Digital Omnibus on AI (amends Regulations 2024/1689, 2018/1139, 2023/1230)
+    edition: Regulation of 8 July 2026, OJ L, 24.7.2026
+    url: https://eur-lex.europa.eu/eli/reg/2026/1744/oj
+    amends: [EU2024/1689]
+    verification:
+      method: official-text
+      checked: "2026-10-29"
+      note: Read through the EU Publications Office (CELEX 32026R1744).
+  EU2022/1426:
+    short: Reg. (EU) 2022/1426
+    title: Commission Implementing Regulation (EU) 2022/1426 — type approval of the ADS of fully automated vehicles
+    edition: Consolidated version of 24 March 2026 (amended by Implementing Regulation (EU) 2026/481 of 3 March 2026)
+    url: https://eur-lex.europa.eu/eli/reg_impl/2022/1426/oj
+    verification:
+      method: official-text
+      checked: "2026-10-29"
+      note: Annex III structure read from CELEX 32022R1426; consolidated versions 2022-08-26 and 2026-03-24 listed by the Publications Office SPARQL endpoint.
+    watch:
+      - {method: eu-cellar, celex: "32022R1426"}
+  EU2026/481:
+    short: Reg. (EU) 2026/481
+    title: Commission Implementing Regulation (EU) 2026/481 amending Implementing Regulation (EU) 2022/1426
+    edition: Regulation of 3 March 2026, OJ L, 4.3.2026
+    url: https://eur-lex.europa.eu/eli/reg_impl/2026/481/oj
+    amends: [EU2022/1426]
+    verification: {method: official-text, checked: "2026-10-29", note: Title and date read from CELEX 32026R0481.}
+    locators: none
+  EU2019/2144:
+    short: Reg. (EU) 2019/2144
+    title: Regulation (EU) 2019/2144 — General Safety Regulation
+    edition: OJ L 325, 16.12.2019
+    url: https://eur-lex.europa.eu/eli/reg/2019/2144/oj
+    verification: {method: official-text, checked: "2026-10-29", note: Read through the EU Publications Office (CELEX 32019R2144).}
+    watch:
+      - {method: eu-cellar, celex: "32019R2144"}
+  EU2018/858:
+    short: Reg. (EU) 2018/858
+    title: Regulation (EU) 2018/858 — approval and market surveillance of motor vehicles
+    edition: OJ L 151, 14.6.2018 (Article 5(4) added by Article 107 of Regulation (EU) 2024/1689)
+    url: https://eur-lex.europa.eu/eli/reg/2018/858/oj
+    verification: {method: official-text, checked: "2026-10-29", note: Amendment checked in Article 107 of CELEX 32024R1689.}
+    locators: none
+  EU2024/2847:
+    short: Cyber Resilience Act
+    title: Regulation (EU) 2024/2847 — Cyber Resilience Act
+    edition: OJ L, 20.11.2024
+    url: https://eur-lex.europa.eu/eli/reg/2024/2847/oj
+    verification: {method: official-text, checked: "2026-10-29", note: Read through the EU Publications Office (CELEX 32024R2847).}
+  EU2025/1535:
+    short: Del. Reg. (EU) 2025/1535
+    title: Commission Delegated Regulation (EU) 2025/1535 (Cyber Resilience Act exclusion for L-category vehicles)
+    edition: as cited
+    url: https://eur-lex.europa.eu/eli/reg_del/2025/1535/oj
+    verification: {method: unverified, checked: "2026-10-29", note: Not opened in this review; the course states that it extends the CRA exclusion to most L-category vehicles.}
+    locators: none
+  EU2024/2853:
+    short: Product Liability Directive
+    title: Directive (EU) 2024/2853 — liability for defective products
+    edition: OJ L, 18.11.2024
+    url: https://eur-lex.europa.eu/eli/dir/2024/2853/oj
+    verification: {method: unverified, checked: "2026-10-29", note: Cited as a whole; not opened in this review.}
+    locators: none
+  EU2021/1341:
+    short: Del. Reg. (EU) 2021/1341
+    title: Commission Delegated Regulation (EU) 2021/1341 — driver drowsiness and attention warning (DDAW)
+    edition: as cited
+    url: https://eur-lex.europa.eu/eli/reg_del/2021/1341/oj
+    verification: {method: unverified, checked: "2026-10-29", note: Cited as a whole; not opened in this review.}
+    locators: none
+  EU2023/2590:
+    short: Del. Reg. (EU) 2023/2590
+    title: Commission Delegated Regulation (EU) 2023/2590 — advanced driver distraction warning (ADDW)
+    edition: as cited
+    url: https://eur-lex.europa.eu/eli/reg_del/2023/2590/oj
+    verification: {method: unverified, checked: "2026-10-29", note: Cited as a whole; not opened in this review.}
+    locators: none
+
+  # ---------------------------------------------------------------- national law
+  DE-StVG:
+    short: StVG
+    title: Straßenverkehrsgesetz (German Road Traffic Act), §§ 1a–1l
+    edition: Consolidated text on gesetze-im-internet.de
+    url: https://www.gesetze-im-internet.de/stvg/
+    verification: {method: official-text, checked: "2026-10-29", note: "§ 1a (automated driving function), § 1d (autonomous driving function in defined operating areas) and § 1l (evaluation) opened on gesetze-im-internet.de."}
+  DE-StVO:
+    short: StVO
+    title: Straßenverkehrs-Ordnung (German Road Traffic Regulations)
+    edition: StVO 2013, consolidated text on gesetze-im-internet.de
+    url: https://www.gesetze-im-internet.de/stvo_2013/__3.html
+    verification: {method: official-text, checked: "2026-10-29"}
+  DE-AFGBV:
+    short: AFGBV
+    title: Autonome-Fahrzeuge-Genehmigungs-und-Betriebs-Verordnung
+    edition: Ordinance of 24 June 2022
+    url: https://www.gesetze-im-internet.de/afgbv/
+    verification: {method: unverified, checked: "2026-10-29", note: Cited as a whole; not opened in this review.}
+    locators: none
+  NHTSA-SGO:
+    short: NHTSA SGO 2021-01
+    title: NHTSA Standing General Order 2021-01 on crash reporting (ADS and Level 2 ADAS)
+    edition: Third Amended SGO, reports from 16 June 2025; first issued 29 June 2021
+    url: https://www.nhtsa.gov/laws-regulations/standing-general-order-crash-reporting
+    verification:
+      method: official-summary
+      checked: "2026-10-29"
+      note: >-
+        The SGO data element definitions (static.nhtsa.gov, release of 15 October 2026) describe the third
+        amendment data sets as covering reports received from 16 June 2025. The NHTSA web page returned
+        HTTP 403 to automated clients; the issue date of the third amendment (24 April 2025) rests on secondary
+        sources (law-firm client alerts cited in 07-05).
+    locators: none
+    watch:
+      - {method: regex-page, url: "https://www.nhtsa.gov/laws-regulations/standing-general-order-crash-reporting", pattern: 'href="([^"]*(?:[Aa]mend|General_Order|SGO)[^"]*\.pdf)"'}
+      - {method: csv-header, url: "https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/SGO-2021-01_Incident_Reports_ADS.csv"}
+      - {method: csv-header, url: "https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/SGO-2021-01_Incident_Reports_ADAS.csv"}
+
+  # ---------------------------------------------------------------- standards
+  ISO26262:
+    short: ISO 26262
+    title: ISO 26262:2018 — Road vehicles — Functional safety (series)
+    edition: Second edition (2018), parts 1–12
+    url: https://www.iso.org/standard/68383.html
+    verification:
+      method: official-summary
+      checked: "2026-10-29"
+      note: >-
+        ISO Open Data (28 October 2026): every part at stage 90.92 (to be revised); the third edition is at
+        ISO/DIS stage 40.20.
+    locators: none
+    watch:
+      - {method: iso-open-data, reference: "ISO 26262-1:2018"}
+  ISO26262-2:
+    short: ISO 26262-2
+    title: ISO 26262-2:2018 — Part 2 Management of functional safety
+    edition: Second edition, 2018
+    url: https://www.iso.org/standard/68384.html
+    verification: {method: official-summary, checked: "2026-10-29", note: Table of contents in the publisher's sample (cdn.standards.iteh.ai/samples/68384).}
+    watch:
+      - {method: iso-open-data, reference: "ISO 26262-2:2018"}
+  ISO26262-3:
+    short: ISO 26262-3
+    title: ISO 26262-3:2018 — Part 3 Concept phase
+    edition: Second edition, 2018
+    url: https://www.iso.org/standard/68385.html
+    verification: {method: official-summary, checked: "2026-10-29", note: Table of contents in the publisher's sample (cdn.standards.iteh.ai/samples/68385).}
+    watch:
+      - {method: iso-open-data, reference: "ISO 26262-3:2018"}
+  ISO26262-4:
+    short: ISO 26262-4
+    title: ISO 26262-4:2018 — Part 4 Product development at the system level
+    edition: Second edition, 2018
+    url: https://www.iso.org/standard/68386.html
+    verification: {method: official-summary, checked: "2026-10-29", note: Table of contents in the publisher's sample (cdn.standards.iteh.ai/samples/68386).}
+  ISO26262-5:
+    short: ISO 26262-5
+    title: ISO 26262-5:2018 — Part 5 Product development at the hardware level
+    edition: Second edition, 2018
+    url: https://www.iso.org/standard/68387.html
+    verification: {method: official-summary, checked: "2026-10-29", note: Table of contents in the publisher's sample (cdn.standards.iteh.ai/samples/68387).}
+  ISO26262-6:
+    short: ISO 26262-6
+    title: ISO 26262-6:2018 — Part 6 Product development at the software level
+    edition: Second edition, 2018
+    url: https://www.iso.org/standard/68388.html
+    verification: {method: official-summary, checked: "2026-10-29", note: Table of contents in the publisher's sample (cdn.standards.iteh.ai/samples/68388).}
+  ISO26262-8:
+    short: ISO 26262-8
+    title: ISO 26262-8:2018 — Part 8 Supporting processes
+    edition: Second edition, 2018
+    url: https://www.iso.org/standard/68390.html
+    verification: {method: official-summary, checked: "2026-10-29", note: Table of contents in the publisher's sample (cdn.standards.iteh.ai/samples/68390).}
+  ISO26262-9:
+    short: ISO 26262-9
+    title: ISO 26262-9:2018 — Part 9 ASIL-oriented and safety-oriented analyses
+    edition: Second edition, 2018
+    url: https://www.iso.org/standard/68391.html
+    verification: {method: official-summary, checked: "2026-10-29", note: Table of contents in the publisher's sample (cdn.standards.iteh.ai/samples/68391).}
+  ISO21448:
+    short: ISO 21448
+    title: ISO 21448:2022 — Road vehicles — Safety of the intended functionality (SOTIF)
+    edition: First edition, 2022 (stage 90.92 to be revised; ISO/WD 21448 at stage 20.60, ISO Open Data, 28 October 2026)
+    url: https://www.iso.org/standard/77490.html
+    verification:
+      method: official-summary
+      checked: "2026-10-29"
+      note: >-
+        Clause and annex titles from the table of contents in the publisher's sample
+        (cdn.standards.iteh.ai/samples/77490). ISO's Online Browsing Platform returned HTTP 403 to automated
+        clients. Body text is paywalled and was not read.
+    watch:
+      - {method: iso-open-data, reference: "ISO 21448:2022"}
+  ISO21434:
+    short: ISO/SAE 21434
+    title: ISO/SAE 21434:2021 — Road vehicles — Cybersecurity engineering
+    edition: First edition, 2021 (stage 90.92; ISO/SAE AWI 21434 registered, ISO Open Data, 28 October 2026)
+    url: https://www.iso.org/standard/70918.html
+    verification:
+      method: official-summary
+      checked: "2026-10-29"
+      note: Clause titles 4–15 from the introduction in the publisher's sample (cdn.standards.iteh.ai/samples/70918); subclauses and annexes from secondary sources (see entries).
+    watch:
+      - {method: iso-open-data, reference: "ISO/SAE 21434:2021"}
+  ISO8800:
+    short: ISO/PAS 8800
+    title: ISO/PAS 8800:2024 — Road vehicles — Safety and artificial intelligence
+    edition: First edition, December 2024 (stage 60.60; ISO/PWI PAS 8800-1 and -2 registered, ISO Open Data, 28 October 2026)
+    url: https://www.iso.org/standard/83303.html
+    verification: {method: official-summary, checked: "2026-10-29", note: Table of contents in the publisher's sample (cdn.standards.iteh.ai/samples/83303).}
+    watch:
+      - {method: iso-open-data, reference: "ISO/PAS 8800:2024"}
+  ISO5083:
+    short: ISO/TS 5083
+    title: ISO/TS 5083:2025 — Road vehicles — Safety for automated driving systems — Design, verification and validation
+    edition: First edition, April 2025 (stage 90.92; ISO/WD TS 5083 at stage 20.60, ISO Open Data, 28 October 2026)
+    url: https://www.iso.org/standard/81920.html
+    verification: {method: official-summary, checked: "2026-10-29", note: Table of contents in the publisher's sample (cdn.standards.iteh.ai/samples/81920).}
+    locators: none
+    watch:
+      - {method: iso-open-data, reference: "ISO/TS 5083:2025"}
+  ISO34502:
+    short: ISO 34502
+    title: ISO 34502:2022 — Road vehicles — Test scenarios for automated driving systems — Scenario-based safety evaluation framework
+    edition: First edition, 2022
+    url: https://www.iso.org/standard/78951.html
+    verification: {method: official-summary, checked: "2026-10-29", note: ISO Open Data record 78951, stage 60.60.}
+    locators: none
+    watch:
+      - {method: iso-open-data, reference: "ISO 34502:2022"}
+  ISO34503:
+    short: ISO 34503
+    title: ISO 34503:2023 — Road vehicles — Test scenarios for automated driving systems — Specification for operational design domain
+    edition: First edition, 2023
+    url: https://www.iso.org/standard/78952.html
+    verification: {method: official-summary, checked: "2026-10-29", note: ISO Open Data, stage 60.60.}
+    locators: none
+    watch:
+      - {method: iso-open-data, reference: "ISO 34503:2023"}
+  ISO24089:
+    short: ISO 24089
+    title: ISO 24089:2023 — Road vehicles — Software update engineering
+    edition: First edition, 2023
+    url: https://www.iso.org/standard/77796.html
+    verification: {method: official-summary, checked: "2026-10-29", note: ISO Open Data, stage 60.60.}
+    locators: none
+    watch:
+      - {method: iso-open-data, reference: "ISO 24089:2023"}
+  ISO18045:
+    short: ISO/IEC 18045
+    title: ISO/IEC 18045 — Methodology for IT security evaluation
+    edition: Cited without edition as the source of the attack-potential factor values of ISO/SAE 21434 Annex G
+    url: https://www.iso.org/standard/72889.html
+    verification: {method: official-summary, checked: "2026-10-29", note: "ISO Open Data: ISO/IEC 18045:2022 is at stage 95.99 (withdrawn) as of 28 October 2026; the course does not depend on an edition."}
+    locators: none
+  UL4600:
+    short: UL 4600
+    title: UL 4600 — Standard for Safety for the Evaluation of Autonomous Products
+    edition: Edition 3, released 17 March 2023
+    url: https://www.ul.com/news/ul-4600-edition-3-updates-incorporate-autonomous-trucking
+    verification: {method: official-summary, checked: "2026-10-29", note: UL Solutions news item of 18 July 2023 states the release date and the scope of the changes.}
+    locators: none
+  IEC61508-6:
+    short: IEC 61508-6
+    title: IEC 61508-6:2010 — Functional safety of E/E/PE safety-related systems — Part 6 Guidelines on the application of IEC 61508-2 and -3
+    edition: Edition 2.0, 2010
+    url: https://webstore.iec.ch/en/publication/5520
+    verification: {method: official-summary, checked: "2026-10-29", note: IEC webstore abstract.}
+
+  # ---------------------------------------------------------------- datasets the notebooks download
+  KITTI:
+    short: KITTI
+    type: dataset
+    title: KITTI Vision Benchmark Suite (object detection and tracking)
+    edition: Archives on the KITTI S3 bucket (avg-kitti), labels of 11 May 2018
+    url: https://www.cvlibs.net/datasets/kitti/
+    verification: {method: official-text, checked: "2026-10-29", note: "Licence CC BY-NC-SA 3.0 as stated on the KITTI site; archive headers read from s3.eu-central-1.amazonaws.com/avg-kitti."}
+    locators: none
+    watch:
+      - {method: headers, url: "https://s3.eu-central-1.amazonaws.com/avg-kitti/data_object_label_2.zip"}
+      - {method: headers, url: "https://s3.eu-central-1.amazonaws.com/avg-kitti/data_tracking_label_2.zip"}
+  NGSIM:
+    short: NGSIM
+    type: dataset
+    title: Next Generation Simulation (NGSIM) vehicle trajectories, US DOT open data
+    edition: data.transportation.gov dataset 8ect-6jqj
+    url: https://data.transportation.gov/d/8ect-6jqj
+    verification: {method: official-text, checked: "2026-10-29", note: Public domain (US DOT open data).}
+    locators: none
+    watch:
+      - {method: json-fields, url: "https://data.transportation.gov/api/views/8ect-6jqj.json", fields: ["rowsUpdatedAt", "columns[].fieldName"]}
+  ROAD:
+    short: ROAD
+    type: dataset
+    title: ROAD — Real ORNL Automotive Dynamometer CAN intrusion dataset (Verma et al., 2024)
+    edition: Zenodo record 10462796
+    url: https://doi.org/10.5281/zenodo.10462796
+    verification: {method: official-text, checked: "2026-10-29", note: Licence CC BY 4.0 per the Zenodo record.}
+    locators: none
+    watch:
+      - {method: json-fields, url: "https://zenodo.org/api/records/10462796", fields: ["revision", "files[].checksum"]}
+  VEREMI:
+    short: VeReMi Extension
+    type: dataset
+    title: VeReMi Extension V2X misbehaviour dataset (Kamel et al., 2020)
+    edition: Zenodo record 20090854
+    url: https://doi.org/10.5281/zenodo.20090854
+    verification: {method: official-text, checked: "2026-10-29", note: Licence CC BY 4.0 per the Zenodo record.}
+    locators: none
+    watch:
+      - {method: json-fields, url: "https://zenodo.org/api/records/20090854", fields: ["revision", "files[].checksum"]}
+
+entries:
+  # ================================================================ UN R157 (01 series, Amend.4)
+  - id: r157-def-transition-demand
+    doc: UNR157
+    locator: "2.2"
+    states: Definition of the transition demand (request from the system to the driver to take back the DDT).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-01]
+  - id: r157-def-mrm
+    doc: UNR157
+    locator: "2.7"
+    states: Definition of the minimum risk manoeuvre, quoted verbatim.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-01]
+  - id: r157-def-max-operational-speed
+    doc: UNR157
+    locator: "2.9.2"
+    states: The maximum operational speed is selected by the system "under current environmental and sensor conditions".
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-01]
+  - id: r157-misuse
+    doc: UNR157
+    locator: "5.1.8"
+    states: The manufacturer takes measures against reasonably foreseeable misuse by the driver and tampering.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-03]
+  - id: r157-speed-130
+    doc: UNR157
+    locator: "5.2.3.1"
+    states: Operation up to 130 km/h; a specified maximum speed above 60 km/h only with MRM lane-change capability (01 series).
+    fact: 'MRM lane[- ]change'
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29", note: "The original text (Amend.1) limited 5.2.3.1 to 60 km/h."}
+    used_in: [07-01]
+  - id: r157-transition-demand
+    doc: UNR157
+    locator: "5.4"
+    states: Transition demand and system operation during the transition phase (heading).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-03]
+  - id: r157-planned-event
+    doc: UNR157
+    locator: "5.4.2.1"
+    states: For a planned event, the transition demand comes early enough that an MRM would stop the vehicle before the event.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-01, 07-03]
+  - id: r157-no-lane-change-in-transition
+    doc: UNR157
+    locator: "5.4.2.4"
+    states: A regular lane change is not started when a transition demand is known to occur during it.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05]
+  - id: r157-transition-phase
+    doc: UNR157
+    locator: "5.4.3"
+    states: The system keeps operating during the transition phase and may reduce speed.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-03]
+  - id: r157-escalation-4s
+    doc: UNR157
+    locator: "5.4.3.2"
+    fact_locators: ["6.4.1"]
+    states: The transition demand is escalated at the latest 4 s after it starts (with a haptic warning, 6.4.1(c)).
+    fact: '\b4(?:\.0)?\s?s\b'
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-01, 07-03]
+  - id: r157-mrm-earliest-10s
+    doc: UNR157
+    locator: "5.4.4.1"
+    states: Without driver response an MRM starts at the earliest 10 s after the start of the transition demand.
+    fact: '\b10(?:\.0)?\s?s\b'
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-01, 07-03]
+  - id: r157-mrm-immediate
+    doc: UNR157
+    locator: "5.4.4.1.1"
+    states: An MRM may start immediately in case of a severe ALKS or vehicle failure.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-01]
+  - id: r157-mrm
+    doc: UNR157
+    locator: "5.5"
+    states: Minimum risk manoeuvre (heading); ends in standstill with hazard lights.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-01, 07-03]
+  - id: r157-mrm-standstill
+    doc: UNR157
+    locator: "5.5.1"
+    states: The MRM brings the vehicle to standstill in a target stop area, unless the driver deactivates the system (01 series).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29", note: "In the original text 5.5.1 held the deceleration limit and 5.5.2 the standstill; the 01 series swapped them."}
+    used_in: []
+  - id: r157-mrm-deceleration
+    doc: UNR157
+    locator: "5.5.2"
+    superseded_locators: ["5.5.1"]
+    states: During the MRM the vehicle is slowed down aiming at a deceleration demand not greater than 4.0 m/s²; hazard lights at the start of the MRM.
+    fact: '\b4(?:\.0)?\s?m/s(?:²|\^2|2\b)'
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29", note: "Paragraph 5.5.1 in the original text (Amend.1); 5.5.2 in the 01 series that the course cites."}
+    used_in: [03-05, 07-01, 07-03]
+  - id: r157-mrm-termination
+    doc: UNR157
+    locator: "5.5.3"
+    states: An MRM ends only when the system is deactivated or the vehicle is at standstill.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-01]
+  - id: r157-reactivation
+    doc: UNR157
+    locator: "5.5.5"
+    states: Reactivation after an MRM only after a new engine start/run cycle.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-03]
+  - id: r157-driver-availability-system
+    doc: UNR157
+    locator: "6.1"
+    states: Driver availability recognition system (presence, belt, availability).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-03]
+  - id: r157-driver-presence
+    doc: UNR157
+    locator: "6.1.2"
+    states: A transition demand starts if the driver is out of the seat for more than 1 s or the belt is unbuckled.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-03]
+  - id: r157-driver-availability
+    doc: UNR157
+    locator: "6.1.3"
+    states: The system detects whether the driver is available to respond to a transition demand.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-03]
+  - id: r157-availability-criteria
+    doc: UNR157
+    locator: "6.1.3.1"
+    states: At least two availability criteria within the last 30 s; otherwise a warning and a transition demand at the latest after 15 s; documented justification.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-03]
+  - id: r157-other-activities
+    doc: UNR157
+    locator: "6.1.4"
+    states: Other activities on on-board displays are suspended at a transition demand or deactivation.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-03]
+  - id: r157-activation
+    doc: UNR157
+    locator: "6.2"
+    states: Activation, deactivation and driver input (heading).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-03]
+  - id: r157-activation-conditions
+    doc: UNR157
+    locator: "6.2.3"
+    states: Activation only on deliberate driver action when all listed conditions hold, incl. (g) roads where pedestrians and cyclists are prohibited.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-03]
+  - id: r157-manual-deactivation
+    doc: UNR157
+    locator: "6.2.4"
+    states: Deliberate deactivation, protected against unintentional action, with the driver in lateral control.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05]
+  - id: r157-deactivation-during-td
+    doc: UNR157
+    locator: "6.2.5.2"
+    states: During a transition demand or MRM, deactivation by taking the steering control only if the driver is attentive (6.3.1.1).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-03]
+  - id: r157-deactivation-during-em
+    doc: UNR157
+    locator: "6.2.5.3"
+    states: Deactivation during an emergency manoeuvre may be delayed until the collision risk has disappeared.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05]
+  - id: r157-no-automatic-fallback
+    doc: UNR157
+    locator: "6.2.6"
+    states: No automatic transition to a function providing continuous longitudinal/lateral control after deactivation; AEBS, ESC, BAS, ESF are not deactivated with the ALKS.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-03]
+  - id: r157-override
+    doc: UNR157
+    locator: "6.3"
+    states: System override (heading).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-03]
+  - id: r157-attentiveness
+    doc: UNR157
+    locator: "6.3.1.1"
+    states: Driver attentiveness criteria (gaze on road or mirrors, head movement towards the driving task).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-03]
+  - id: r157-information
+    doc: UNR157
+    locator: "6.4"
+    states: Information to the driver (heading).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-03]
+  - id: r157-td-signals
+    doc: UNR157
+    locator: "6.4.1"
+    states: Transition demand by optical plus acoustic and/or haptic signal; at the latest after 4 s a haptic warning and escalation (6.4.1(c)).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-01, 07-03]
+  - id: r157-deactivation-signal
+    doc: UNR157
+    locator: "6.4.2.3"
+    states: Deactivation is indicated optically, plus an acoustic signal unless it follows a transition demand that had one.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05]
+  - id: r157-dssad
+    doc: UNR157
+    locator: "8"
+    states: Data Storage System for Automated Driving (DSSAD).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-06]
+  - id: r157-annex3
+    doc: UNR157
+    locator: Annex 3
+    states: Guidance on traffic disturbance critical scenarios (cut-in, cut-out, deceleration) with human-driver performance models.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [04-05]
+  - id: r157-annex4
+    doc: UNR157
+    locator: Annex 4
+    states: Special requirements for the safety aspects of electronic control systems and audit (safety concept, field monitoring).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [02-01, 03-05, 07-01, 07-03, 07-05, 07-06, 08-02]
+  - id: r157-annex4-safety-approach
+    doc: UNR157
+    locator: Annex 4 3.4.4
+    states: The safety approach "may be based on" FMEA, FTA and STPA "or any similar process" (b); the inspection covers items (i)–(viii), incl. foreseeable misuse (vi) and cyber-attacks (viii).
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [03-05, 07-03]
+  - id: r157-annex4-field-monitoring
+    doc: UNR157
+    locator: Annex 4 3.5.4
+    states: Processes to monitor safety-relevant incidents caused by the engaged ALKS and to report critical incidents.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-05]
+  - id: r157-annex5
+    doc: UNR157
+    locator: Annex 5
+    states: Test specifications for ALKS.
+    source: https://www.marklines.com/statics/unece/pdf_202311/R157am4e.pdf
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+
+  # ================================================================ UN R155
+  - id: r155-csms-processes
+    doc: UNR155
+    locator: "7.2.2.2"
+    states: Processes the CSMS must contain, items (a)–(h); (g) monitoring, detection and response.
+    source: https://eur-lex.europa.eu/eli/reg/2021/387/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-05, 08-02]
+  - id: r155-suppliers
+    doc: UNR155
+    locator: "7.2.2.5"
+    states: The CSMS manages dependencies on contracted suppliers, service providers and sub-organisations.
+    source: https://eur-lex.europa.eu/eli/reg/2021/387/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+  - id: r155-detect-attacks
+    doc: UNR155
+    locator: "7.3.7"
+    states: Measures to detect and prevent cyber-attacks, support monitoring, and provide data forensic capability.
+    source: https://eur-lex.europa.eu/eli/reg/2021/387/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [05-04, 05-05]
+  - id: r155-reporting
+    doc: UNR155
+    locator: "7.4.1"
+    states: Report the outcome of monitoring (7.2.2.2(g)) at least once a year.
+    source: https://eur-lex.europa.eu/eli/reg/2021/387/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-05]
+  - id: r155-annex5
+    doc: UNR155
+    locator: Annex 5
+    states: List of threats and corresponding mitigations.
+    source: https://eur-lex.europa.eu/eli/reg/2021/387/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [05-02, 05-04, 08-01, 08-02]
+  - id: r155-annex5-part-a
+    doc: UNR155
+    locator: Annex 5 Part A
+    also: ["Table A1"]
+    states: Vulnerabilities or attack methods related to the threats (Table A1).
+    source: https://eur-lex.europa.eu/eli/reg/2021/387/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [05-04, 08-02]
+  - id: r155-threat-categories
+    doc: UNR155
+    locator: "4.3.1"
+    also: ["4.3.2", "4.3.3", "4.3.4", "4.3.5", "4.3.6", "4.3.7"]
+    states: Annex 5 Part A groups threats in seven high-level categories, paragraphs 4.3.1–4.3.7.
+    source: https://eur-lex.europa.eu/eli/reg/2021/387/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+
+  # ================================================================ EU AI Act
+  - id: omnibus-art1
+    doc: EU2026/1744
+    locator: Art. 1
+    states: Article 1 amends Regulation (EU) 2024/1689, among others replacing Art. 2(2) and Art. 113 (application dates).
+    source: https://eur-lex.europa.eu/eli/reg/2026/1744/oj
+    verification: {method: official-text, checked: "2026-10-29", note: "CELEX 32026R1744, Article 1."}
+    used_in: [06-01, 08-02]
+  - id: omnibus-art113
+    doc: EU2026/1744
+    locator: Art. 113
+    states: Amended Art. 113 of Regulation (EU) 2024/1689 postpones high-risk obligations to 2 December 2027 (Annex III) and 2 August 2028 (Annex I products).
+    source: https://eur-lex.europa.eu/eli/reg/2026/1744/oj
+    verification: {method: official-text, checked: "2026-10-29", note: "Amended Art. 113(c)(i) and (ii) as set out in Article 1 of CELEX 32026R1744."}
+    used_in: [06-01]
+  - id: aia-art2-2
+    doc: EU2024/1689
+    locator: Art. 2(2)
+    also: ["Art. 2"]
+    states: For high-risk AI under Art. 6(1) and Annex I Section B only listed provisions apply directly; originally Art. 6(1), Arts 102–109 and 112, after Reg. (EU) 2026/1744 Art. 6(1), Art. 60a and Arts 102–112.
+    source: https://eur-lex.europa.eu/eli/reg/2026/1744/oj
+    verification: {method: official-text, checked: "2026-10-29", note: "Amended wording read in Article 1 of Regulation (EU) 2026/1744 (CELEX 32026R1744); the course can cite it directly rather than as 'reported'."}
+    used_in: [06-01, 06-06, 08-02]
+  - id: aia-art6-1
+    doc: EU2024/1689
+    locator: Art. 6(1)
+    also: ["Art. 6"]
+    states: AI systems that are safety components of products under Annex I legislation are high-risk.
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [06-01, 06-06, 08-02]
+  - id: aia-art60a
+    doc: EU2024/1689
+    locator: Art. 60a
+    states: Article inserted by Reg. (EU) 2026/1744 (testing in real-world conditions for Annex I Section B products); listed in the amended Art. 2(2).
+    source: https://eur-lex.europa.eu/eli/reg/2026/1744/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [06-01, 08-02]
+  - id: aia-arts-102-112
+    doc: EU2024/1689
+    locator: Art. 102-109
+    also: ["Art. 102", "Art. 102-112", "Art. 112"]
+    states: Articles 102–109 amend sectoral acts (including vehicle type-approval acts); Art. 112 is evaluation and review.
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [06-01, 08-02]
+  - id: aia-art107
+    doc: EU2024/1689
+    locator: Art. 107
+    states: Article 107 amends Regulation (EU) 2018/858 (Art. 5(4)) so that delegated acts on AI safety components take Chapter III Section 2 into account.
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [06-01, 08-02]
+  - id: aia-art109
+    doc: EU2024/1689
+    locator: Art. 109
+    states: Article 109 amends Regulation (EU) 2019/2144 (Art. 11(3)) for implementing acts on AI safety components.
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+  - id: aia-chapter3-section2
+    doc: EU2024/1689
+    locator: Chapter III Section 2
+    states: Requirements for high-risk AI systems (Arts 8–15).
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [06-01, 08-02]
+  - id: aia-annex1-section-b
+    doc: EU2024/1689
+    locator: Annex I Section B
+    also: ["Annex I"]
+    states: Annex I Section B lists Union harmonisation legislation incl. Regulations (EU) 2018/858 and 2019/2144; Annex I-linked high-risk obligations apply from 2 August 2028 after Reg. (EU) 2026/1744.
+    source: https://eur-lex.europa.eu/eli/reg/2026/1744/oj
+    verification: {method: official-text, checked: "2026-10-29", note: "Date read in the amended Article 113 (Reg. (EU) 2026/1744)."}
+    used_in: [06-01, 06-06, 08-02]
+  - id: aia-annex3
+    doc: EU2024/1689
+    locator: Annex III
+    states: Stand-alone high-risk use cases (point 2 covers safety components in road-traffic management, not vehicles); obligations apply from 2 December 2027 after Reg. (EU) 2026/1744.
+    source: https://eur-lex.europa.eu/eli/reg/2026/1744/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [06-01, 06-06, 08-02]
+  - id: aia-art5
+    doc: EU2024/1689
+    locator: Art. 5
+    states: Prohibited AI practices.
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+  - id: aia-art9
+    doc: EU2024/1689
+    locator: Art. 9
+    states: Risk management system.
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+  - id: aia-art10
+    doc: EU2024/1689
+    locator: Art. 10
+    states: Data and data governance; data sets "to the best extent possible, free of errors and complete" (Art. 10(3)).
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+  - id: aia-art11
+    doc: EU2024/1689
+    locator: Art. 11
+    states: Technical documentation.
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+  - id: aia-art12
+    doc: EU2024/1689
+    locator: Art. 12
+    states: Record-keeping (logging).
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+  - id: aia-art13
+    doc: EU2024/1689
+    locator: Art. 13
+    states: Transparency and provision of information to deployers (instructions for use).
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+  - id: aia-art14
+    doc: EU2024/1689
+    locator: Art. 14
+    states: Human oversight.
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+  - id: aia-art15
+    doc: EU2024/1689
+    locator: Art. 15
+    states: Accuracy, robustness and cybersecurity.
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+  - id: aia-art50
+    doc: EU2024/1689
+    locator: Art. 50
+    states: Transparency obligations for providers and deployers of certain AI systems.
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [08-02]
+  - id: aia-art86
+    doc: EU2024/1689
+    locator: Art. 86
+    states: Right to explanation of individual decision-making (deployers of Annex III systems).
+    source: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [06-06]
+
+  # ================================================================ other EU acts
+  - id: eu1426-annex3-part4
+    doc: EU2022/1426
+    locator: Annex III Part 4
+    states: Principles for the credibility assessment of a virtual toolchain used in ADS validation.
+    source: https://eur-lex.europa.eu/eli/reg_impl/2022/1426/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [04-04]
+  - id: eu1426-annex3-part5
+    doc: EU2022/1426
+    locator: Annex III Part 5
+    also: ["Annex III"]
+    states: In-service monitoring and reporting; safety-critical occurrences without delay, listed short-term occurrences within one month, annual report.
+    source: https://eur-lex.europa.eu/eli/reg_impl/2022/1426/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-05]
+  - id: gsr-defs-ddaw-addw
+    doc: EU2019/2144
+    locator: Art. 3(5)
+    also: ["Art. 3(6)"]
+    states: Definitions of driver drowsiness and attention warning (5) and advanced driver distraction warning (6).
+    source: https://eur-lex.europa.eu/eli/reg/2019/2144/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-03]
+  - id: gsr-art6
+    doc: EU2019/2144
+    locator: Art. 6(1)
+    also: ["Art. 6", "Art. 6(1)(c)", "Art. 6(1)(d)"]
+    states: Advanced vehicle systems for all motor vehicles, incl. DDAW (c) and ADDW (d).
+    source: https://eur-lex.europa.eu/eli/reg/2019/2144/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [06-01, 07-03]
+  - id: gsr-art6-3
+    doc: EU2019/2144
+    locator: Art. 6(3)
+    states: DDAW and ADDW do not continuously record or retain data beyond what is necessary in the closed-loop system.
+    source: https://eur-lex.europa.eu/eli/reg/2019/2144/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-03]
+  - id: gsr-annex2
+    doc: EU2019/2144
+    locator: Annex II
+    states: Requirements and application dates.
+    source: https://eur-lex.europa.eu/eli/reg/2019/2144/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-03]
+  - id: cra-art2-2c
+    doc: EU2024/2847
+    locator: Art. 2(2)(c)
+    states: The CRA does not apply to products with digital elements to which Regulation (EU) 2019/2144 applies.
+    source: https://eur-lex.europa.eu/eli/reg/2024/2847/oj
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [05-01]
+
+  # ================================================================ German law
+  - id: stvg-1a-1l
+    doc: DE-StVG
+    locator: 1a-1l
+    also: ["1a", "1b", "1a/1b"]
+    states: Rules for motor vehicles with automated (§§ 1a–1c) and autonomous (§§ 1d–1l) driving functions.
+    source: https://www.gesetze-im-internet.de/stvg/__1a.html
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [01-01, 08-02]
+  - id: stvg-1d-1l
+    doc: DE-StVG
+    locator: 1d-1l
+    states: Act on Autonomous Driving (2021) — Level 4 operation in defined operating areas with technical supervision.
+    source: https://www.gesetze-im-internet.de/stvg/__1d.html
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [07-06, 08-02]
+  - id: stvo-3-1
+    doc: DE-StVO
+    locator: 3(1)
+    states: With visibility below 50 m due to fog, snow or rain, no faster than 50 km/h.
+    source: https://www.gesetze-im-internet.de/stvo_2013/__3.html
+    verification: {method: official-text, checked: "2026-10-29"}
+    used_in: [04-02, avsafety/perturb.py]
+
+  # ================================================================ ISO 26262:2018
+  - id: iso26262-2-cl6
+    doc: ISO26262-2
+    locator: "6"
+    states: Project-dependent safety management, incl. safety case (6.4.8) and confirmation measures (6.4.9–6.4.12).
+    source: https://cdn.standards.iteh.ai/samples/68384/a48c82d694274496bcb249700a63ac2f/ISO-26262-2-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-06]
+  - id: iso26262-2-table1
+    doc: ISO26262-2
+    locator: Table 1
+    states: Required confirmation measures and degree of independence (I0–I3) per ASIL.
+    source: https://dvcon-proceedings.org/wp-content/uploads/institutionalizing-a-certified-iso26262-safety-process-experiences-and-lessons-learned.pdf
+    verification: {method: secondary, checked: "2026-10-29", note: "The I0–I3 independence scheme of the confirmation measures is described in the DVCon paper; the table number was not visible in the official sample."}
+    used_in: [03-01, 03-06, templates/HARA_Template.md]
+  - id: iso26262-2-annexE
+    doc: ISO26262-2
+    locator: Annex E
+    states: Informative guidance on the potential interaction of functional safety with cybersecurity.
+    source: https://www.din.de/de/mitwirken/normenausschuesse/naautomobil/veroeffentlichungen/wdc-beuth:din21:300423923/toc-3032787/download
+    verification: {method: official-summary, checked: "2026-10-29", note: Annex title from the DIN table of contents of the standard.}
+    used_in: [05-01, 05-02, 08-01, templates/TARA_Template.md]
+  - id: iso26262-3-cl5
+    doc: ISO26262-3
+    locator: "5"
+    states: Item definition.
+    source: https://cdn.standards.iteh.ai/samples/68385/5197311d95f84f88b2468c73d3366b32/ISO-26262-3-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [01-01, 03-02, 05-02, 08-05, site/industry.md, templates/HARA_Template.md]
+  - id: iso26262-3-cl6
+    doc: ISO26262-3
+    locator: "6"
+    states: Hazard analysis and risk assessment (HARA), safety goals.
+    source: https://cdn.standards.iteh.ai/samples/68385/5197311d95f84f88b2468c73d3366b32/ISO-26262-3-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29", note: "Clause 6 with objectives, inputs, requirements and work products listed in the sample; its title is obscured by the sample watermark, the annex B title 'Hazard analysis and risk assessment' is visible."}
+    used_in: [03-01, 03-02, 08-05, site/industry.md]
+  - id: iso26262-3-cl7
+    doc: ISO26262-3
+    locator: "7"
+    states: Functional safety concept.
+    source: https://cdn.standards.iteh.ai/samples/68385/5197311d95f84f88b2468c73d3366b32/ISO-26262-3-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-01, 03-02, 08-05, templates/HARA_Template.md]
+  - id: iso26262-3-annexB
+    doc: ISO26262-3
+    locator: Annex B
+    states: Informative annex on hazard analysis and risk assessment (S, E, C classes and examples).
+    source: https://cdn.standards.iteh.ai/samples/68385/5197311d95f84f88b2468c73d3366b32/ISO-26262-3-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-01, 03-02, templates/HARA_Template.md]
+  - id: iso26262-3-table4
+    doc: ISO26262-3
+    locator: Table 4
+    states: ASIL determination from S, E and C (reproduced in avsafety.iso26262 and tested).
+    source: https://www.electronicdesign.com/technologies/embedded/article/21798166/understanding-iso-26262-asils
+    verification: {method: secondary, checked: "2026-10-29", note: "Electronic Design describes Table 4 as the ASIL determination table (2011 edition, where HARA was clause 7); the table content is checked by tests/test_iso26262.py."}
+    used_in: [01-05, 03-01, 03-02, 05-02, 08-01, avsafety/exercises.py, avsafety/iso26262.py, templates/HARA_Template.md, templates/TARA_Template.md]
+  - id: iso26262-4-cl6
+    doc: ISO26262-4
+    locator: "6"
+    states: Technical safety concept.
+    source: https://cdn.standards.iteh.ai/samples/68386/7db689a782c8467b896a59b76920f037/ISO-26262-4-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: []
+  - id: iso26262-4-cl7
+    doc: ISO26262-4
+    locator: "7"
+    states: System and item integration and testing.
+    source: https://cdn.standards.iteh.ai/samples/68386/7db689a782c8467b896a59b76920f037/ISO-26262-4-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-06]
+  - id: iso26262-4-cl8
+    doc: ISO26262-4
+    locator: "8"
+    states: Safety validation.
+    source: https://cdn.standards.iteh.ai/samples/68386/7db689a782c8467b896a59b76920f037/ISO-26262-4-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-06]
+  - id: iso26262-5-cl8
+    doc: ISO26262-5
+    locator: "8"
+    states: Evaluation of the hardware architectural metrics (SPFM, LFM).
+    source: https://cdn.standards.iteh.ai/samples/68387/de80261740764b939ce5090c7c289506/ISO-26262-5-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-03]
+  - id: iso26262-5-cl9
+    doc: ISO26262-5
+    locator: "9"
+    states: Evaluation of safety goal violations due to random hardware failures (PMHF).
+    source: https://cdn.standards.iteh.ai/samples/68387/de80261740764b939ce5090c7c289506/ISO-26262-5-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-03, 03-04]
+  - id: iso26262-5-annexC
+    doc: ISO26262-5
+    locator: Annex C
+    states: Normative annex defining the hardware architectural metrics.
+    source: https://cdn.standards.iteh.ai/samples/68387/de80261740764b939ce5090c7c289506/ISO-26262-5-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-03]
+  - id: iso26262-5-annexD
+    doc: ISO26262-5
+    locator: Annex D
+    states: Informative annex on the evaluation of diagnostic coverage (low/medium/high tables).
+    source: https://cdn.standards.iteh.ai/samples/68387/de80261740764b939ce5090c7c289506/ISO-26262-5-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-03]
+  - id: iso26262-5-tables4-6
+    doc: ISO26262-5
+    locator: Table 4
+    also: ["Table 5", "Table 6"]
+    states: Target values for SPFM (Table 4), LFM (Table 5) and PMHF (Table 6) per ASIL.
+    source: https://community.infineon.com/t5/Knowledge-Base-Articles/AURIX-MCU-FMEDA-KBA236341/ta-p/372906
+    verification: {method: unverified, checked: "2026-10-29", note: "Target values are given by secondary sources (Infineon KBA) without table numbers; the numbers 4–6 were not checked against the official text."}
+    used_in: [03-03, avsafety/exercises.py, avsafety/iso26262.py]
+  - id: iso26262-6-cl9
+    doc: ISO26262-6
+    locator: "9"
+    states: Software unit verification.
+    source: https://cdn.standards.iteh.ai/samples/68388/34205953cd2c4c5f947890009caa464e/ISO-26262-6-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-06]
+  - id: iso26262-6-cl10
+    doc: ISO26262-6
+    locator: "10"
+    states: Software integration and verification.
+    source: https://cdn.standards.iteh.ai/samples/68388/34205953cd2c4c5f947890009caa464e/ISO-26262-6-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-06]
+  - id: iso26262-6-cl11
+    doc: ISO26262-6
+    locator: "11"
+    states: Testing of the embedded software.
+    source: https://cdn.standards.iteh.ai/samples/68388/34205953cd2c4c5f947890009caa464e/ISO-26262-6-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-06]
+  - id: iso26262-6-table7
+    doc: ISO26262-6
+    locator: Table 7
+    states: Methods for software unit verification (2018 numbering).
+    source: https://www.iso.org/standard/68388.html
+    verification: {method: unverified, checked: "2026-10-29", note: "Most public sources cite the 2011 numbering (Table 10, methods for software unit testing); the 2018 table number was not confirmed."}
+    used_in: [03-01, 03-06]
+  - id: iso26262-6-table9
+    doc: ISO26262-6
+    locator: Table 9
+    states: Structural coverage metrics at the software unit level (2018 numbering).
+    source: https://www.iso.org/standard/68388.html
+    verification: {method: unverified, checked: "2026-10-29", note: "Public sources disagree (Table 12 in the 2011 edition; Table 9 cited for 2018 by a tool-vendor mapping); not confirmed against the official text."}
+    used_in: [03-01, 03-06]
+  - id: iso26262-8-cl5
+    doc: ISO26262-8
+    locator: "5"
+    states: Interfaces within distributed developments (development interface agreement, DIA).
+    source: https://cdn.standards.iteh.ai/samples/68390/8b6b8ddbf06b436e8ac60f72f63c17d9/ISO-26262-8-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-01, 03-02, 08-01, templates/HARA_Template.md]
+  - id: iso26262-8-cl8
+    doc: ISO26262-8
+    locator: "8"
+    states: Change management (impact analysis of modifications).
+    source: https://cdn.standards.iteh.ai/samples/68390/8b6b8ddbf06b436e8ac60f72f63c17d9/ISO-26262-8-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [08-01, 08-02, 08-03]
+  - id: iso26262-8-cl9
+    doc: ISO26262-8
+    locator: "9"
+    states: Verification.
+    source: https://cdn.standards.iteh.ai/samples/68390/8b6b8ddbf06b436e8ac60f72f63c17d9/ISO-26262-8-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-06]
+  - id: iso26262-8-cl11
+    doc: ISO26262-8
+    locator: "11"
+    states: Confidence in the use of software tools (TI, TD, TCL).
+    source: https://cdn.standards.iteh.ai/samples/68390/8b6b8ddbf06b436e8ac60f72f63c17d9/ISO-26262-8-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-06, 04-04, templates/SOTIF_Analysis_Template.md]
+  - id: iso26262-9-cl5
+    doc: ISO26262-9
+    locator: "5"
+    also: ["5.4"]
+    states: Requirements decomposition with respect to ASIL tailoring (ASIL decomposition); permitted schemes in 5.4.
+    source: https://cdn.standards.iteh.ai/samples/68391/9c2855b8649b432f8192125999a5e01a/ISO-26262-9-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-01, 03-02, 03-04, avsafety/exercises.py, avsafety/iso26262.py, site/industry.md]
+  - id: iso26262-9-cl7
+    doc: ISO26262-9
+    locator: "7"
+    states: Analysis of dependent failures (DFA).
+    source: https://cdn.standards.iteh.ai/samples/68391/9c2855b8649b432f8192125999a5e01a/ISO-26262-9-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-02, 03-04, site/industry.md, templates/HARA_Template.md]
+  - id: iso26262-9-cl8
+    doc: ISO26262-9
+    locator: "8"
+    states: Safety analyses (inductive and deductive).
+    source: https://cdn.standards.iteh.ai/samples/68391/9c2855b8649b432f8192125999a5e01a/ISO-26262-9-2018.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-03, 03-04, 03-05, site/industry.md]
+
+  # ================================================================ ISO 21448:2022
+  - id: iso21448-cl4-2
+    doc: ISO21448
+    locator: "4.2"
+    states: SOTIF principles, incl. the SOTIF-related hazardous event model (4.2.1).
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [04-01]
+  - id: iso21448-scenario-areas
+    doc: ISO21448
+    locator: "4.2.2"
+    states: The four scenario areas (known/unknown × hazardous/not hazardous).
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: official-summary, checked: "2026-10-29", note: "Subclause title '4.2.2 The four scenario areas' in the official table of contents; the body text was not read."}
+    used_in: [04-01, templates/SOTIF_Analysis_Template.md]
+  - id: iso21448-cl5
+    doc: ISO21448
+    locator: "5"
+    states: Specification and design.
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [01-01, 04-01, 04-02, templates/SOTIF_Analysis_Template.md]
+  - id: iso21448-cl6
+    doc: ISO21448
+    locator: "6"
+    states: Identification and evaluation of hazards, incl. acceptance criteria for the residual risk (6.5).
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [01-03, 01-07, 02-02, 03-05, 04-01, 04-02, site/industry.md, templates/SOTIF_Analysis_Template.md]
+  - id: iso21448-cl7
+    doc: ISO21448
+    locator: "7"
+    states: Identification and evaluation of potential functional insufficiencies and triggering conditions.
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [01-03, 01-07, 02-02, 03-05, 04-01, 04-02, site/industry.md, templates/SOTIF_Analysis_Template.md]
+  - id: iso21448-cl8
+    doc: ISO21448
+    locator: "8"
+    context: 'SOTIF|21448|modification|measure|restrict|insufficien|validation target'
+    states: Functional modifications addressing SOTIF-related risks.
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [04-01, 04-02, 04-06, 08-01, templates/SOTIF_Analysis_Template.md]
+  - id: iso21448-cl9
+    doc: ISO21448
+    locator: "9"
+    states: Definition of the verification and validation strategy (acceptance criteria → validation targets).
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [01-04, 04-01, 04-02, 04-04, 04-06, site/industry.md, templates/SOTIF_Analysis_Template.md]
+  - id: iso21448-cl10
+    doc: ISO21448
+    locator: "10"
+    states: Evaluation of known scenarios (Area 2).
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [01-04, 04-01, 04-02, 04-04, 04-06, 08-05, site/industry.md, templates/SOTIF_Analysis_Template.md]
+  - id: iso21448-cl11
+    doc: ISO21448
+    locator: "11"
+    states: Evaluation of unknown scenarios (Area 3).
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [04-01, 04-04, 08-05, site/industry.md, templates/SOTIF_Analysis_Template.md]
+  - id: iso21448-cl12
+    doc: ISO21448
+    locator: "12"
+    states: Evaluation of the achievement of the SOTIF (release recommendation).
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [04-01, 08-05, 08-06, site/industry.md, templates/SOTIF_Analysis_Template.md]
+  - id: iso21448-cl13
+    doc: ISO21448
+    locator: "13"
+    states: Operation phase activities (field monitoring, SOTIF issue evaluation and resolution).
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [02-02, 04-01, 08-01, 08-02, 08-03, 08-06, site/industry.md, templates/SOTIF_Analysis_Template.md]
+  - id: iso21448-annexA
+    doc: ISO21448
+    locator: Annex A
+    states: Annex A (general guidance on SOTIF) discusses the interaction with ISO 26262.
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: unverified, checked: "2026-10-29", note: "The table of contents gives only the title 'General guidance on SOTIF'; whether it covers the interaction with ISO 26262 was not checked."}
+    used_in: [04-01]
+  - id: iso21448-annexB
+    doc: ISO21448
+    locator: Annex B
+    states: Guidance on scenario and system analyses; STPA illustrated in B.4.
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: secondary, checked: "2026-10-29", note: "Annex title from the official table of contents; the B.4 STPA example as cited by Graubohm et al. (2023)."}
+    used_in: [03-05]
+  - id: iso21448-annexC
+    doc: ISO21448
+    locator: Annex C
+    states: Guidance on SOTIF verification and validation (incl. validation targets).
+    source: https://cdn.standards.iteh.ai/samples/77490/d9843a45e11947e0aa79aaf2f00b65a8/ISO-21448-2022.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [04-01, 04-04]
+
+  # ================================================================ ISO/SAE 21434:2021
+  - id: iso21434-cl5
+    doc: ISO21434
+    locator: "5"
+    states: Organizational cybersecurity management.
+    source: https://cdn.standards.iteh.ai/samples/70918/aa7103c3560f406c86ccdbfec4a0d8de/ISO-SAE-21434-2021.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [05-01, 05-02, 08-01, templates/TARA_Template.md]
+  - id: iso21434-cl6
+    doc: ISO21434
+    locator: "6"
+    states: Project dependent cybersecurity management (cybersecurity case, assessment, release for post-development).
+    source: https://cdn.standards.iteh.ai/samples/70918/aa7103c3560f406c86ccdbfec4a0d8de/ISO-SAE-21434-2021.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [05-01, 08-04, 08-05]
+  - id: iso21434-cl7
+    doc: ISO21434
+    locator: "7"
+    states: Distributed cybersecurity activities (interface agreements with suppliers).
+    source: https://cdn.standards.iteh.ai/samples/70918/aa7103c3560f406c86ccdbfec4a0d8de/ISO-SAE-21434-2021.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [05-01, 08-01]
+  - id: iso21434-cl8
+    doc: ISO21434
+    locator: "8"
+    states: Continual cybersecurity activities (monitoring, event evaluation, vulnerability analysis and management).
+    source: https://cdn.standards.iteh.ai/samples/70918/aa7103c3560f406c86ccdbfec4a0d8de/ISO-SAE-21434-2021.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [05-01, 08-01, 08-02]
+  - id: iso21434-8-3
+    doc: ISO21434
+    locator: "8.3"
+    also: ["8.4"]
+    states: Cybersecurity monitoring (8.3) and cybersecurity event evaluation (8.4).
+    source: https://wiki.covesa.global/download/attachments/364212/GENIVI_SEC_TEAM_ISO-21434_Summary.pdf?api=v2
+    verification: {method: secondary, checked: "2026-10-29"}
+    used_in: [05-04, 05-05]
+  - id: iso21434-8-5
+    doc: ISO21434
+    locator: "8.5"
+    also: ["8.6"]
+    states: Vulnerability analysis (8.5) and vulnerability management (8.6).
+    source: https://wiki.covesa.global/download/attachments/364212/GENIVI_SEC_TEAM_ISO-21434_Summary.pdf?api=v2
+    verification: {method: secondary, checked: "2026-10-29"}
+    used_in: [05-03]
+  - id: iso21434-cl9
+    doc: ISO21434
+    locator: "9"
+    states: Concept (item definition, cybersecurity goals, cybersecurity concept).
+    source: https://cdn.standards.iteh.ai/samples/70918/aa7103c3560f406c86ccdbfec4a0d8de/ISO-SAE-21434-2021.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [05-01, 05-02, templates/TARA_Template.md]
+  - id: iso21434-9-3
+    doc: ISO21434
+    locator: "9.3"
+    states: Item definition.
+    source: https://wiki.covesa.global/download/attachments/364212/GENIVI_SEC_TEAM_ISO-21434_Summary.pdf?api=v2
+    verification: {method: secondary, checked: "2026-10-29"}
+    used_in: [05-02]
+  - id: iso21434-9-4
+    doc: ISO21434
+    locator: "9.4"
+    states: Cybersecurity goals (and claims).
+    source: https://wiki.covesa.global/download/attachments/364212/GENIVI_SEC_TEAM_ISO-21434_Summary.pdf?api=v2
+    verification: {method: secondary, checked: "2026-10-29"}
+    used_in: [08-05]
+  - id: iso21434-9-5
+    doc: ISO21434
+    locator: "9.5"
+    states: Cybersecurity concept.
+    source: https://wiki.covesa.global/download/attachments/364212/GENIVI_SEC_TEAM_ISO-21434_Summary.pdf?api=v2
+    verification: {method: secondary, checked: "2026-10-29"}
+    used_in: [05-05]
+  - id: iso21434-cl10
+    doc: ISO21434
+    locator: "10"
+    states: Product development (cybersecurity specifications, verification).
+    source: https://cdn.standards.iteh.ai/samples/70918/aa7103c3560f406c86ccdbfec4a0d8de/ISO-SAE-21434-2021.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [02-04, 05-01, 05-04]
+  - id: iso21434-10-4-2
+    doc: ISO21434
+    locator: "10.4.2"
+    states: Integration and verification (cybersecurity verification of the implemented controls).
+    source: https://ldra.com/wp-content/uploads/ldra/Achieving_the_ISO_SAE-21434_software-_objectives_v2.0.pdf
+    verification: {method: secondary, checked: "2026-10-29", note: "Subclause title per the LDRA white paper and the RISE course outline (10.4.1 design, 10.4.2 integration and verification)."}
+    used_in: [05-04, 05-05]
+  - id: iso21434-cl11
+    doc: ISO21434
+    locator: "11"
+    states: Cybersecurity validation at vehicle level.
+    source: https://cdn.standards.iteh.ai/samples/70918/aa7103c3560f406c86ccdbfec4a0d8de/ISO-SAE-21434-2021.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [02-04, 05-01]
+  - id: iso21434-cl12
+    doc: ISO21434
+    locator: "12"
+    states: Production.
+    source: https://cdn.standards.iteh.ai/samples/70918/aa7103c3560f406c86ccdbfec4a0d8de/ISO-SAE-21434-2021.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [05-01]
+  - id: iso21434-cl13
+    doc: ISO21434
+    locator: "13"
+    states: Operations and maintenance (incident response, updates).
+    source: https://cdn.standards.iteh.ai/samples/70918/aa7103c3560f406c86ccdbfec4a0d8de/ISO-SAE-21434-2021.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [05-01, 05-04, 08-01, 08-02]
+  - id: iso21434-cl14
+    doc: ISO21434
+    locator: "14"
+    states: End of cybersecurity support and decommissioning.
+    source: https://cdn.standards.iteh.ai/samples/70918/aa7103c3560f406c86ccdbfec4a0d8de/ISO-SAE-21434-2021.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [05-01]
+  - id: iso21434-cl15
+    doc: ISO21434
+    locator: "15"
+    states: Threat analysis and risk assessment (TARA) methods.
+    source: https://cdn.standards.iteh.ai/samples/70918/aa7103c3560f406c86ccdbfec4a0d8de/ISO-SAE-21434-2021.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [02-04, 03-05, 05-01, 05-02, 05-05, 08-02, 08-05, avsafety/iso21434.py, site/glossary.md, site/industry.md, templates/TARA_Template.md]
+  - id: iso21434-15-6
+    doc: ISO21434
+    locator: "15.6"
+    states: Attack path analysis.
+    source: https://arxiv.org/abs/2307.02261
+    verification: {method: secondary, checked: "2026-10-29"}
+    used_in: [05-03]
+  - id: iso21434-15-7
+    doc: ISO21434
+    locator: "15.7"
+    states: Attack feasibility rating.
+    source: https://arxiv.org/abs/2307.02261
+    verification: {method: secondary, checked: "2026-10-29"}
+    used_in: [05-03]
+  - id: iso21434-annexE
+    doc: ISO21434
+    locator: Annex E
+    states: Informative annex on cybersecurity assurance levels (CAL).
+    source: https://arxiv.org/abs/2307.02261
+    verification: {method: secondary, checked: "2026-10-29"}
+    used_in: [05-01, 05-02, 05-05, 07-04, 08-01, avsafety/iso21434.py, site/glossary.md, site/toolkit.md, templates/TARA_Template.md]
+  - id: iso21434-annexF
+    doc: ISO21434
+    locator: Annex F
+    states: Informative guidelines for impact rating; safety impact uses ISO 26262 severity classes.
+    source: https://arxiv.org/abs/2307.02261
+    verification: {method: secondary, checked: "2026-10-29"}
+    used_in: [05-02, 08-01]
+  - id: iso21434-annexG
+    doc: ISO21434
+    locator: Annex G
+    states: Informative guidelines for attack feasibility rating; attack-potential approach (G.2) with values from ISO/IEC 18045.
+    source: https://arxiv.org/abs/2307.02261
+    verification: {method: secondary, checked: "2026-10-29"}
+    used_in: [02-04, 05-02, 05-03, 05-04, 05-05, avsafety/exercises.py]
+  - id: iso21434-annexH
+    doc: ISO21434
+    locator: Annex H
+    states: Informative example application of the TARA methods (headlamp), incl. the example risk matrix the course uses.
+    source: https://arxiv.org/abs/2307.02261
+    verification: {method: secondary, checked: "2026-10-29", note: "That the example risk matrix sits in Annex H rests on secondary sources."}
+    used_in: [02-04, 05-01, 05-02, 05-05, 08-01, avsafety/exercises.py]
+
+  # ================================================================ ISO/PAS 8800:2024, IEC 61508-6
+  - id: iso8800-cl8
+    doc: ISO8800
+    locator: "8"
+    states: Assurance arguments for AI systems.
+    source: https://cdn.standards.iteh.ai/samples/83303/0c6743b68df0446ca9872168dbbf2e19/ISO-PAS-8800-2024.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [08-04]
+  - id: iec61508-6-annexD
+    doc: IEC61508-6
+    locator: Annex D
+    states: Methodology for quantifying the effect of hardware-related common cause failures (beta factor).
+    source: https://webstore.iec.ch/en/publication/5520
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [03-04]
+  - id: iso8800-cl14
+    doc: ISO8800
+    locator: "14"
+    states: Measures during operation (field data collection, continual re-evaluation of the assurance argument).
+    source: https://cdn.standards.iteh.ai/samples/83303/0c6743b68df0446ca9872168dbbf2e19/ISO-PAS-8800-2024.pdf
+    verification: {method: official-summary, checked: "2026-10-29"}
+    used_in: [08-06]

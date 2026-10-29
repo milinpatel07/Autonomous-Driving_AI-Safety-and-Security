@@ -1,0 +1,127 @@
+{
+ "counts": {
+  "ADAS": {
+   "crashes": 5042,
+   "crashes_third_amendment": 2372,
+   "reports_latest_version": 5080
+  },
+  "ADS": {
+   "crashes": 3059,
+   "crashes_third_amendment": 1562,
+   "reports_latest_version": 3450
+  }
+ },
+ "diff_basis": "first submitted in Sep 2026 (no earlier snapshot was available for a diff)",
+ "dmv_years": [
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "new_reports": {
+  "ADAS": 144,
+  "ADS": 74
+ },
+ "nhtsa_release": "2026-10-15",
+ "provisional_from_month": "2026-08",
+ "reports_received_through_month": "2026-09",
+ "sources": {
+  "dmv_2020": {
+   "accessed": "2026-10-29",
+   "bytes": 65765,
+   "release": "2021-02-09",
+   "sha256": "672ebafe7cf4ac08cdc3517b47974d3050ecc6584692e0811657cb8115303f9c",
+   "status": "not-modified",
+   "url": "https://www.dmv.ca.gov/portal/file/2020-autonomous-mileage-reports-csv/"
+  },
+  "dmv_2021": {
+   "accessed": "2026-10-29",
+   "bytes": 114856,
+   "release": "2022-03-25",
+   "sha256": "dacfb9dfb8f967b781f453db8e8773f56383b815b2ae7e86554d81b16a6682a4",
+   "status": "not-modified",
+   "url": "https://www.dmv.ca.gov/portal/file/2021-autonomous-mileage-reports-csv/"
+  },
+  "dmv_2022": {
+   "accessed": "2026-10-29",
+   "bytes": 154820,
+   "release": "2023-02-17",
+   "sha256": "51702c1b98a5067642d9f8fde5445dfe27cb9b284b23c94031cbb6e1a2143280",
+   "status": "not-modified",
+   "url": "https://www.dmv.ca.gov/portal/file/2022-autonomous-mileage-reports-csv/"
+  },
+  "dmv_2023": {
+   "accessed": "2026-10-29",
+   "bytes": 168161,
+   "release": "2024-02-02",
+   "sha256": "596b8087641e110ce0dca49ed1c917b383e1909c4842ef11aa1ded80acf5e209",
+   "status": "not-modified",
+   "url": "https://www.dmv.ca.gov/portal/file/2023-autonomous-mileage-reports-csv/"
+  },
+  "dmv_2024": {
+   "accessed": "2026-10-29",
+   "bytes": 264588,
+   "release": "2025-01-31",
+   "sha256": "862b861a2508f5c312540256a0e6422848112d552cbf5af1e78e1af503e12f55",
+   "status": "not-modified",
+   "url": "https://www.dmv.ca.gov/portal/file/2024-autonomous-mileage-reports-csv/"
+  },
+  "sgo_adas_archive": {
+   "accessed": "2026-10-29",
+   "bytes": 4092534,
+   "release": "2026-03-26",
+   "sha256": "99579d4c9add8f2fd0adfcff9199210fee8aaf9cbaf64347fd7adbb4446b6f5e",
+   "status": "not-modified",
+   "url": "https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/Archive-2021-2025/SGO-2021-01_Incident_Reports_ADAS.csv"
+  },
+  "sgo_adas_current": {
+   "accessed": "2026-10-29",
+   "bytes": 2468633,
+   "release": "2026-10-15",
+   "sha256": "07aab76367c8dd0e2ab8fcc895e370d1716c46126d90e08a6506f23bb64f6251",
+   "status": "not-modified",
+   "url": "https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/SGO-2021-01_Incident_Reports_ADAS.csv"
+  },
+  "sgo_ads_archive": {
+   "accessed": "2026-10-29",
+   "bytes": 3943732,
+   "release": "2026-03-26",
+   "sha256": "cb2b38a21e2ce5c2337dfa0cffe8d6fce5e422cf93fe4c78942eec5cf72f41ba",
+   "status": "not-modified",
+   "url": "https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/Archive-2021-2025/SGO-2021-01_Incident_Reports_ADS.csv"
+  },
+  "sgo_ads_current": {
+   "accessed": "2026-10-29",
+   "bytes": 2788134,
+   "release": "2026-10-15",
+   "sha256": "1dbc685559c54b63806305bbdf367bb6804697c3029b4b2c2a1d4282b301db6b",
+   "status": "not-modified",
+   "url": "https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/SGO-2021-01_Incident_Reports_ADS.csv"
+  },
+  "waymo_csv1": {
+   "accessed": "2026-10-29",
+   "bytes": 256,
+   "release": "2026-09-24",
+   "sha256": "f62cf25ecd4e5eebf91445d206d42520ffe15eec19c26efecd14bd743964cb12",
+   "status": "not-modified",
+   "url": "https://storage.googleapis.com/waymo-uploads/files/documents/safety/safety-impact-data/CSV1%20-%20RO%20Miles%20per%20Location%20202009-202606-2022benchmark.csv"
+  },
+  "waymo_csv2": {
+   "accessed": "2026-10-29",
+   "bytes": 364075,
+   "release": "2026-09-24",
+   "sha256": "ad27b6a4259bc79dd4f34b8cbe49c62bb1cf2245ab0f9403f518c80b6735bbe5",
+   "status": "not-modified",
+   "url": "https://storage.googleapis.com/waymo-uploads/files/documents/safety/safety-impact-data/CSV2%20-%20Crashes%20with%20SGO%20ID%20and%20Group%20Membership%20202009-202606-2022benchmark.csv"
+  }
+ },
+ "updated_reports": {
+  "ADAS": 0,
+  "ADS": 0
+ },
+ "waymo_files": {
+  "csv1": "CSV1 - RO Miles per Location 202009-202606-2022benchmark.csv",
+  "csv2": "CSV2 - Crashes with SGO ID and Group Membership 202009-202606-2022benchmark.csv"
+ }
+}

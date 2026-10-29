@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" role="img" aria-labelledby="bt bd" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
   <title id="bt">Autonomous Driving: AI Safety and Security</title>
-  <desc id="bd">An open course in eight modules (47 notebooks, real data) along a road: perception, failures and robustness, functional safety, SOTIF, cybersecurity, AI safety, runtime assurance, and standards, regulation and safety case.</desc>
+  <desc id="bd">An open course in eight modules (50 notebooks, real data) along a road: perception, failures and robustness, functional safety, SOTIF, cybersecurity, AI safety, runtime assurance, and standards, regulation and safety case.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d1b2a"/><stop offset="1" stop-color="#1b3a5c"/></linearGradient>
     <linearGradient id="road" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a9d8f"/><stop offset=".5" stop-color="#6aa7f0"/><stop offset="1" stop-color="#e9c46a"/></linearGradient>
@@ -9,7 +9,7 @@
   <g opacity=".08" stroke="#fff">
     <path d="M0 110 H1280 M0 220 H1280 M0 330 H1280"/><path d="M160 0 V440 M320 0 V440 M480 0 V440 M640 0 V440 M800 0 V440 M960 0 V440 M1120 0 V440"/>
   </g>
-  <text x="56" y="92" fill="#9fc3ea" font-size="16" font-weight="700" letter-spacing="3">OPEN COURSE · 47 NOTEBOOKS · REAL DATA · RUNS IN COLAB</text>
+  <text x="56" y="92" fill="#9fc3ea" font-size="16" font-weight="700" letter-spacing="3">OPEN COURSE · 50 NOTEBOOKS · REAL DATA · RUNS IN YOUR BROWSER</text>
   <text x="56" y="146" fill="#ffffff" font-size="50" font-weight="800" letter-spacing="-.5">Autonomous Driving</text>
   <text x="56" y="200" fill="#ffffff" font-size="50" font-weight="800" letter-spacing="-.5">AI Safety &amp; Security</text>
   <text x="58" y="240" fill="#c9d6e3" font-size="19">From sensors to safety cases: ISO 26262 · ISO 21448 · ISO/SAE 21434 · ISO/PAS 8800</text>
@@ -28,7 +28,7 @@
   </g>
   <g transform="translate(1040 70)" opacity=".95">
     <rect x="0" y="0" width="186" height="96" rx="16" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".25"/>
-    <text x="93" y="40" text-anchor="middle" fill="#ffffff" font-size="30" font-weight="800">8 · 47 · 4</text>
+    <text x="93" y="40" text-anchor="middle" fill="#ffffff" font-size="30" font-weight="800">8 · 50 · 4</text>
     <text x="93" y="68" text-anchor="middle" fill="#c9d6e3" font-size="13">modules · notebooks · tools</text>
   </g>
 </svg>

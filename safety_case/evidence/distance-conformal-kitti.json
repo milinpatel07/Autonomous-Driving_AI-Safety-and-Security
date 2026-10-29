@@ -1,0 +1,26 @@
+{
+  "schema": "avsafety.evidence/1",
+  "id": "distance-conformal-kitti",
+  "title": "Mondrian conformal distance intervals (monocular), KITTI test objects",
+  "values": {
+    "alpha": 0.1,
+    "coverage_pedestrian": 0.898627,
+    "coverage_overall": 0.896967,
+    "coverage_truncated": 0.304455,
+    "n_truncated": 808,
+    "ttc_width_20m_s": 0.273067
+  },
+  "units": {},
+  "n": 947,
+  "confidence": 0.9,
+  "producer": {
+    "notebook": "06_AI_Safety_ISO_PAS_8800/05_conformal_prediction.ipynb",
+    "code_hash": "sha256:9f1766b5699c280d",
+    "avsafety_version": "1.2.0"
+  },
+  "recorded_at": "2026-10-29T08:44:53Z",
+  "dataset": {
+    "name": "KITTI object detection labels, all 7,481 training frames",
+    "licence": "CC BY-NC-SA 3.0"
+  }
+}

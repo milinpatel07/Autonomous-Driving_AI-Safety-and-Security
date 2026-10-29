@@ -1,0 +1,27 @@
+{
+  "schema": "avsafety.evidence/1",
+  "id": "ood-monitor-kitti",
+  "title": "OOD monitor on degraded KITTI frames: requirement-based threshold, held-out test frames",
+  "values": {
+    "signal": "feature k-NN distance",
+    "auroc_test": 0.975556,
+    "tpr_detected": 30,
+    "tpr_n": 30,
+    "tpr_lower_95": 0.904966,
+    "fpr_clear": "4/15",
+    "fpr_shifted": "17/30"
+  },
+  "units": {},
+  "n": 30,
+  "confidence": 0.95,
+  "producer": {
+    "notebook": "04_SOTIF_ISO21448/03_ood_monitoring_as_safety_measure.ipynb",
+    "code_hash": "sha256:25b7c51ee034baab",
+    "avsafety_version": "1.2.0"
+  },
+  "recorded_at": "2026-10-29T08:42:04Z",
+  "dataset": {
+    "name": "KITTI object detection, 30 frames with LiDAR; fog and low light rendered",
+    "licence": "CC BY-NC-SA 3.0"
+  }
+}

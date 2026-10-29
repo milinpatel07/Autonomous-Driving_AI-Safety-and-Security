@@ -1,0 +1,51 @@
+name: Browser edition
+
+# Builds the in-browser edition (JupyterLite + Pyodide) and runs every notebook in it that needs no
+# third-party server, in headless Chromium. The notebooks that download NGSIM data are left out here
+# because their result depends on an external service.
+on:
+  pull_request:
+    paths:
+      - "[0-9][0-9]_*/*.ipynb"
+      - "avsafety/**"
+      - "pyproject.toml"
+      - "lite/**"
+      - "scripts/build_lite.py"
+      - "scripts/test_lite.mjs"
+      - "site/run-in-browser.md"
+      - ".github/workflows/lite-test.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: lite-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install the pinned build tools (separate environment)
+        run: |
+          python -m venv "$RUNNER_TEMP/lite-venv"
+          "$RUNNER_TEMP/lite-venv/bin/pip" install -r lite/requirements-lite.txt
+      - name: Cache the Pyodide runtime and packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/avsafety-lite
+          key: lite-${{ hashFiles('lite/pyodide.json') }}
+      - name: Build the browser edition (also checks site/run-in-browser.md is current)
+        run: '"$RUNNER_TEMP/lite-venv/bin/python" scripts/build_lite.py --check-page site/run-in-browser.md'
+      - name: Install headless Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.63.0
+          npx playwright install --with-deps chromium
+      - name: Run the notebooks in Pyodide
+        run: node scripts/test_lite.mjs --all --offline-only --jobs 3

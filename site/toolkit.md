@@ -7,7 +7,7 @@ package. The notebooks stay self-contained for Colab, but every table they defin
 toolkit, and the browser tools are checked against it in CI.
 
 ```bash
-pip install "avsafety[data] @ git+https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security.git"
+pip install "avsafety[data,assurance,bench] @ git+https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Security.git"
 ```
 
 ```python
@@ -30,7 +30,11 @@ validation.miles_to_demonstrate(1.09e-8, 0.95)       # ≈ 2.75e8 miles (Kalra &
 | `validation` | zero-failure miles, Poisson confidence bounds | Kalra & Paddock 2016 |
 | `uq` | ECE, Brier, NLL, temperature scaling, split conformal | Guo et al. 2017; Angelopoulos & Bates 2021 |
 | `coverage` | n-wise scenario / ODD coverage | ISO 34502:2022, ISO 34503:2023 |
-| `data` | real public data on demand: KITTI object and tracking frames (camera, LiDAR, labels, calibration), NGSIM trajectories, NHTSA crash reports | KITTI (CC BY-NC-SA 3.0), US DOT, NHTSA |
+| `data` | real public data on demand: KITTI object and tracking frames (camera, LiDAR, labels, calibration), NGSIM trajectories, NHTSA crash reports, ROAD CAN intrusion logs, VeReMi Extension V2X messages | see [Data and licences](datasets.md) |
+| `perturb` | physically based perturbations: Koschmieder fog from LiDAR depth, low light (shot and read noise), lens dirt, LiDAR fog | Koschmieder 1924 via Sakaridis et al. 2018 |
+| `bench` | SOTIF perception benchmark: versioned split, evaluation, confidence intervals, triggering-condition table, release verdict; CLI `python -m avsafety.bench` | [benchmark](benchmark.md) |
+| `assurance` | safety case as code: GSN argument in YAML, evidence records, acceptance criteria, staleness, status propagation, rendering | [safety case](safety-case.md); GSN Community Standard v3 |
+| `exercises` | auto-checked exercises with hints; reference values computed by the modules above | [teaching guide](teaching.md) |
 
 :::{note}
 ISO/SAE 21434 Annexes E, G and H are informative; organisations may define their own rating schemes. The toolkit

@@ -1,0 +1,7 @@
+kind,regime,crashes,partner_unknown_pct,road_unknown_pct,severity_unknown_pct,movement_unknown_pct,narrative_redacted_pct,notice_via_telematics_pct,multi_report_crashes_pct
+ADAS,original / 1st amended order,965,28.8,13.8,82.2,16.6,84.7,76.8,0.4
+ADAS,2nd amended order,1682,39.1,28.2,81.9,36.7,91.1,71.7,0.1
+ADAS,3rd amended order,2372,52.6,38.0,91.2,52.8,91.7,90.6,0.3
+ADS,original / 1st amended order,297,0.3,0.3,3.4,0.7,28.3,64.6,60.6
+ADS,2nd amended order,1200,0.0,0.1,1.5,0.1,8.5,88.6,15.3
+ADS,3rd amended order,1562,0.0,0.1,1.6,0.1,0.6,88.5,0.1

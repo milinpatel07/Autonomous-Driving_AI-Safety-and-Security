@@ -12,6 +12,14 @@ and keeps it in a local cache (``~/.cache/avsafety`` or ``$AVSAFETY_CACHE``).
   Public US government data — https://www.nhtsa.gov/laws-regulations/standing-general-order-crash-reporting
 * **NGSIM** vehicle trajectories (US-101, I-80, Lankershim, Peachtree) via the
   US DOT open-data API. Public domain — https://data.transportation.gov/d/8ect-6jqj
+* **ROAD** CAN intrusion dataset (Oak Ridge National Laboratory): real CAN logs of
+  one vehicle with physically verified fuzzing, targeted-injection and masquerade
+  attacks. Single captures are read out of the 557 MB archive by range requests.
+  Verma et al. (2024), PLOS ONE. Licence: CC BY 4.0 — https://doi.org/10.5281/zenodo.10462796
+* **VeReMi Extension** V2X misbehaviour benchmark: simulated (VEINS/SUMO, LuST
+  scenario) BSM logs with sensor-error models and labelled attacks. Single receiver
+  logs are read out of the per-attack archives by range requests.
+  Kamel et al. (2020), IEEE ICC. Licence: CC BY 4.0 — https://doi.org/10.5281/zenodo.20090854
 
 Each function raises :class:`DataUnavailable` with a clear message when the
 network is unreachable, so notebooks can explain what happened.
@@ -23,6 +31,8 @@ import http.client
 import io
 import json
 import os
+import re
+import struct
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -39,6 +49,8 @@ SGO_URLS = {
     "ADAS": "https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/SGO-2021-01_Incident_Reports_ADAS.csv",
 }
 NGSIM_API = "https://data.transportation.gov/resource/8ect-6jqj.json"
+ROAD_URL = "https://zenodo.org/api/records/10462796/files/road.zip/content"
+VEREMI_URL = "https://zenodo.org/api/records/20090854/files/{subset}.zip/content"
 
 LICENCES = {
     "KITTI": "KITTI Vision Benchmark Suite (Geiger et al., CVPR 2012 / IJRR 2013), CC BY-NC-SA 3.0, "
@@ -47,6 +59,11 @@ LICENCES = {
                  "https://www.nhtsa.gov/laws-regulations/standing-general-order-crash-reporting",
     "NGSIM": "US DOT Next Generation Simulation (NGSIM) vehicle trajectories, public domain, "
              "https://data.transportation.gov/d/8ect-6jqj",
+    "ROAD": "ROAD CAN intrusion dataset, Oak Ridge National Laboratory (Verma et al., PLOS ONE 2024, "
+            "doi:10.1371/journal.pone.0296879), CC BY 4.0, https://doi.org/10.5281/zenodo.10462796",
+    "VeReMi Extension": "VeReMi Extension V2X misbehaviour dataset, Institute of Distributed Systems, Ulm University "
+                        "(Kamel et al., IEEE ICC 2020, doi:10.1109/ICC40277.2020.9149132), simulated with "
+                        "VEINS/SUMO (LuST scenario), CC BY 4.0, https://doi.org/10.5281/zenodo.20090854",
 }
 
 KITTI_CLASSES = ("Car", "Van", "Truck", "Pedestrian", "Person_sitting", "Cyclist", "Tram", "Misc", "DontCare")
@@ -118,10 +135,58 @@ class _HTTPRangeFile(io.RawIOBase):
         return len(data)
 
 
+class _SubFile(io.RawIOBase):
+    """A read-only window [offset, offset + size) of another seekable file."""
+
+    def __init__(self, base, offset: int, size: int):
+        self.base, self.offset, self.size, self.pos = base, offset, size, 0
+
+    def readable(self) -> bool:
+        return True
+
+    def seekable(self) -> bool:
+        return True
+
+    def tell(self) -> int:
+        return self.pos
+
+    def seek(self, offset: int, whence: int = 0) -> int:
+        self.pos = {0: 0, 1: self.pos, 2: self.size}[whence] + offset
+        return self.pos
+
+    def readinto(self, buffer) -> int:
+        n = min(len(buffer), self.size - self.pos)
+        if n <= 0:
+            return 0
+        self.base.seek(self.offset + self.pos)
+        data = self.base.read(n)
+        buffer[: len(data)] = data
+        self.pos += len(data)
+        return len(data)
+
+
 @lru_cache(maxsize=16)
+def _remote_zip_url(url: str, buffer_size: int = 1 << 20) -> zipfile.ZipFile:
+    return zipfile.ZipFile(io.BufferedReader(_HTTPRangeFile(url), buffer_size=buffer_size))
+
+
 def _remote_zip(archive: str) -> zipfile.ZipFile:
-    raw = _HTTPRangeFile(KITTI_BASE + archive)
-    return zipfile.ZipFile(io.BufferedReader(raw, buffer_size=1 << 20))
+    return _remote_zip_url(KITTI_BASE + archive)
+
+
+@lru_cache(maxsize=32)
+def _remote_inner_zip(url: str, member: str) -> zipfile.ZipFile:
+    """Open a zip that is *stored* (not compressed) inside a remote zip, without downloading either."""
+    outer = _remote_zip_url(url, 1 << 16)
+    info = outer.getinfo(member)
+    if info.compress_type != zipfile.ZIP_STORED:
+        raise DataUnavailable(f"{member} is compressed inside {url}; cannot read it by range requests")
+    raw = _HTTPRangeFile(url)
+    raw.seek(info.header_offset)
+    header = raw.read(30)
+    name_len, extra_len = struct.unpack("<HH", header[26:30])
+    start = info.header_offset + 30 + name_len + extra_len
+    return zipfile.ZipFile(io.BufferedReader(_SubFile(raw, start, info.compress_size), buffer_size=4 << 20))
 
 
 def fetch_kitti_file(archive: str, member: str) -> bytes:
@@ -373,3 +438,278 @@ def ngsim(location: str = "us-101", where: str | None = None, limit: int = 200_0
             except (ValueError, TypeError):
                 pass
     return df
+
+
+# --------------------------------------------------------------------------- ROAD CAN intrusion dataset
+ROAD_ATTACK_FAMILY = {
+    "fuzzing": "fuzzing",
+    "correlated_signal": "targeted injection",
+    "max_speedometer": "targeted injection",
+    "max_engine_coolant_temp": "targeted injection",
+    "reverse_light_on": "targeted injection",
+    "reverse_light_off": "targeted injection",
+    "accelerator": "unlabelled (no injected frames)",
+}
+_CANDUMP = re.compile(r"^\((\d+\.\d+)\)\s+\S+\s+([0-9A-Fa-f]+)#([0-9A-Fa-f]*)\s*$")
+_HEX = np.full(256, 255, dtype=np.uint8)
+for _i, _c in enumerate(b"0123456789ABCDEF"):
+    _HEX[_c] = _i
+for _i, _c in enumerate(b"abcdef"):
+    _HEX[_c] = 10 + _i
+
+
+def parse_candump(text: str):
+    """Parse a Linux ``candump -l`` log into a DataFrame.
+
+    Each line looks like ``(1000000000.001000) can0 0D0#427504646C018700``.
+    Returns columns ``t`` (s, relative to the first frame), ``can_id`` (int), ``dlc``
+    (bytes), ``data`` (upper-case hex string) and ``b0``..``b7`` (uint8, zero-padded
+    beyond the DLC). Malformed lines raise ``ValueError``.
+    """
+    import pandas as pd
+    lines = [ln for ln in text.splitlines() if ln.strip()]
+    rows = [_CANDUMP.match(ln) for ln in lines]
+    bad = [ln for ln, m in zip(lines, rows) if m is None]
+    if bad:
+        raise ValueError(f"not a candump line: {bad[0]!r}")
+    stamp = np.array([float(m.group(1)) for m in rows])
+    data = [m.group(3).upper() for m in rows]
+    dlc = np.array([len(d) // 2 for d in data], dtype=np.int16)
+    if (dlc > 8).any():
+        raise ValueError("classic CAN payloads have at most 8 bytes")
+    padded = np.frombuffer("".join(d.ljust(16, "0") for d in data).encode(), dtype=np.uint8).reshape(-1, 16)
+    nib = _HEX[padded]
+    pay = (nib[:, 0::2] << 4) | nib[:, 1::2]
+    df = pd.DataFrame({"t": stamp - (stamp[0] if len(stamp) else 0.0),
+                       "can_id": np.array([int(m.group(2), 16) for m in rows], dtype=np.int32),
+                       "dlc": dlc, "data": data})
+    for k in range(8):
+        df[f"b{k}"] = pay[:, k]
+    return df
+
+
+def road_label(df, meta: dict, tol: float = 1e-3):
+    """Ground-truth labels for one ROAD capture from its ``capture_metadata.json`` entry.
+
+    A frame is labelled injected (1) when it lies inside ``injection_interval``, carries the
+    injected identifier (``'XXX'`` = any identifier, used for fuzzing) and its payload matches
+    ``injection_data_str``, where ``X`` is a wildcard nibble. This reconstructs the injected
+    frames from the published metadata; a genuine frame that happens to match the pattern inside
+    the interval would also be labelled 1 (rare, but a limitation to state). ``tol`` (s) widens
+    the interval because the published bounds are rounded to the microsecond and the first
+    injected frame can carry exactly the start time. Returns an int8 array.
+    """
+    label = np.zeros(len(df), dtype=np.int8)
+    interval, pattern, aid = meta.get("injection_interval"), meta.get("injection_data_str"), meta.get("injection_id")
+    if not interval or not pattern:
+        return label
+    t = df["t"].to_numpy()
+    sel = (t >= interval[0] - tol) & (t <= interval[1] + tol)
+    if aid and "X" not in aid.upper():
+        sel &= df["can_id"].to_numpy() == int(aid, 16)
+    data = df["data"].to_numpy()
+    pattern = pattern.upper()
+    for i in np.flatnonzero(sel):
+        d = data[i]
+        if len(d) == len(pattern) and all(p == "X" or p == c for p, c in zip(pattern, d)):
+            label[i] = 1
+    return label
+
+
+def _road_family(capture: str) -> str:
+    base = re.sub(r"(_attack.*|_masquerade)$", "", capture)
+    if capture.startswith("ambient"):
+        return "none"
+    family = ROAD_ATTACK_FAMILY.get(base, "unknown")
+    return "masquerade" if capture.endswith("_masquerade") else family
+
+
+def _road_member(member: str) -> bytes:
+    """One file of the ROAD archive, cached gzip-compressed (the logs compress about 6:1)."""
+    import gzip
+    target = cache_dir() / "road" / (member + ".gz")
+    if target.exists():
+        return gzip.decompress(target.read_bytes())
+    try:
+        data = _remote_zip_url(ROAD_URL).read(member)
+    except KeyError:
+        raise DataUnavailable(f"{member} is not in the ROAD archive") from None
+    _atomic_write(target, gzip.compress(data, compresslevel=3))
+    return data
+
+
+@lru_cache(maxsize=2)
+def road_metadata(kind: str = "attacks") -> dict:
+    """``capture_metadata.json`` of the ROAD ``'attacks'`` or ``'ambient'`` folder (elapsed time,
+    injected identifier, payload pattern and injection interval in s per capture)."""
+    if kind not in ("attacks", "ambient"):
+        raise ValueError("kind must be 'attacks' or 'ambient'")
+    return json.loads(_road_member(f"road/{kind}/capture_metadata.json").decode())
+
+
+def can_ids(captures="fuzzing_attack_1"):
+    """Real CAN traffic with labelled attacks from the ROAD dataset (Verma et al., 2024).
+
+    ``captures`` is one capture name or a list, e.g. ``'ambient_dyno_drive_basic_short'``,
+    ``'fuzzing_attack_1'``, ``'max_speedometer_attack_1'``,
+    ``'max_speedometer_attack_1_masquerade'`` (see :func:`road_metadata`). Only the requested
+    logs are downloaded (0.1-73 MB compressed each) and cached.
+
+    Returns a DataFrame with ``capture``, ``t`` (s from capture start), ``can_id``, ``dlc``,
+    ``data``, ``b0``..``b7``, ``label`` (1 = injected frame) and ``attack`` (family:
+    'none', 'fuzzing', 'targeted injection', 'masquerade'). In the ``_masquerade`` variants the
+    genuine frames of the target identifier were removed during the injection interval, which
+    emulates a silenced sender (the dataset's "simulated masquerade").
+    """
+    import pandas as pd
+    names = [captures] if isinstance(captures, str) else list(captures)
+    parts = []
+    for name in names:
+        kind = "ambient" if name.startswith("ambient") else "attacks"
+        meta = road_metadata(kind)
+        if name not in meta:
+            raise ValueError(f"unknown ROAD capture {name!r}")
+        df = parse_candump(_road_member(f"road/{kind}/{name}.log").decode())
+        df["label"] = road_label(df, meta[name])
+        df["attack"] = _road_family(name)
+        df.insert(0, "capture", name)
+        parts.append(df)
+    return pd.concat(parts, ignore_index=True)
+
+
+# --------------------------------------------------------------------------- VeReMi Extension (V2X)
+VEREMI_ATTACKS = {
+    0: "Genuine", 1: "ConstPos", 2: "ConstPosOffset", 3: "RandomPos", 4: "RandomPosOffset",
+    5: "ConstSpeed", 6: "ConstSpeedOffset", 7: "RandomSpeed", 8: "RandomSpeedOffset",
+    9: "EventualStop", 10: "Disruptive", 11: "DataReplay", 12: "DelayedMessages",
+    13: "DoS", 14: "DoSRandom", 15: "DoSDisruptive", 16: "GridSybil", 17: "DataReplaySybil",
+    18: "DoSRandomSybil", 19: "DoSDisruptiveSybil",
+}
+_TRACE = re.compile(r"traceJSON-(\d+)-(\d+)-A(\d+)-(\d+)-(\d+)\.json$")
+
+
+def parse_veremi_trace(text: str, receiver: int = -1):
+    """Parse one VeReMi(-Extension) ``traceJSON`` receiver log (one JSON object per line).
+
+    ``type`` 2 rows are the receiver's own GNSS fixes, ``type`` 3 rows are received BSMs.
+    Vectors are split into ``_x``/``_y`` columns: ``pos`` (m), ``spd`` (m/s), ``acl`` (m/s^2),
+    ``hed`` (unit heading vector) and their ``*_noise`` (the sender's stated error, same units).
+    Times ``rcv_time``/``send_time`` are simulation seconds.
+    """
+    import pandas as pd
+    recs = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        m = json.loads(line)
+        r = {"receiver": receiver, "type": m["type"], "rcv_time": m.get("rcvTime", np.nan),
+             "send_time": m.get("sendTime", np.nan), "sender": m.get("sender", -1),
+             "sender_pseudo": m.get("senderPseudo", -1), "message_id": m.get("messageID", -1)}
+        for key in ("pos", "spd", "acl", "hed", "pos_noise", "spd_noise", "acl_noise", "hed_noise"):
+            v = m.get(key, (np.nan, np.nan))
+            r[f"{key}_x"], r[f"{key}_y"] = v[0], v[1]
+        recs.append(r)
+    df = pd.DataFrame(recs)
+    for col in ("receiver", "type", "sender", "sender_pseudo", "message_id"):
+        if col in df:
+            df[col] = df[col].astype("int64")
+    return df
+
+
+def _veremi_inner(attack: str, density: str, hour: int):
+    """The stored inner zip of one VeReMi Extension subset for simulation hour 0 or 1."""
+    url = VEREMI_URL.format(subset=f"{attack}_{density}")
+    start = {"0709": 25200, "1416": 50400}[density] + 3600 * hour
+    outer = _remote_zip_url(url, 1 << 16)
+    members = [n for n in outer.namelist() if f"/VeReMi_{start}_" in n and n.endswith(".zip")]
+    if not members:
+        raise DataUnavailable(f"no simulation hour {hour} in {attack}_{density}")
+    return url, members[0], _remote_inner_zip(url, members[0])
+
+
+def _veremi_index(attack: str, density: str) -> dict:
+    """Map vehicle id -> attacker type for every vehicle of a subset (from the log file names)."""
+    target = cache_dir() / "veremi" / f"{attack}_{density}" / "attacker_types.json"
+    if target.exists():
+        return {int(k): v for k, v in json.loads(target.read_text()).items()}
+    url = VEREMI_URL.format(subset=f"{attack}_{density}")
+    outer = _remote_zip_url(url, 1 << 16)
+    index = {}
+    for member in outer.namelist():
+        if member.endswith(".zip"):
+            for name in _remote_inner_zip(url, member).namelist():
+                m = _TRACE.search(name)
+                if m:
+                    index[int(m.group(1))] = int(m.group(3))
+    _atomic_write(target, json.dumps(index).encode())
+    return index
+
+
+def veremi(attack: str = "ConstPosOffset", density: str = "1416", hour: int = 1, n_receivers: int = 40,
+           genuine_receivers_only: bool = True):
+    """Received V2X messages (BSMs) from the VeReMi Extension benchmark, labelled per sender.
+
+    ``attack`` names a VeReMi Extension subset (a value of :data:`VEREMI_ATTACKS`, e.g.
+    'ConstPos', 'ConstPosOffset', 'RandomPosOffset', 'ConstSpeedOffset', 'EventualStop',
+    'DataReplay', 'DoS'); ``density`` is '1416' (14:00-16:00, lighter traffic) or '0709'
+    (rush hour); ``hour`` selects the first (0) or second (1) simulated hour, which gives a
+    time-separated train/test split. In every subset 30 % of vehicles misbehave.
+
+    Only the first ``n_receivers`` receiver logs (each 20-100 kB compressed) are downloaded.
+    The data are **simulated** (VEINS/SUMO on the LuST scenario, with GNSS-like sensor error
+    models): real benchmark data, not field measurements.
+
+    Returns a DataFrame from :func:`parse_veremi_trace` plus ``attacker_type`` (sender's type,
+    0 = genuine; -1 for the receiver's own fixes) and ``attack`` (its name).
+    """
+    import pandas as pd
+    if attack not in VEREMI_ATTACKS.values() or attack == "Genuine":
+        raise ValueError(f"unknown VeReMi Extension attack {attack!r}")
+    if density not in ("1416", "0709") or hour not in (0, 1):
+        raise ValueError("density must be '1416' or '0709' and hour 0 or 1")
+    index = _veremi_index(attack, density)
+    folder = cache_dir() / "veremi" / f"{attack}_{density}" / f"hour{hour}"
+    listing = folder / "receivers.json"
+    if listing.exists():
+        names = json.loads(listing.read_text())
+    else:
+        _, _, inner = _veremi_inner(attack, density, hour)
+        names = [n for n in inner.namelist() if _TRACE.search(n)]
+        _atomic_write(listing, json.dumps(names).encode())
+    if genuine_receivers_only:
+        names = [n for n in names if _TRACE.search(n).group(3) == "0"]
+    import gzip
+    parts = []
+    for name in names[:n_receivers]:
+        target = folder / (Path(name).name + ".gz")
+        if not target.exists():
+            _, _, inner = _veremi_inner(attack, density, hour)
+            _atomic_write(target, gzip.compress(inner.read(name), compresslevel=3))
+        parts.append(parse_veremi_trace(gzip.decompress(target.read_bytes()).decode(),
+                                        int(_TRACE.search(name).group(1))))
+    df = pd.concat(parts, ignore_index=True)
+    df["attacker_type"] = np.where(df["type"] == 3, df["sender"].map(index).fillna(-1), -1).astype(int)
+    df["attack"] = np.where(df["type"] == 2, "own GNSS", df["attacker_type"].map(VEREMI_ATTACKS).fillna("unknown"))
+    return df
+
+
+def veremi_ground_truth(attack: str = "ConstPosOffset", density: str = "1416", hour: int = 1):
+    """True sender states for every message of one VeReMi Extension subset and simulated hour.
+
+    Reads the ``traceGroundTruthJSON`` file (about 11 MB compressed) and returns one row per
+    message: ``message_id``, ``sender``, ``send_time`` and the *true* ``pos``/``spd``/``acl``/``hed``
+    columns (same names as :func:`parse_veremi_trace`). Join on ``message_id`` to compare what a
+    sender claimed with where it really was.
+    """
+    folder = cache_dir() / "veremi" / f"{attack}_{density}" / f"hour{hour}"
+    import gzip
+    target = folder / "ground_truth.json.gz"
+    if not target.exists():
+        _, _, inner = _veremi_inner(attack, density, hour)
+        names = [n for n in inner.namelist() if "traceGroundTruthJSON" in n]
+        if not names:
+            raise DataUnavailable(f"no ground-truth file in {attack}_{density}, hour {hour}")
+        _atomic_write(target, gzip.compress(inner.read(names[0]), compresslevel=3))
+    df = parse_veremi_trace(gzip.decompress(target.read_bytes()).decode())
+    return df.drop(columns=["receiver", "rcv_time", "type"])

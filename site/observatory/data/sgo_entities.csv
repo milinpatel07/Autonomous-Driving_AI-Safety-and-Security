@@ -1,0 +1,28 @@
+kind,entity,original / 1st amended order,2nd amended order,3rd amended order,total
+ADAS,BMW,7,13,12,32
+ADAS,Ford,7,21,28,56
+ADAS,General Motors,5,45,114,164
+ADAS,Honda,96,5,2,103
+ADAS,Hyundai,4,6,9,19
+ADAS,Kia,4,9,12,25
+ADAS,Lucid,4,5,4,13
+ADAS,Mercedes-Benz,4,10,5,19
+ADAS,Nissan North,3,12,6,21
+ADAS,Rivian Automotive,0,16,5,21
+ADAS,Subaru of,23,28,15,66
+ADAS,Tesla,778,1480,2135,4393
+ADAS,Toyota Engineering & Manufacturing,16,13,8,37
+ADAS,18 other entities (< 10 crashes each),14,19,17,50
+ADS,Argo AI,20,0,0,20
+ADS,Aurora,2,15,8,25
+ADS,Avride,0,3,81,84
+ADS,Beep,2,4,4,10
+ADS,Cruise,60,95,0,155
+ADS,May Mobility,3,18,20,41
+ADS,Motional,3,11,15,29
+ADS,Nuro,0,8,7,15
+ADS,Tesla,0,0,36,36
+ADS,Waymo,136,952,1293,2381
+ADS,WeRide,3,9,1,13
+ADS,Zoox,37,55,80,172
+ADS,33 other entities (< 10 crashes each),31,30,17,78

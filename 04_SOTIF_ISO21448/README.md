@@ -1,8 +1,8 @@
 # Module 04 · SOTIF (ISO 21448)
 
-Hazards without a fault: functional insufficiencies, triggering conditions and reasonably foreseeable misuse. Triggering conditions measured on real data, scenario spaces, OOD monitoring as a safety measure, simulation-based validation, criticality metrics and RSS.
+Hazards without a fault: functional insufficiencies, triggering conditions and reasonably foreseeable misuse. Triggering conditions measured on real data, scenario spaces, OOD monitoring as a safety measure, simulation-based validation, criticality metrics and RSS, and an open SOTIF benchmark that evaluates any detector against a declared requirement.
 
-**5 notebooks** · each runs in Google Colab on CPU; real-data notebooks download the frames and records they need on demand.
+**6 notebooks** · each runs in Google Colab on CPU; real-data notebooks download the frames and records they need on demand.
 
 | # | Notebook | Level | Standards | Open |
 |---|---|---|---|---|
@@ -11,6 +11,7 @@ Hazards without a fault: functional insufficiencies, triggering conditions and r
 | 03 | [OOD Monitoring as a SOTIF Safety Measure](03_ood_monitoring_as_safety_measure.ipynb) | Intermediate | ISO 21448:2022, ISO/PAS 8800:2024, UN R157 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF_ISO21448/03_ood_monitoring_as_safety_measure.ipynb) |
 | 04 | [Simulation-Based SOTIF Validation](04_simulation_based_validation.ipynb) | Advanced | ISO 21448:2022, ISO 26262-8:2018, Regulation (EU) 2022/1426 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF_ISO21448/04_simulation_based_validation.ipynb) |
 | 05 | [Criticality Metrics and Responsibility-Sensitive Safety (RSS)](05_criticality_metrics_and_rss.ipynb) | Intermediate | ISO 21448:2022, IEEE 2846-2022, UL 4600 (3rd ed., 2023), ISO 34502:2022 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF_ISO21448/05_criticality_metrics_and_rss.ipynb) |
+| 06 | [An Open SOTIF Perception Benchmark](06_sotif_benchmark.ipynb) | Advanced | ISO 21448:2022, ISO 34503:2023 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF_ISO21448/06_sotif_benchmark.ipynb) |
 
 ## What you will learn
 
@@ -62,6 +63,15 @@ Hazards without a fault: functional insufficiencies, triggering conditions and r
 - Quantify the **sensitivity** of the RSS envelope to its parameters and the resulting **safety–usefulness trade-off**.
 - Simulate a **cut-in** and compare an RSS-compliant controller with a naive one using metrics over time.
 - Position such safety envelopes in **ISO 21448**, **IEEE 2846-2022** and **UL 4600** arguments, and state their limitations.
+
+### 06 · An Open SOTIF Perception Benchmark
+
+- Evaluate **any** camera detector against a fixed, versioned SOTIF benchmark in one call, and read the resulting
+- Explain each design choice of the benchmark — frame rule, population, matching, conditions, threshold policy —
+- Turn the report into a **verdict against a declared requirement**, a **supported speed per condition** (ODD
+- Compare detectors fairly and recognise when a difference is inside the statistical noise
+- State what a benchmark of synthetic conditions on real images can and cannot claim, and how a company would run
+- Describe how the LiDAR track on SOTIF-PCOD adds weather and illumination conditions for LiDAR detectors
 
 ---
 
