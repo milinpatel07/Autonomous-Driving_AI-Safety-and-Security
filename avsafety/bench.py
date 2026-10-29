@@ -635,7 +635,8 @@ class Report:
     def release(self, requirement=None) -> dict:
         """Release verdict for the declared requirement (decision rule of the 08-05 capstone).
 
-        RELEASE: met at the full speed in every ODD condition (and the FP limit, if any, holds).
+        RELEASE: met at the full speed in every ODD condition (and the FP limit, if any, holds); a
+        declared ODD condition that was not evaluated counts as missing evidence and prevents RELEASE.
         RELEASE WITH ODD RESTRICTION: met in clear air at some speed; each ODD condition is then
         claimed only up to its supported speed, or excluded (monitor needed) if there is none.
         DO NOT RELEASE: not demonstrated in clear air at any speed of the grid.
@@ -643,14 +644,16 @@ class Report:
         req = get_requirement(requirement)
         tct = {r["condition"]: r for r in self.triggering_conditions(req)}
         odd = [c for c in req.odd_conditions if c in tct]
-        reasons = []
+        missing = [c for c in req.odd_conditions if c not in tct]
+        reasons = [f"{c}: declared in the ODD but not evaluated -> no evidence; excluded until tested"
+                   for c in missing]
         fp_ok = True
         if req.max_fp_per_frame is not None:
             n_fp = sum(int(round(tct[c]["fp_per_frame"] * self.n_frames)) for c in odd)
             ub = validation.poisson_upper_bound(n_fp, self.n_frames * max(len(odd), 1), req.confidence)
             fp_ok = ub <= req.max_fp_per_frame
             reasons.append(f"false positives per frame (upper {req.confidence:.0%} bound) {ub:.3f} vs limit {req.max_fp_per_frame}")
-        full = all(tct[c]["verdict"] == "meets" for c in odd) and bool(odd) and fp_ok
+        full = all(tct[c]["verdict"] == "meets" for c in odd) and bool(odd) and not missing and fp_ok
         clear = tct.get("clear")
         if full:
             v = "RELEASE"
@@ -659,13 +662,15 @@ class Report:
         else:
             v = "DO NOT RELEASE"
         restricted = {c: tct[c]["v_max_kmh"] for c in odd}
+        restricted.update({c: None for c in missing})
         for c in odd:
             r = tct[c]
             reasons.append(f"{r['label']}: recall {r['recall']} (n = {r['n']}, one-sided lower bound "
                            f"{r['lower_bound']:.3f} vs {req.min_recall}) -> {r['verdict']}; supported up to "
                            + (f"{r['v_max_kmh']:g} km/h" if r["v_max_kmh"] else "no speed in the grid"))
         outside = [r["label"] for r in tct.values() if not r["in_odd"] and r["verdict"] != "meets"]
-        return {"verdict": v, "requirement": req.id, "odd_conditions": odd, "restricted_odd_kmh": restricted,
+        return {"verdict": v, "requirement": req.id, "odd_conditions": odd, "not_evaluated": missing,
+                "restricted_odd_kmh": restricted,
                 "outside_odd_not_met": outside, "reasons": reasons,
                 "rule": "RELEASE if met at full speed in all ODD conditions; RELEASE WITH ODD RESTRICTION if met in "
                         "clear air at some speed; otherwise DO NOT RELEASE"}
