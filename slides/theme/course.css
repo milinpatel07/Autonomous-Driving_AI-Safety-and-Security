@@ -1,0 +1,122 @@
+/* @theme course */
+/* Lecture slides for "Autonomous Driving: AI Safety and Security". 16:9, light, colours as in the notebooks. */
+
+@import 'default';
+
+:root {
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --accent: #0072B2;
+  --line: #e5e7eb;
+  --soft: #f3f4f6;
+}
+
+section {
+  width: 1280px;
+  height: 720px;
+  padding: 46px 56px 52px 56px;
+  font-family: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, "DejaVu Sans", sans-serif;
+  font-size: 25px;
+  line-height: 1.35;
+  color: var(--ink);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* The title of a content slide is its message, written as a full sentence. */
+h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 18px 0;
+  padding: 0 0 10px 0;
+  border-bottom: 3px solid var(--accent);
+}
+h2 { font-size: 27px; color: var(--accent); margin: 10px 0 8px 0; }
+h3 { font-size: 23px; color: var(--ink); margin: 6px 0 4px 0; }
+strong { color: var(--ink); }
+a { color: var(--accent); }
+ul, ol { margin: 4px 0; padding-left: 1.2em; }
+li { margin: 4px 0; }
+li::marker { color: var(--accent); }
+
+/* Figures: centred, scaled to the space below the title. */
+section p:has(> img) { text-align: center; margin: 4px 0; }
+img { max-width: 100%; max-height: 520px; }
+
+table { border-collapse: collapse; font-size: 20px; margin: 6px auto; }
+th { background: var(--soft); color: var(--ink); font-weight: 700; }
+th, td { border: 1px solid var(--line); padding: 5px 10px; text-align: left; vertical-align: top; }
+
+code { font-size: 0.9em; background: var(--soft); color: var(--ink); padding: 1px 4px; border-radius: 3px; }
+
+/* One line under a figure: what to read from it. */
+.take {
+  font-size: 22px;
+  color: var(--ink);
+  border-left: 5px solid var(--accent);
+  padding: 4px 12px;
+  margin-top: auto;
+  background: var(--soft);
+}
+.small { font-size: 20px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+.cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; align-items: start; }
+.box { border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; background: #fafafa; }
+.box h3 { margin-top: 0; }
+
+header {
+  font-size: 15px;
+  color: var(--muted);
+  top: 14px;
+  left: 56px;
+  right: 56px;
+}
+footer {
+  font-size: 14px;
+  color: var(--muted);
+  left: 56px;
+  right: 120px;
+  bottom: 16px;
+}
+section::after {
+  font-size: 15px;
+  color: var(--muted);
+  right: 56px;
+  bottom: 16px;
+}
+
+/* Title slide of a deck. */
+section.title {
+  justify-content: center;
+  background: #f8fafc;
+  border-left: 18px solid var(--accent);
+}
+section.title h1 { font-size: 46px; border: none; margin-bottom: 8px; }
+section.title h2 { color: var(--muted); font-weight: 400; font-size: 28px; }
+section.title p { font-size: 22px; color: var(--muted); }
+
+/* Divider at the start of each notebook. */
+section.notebook {
+  justify-content: center;
+  background: #f8fafc;
+}
+section.notebook h1 { font-size: 40px; border-bottom-color: var(--accent); }
+section.notebook p, section.notebook li { font-size: 24px; }
+section.notebook .nb { font-size: 22px; color: var(--accent); font-weight: 700; letter-spacing: 0.04em; }
+
+/* Module accent colours (same as the course map). */
+section.m01, section.m02 { --accent: #56B4E9; }
+section.m03 { --accent: #0072B2; }
+section.m04 { --accent: #E69F00; }
+section.m05 { --accent: #D55E00; }
+section.m06 { --accent: #009E73; }
+section.m07 { --accent: #CC79A7; }
+section.m08 { --accent: #6b7280; }
+
+/* Slides with a long table. */
+section.compact table { font-size: 17px; }
+section.compact th, section.compact td { padding: 3px 8px; }

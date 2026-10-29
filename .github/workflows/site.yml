@@ -1,7 +1,7 @@
 name: Website
 
-# Builds the course website (Jupyter Book 2), the in-browser edition (JupyterLite) and the field-safety
-# observatory, and deploys them to GitHub Pages. The monthly schedule refreshes the observatory from the
+# Builds the course website (Jupyter Book 2), the in-browser edition (JupyterLite), the lecture slides and the
+# field-safety observatory, and deploys them to GitHub Pages. The monthly schedule refreshes the observatory from the
 # public sources without committing anything: the deployed site carries the fresh data.
 on:
   push:
@@ -77,6 +77,12 @@ jobs:
           cp assets/* _build/html/assets/
           cp -r "$RUNNER_TEMP/lite" _build/html/lite
           test -f _build/html/lite/static/pyodide/pyodide.mjs
+      - name: Build the lecture slides (HTML, PDF and image-based PowerPoint)
+        run: |
+          python scripts/build_slides.py --pdf --pptx
+          mkdir -p _build/html/slides
+          cp -r slides/_build/*.html slides/_build/*.pdf slides/_build/*.pptx slides/_build/fig slides/_build/diagrams \
+            _build/html/slides/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _build/html

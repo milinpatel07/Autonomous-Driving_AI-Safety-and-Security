@@ -46,6 +46,10 @@ jobs:
           if python -m pytest -q classroom/assignment; then echo "empty template passed" && exit 1; fi
       - name: German edition in sync with the English notebooks
         run: python scripts/check_translations.py
+      - name: "Lecture slides: every figure reference resolves to a notebook output"
+        run: |
+          pip install "matplotlib>=3.6"
+          python scripts/build_slides.py --check
       - name: Safety case changes against the base branch (informational)
         if: github.event_name == 'pull_request'
         continue-on-error: true

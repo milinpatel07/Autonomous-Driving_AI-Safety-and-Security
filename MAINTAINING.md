@@ -112,3 +112,11 @@ badge in `README.md`.
    `python scripts/execute_notebooks.py --write <notebook>`.
 5. Before the pull request: `pytest -q`, `python scripts/check_course.py`,
    `python scripts/check_references.py --strict`; add a line under *Unreleased* in `CHANGELOG.md`.
+
+## Lecture slides
+
+The decks in `slides/` take their figures from the committed notebook outputs by cell id
+(`nb:<notebook>#<cell id>/<output>`). A slide therefore changes when its notebook is re-executed, and a slide
+whose cell was deleted fails the CI check `python scripts/build_slides.py --check`. When a re-run changes a
+number, update the slide title and speaker notes that quote it. The website workflow builds HTML, PDF and
+PowerPoint; locally: `python scripts/build_slides.py --pdf --pptx` (needs Node.js and a Chromium-based browser).

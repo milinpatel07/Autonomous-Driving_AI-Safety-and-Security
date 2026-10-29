@@ -30,6 +30,7 @@ project:
     - "references/**"
     - "lite/**"
     - "scripts/**"
+    - "slides/**"
   toc:
     - file: site/index.md
     - file: site/learning-paths.md
@@ -149,6 +150,8 @@ site:
       url: /industry
     - title: Teaching
       url: /teaching
+    - title: Slides
+      url: https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/slides/
     - title: Field data
       url: /observatory
     - title: Browser edition
