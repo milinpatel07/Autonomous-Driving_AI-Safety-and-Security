@@ -33,6 +33,7 @@ import json
 import os
 import re
 import struct
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -202,15 +203,25 @@ def fetch_kitti_file(archive: str, member: str) -> bytes:
     return data
 
 
-def _fetch_url(url: str, filename: str) -> Path:
+def _fetch_url(url: str, filename: str, attempts: int = 4, backoff_s: float = 5.0) -> Path:
+    """Download ``url`` once into the cache; retry transient failures with exponential backoff."""
     target = cache_dir() / filename
-    if not target.exists():
+    if target.exists():
+        return target
+    for attempt in range(attempts):
         try:
             with urllib.request.urlopen(url, timeout=120) as resp:
                 _atomic_write(target, resp.read())
+            return target
+        except urllib.error.HTTPError as exc:
+            if exc.code < 500 and exc.code != 429:      # client errors do not go away by retrying
+                raise DataUnavailable(f"cannot download {url}: {exc}") from None
+            error = exc
         except (urllib.error.URLError, http.client.HTTPException, OSError) as exc:
-            raise DataUnavailable(f"cannot download {url}: {exc}") from None
-    return target
+            error = exc
+        if attempt < attempts - 1:
+            time.sleep(backoff_s * 2 ** attempt)
+    raise DataUnavailable(f"cannot download {url} after {attempts} attempts: {error}") from None
 
 
 # --------------------------------------------------------------------------- KITTI parsing

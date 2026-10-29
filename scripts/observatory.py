@@ -962,7 +962,7 @@ def render_page(c: dict) -> str:
 
     L = []
     w = L.append
-    w("---\ntitle: Field safety observatory\nshort_title: Field observatory\n"
+    w("---\ntitle: Field-safety statistics\nshort_title: Field-safety statistics\n"
       "description: Monthly view of NHTSA Standing General Order crash reports for ADS and Level 2 ADAS, "
       "California testing disengagements and published exposure, with the caveats needed to read them.\n---\n")
     w("<!-- refresh-notice -->")

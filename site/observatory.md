@@ -1,6 +1,6 @@
 ---
-title: Field safety observatory
-short_title: Field observatory
+title: Field-safety statistics
+short_title: Field-safety statistics
 description: Monthly view of NHTSA Standing General Order crash reports for ADS and Level 2 ADAS, California testing disengagements and published exposure, with the caveats needed to read them.
 ---
 

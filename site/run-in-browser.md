@@ -1,10 +1,10 @@
 ---
-title: Run in your browser
+title: Browser edition
 description: Course notebooks that run entirely in the web browser, with no account, installation or server.
 ---
 
-Every notebook with an **Open in browser** link below runs **entirely in your web browser**: no account, no
-installation, no server.
+The notebooks with an *Open in browser* link below run entirely in the web browser, without an account, an
+installation or a server.
 Python runs inside the browser tab ([Pyodide](https://pyodide.org), Python compiled to WebAssembly) in a
 [JupyterLite](https://jupyterlite.readthedocs.io) notebook interface. This works where Google Colab is blocked
 or a Google login is not an option, for example on some company networks.
@@ -84,6 +84,6 @@ network request outside this website; the automated test of the browser edition 
 | 08-03 Standards Gaps and Open Problems in AV Safety | [Open in browser](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/lite/notebooks/index.html?path=08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb) |
 | 08-04 Safety Cases and Goal Structuring Notation (GSN) | [Open in browser](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/lite/notebooks/index.html?path=08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb) |
 | 08-05 Capstone: Pedestrian AEB from Requirement to Release Decision | No: needs PyTorch; KITTI data cannot be downloaded from a browser |
-| 08-06 Continuous Assurance: A Safety Case That Updates Itself | No: downloads data directly, which the browser edition does not support |
+| 08-06 Continuous Assurance: Maintaining the Safety Case as Code | No: downloads data directly, which the browser edition does not support |
 
 <!-- lite-notebooks:end -->

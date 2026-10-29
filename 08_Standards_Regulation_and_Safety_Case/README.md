@@ -11,7 +11,7 @@ Bringing it together: how the standards interlock, what type approval and regula
 | 03 | [Standards Gaps and Open Problems in AV Safety](03_standards_gaps.ipynb) | Advanced | ISO 26262:2018, ISO 21448:2022, ISO/SAE 21434:2021, ISO/PAS 8800:2024, ISO/TS 5083:2025, UL 4600 (3rd ed.) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb) |
 | 04 | [Safety Cases and Goal Structuring Notation (GSN)](04_safety_case_gsn.ipynb) | Advanced | GSN Community Standard v3 (2021), UL 4600 (3rd ed., 2023), ISO/TS 5083:2025, ISO/PAS 8800:2024 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb) |
 | 05 | [Capstone: Pedestrian AEB from Requirement to Release Decision](05_capstone_aeb_from_requirement_to_release.ipynb) | Advanced | ISO 26262:2018, ISO 21448:2022, ISO/SAE 21434:2021, ISO/PAS 8800:2024, UL 4600 (3rd ed.) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb) |
-| 06 | [Continuous Assurance: A Safety Case That Updates Itself](06_continuous_assurance.ipynb) | Advanced | UL 4600 (3rd ed., 2023), ISO/TS 5083:2025, ISO 21448:2022, ISO/PAS 8800:2024, GSN Community Standard v3 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/06_continuous_assurance.ipynb) |
+| 06 | [Continuous Assurance: Maintaining the Safety Case as Code](06_continuous_assurance.ipynb) | Advanced | UL 4600 (3rd ed., 2023), ISO/TS 5083:2025, ISO 21448:2022, ISO/PAS 8800:2024, GSN Community Standard v3 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/06_continuous_assurance.ipynb) |
 
 ## What you will learn
 
@@ -58,7 +58,7 @@ Bringing it together: how the standards interlock, what type approval and regula
 - Combine the TARA, the validation target and scenario coverage into a GSN-shaped evidence table.
 - Compute a release checklist and decision (*release / release with ODD restriction / do not release*), and explain why the evidence in a notebook can never be enough on its own.
 
-### 06 · Continuous Assurance: A Safety Case That Updates Itself
+### 06 · Continuous Assurance: Maintaining the Safety Case as Code
 
 - Explain why a safety case written once becomes wrong without anyone editing it, and which changes cause this.
 - State what UL 4600, ISO/TS 5083, ISO 21448 and ISO/PAS 8800 say about keeping the argument valid after release, and how much of that is publicly verifiable.

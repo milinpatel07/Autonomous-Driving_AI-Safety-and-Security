@@ -2,7 +2,7 @@
 
 The course cites standards and regulations that change, and downloads data from servers it does not
 control. Three automated checks catch most of the decay; this page says what to do when they fire. In addition,
-the website workflow (`site.yml`) refreshes the field-safety observatory from the NHTSA, California DMV and Waymo
+the website workflow (`site.yml`) refreshes the field-safety statistics page from the NHTSA, California DMV and Waymo
 files on the 17th of each month and redeploys the site; nothing is committed.
 
 | Check | When | What it does | When it fails |

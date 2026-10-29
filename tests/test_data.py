@@ -71,3 +71,38 @@ def test_parse_oxts_trailing_space_does_not_shift_columns():
     assert df["lon"].iloc[0] == pytest.approx(8.4371337908929)
     assert df["vf"].iloc[0] == pytest.approx(0.082894)       # forward velocity, not the next column
     assert df["orimode"].iloc[0] == 0
+
+
+def test_fetch_url_retries_transient_errors_then_succeeds(tmp_path, monkeypatch):
+    import io
+    import urllib.error
+    from avsafety import data as D
+    monkeypatch.setenv("AVSAFETY_CACHE", str(tmp_path))
+    calls = {"n": 0}
+
+    def flaky(url, timeout=None):
+        calls["n"] += 1
+        if calls["n"] < 3:
+            raise urllib.error.URLError("temporary failure")
+        return io.BytesIO(b'[{"ok": 1}]')
+
+    monkeypatch.setattr(D.urllib.request, "urlopen", flaky)
+    path = D._fetch_url("https://example.org/x.json", "retry/x.json", attempts=4, backoff_s=0)
+    assert calls["n"] == 3 and path.read_bytes() == b'[{"ok": 1}]'
+
+
+def test_fetch_url_does_not_retry_client_errors(tmp_path, monkeypatch):
+    import urllib.error
+    import pytest
+    from avsafety import data as D
+    monkeypatch.setenv("AVSAFETY_CACHE", str(tmp_path))
+    calls = {"n": 0}
+
+    def not_found(url, timeout=None):
+        calls["n"] += 1
+        raise urllib.error.HTTPError(url, 404, "Not Found", {}, None)
+
+    monkeypatch.setattr(D.urllib.request, "urlopen", not_found)
+    with pytest.raises(D.DataUnavailable):
+        D._fetch_url("https://example.org/missing.json", "retry/missing.json", attempts=4, backoff_s=0)
+    assert calls["n"] == 1
