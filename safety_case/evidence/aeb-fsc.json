@@ -1,0 +1,32 @@
+{
+  "schema": "avsafety.evidence/1",
+  "id": "aeb-fsc",
+  "title": "Decomposition, fault-tree check and timing (section 3)",
+  "values": {
+    "decomposition_sg01": [
+      "B(D)",
+      "B(D)"
+    ],
+    "fta_top_event_per_h": 8.0001e-10,
+    "fta_top_event_without_e2e_per_h": 8e-08,
+    "fhti_max_sg01_ms": 200,
+    "fhti_max_sg02_ms": 300
+  },
+  "units": {
+    "fta_top_event_per_h": "1/h",
+    "fhti_max_sg01_ms": "ms",
+    "fhti_max_sg02_ms": "ms"
+  },
+  "n": null,
+  "confidence": null,
+  "producer": {
+    "notebook": "08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb",
+    "code_hash": "sha256:2def87cb6e6261ba",
+    "avsafety_version": "1.2.0"
+  },
+  "recorded_at": "2026-10-29T08:47:49Z",
+  "dataset": {
+    "name": "none (analysis with illustrative ratings and rates)",
+    "licence": "n/a"
+  }
+}

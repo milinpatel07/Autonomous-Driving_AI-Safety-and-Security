@@ -1,0 +1,31 @@
+{
+  "schema": "avsafety.evidence/1",
+  "id": "aeb-tara",
+  "title": "TARA summary for the perception-to-brake path (section 6)",
+  "values": {
+    "open_threats": 1,
+    "residual_risk": [
+      2,
+      2,
+      2,
+      4
+    ],
+    "cal_ts01": 4,
+    "cal_ts02": 4,
+    "cal_ts03": 2,
+    "cal_ts04": 2
+  },
+  "units": {},
+  "n": null,
+  "confidence": null,
+  "producer": {
+    "notebook": "08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb",
+    "code_hash": "sha256:2def87cb6e6261ba",
+    "avsafety_version": "1.2.0"
+  },
+  "recorded_at": "2026-10-29T08:47:49Z",
+  "dataset": {
+    "name": "none (analysis with illustrative ratings and rates)",
+    "licence": "n/a"
+  }
+}

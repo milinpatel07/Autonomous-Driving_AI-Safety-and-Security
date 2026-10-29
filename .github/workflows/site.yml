@@ -1,10 +1,15 @@
 name: Website
 
+# Builds the course website (Jupyter Book 2), the in-browser edition (JupyterLite) and the field-safety
+# observatory, and deploys them to GitHub Pages. The monthly schedule refreshes the observatory from the
+# public sources without committing anything: the deployed site carries the fresh data.
 on:
   push:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  schedule:
+    - cron: "41 4 17 * *"   # 17th of each month, 04:41 UTC: after NHTSA's monthly release on the 15th
 
 permissions:
   contents: read
@@ -18,6 +23,7 @@ concurrency:
 env:
   # GitHub Pages serves project sites under /<repository-name>
   BASE_URL: /${{ github.event.repository.name }}
+  AVSAFETY_CACHE: ${{ github.workspace }}/.avcache
 
 jobs:
   build:
@@ -30,15 +36,47 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install Jupyter Book 2
-        run: pip install "jupyter-book>=2,<3"
+      # Raw files of earlier releases: used for conditional requests, as a fallback when a source is
+      # unreachable, and for the "what changed" section.
+      - uses: actions/cache@v4
+        with:
+          path: .avcache/observatory
+          key: observatory-${{ github.run_id }}
+          restore-keys: observatory-
+      - name: Install Jupyter Book 2 and the observatory's dependencies
+        run: pip install "jupyter-book>=2,<3" "numpy>=1.23" "scipy>=1.9" "pandas>=1.5" "matplotlib>=3.6"
+      - name: Refresh the field-safety observatory
+        if: github.event_name != 'pull_request'
+        run: |
+          set +e
+          python scripts/observatory.py
+          rc=$?
+          set -e
+          if [ "$rc" -eq 3 ]; then
+            echo "::warning::NHTSA data unavailable and not cached; deploying the committed snapshot with a notice."
+          elif [ "$rc" -ne 0 ]; then
+            exit "$rc"
+          fi
+      - name: Cache the Pyodide runtime and packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/avsafety-lite
+          key: lite-${{ hashFiles('lite/pyodide.json') }}
+      - name: Build the in-browser edition (JupyterLite + Pyodide)
+        run: |
+          python -m venv "$RUNNER_TEMP/lite-venv"
+          "$RUNNER_TEMP/lite-venv/bin/pip" install -r lite/requirements-lite.txt
+          "$RUNNER_TEMP/lite-venv/bin/python" scripts/build_lite.py \
+            --check-page site/run-in-browser.md --output-dir "$RUNNER_TEMP/lite"
       - name: Build HTML (notebooks are committed with outputs)
         run: jupyter-book build --html
-      - name: Add interactive tools and assets
+      - name: Add interactive tools, assets and the in-browser edition
         run: |
           mkdir -p _build/html/tools _build/html/assets
           cp site/tools/* _build/html/tools/
           cp assets/* _build/html/assets/
+          cp -r "$RUNNER_TEMP/lite" _build/html/lite
+          test -f _build/html/lite/static/pyodide/pyodide.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _build/html

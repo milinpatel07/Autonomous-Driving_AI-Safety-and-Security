@@ -11,30 +11,34 @@
 </p>
 
 **An open, runnable course on the safety and security of automated driving** — from how a vehicle perceives the
-world and predicts what others will do, to how you argue that it is safe and secure enough to deploy. Forty-seven
+world and predicts what others will do, to how you argue that it is safe and secure enough to deploy. Fifty
 Jupyter notebooks cover perception and prediction, real-world failures, **ISO 26262**, **ISO 21448 (SOTIF)**,
 **ISO/SAE 21434**, **ISO/PAS 8800**, runtime assurance, regulation and safety cases. Every notebook opens in Google
-Colab with one click and runs on a CPU; the perception, prediction and field-safety notebooks work on **real public
-data** (KITTI, NGSIM, NHTSA), fetched a few frames at a time.
+Colab with one click and runs on a CPU, and 24 of them [run in your browser with no account](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/run-in-browser).
+The perception, prediction, security and field-safety notebooks work on **real public data** (KITTI, NGSIM, NHTSA,
+ROAD CAN logs) and the simulated VeReMi V2X benchmark, fetched a few files at a time.
 
 <p align="center">
   <a href="https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/"><b>Website</b></a> ·
   <a href="#the-course"><b>Course</b></a> ·
+  <a href="#living-evidence"><b>Living evidence</b></a> ·
   <a href="#interactive-tools"><b>Interactive tools</b></a> ·
   <a href="#the-avsafety-toolkit"><b>Toolkit</b></a> ·
   <a href="templates/"><b>Templates</b></a> ·
   <a href="#learning-paths"><b>Learning paths</b></a> ·
-  <a href="https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/industry/"><b>For industry</b></a>
+  <a href="https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/industry/"><b>For industry</b></a> ·
+  <a href="#for-instructors"><b>For instructors</b></a>
 </p>
 
 ## Why this course
 
-- **Real data, not cartoons.** Detection, LiDAR, fusion, tracking and SOTIF triggering conditions are evaluated on real KITTI camera images and LiDAR scans against ground truth; prediction uses real NGSIM highway trajectories; field monitoring uses NHTSA's crash reports.
+- **Real data, not cartoons.** Detection, LiDAR, fusion, tracking and SOTIF triggering conditions are evaluated on real KITTI camera images and LiDAR scans against ground truth; prediction uses real NGSIM highway trajectories; intrusion detection uses real CAN-bus attack logs; field monitoring uses NHTSA's crash reports.
+- **A living course.** The capstone's safety case is kept as code and re-evaluated by CI whenever its evidence changes; an open SOTIF benchmark rates any detector against a declared requirement; a field-safety observatory refreshes the public crash data every month.
 - **For academia and industry.** Every notebook ends with an *In industry* section naming the work product it feeds (HARA, FMEDA, FTA, STPA, SOTIF analysis, TARA, safety case), who owns it and what assessors look for.
 - **End to end.** A recurring worked example, an automatic emergency braking (AEB) function that protects pedestrians, links the modules: from detection and tracking through HARA, fault trees, SOTIF and TARA to a GSN safety case and a release decision in the capstone.
-- **Correct and sourced.** Every notebook has been reviewed against the standards and primary sources (NTSB, NHTSA, UNECE, EUR-Lex, peer-reviewed papers). Normative tables are implemented once in a tested toolkit, and time-sensitive facts are dated.
-- **Runnable and tested.** Continuous integration executes every notebook, runs the toolkit's unit tests and checks every link and Colab badge on each change.
-- **Hands-on.** You build things: a LiDAR object pipeline, a Kalman tracker, a trajectory predictor, a fault-tree engine, an STPA analysis, a TARA pipeline, a CAN intrusion detector, conformal prediction sets, a safety-shielded motion planner and a safety-case checker.
+- **Correct and sourced.** Every notebook has been checked against the standards and public primary sources where available (NTSB, NHTSA, UNECE, EUR-Lex, peer-reviewed papers); items that could not be verified are flagged in the reference registry. Normative tables are implemented once in a tested toolkit, time-sensitive facts are dated, and every clause the course cites is registered with its source in [`references/normative.yaml`](references/normative.yaml) and checked for consistency in CI.
+- **Runnable, tested and maintained.** Continuous integration executes every notebook and runs the toolkit's unit tests on each change; monthly jobs watch the cited regulations and datasets for new versions and re-run the course against the live sources ([MAINTAINING.md](MAINTAINING.md)).
+- **Hands-on.** You build things: a LiDAR object pipeline, a Kalman tracker, a trajectory predictor, a fault-tree engine, an STPA analysis, a TARA pipeline, a CAN intrusion detector, a V2X misbehaviour detector, conformal prediction sets, a safety-shielded motion planner and a safety case that updates itself.
 
 <p align="center">
   <img src="assets/real-data-kitti.jpg" alt="A real KITTI frame: LiDAR points projected onto the camera image and 3D boxes around pedestrians, cyclists and cars, with a bird's-eye view of the same scan" width="100%">
@@ -52,11 +56,11 @@ data** (KITTI, NGSIM, NHTSA), fetched a few frames at a time.
 | [01 · Perception and Prediction](01_Perception/README.md) | SAE levels, ODD, real camera and LiDAR data, detection, VRUs, fusion, tracking, datasets, trajectory prediction | 9 |
 | [02 · Failures and Robustness](02_Failures_and_Robustness/README.md) | incident investigations, corner cases, OOD detection, adversarial attacks | 4 |
 | [03 · Functional Safety (ISO 26262)](03_Functional_Safety_ISO26262/README.md) | lifecycle, HARA, FMEA/FMEDA, fault tree analysis, STPA, V&V | 6 |
-| [04 · SOTIF (ISO 21448)](04_SOTIF_ISO21448/README.md) | triggering conditions measured on real data, scenarios, OOD monitoring, simulation, RSS | 5 |
-| [05 · Cybersecurity (ISO/SAE 21434)](05_Cybersecurity_ISO21434/README.md) | framework, TARA, attack surfaces, CAN intrusion detection | 4 |
+| [04 · SOTIF (ISO 21448)](04_SOTIF_ISO21448/README.md) | triggering conditions measured on real data, scenarios, OOD monitoring, simulation, RSS, an open SOTIF benchmark | 6 |
+| [05 · Cybersecurity (ISO/SAE 21434)](05_Cybersecurity_ISO21434/README.md) | framework, TARA, attack surfaces, CAN intrusion detection on real attack logs, V2X misbehaviour detection | 5 |
 | [06 · AI Safety (ISO/PAS 8800)](06_AI_Safety_ISO_PAS_8800/README.md) | uncertainty, ensembles, calibration and conformal prediction on real detections, XAI, end-to-end and foundation models, statistical validation | 8 |
 | [07 · Runtime Assurance and Operations](07_Runtime_Assurance_and_Operations/README.md) | runtime ODD monitoring, safe planning and fallback, human factors and takeover, V2X, field monitoring with NHTSA data, deployment | 6 |
-| [08 · Standards, Regulation and Safety Case](08_Standards_Regulation_and_Safety_Case/README.md) | standards integration, type approval, gaps, GSN safety cases, capstone: AEB from requirement to release | 5 |
+| [08 · Standards, Regulation and Safety Case](08_Standards_Regulation_and_Safety_Case/README.md) | standards integration, type approval, gaps, GSN safety cases, capstone: AEB from requirement to release, continuous assurance | 6 |
 
 Expand a module to open any notebook directly in Colab:
 
@@ -105,7 +109,7 @@ Expand a module to open any notebook directly in Colab:
 </details>
 
 <details>
-<summary><b>04 · SOTIF (ISO 21448)</b> — 5 notebooks</summary>
+<summary><b>04 · SOTIF (ISO 21448)</b> — 6 notebooks</summary>
 
 | # | Notebook | Level | Open |
 |---|---|---|---|
@@ -114,11 +118,12 @@ Expand a module to open any notebook directly in Colab:
 | 04-03 | [OOD Monitoring as a SOTIF Safety Measure](04_SOTIF_ISO21448/03_ood_monitoring_as_safety_measure.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF_ISO21448/03_ood_monitoring_as_safety_measure.ipynb) |
 | 04-04 | [Simulation-Based SOTIF Validation](04_SOTIF_ISO21448/04_simulation_based_validation.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF_ISO21448/04_simulation_based_validation.ipynb) |
 | 04-05 | [Criticality Metrics and Responsibility-Sensitive Safety (RSS)](04_SOTIF_ISO21448/05_criticality_metrics_and_rss.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF_ISO21448/05_criticality_metrics_and_rss.ipynb) |
+| 04-06 | [An Open SOTIF Perception Benchmark](04_SOTIF_ISO21448/06_sotif_benchmark.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/04_SOTIF_ISO21448/06_sotif_benchmark.ipynb) |
 
 </details>
 
 <details>
-<summary><b>05 · Cybersecurity (ISO/SAE 21434)</b> — 4 notebooks</summary>
+<summary><b>05 · Cybersecurity (ISO/SAE 21434)</b> — 5 notebooks</summary>
 
 | # | Notebook | Level | Open |
 |---|---|---|---|
@@ -126,6 +131,7 @@ Expand a module to open any notebook directly in Colab:
 | 05-02 | [Threat Analysis and Risk Assessment (TARA)](05_Cybersecurity_ISO21434/02_tara.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/05_Cybersecurity_ISO21434/02_tara.ipynb) |
 | 05-03 | [Attack Surface Analysis for Autonomous Vehicles](05_Cybersecurity_ISO21434/03_attack_surface_analysis.ipynb) | Intermediate | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/05_Cybersecurity_ISO21434/03_attack_surface_analysis.ipynb) |
 | 05-04 | [CAN Bus Security and Intrusion Detection](05_Cybersecurity_ISO21434/04_can_bus_intrusion_detection.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/05_Cybersecurity_ISO21434/04_can_bus_intrusion_detection.ipynb) |
+| 05-05 | [V2X Misbehaviour Detection](05_Cybersecurity_ISO21434/05_v2x_misbehaviour_detection.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/05_Cybersecurity_ISO21434/05_v2x_misbehaviour_detection.ipynb) |
 
 </details>
 
@@ -160,7 +166,7 @@ Expand a module to open any notebook directly in Colab:
 </details>
 
 <details>
-<summary><b>08 · Standards, Regulation and Safety Case</b> — 5 notebooks</summary>
+<summary><b>08 · Standards, Regulation and Safety Case</b> — 6 notebooks</summary>
 
 | # | Notebook | Level | Open |
 |---|---|---|---|
@@ -169,6 +175,7 @@ Expand a module to open any notebook directly in Colab:
 | 08-03 | [Standards Gaps and Open Problems in AV Safety](08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/03_standards_gaps.ipynb) |
 | 08-04 | [Safety Cases and Goal Structuring Notation (GSN)](08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/04_safety_case_gsn.ipynb) |
 | 08-05 | [Capstone: Pedestrian AEB from Requirement to Release Decision](08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb) |
+| 08-06 | [Continuous Assurance: A Safety Case That Updates Itself](08_Standards_Regulation_and_Safety_Case/06_continuous_assurance.ipynb) | Advanced | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/milinpatel07/Autonomous-Driving_AI-Safety-and-Security/blob/main/08_Standards_Regulation_and_Safety_Case/06_continuous_assurance.ipynb) |
 
 </details>
 
@@ -178,18 +185,33 @@ Expand a module to open any notebook directly in Colab:
 
 | Goal | Path |
 |---|---|
-| **Complete course** | 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08, ending with the capstone 08-05 |
-| **Functional safety engineer** | 03-01 → 03-02 → 03-03 → 03-04 → 03-05 → 03-06 → 08-04 → 08-05 |
-| **SOTIF / perception safety engineer** | 01-04 → 01-05 → 04-01 → 04-02 → 04-03 → 04-05 → 06-08 |
+| **Complete course** | 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08, ending with the capstone 08-05 and continuous assurance 08-06 |
+| **Functional safety engineer** | 03-01 → 03-02 → 03-03 → 03-04 → 03-05 → 03-06 → 08-04 → 08-05 → 08-06 |
+| **SOTIF / perception safety engineer** | 01-04 → 01-05 → 04-01 → 04-02 → 04-03 → 04-05 → 04-06 → 06-08 |
 | **ML / perception engineer** | 01-02 → 01-03 → 01-04 → 01-06 → 01-07 → 01-09 → 06-02 … 06-05 → 06-07 |
-| **Security engineer** | 05-01 → 05-02 → 05-03 → 05-04 → 02-04 → 07-04 → 08-01 |
+| **Security engineer** | 05-01 → 05-02 → 05-03 → 05-04 → 05-05 → 02-04 → 07-04 → 08-01 |
 | **Validation and operations** | 04-02 → 04-04 → 06-08 → 07-01 → 07-02 → 07-03 → 07-05 |
-| **Manager, assessor, regulator** | 01-01 → 02-01 → 08-01 → 08-02 → 07-05 → 08-04 → 08-05 |
+| **Manager, assessor, regulator** | 01-01 → 02-01 → 08-01 → 08-02 → 07-05 → 08-04 → 08-05 → 08-06 |
 | **Short introduction** | 01-01 → 03-02 → 08-05 and the [interactive tools](#interactive-tools) |
 
 The [industry map](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/industry/) links every
 engineering work product (HARA, FMEDA, FTA, STPA, SOTIF analysis, TARA, safety case …) to the notebooks and tools
 that support it.
+
+## Living evidence
+
+Three parts of the course are kept current by code rather than by hand:
+
+| | What it is | How it stays current |
+|---|---|---|
+| [**A safety case that updates itself**](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/safety-case) | The capstone's pedestrian-AEB safety argument as code ([`safety_case/`](safety_case/README.md), `avsafety.assurance`): every claim is linked to the notebook and metric that produce its evidence | CI re-runs the producing notebooks on each change and reports any claim whose status flips; evidence from changed code is marked stale ([08-06](08_Standards_Regulation_and_Safety_Case/06_continuous_assurance.ipynb)) |
+| [**Open SOTIF perception benchmark**](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/benchmark) | Any camera detector on 120 real KITTI frames under physically modelled fog, low light and lens dirt: recall with confidence intervals, a triggering-condition table, the supported speed and a release verdict against a declared requirement; optional LiDAR track on SOTIF-PCOD | Versioned split; results submitted by pull request are validated against a schema ([04-06](04_SOTIF_ISO21448/06_sotif_benchmark.ipynb), [`benchmark/`](benchmark/README.md)) |
+| [**Field-safety observatory**](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/observatory) | NHTSA Standing General Order crash reports for ADS and Level 2 ADAS, California DMV disengagements and published exposure, with the caveats needed to read them | Rebuilt from the official files every month (`scripts/observatory.py`, run by the website workflow) |
+
+```bash
+python -m avsafety.bench --model torchvision:fasterrcnn_mobilenet_v3_large_fpn --out results.json   # benchmark a detector
+python scripts/safety_case.py --report                                                              # evaluate the safety case
+```
 
 ## Interactive tools
 
@@ -202,6 +224,15 @@ they agree):
 | [TARA risk calculator](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/tools/tara.html) | Attack potential, attack vector or CVSS v3.1 → feasibility → risk value and CAL (ISO/SAE 21434) |
 | [RSS safe distance](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/tools/rss.html) | Responsibility-Sensitive Safety minimum gap, TTC, headway and DRAC |
 | [How many miles?](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/tools/miles.html) | Failure-free distance needed to demonstrate a target rate (Kalra & Paddock, 2016) |
+
+## For instructors
+
+The course can be adopted as a whole (a 14-week, 5-ECTS semester plan or a 5-day industry training) or notebook by
+notebook. The [teaching guide](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/teaching)
+gives assessable learning outcomes per module, the schedule, an assessment design with a rubric for the capstone, and
+how institutions can certify results. Notebooks in Modules 03, 04 and 05 contain auto-checked exercises
+(`avsafety.exercises`), and [`classroom/`](classroom/README.md) is an autograded assignment template whose tests
+compute every reference answer with the toolkit.
 
 ## The avsafety toolkit
 
@@ -227,8 +258,9 @@ crashes = data.nhtsa_sgo("ADS")        # NHTSA Standing General Order crash repo
 
 See [avsafety/README.md](avsafety/README.md) for all modules: ISO 26262 (ASIL, decomposition, SPFM/LFM/PMHF),
 ISO/SAE 21434 (attack potential, risk, CAL, CVSS), SOTIF metrics and RSS, statistical validation, uncertainty
-(calibration, temperature scaling, conformal prediction), scenario coverage, and real-data loaders for KITTI,
-NGSIM and NHTSA crash reports.
+(calibration, temperature scaling, conformal prediction), scenario coverage, physically based perturbations, the
+SOTIF benchmark, the safety case as code, auto-checked exercises, and real-data loaders for KITTI, NGSIM, NHTSA crash
+reports, ROAD CAN logs and VeReMi V2X messages.
 
 ## Templates
 
@@ -240,7 +272,14 @@ Professional, editable templates with worked examples that match the notebooks:
 ## Getting started
 
 **Google Colab (recommended):** click any *Open in Colab* badge. Nothing to install: real-data notebooks install
-the course toolkit and download the frames they need on first run.
+the course toolkit and download the files they need on first run.
+
+**In your browser, no account:** [24 notebooks](https://milinpatel07.github.io/Autonomous-Driving_AI-Safety-and-Security/run-in-browser)
+run entirely in the web browser (JupyterLite and Pyodide): no login, no installation, nothing leaves your device, and
+it works where Colab is blocked. Notebooks that need PyTorch or the KITTI and NHTSA downloads run on Colab.
+
+**Deutsche Ausgabe:** die sechs Kern-Notebooks (SAE-Stufen und ODD, G&R/HARA, SOTIF, TARA, ISO/PAS 8800,
+Abschlussprojekt AEB) auf Deutsch – [de/README.md](de/README.md).
 
 **Locally:**
 
@@ -249,7 +288,7 @@ git clone https://github.com/milinpatel07/Autonomous-Driving_AI-Safety-and-Secur
 cd Autonomous-Driving_AI-Safety-and-Security
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-pip install -e ".[data]"      # the course toolkit with its real-data loaders
+pip install -e ".[data,assurance,bench]"      # the course toolkit with real-data loaders, safety case and benchmark
 jupyter lab
 ```
 
@@ -269,8 +308,8 @@ More on the [About page](https://milinpatel07.github.io/Autonomous-Driving_AI-Sa
 
 ## Contributing
 
-Corrections, new topics and translations are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) and the
-[roadmap](ROADMAP.md) for ideas.
+Corrections, new topics, benchmark results and translations are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md),
+[MAINTAINING.md](MAINTAINING.md), the [changelog](CHANGELOG.md) and the [roadmap](ROADMAP.md).
 
 ## Citation
 

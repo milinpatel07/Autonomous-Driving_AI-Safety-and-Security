@@ -1,0 +1,290 @@
+# Assurance case for pedestrian AEB (course running example), evaluated by avsafety.assurance.
+# Source of truth for ratings: 03-02 HARA and 05-02 TARA; argument structure: 08-04 and the capstone 08-05.
+# Acceptance criteria live HERE, fixed before the evidence is produced; notebooks only report measurements.
+# ASIL, PMHF target, permitted decompositions and CAL are computed from the entries below with avsafety.
+name: aeb_pedestrian
+title: Pedestrian AEB - assurance case
+evidence: evidence
+
+hara:   # 03-02 (S/E/C classes; FTTI illustrative, as in 03-02)
+  hazardous_events:
+    HE-01: {S: S3, E: E2, C: C2, goal: SG-02, situation: "Urban, 30-50 km/h, pedestrian steps into path"}
+    HE-02: {S: S3, E: E3, C: C2, goal: SG-02, situation: "Rural/motorway, approaching stationary traffic jam end"}
+    HE-03: {S: S3, E: E4, C: C3, goal: SG-01, situation: "Motorway, 100-130 km/h, follower at ~1 s headway"}
+    HE-04: {S: S1, E: E4, C: C2, goal: SG-01, situation: "Urban, 30-50 km/h, follower close behind"}
+  safety_goals:
+    SG-01: {text: "Avoid unintended AEB deceleration", ftti_ms: 300}
+    SG-02: {text: "Avoid omission of AEB deceleration when a collision with a pedestrian or a stationary vehicle is imminent", ftti_ms: 500}
+
+tara:   # 05-02 (threats on the perception -> brake path; CAL from impact and the most remote attack vector)
+  threats:
+    TS-01: {text: "Forged brake-request frames on CAN-FD", impact: Severe, attack_vector: Network, goal: SG-01}
+    TS-02: {text: "Manipulated DNN weights via a malicious update", impact: Severe, attack_vector: Network, goal: SG-02}
+    TS-03: {text: "Physical adversarial patch suppresses pedestrian detections", impact: Severe, attack_vector: Physical, goal: SG-02}
+    TS-04: {text: "Camera dazzled by a high-power light source", impact: Severe, attack_vector: Physical, goal: SG-02}
+
+nodes:
+  - id: G1
+    type: Goal
+    text: "Pedestrian AEB is acceptably safe for release within its ODD (urban pedestrian sub-scope, <= 60 km/h)"
+    in_context_of: [C1, C2]
+    supported_by: [S1]
+  - id: C1
+    type: Context
+    text: "Item: AEB, active 10-130 km/h; camera + radar; driver responsible (outside SAE J3016 levels)"
+    notebook: 03_Functional_Safety_ISO26262/02_hara.ipynb
+  - id: C2
+    type: Context
+    text: "HARA: SG-01 ASIL {SG-01.asil}, FTTI {SG-01.ftti_ms} ms; SG-02 ASIL {SG-02.asil}, FTTI {SG-02.ftti_ms} ms"
+    notebook: 03_Functional_Safety_ISO26262/02_hara.ipynb
+  - id: S1
+    type: Strategy
+    text: "Argue over the sources of hazardous behaviour, validation and operation"
+    in_context_of: [J1]
+    supported_by: [G2, G3, G4, G5, G6, G7]
+  - id: J1
+    type: Justification
+    text: "Faults, insufficiencies, ML causes and attacks are complementary; no single standard covers them"
+    notebook: 08_Standards_Regulation_and_Safety_Case/01_standards_integration.ipynb
+
+  # ---------------- ISO 26262
+  - id: G2
+    type: Goal
+    text: "E/E malfunctions do not violate SG-01 or SG-02 (ISO 26262)"
+    supported_by: [S2]
+  - id: S2
+    type: Strategy
+    text: "Argue over each safety goal of the HARA"
+    supported_by: [G2.0, G2.1, G2.2]
+  - id: G2.0
+    type: Goal
+    text: "Every ASIL-rated hazardous event has a safety goal; ASIL and FTTI used in the release analysis match the HARA"
+    supported_by: [Sn2.0]
+  - id: Sn2.0
+    type: Solution
+    text: "HARA summary recomputed in the capstone (08-05 section 2)"
+    evidence: aeb-hara
+    criterion: "uncovered_events == 0 and sg01_asil == SG-01.asil and sg02_asil == SG-02.asil and sg01_ftti_ms == SG-01.ftti_ms and sg02_ftti_ms == SG-02.ftti_ms"
+  - id: G2.1
+    type: Goal
+    text: "SG-01 (ASIL {SG-01.asil}): E/E faults do not cause unintended AEB deceleration"
+    in_context_of: [A2.1]
+    supported_by: [Sn2.1a, Sn2.1b, Sn2.1c]
+  - id: A2.1
+    type: Assumption
+    text: "Decision and plausibility channels are sufficiently independent (DFA, 03-02)"
+  - id: Sn2.1a
+    type: Solution
+    text: "ASIL decomposition of SG-01 is permitted by ISO 26262-9"
+    evidence: aeb-fsc
+    criterion: "decomposition_sg01 in SG-01.decompositions"
+  - id: Sn2.1b
+    type: Solution
+    text: "Fault-tree check: top event rate below the PMHF target of the SG-01 ASIL"
+    evidence: aeb-fsc
+    criterion: "fta_top_event_per_h < SG-01.pmhf_target_per_h"
+  - id: Sn2.1c
+    type: Solution
+    text: "Fault handling time of every SG-01 mechanism within FTTI"
+    evidence: aeb-fsc
+    criterion: "fhti_max_sg01_ms <= SG-01.ftti_ms"
+  - id: G2.2
+    type: Goal
+    text: "SG-02 (ASIL {SG-02.asil}) E/E part: loss of perception is detected within {SG-02.ftti_ms} ms"
+    supported_by: [Sn2.2]
+  - id: Sn2.2
+    type: Solution
+    text: "Frame-loss detection timing"
+    evidence: aeb-fsc
+    criterion: "fhti_max_sg02_ms <= SG-02.ftti_ms"
+
+  # ---------------- ISO 21448
+  - id: G3
+    type: Goal
+    text: "Functional insufficiencies of pedestrian perception are acceptably reduced (ISO 21448)"
+    in_context_of: [C3]
+    supported_by: [S3]
+  - id: C3
+    type: Context
+    text: "PR-01: recall >= 0.90 at 95 % one-sided confidence for braking-relevant pedestrians"
+    notebook: 08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb
+  - id: S3
+    type: Strategy
+    text: "Argue over the performance requirement PR-01 and runtime measures"
+    supported_by: [G3.1, G3.2, G3.3]
+  - id: G3.1
+    type: Goal
+    text: "PR-01 holds in the specified ODD (<= 60 km/h)"
+    supported_by: [Sn3.1a, Sn3.1b]
+  - id: Sn3.1a
+    type: Solution
+    text: "PR-01 check on 40 KITTI frames (capstone 4.5)"
+    evidence: aeb-pr01
+    criterion: "recall_lower_95 >= 0.90"
+  - id: Sn3.1b
+    type: Solution
+    text: "Supplier detector reaches recall 0.90 at some operating threshold (01-05)"
+    evidence: vru-recall-kitti
+    criterion: "max_recall_any_threshold >= 0.90"
+  - id: G3.2
+    type: Goal
+    text: "PR-01 holds in a restricted ODD that is enforced by design"
+    supported_by: [Sn3.2]
+  - id: Sn3.2
+    type: Solution
+    text: "Speed-dependent PR-01 check (capstone 4.5)"
+    evidence: aeb-pr01
+    criterion: "v_star_kmh != null"
+  - id: G3.3
+    type: Goal
+    text: "Degraded camera conditions (fog, low light) are detected at runtime so that the function degrades"
+    in_context_of: [A3.3]
+    supported_by: [Sn3.3]
+  - id: A3.3
+    type: Assumption
+    text: "Physically based fog and low light rendered on real KITTI frames represent real degradations"
+  - id: Sn3.3
+    type: Solution
+    text: "OOD monitor: requirement R-MON-1, TPR >= 0.90 at 95 % confidence (04-03)"
+    evidence: ood-monitor-kitti
+    criterion: "tpr_lower_95 >= 0.90"
+
+  # ---------------- ISO/PAS 8800
+  - id: G4
+    type: Goal
+    text: "ML-specific insufficiencies of the detector are controlled (ISO/PAS 8800)"
+    supported_by: [S4]
+  - id: S4
+    type: Strategy
+    text: "Argue over the uncertainty evidence the function relies on"
+    supported_by: [G4.1, G4.2, G4.3]
+  - id: G4.1
+    type: Goal
+    text: "Detector scores are calibrated where fusion uses them as probabilities"
+    supported_by: [Sn4.1a, Sn4.1b]
+  - id: Sn4.1a
+    type: Solution
+    text: "Person-score ECE after temperature scaling, held-out frames (capstone 5)"
+    evidence: aeb-calibration
+    criterion: "ece_after <= 0.05"
+  - id: Sn4.1b
+    type: Solution
+    text: "Detection ECE after Platt scaling, held-out frames (06-04)"
+    evidence: detection-calibration-kitti
+    criterion: "dece_platt <= 0.05"
+  - id: G4.2
+    type: Goal
+    text: "A score threshold bounds the pedestrian miss rate at alpha = 0.10 (split conformal)"
+    supported_by: [Sn4.2]
+  - id: Sn4.2
+    type: Solution
+    text: "Conformal recall threshold and held-out check (capstone 5)"
+    evidence: aeb-conformal
+    criterion: "tau_conf > 0.01 and heldout_recall >= heldout_recall_min"
+  - id: G4.3
+    type: Goal
+    text: "Distance intervals cover the true pedestrian distance with probability >= 0.90"
+    in_context_of: [A4.3, J4.3]
+    supported_by: [Sn4.3]
+  - id: A4.3
+    type: Assumption
+    text: "Objects in operation are exchangeable with the calibration objects (incl. truncated ones)"
+    evidence: distance-conformal-kitti
+    criterion: "coverage_truncated >= 0.88"
+  - id: J4.3
+    type: Justification
+    text: "Tolerance 0.02 is about two binomial standard deviations at n = 950 and coverage 0.90"
+  - id: Sn4.3
+    type: Solution
+    text: "Mondrian conformal intervals, pedestrian test coverage (06-05)"
+    evidence: distance-conformal-kitti
+    criterion: "coverage_pedestrian >= 0.88"
+
+  # ---------------- ISO/SAE 21434
+  - id: G5
+    type: Goal
+    text: "Cybersecurity threats on the perception-to-brake path are treated (ISO/SAE 21434)"
+    in_context_of: [C5]
+    supported_by: [Sn5]
+  - id: C5
+    type: Context
+    text: "TARA: TS-01 CAL {TS-01.cal}, TS-02 CAL {TS-02.cal}, TS-03 CAL {TS-03.cal}, TS-04 CAL {TS-04.cal}"
+    notebook: 05_Cybersecurity_ISO21434/02_tara.ipynb
+  - id: Sn5
+    type: Solution
+    text: "TARA summary: residual risks and CALs (capstone 6)"
+    evidence: aeb-tara
+    criterion: "open_threats == 0 and cal_ts01 == TS-01.cal and cal_ts02 == TS-02.cal and cal_ts03 == TS-03.cal and cal_ts04 == TS-04.cal"
+
+  # ---------------- validation
+  - id: G6
+    type: Goal
+    text: "Validation targets V-01 and V-02 are demonstrated for the ODD"
+    in_context_of: [C6]
+    supported_by: [S6]
+  - id: C6
+    type: Context
+    text: "V-01: <= 1 unintended deceleration per 10^6 km; V-02: miss probability <= 10^-2 per encounter"
+    notebook: 08_Standards_Regulation_and_Safety_Case/05_capstone_aeb_from_requirement_to_release.ipynb
+  - id: S6
+    type: Strategy
+    text: "Argue over the statistical method, the exposure achieved and scenario coverage"
+    supported_by: [G6.0, G6.1, G6.2]
+  - id: G6.0
+    type: Goal
+    text: "The rate bounds used for V-01 and V-02 are conservative (exact Poisson intervals)"
+    supported_by: [Sn6.0]
+  - id: Sn6.0
+    type: Solution
+    text: "Monte Carlo coverage of the exact Poisson interval (06-08)"
+    evidence: poisson-interval-coverage
+    criterion: "simulated_coverage >= nominal_coverage"
+  - id: G6.1
+    type: Goal
+    text: "Fleet exposure and proving-ground encounters demonstrate V-01 and V-02"
+    undeveloped: true
+    notebook: 06_AI_Safety_ISO_PAS_8800/08_statistical_safety_validation.ipynb
+    notes: "No vehicle-level validation run yet (capstone 7)"
+  - id: G6.2
+    type: Goal
+    text: "Executed scenarios cover the ODD pairwise (100 %)"
+    undeveloped: true
+    notebook: 04_SOTIF_ISO21448/04_simulation_based_validation.ipynb
+    notes: "Executed coverage is KITTI only; the planned simulation set is not yet run (capstone 7)"
+
+  # ---------------- operation (UL 4600 SPIs, ISO 21448 cl. 13)
+  - id: G7
+    type: Goal
+    text: "The argument stays valid in operation: SPIs tied to claims stay within thresholds"
+    in_context_of: [C7]
+    supported_by: [S7]
+  - id: C7
+    type: Context
+    text: "Pre-SOP proxy: SPI pipeline on Waymo rider-only crashes (NHTSA SGO + Waymo hub), Jul 2025-Jun 2026"
+    notebook: 07_Runtime_Assurance_and_Operations/05_field_safety_monitoring.ipynb
+  - id: S7
+    type: Strategy
+    text: "Argue over lagging and leading SPIs; evidence older than 200 days is stale"
+    supported_by: [G7.1, G7.2]
+  - id: G7.1
+    type: Goal
+    text: "Injury-crash rate <= 50 % of the matched human benchmark (lagging SPI)"
+    supported_by: [Sn7.1]
+  - id: Sn7.1
+    type: Solution
+    text: "Injury-crash SPI, 12 months, exact Poisson 95 % interval (07-05)"
+    evidence: field-spi-waymo
+    criterion: "injury_high <= injury_threshold"
+    refute: "injury_low > injury_threshold"
+    max_age_days: 200
+  - id: G7.2
+    type: Goal
+    text: "Crashes involving a VRU <= 0.10 per 10^6 miles (lagging SPI, illustrative threshold)"
+    supported_by: [Sn7.2]
+  - id: Sn7.2
+    type: Solution
+    text: "VRU-crash SPI, 12 months, exact Poisson 95 % interval (07-05)"
+    evidence: field-spi-waymo
+    criterion: "vru_high <= vru_threshold"
+    refute: "vru_low > vru_threshold"
+    max_age_days: 200

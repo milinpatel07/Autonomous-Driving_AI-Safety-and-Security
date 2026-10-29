@@ -1,0 +1,2009 @@
+{
+ "schema_version": "1.0",
+ "benchmark": {
+  "name": "SOTIF perception benchmark (KITTI camera track)",
+  "spec_version": "1",
+  "spec_sha256": "ecca51391760f9ee9b598ee9155942cc385333f56369f2b47c29552878e7f98e"
+ },
+ "submission": {
+  "model": "torchvision:fasterrcnn_mobilenet_v3_large_fpn",
+  "weights": "FasterRCNN_MobileNet_V3_Large_FPN_Weights.COCO_V1 (COCO)",
+  "framework": "torch 2.15.0+cpu, torchvision 0.29.2+cpu",
+  "training_data": "COCO 2017 train (no KITTI)",
+  "name": "fasterrcnn_mobilenet_v3_large_fpn",
+  "score_threshold": 0.5,
+  "date": "2026-10-29",
+  "avsafety_version": "1.1.0"
+ },
+ "run": {
+  "runtime_s": 1123.6,
+  "n_frames": 120,
+  "conditions": [
+   "clear",
+   "fog_200",
+   "fog_100",
+   "fog_50",
+   "fog_25",
+   "low_light_64",
+   "low_light_256",
+   "lens_dirt_25"
+  ],
+  "official": true,
+  "hardware": "x86_64, Linux, Python 3.13.17"
+ },
+ "requirement": {
+  "id": "PR-01",
+  "cls": "pedestrian",
+  "min_recall": 0.9,
+  "confidence": 0.95,
+  "method": "clopper-pearson",
+  "max_speed_kmh": 60.0,
+  "reaction_s": 0.6,
+  "decel_mps2": 6.0,
+  "lateral_m": 4.0,
+  "min_height_px": 25.0,
+  "max_occlusion": 1,
+  "max_truncation": null,
+  "speeds_kmh": [
+   10,
+   15,
+   20,
+   25,
+   30,
+   35,
+   40,
+   45,
+   50,
+   55,
+   60
+  ],
+  "odd_conditions": [
+   "clear",
+   "low_light_64"
+  ],
+  "max_fp_per_frame": null,
+  "source": "08-05 capstone PR-01: per-frame pedestrian recall >= 0.90 with 95 % one-sided confidence within the stopping distance at 60 km/h (0.6 s, 6 m/s^2), |lateral| <= 4 m, occlusion <= 1, height >= 25 px",
+  "range_m": 33.15
+ },
+ "metrics": {
+  "by_condition": [
+   {
+    "condition": "clear",
+    "class": "pedestrian",
+    "n": 520,
+    "detected": 222,
+    "recall": 0.4269,
+    "ci_low": 0.384,
+    "ci_high": 0.4707,
+    "fp": 147,
+    "fp_per_frame": 1.225,
+    "fp_per_frame_ci": [
+     1.035,
+     1.4398
+    ]
+   },
+   {
+    "condition": "clear",
+    "class": "cyclist",
+    "n": 70,
+    "detected": 30,
+    "recall": 0.4286,
+    "ci_low": 0.3109,
+    "ci_high": 0.5525,
+    "fp": 28,
+    "fp_per_frame": 0.2333,
+    "fp_per_frame_ci": [
+     0.155,
+     0.3372
+    ]
+   },
+   {
+    "condition": "clear",
+    "class": "car",
+    "n": 213,
+    "detected": 163,
+    "recall": 0.7653,
+    "ci_low": 0.7025,
+    "ci_high": 0.8205,
+    "fp": 113,
+    "fp_per_frame": 0.9417,
+    "fp_per_frame_ci": [
+     0.7761,
+     1.1321
+    ]
+   },
+   {
+    "condition": "fog_200",
+    "class": "pedestrian",
+    "n": 520,
+    "detected": 218,
+    "recall": 0.4192,
+    "ci_low": 0.3764,
+    "ci_high": 0.463,
+    "fp": 156,
+    "fp_per_frame": 1.3,
+    "fp_per_frame_ci": [
+     1.104,
+     1.5208
+    ]
+   },
+   {
+    "condition": "fog_200",
+    "class": "cyclist",
+    "n": 70,
+    "detected": 16,
+    "recall": 0.2286,
+    "ci_low": 0.1367,
+    "ci_high": 0.3445,
+    "fp": 25,
+    "fp_per_frame": 0.2083,
+    "fp_per_frame_ci": [
+     0.1348,
+     0.3075
+    ]
+   },
+   {
+    "condition": "fog_200",
+    "class": "car",
+    "n": 213,
+    "detected": 112,
+    "recall": 0.5258,
+    "ci_low": 0.4565,
+    "ci_high": 0.5945,
+    "fp": 85,
+    "fp_per_frame": 0.7083,
+    "fp_per_frame_ci": [
+     0.5658,
+     0.8759
+    ]
+   },
+   {
+    "condition": "fog_100",
+    "class": "pedestrian",
+    "n": 520,
+    "detected": 208,
+    "recall": 0.4,
+    "ci_low": 0.3576,
+    "ci_high": 0.4435,
+    "fp": 160,
+    "fp_per_frame": 1.3333,
+    "fp_per_frame_ci": [
+     1.1347,
+     1.5567
+    ]
+   },
+   {
+    "condition": "fog_100",
+    "class": "cyclist",
+    "n": 70,
+    "detected": 12,
+    "recall": 0.1714,
+    "ci_low": 0.0918,
+    "ci_high": 0.2803,
+    "fp": 25,
+    "fp_per_frame": 0.2083,
+    "fp_per_frame_ci": [
+     0.1348,
+     0.3075
+    ]
+   },
+   {
+    "condition": "fog_100",
+    "class": "car",
+    "n": 213,
+    "detected": 97,
+    "recall": 0.4554,
+    "ci_low": 0.3872,
+    "ci_high": 0.5248,
+    "fp": 62,
+    "fp_per_frame": 0.5167,
+    "fp_per_frame_ci": [
+     0.3961,
+     0.6623
+    ]
+   },
+   {
+    "condition": "fog_50",
+    "class": "pedestrian",
+    "n": 520,
+    "detected": 214,
+    "recall": 0.4115,
+    "ci_low": 0.3689,
+    "ci_high": 0.4552,
+    "fp": 154,
+    "fp_per_frame": 1.2833,
+    "fp_per_frame_ci": [
+     1.0887,
+     1.5028
+    ]
+   },
+   {
+    "condition": "fog_50",
+    "class": "cyclist",
+    "n": 70,
+    "detected": 10,
+    "recall": 0.1429,
+    "ci_low": 0.0707,
+    "ci_high": 0.2471,
+    "fp": 22,
+    "fp_per_frame": 0.1833,
+    "fp_per_frame_ci": [
+     0.1149,
+     0.2776
+    ]
+   },
+   {
+    "condition": "fog_50",
+    "class": "car",
+    "n": 213,
+    "detected": 83,
+    "recall": 0.3897,
+    "ci_low": 0.3238,
+    "ci_high": 0.4587,
+    "fp": 48,
+    "fp_per_frame": 0.4,
+    "fp_per_frame_ci": [
+     0.2949,
+     0.5303
+    ]
+   },
+   {
+    "condition": "fog_25",
+    "class": "pedestrian",
+    "n": 520,
+    "detected": 194,
+    "recall": 0.3731,
+    "ci_low": 0.3314,
+    "ci_high": 0.4162,
+    "fp": 163,
+    "fp_per_frame": 1.3583,
+    "fp_per_frame_ci": [
+     1.1578,
+     1.5836
+    ]
+   },
+   {
+    "condition": "fog_25",
+    "class": "cyclist",
+    "n": 70,
+    "detected": 4,
+    "recall": 0.0571,
+    "ci_low": 0.0158,
+    "ci_high": 0.1399,
+    "fp": 14,
+    "fp_per_frame": 0.1167,
+    "fp_per_frame_ci": [
+     0.0638,
+     0.1957
+    ]
+   },
+   {
+    "condition": "fog_25",
+    "class": "car",
+    "n": 213,
+    "detected": 59,
+    "recall": 0.277,
+    "ci_low": 0.218,
+    "ci_high": 0.3423,
+    "fp": 23,
+    "fp_per_frame": 0.1917,
+    "fp_per_frame_ci": [
+     0.1215,
+     0.2876
+    ]
+   },
+   {
+    "condition": "low_light_64",
+    "class": "pedestrian",
+    "n": 520,
+    "detected": 142,
+    "recall": 0.2731,
+    "ci_low": 0.2352,
+    "ci_high": 0.3136,
+    "fp": 127,
+    "fp_per_frame": 1.0583,
+    "fp_per_frame_ci": [
+     0.8823,
+     1.2592
+    ]
+   },
+   {
+    "condition": "low_light_64",
+    "class": "cyclist",
+    "n": 70,
+    "detected": 7,
+    "recall": 0.1,
+    "ci_low": 0.0412,
+    "ci_high": 0.1952,
+    "fp": 17,
+    "fp_per_frame": 0.1417,
+    "fp_per_frame_ci": [
+     0.0825,
+     0.2268
+    ]
+   },
+   {
+    "condition": "low_light_64",
+    "class": "car",
+    "n": 213,
+    "detected": 84,
+    "recall": 0.3944,
+    "ci_low": 0.3283,
+    "ci_high": 0.4634,
+    "fp": 123,
+    "fp_per_frame": 1.025,
+    "fp_per_frame_ci": [
+     0.8519,
+     1.223
+    ]
+   },
+   {
+    "condition": "low_light_256",
+    "class": "pedestrian",
+    "n": 520,
+    "detected": 70,
+    "recall": 0.1346,
+    "ci_low": 0.1065,
+    "ci_high": 0.167,
+    "fp": 77,
+    "fp_per_frame": 0.6417,
+    "fp_per_frame_ci": [
+     0.5064,
+     0.802
+    ]
+   },
+   {
+    "condition": "low_light_256",
+    "class": "cyclist",
+    "n": 70,
+    "detected": 3,
+    "recall": 0.0429,
+    "ci_low": 0.0089,
+    "ci_high": 0.1202,
+    "fp": 6,
+    "fp_per_frame": 0.05,
+    "fp_per_frame_ci": [
+     0.0183,
+     0.1088
+    ]
+   },
+   {
+    "condition": "low_light_256",
+    "class": "car",
+    "n": 213,
+    "detected": 50,
+    "recall": 0.2347,
+    "ci_low": 0.1795,
+    "ci_high": 0.2975,
+    "fp": 90,
+    "fp_per_frame": 0.75,
+    "fp_per_frame_ci": [
+     0.6031,
+     0.9219
+    ]
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "pedestrian",
+    "n": 520,
+    "detected": 199,
+    "recall": 0.3827,
+    "ci_low": 0.3407,
+    "ci_high": 0.426,
+    "fp": 144,
+    "fp_per_frame": 1.2,
+    "fp_per_frame_ci": [
+     1.012,
+     1.4128
+    ]
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "cyclist",
+    "n": 70,
+    "detected": 24,
+    "recall": 0.3429,
+    "ci_low": 0.2335,
+    "ci_high": 0.466,
+    "fp": 29,
+    "fp_per_frame": 0.2417,
+    "fp_per_frame_ci": [
+     0.1618,
+     0.3471
+    ]
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "car",
+    "n": 213,
+    "detected": 149,
+    "recall": 0.6995,
+    "ci_low": 0.6331,
+    "ci_high": 0.7603,
+    "fp": 85,
+    "fp_per_frame": 0.7083,
+    "fp_per_frame_ci": [
+     0.5658,
+     0.8759
+    ]
+   }
+  ],
+  "by_distance": [
+   {
+    "condition": "clear",
+    "class": "pedestrian",
+    "band": "0-10 m",
+    "n": 100,
+    "detected": 70,
+    "recall": 0.7,
+    "ci_low": 0.6002,
+    "ci_high": 0.7876
+   },
+   {
+    "condition": "clear",
+    "class": "pedestrian",
+    "band": "10-20 m",
+    "n": 227,
+    "detected": 110,
+    "recall": 0.4846,
+    "ci_low": 0.4179,
+    "ci_high": 0.5516
+   },
+   {
+    "condition": "clear",
+    "class": "pedestrian",
+    "band": "20-30 m",
+    "n": 138,
+    "detected": 38,
+    "recall": 0.2754,
+    "ci_low": 0.2028,
+    "ci_high": 0.3578
+   },
+   {
+    "condition": "clear",
+    "class": "pedestrian",
+    "band": "30-40 m",
+    "n": 47,
+    "detected": 3,
+    "recall": 0.0638,
+    "ci_low": 0.0134,
+    "ci_high": 0.1754
+   },
+   {
+    "condition": "clear",
+    "class": "pedestrian",
+    "band": ">= 40 m",
+    "n": 8,
+    "detected": 1,
+    "recall": 0.125,
+    "ci_low": 0.0032,
+    "ci_high": 0.5265
+   },
+   {
+    "condition": "clear",
+    "class": "cyclist",
+    "band": "0-10 m",
+    "n": 16,
+    "detected": 13,
+    "recall": 0.8125,
+    "ci_low": 0.5435,
+    "ci_high": 0.9595
+   },
+   {
+    "condition": "clear",
+    "class": "cyclist",
+    "band": "10-20 m",
+    "n": 29,
+    "detected": 13,
+    "recall": 0.4483,
+    "ci_low": 0.2645,
+    "ci_high": 0.6431
+   },
+   {
+    "condition": "clear",
+    "class": "cyclist",
+    "band": "20-30 m",
+    "n": 17,
+    "detected": 4,
+    "recall": 0.2353,
+    "ci_low": 0.0681,
+    "ci_high": 0.499
+   },
+   {
+    "condition": "clear",
+    "class": "cyclist",
+    "band": "30-40 m",
+    "n": 7,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.4096
+   },
+   {
+    "condition": "clear",
+    "class": "cyclist",
+    "band": ">= 40 m",
+    "n": 1,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.975
+   },
+   {
+    "condition": "clear",
+    "class": "car",
+    "band": "0-10 m",
+    "n": 22,
+    "detected": 22,
+    "recall": 1.0,
+    "ci_low": 0.8456,
+    "ci_high": 1.0
+   },
+   {
+    "condition": "clear",
+    "class": "car",
+    "band": "10-20 m",
+    "n": 73,
+    "detected": 59,
+    "recall": 0.8082,
+    "ci_low": 0.6992,
+    "ci_high": 0.891
+   },
+   {
+    "condition": "clear",
+    "class": "car",
+    "band": "20-30 m",
+    "n": 52,
+    "detected": 42,
+    "recall": 0.8077,
+    "ci_low": 0.6747,
+    "ci_high": 0.9037
+   },
+   {
+    "condition": "clear",
+    "class": "car",
+    "band": "30-40 m",
+    "n": 41,
+    "detected": 24,
+    "recall": 0.5854,
+    "ci_low": 0.4211,
+    "ci_high": 0.7368
+   },
+   {
+    "condition": "clear",
+    "class": "car",
+    "band": ">= 40 m",
+    "n": 25,
+    "detected": 16,
+    "recall": 0.64,
+    "ci_low": 0.4252,
+    "ci_high": 0.8203
+   },
+   {
+    "condition": "fog_200",
+    "class": "pedestrian",
+    "band": "0-10 m",
+    "n": 100,
+    "detected": 71,
+    "recall": 0.71,
+    "ci_low": 0.6107,
+    "ci_high": 0.7964
+   },
+   {
+    "condition": "fog_200",
+    "class": "pedestrian",
+    "band": "10-20 m",
+    "n": 227,
+    "detected": 116,
+    "recall": 0.511,
+    "ci_low": 0.444,
+    "ci_high": 0.5777
+   },
+   {
+    "condition": "fog_200",
+    "class": "pedestrian",
+    "band": "20-30 m",
+    "n": 138,
+    "detected": 31,
+    "recall": 0.2246,
+    "ci_low": 0.158,
+    "ci_high": 0.3034
+   },
+   {
+    "condition": "fog_200",
+    "class": "pedestrian",
+    "band": "30-40 m",
+    "n": 47,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0755
+   },
+   {
+    "condition": "fog_200",
+    "class": "pedestrian",
+    "band": ">= 40 m",
+    "n": 8,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.3694
+   },
+   {
+    "condition": "fog_200",
+    "class": "cyclist",
+    "band": "0-10 m",
+    "n": 16,
+    "detected": 10,
+    "recall": 0.625,
+    "ci_low": 0.3543,
+    "ci_high": 0.848
+   },
+   {
+    "condition": "fog_200",
+    "class": "cyclist",
+    "band": "10-20 m",
+    "n": 29,
+    "detected": 6,
+    "recall": 0.2069,
+    "ci_low": 0.0799,
+    "ci_high": 0.3972
+   },
+   {
+    "condition": "fog_200",
+    "class": "cyclist",
+    "band": "20-30 m",
+    "n": 17,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.1951
+   },
+   {
+    "condition": "fog_200",
+    "class": "cyclist",
+    "band": "30-40 m",
+    "n": 7,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.4096
+   },
+   {
+    "condition": "fog_200",
+    "class": "cyclist",
+    "band": ">= 40 m",
+    "n": 1,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.975
+   },
+   {
+    "condition": "fog_200",
+    "class": "car",
+    "band": "0-10 m",
+    "n": 22,
+    "detected": 21,
+    "recall": 0.9545,
+    "ci_low": 0.7716,
+    "ci_high": 0.9988
+   },
+   {
+    "condition": "fog_200",
+    "class": "car",
+    "band": "10-20 m",
+    "n": 73,
+    "detected": 44,
+    "recall": 0.6027,
+    "ci_low": 0.4814,
+    "ci_high": 0.7155
+   },
+   {
+    "condition": "fog_200",
+    "class": "car",
+    "band": "20-30 m",
+    "n": 52,
+    "detected": 28,
+    "recall": 0.5385,
+    "ci_low": 0.3947,
+    "ci_high": 0.6777
+   },
+   {
+    "condition": "fog_200",
+    "class": "car",
+    "band": "30-40 m",
+    "n": 41,
+    "detected": 14,
+    "recall": 0.3415,
+    "ci_low": 0.2008,
+    "ci_high": 0.5059
+   },
+   {
+    "condition": "fog_200",
+    "class": "car",
+    "band": ">= 40 m",
+    "n": 25,
+    "detected": 5,
+    "recall": 0.2,
+    "ci_low": 0.0683,
+    "ci_high": 0.407
+   },
+   {
+    "condition": "fog_100",
+    "class": "pedestrian",
+    "band": "0-10 m",
+    "n": 100,
+    "detected": 73,
+    "recall": 0.73,
+    "ci_low": 0.632,
+    "ci_high": 0.8139
+   },
+   {
+    "condition": "fog_100",
+    "class": "pedestrian",
+    "band": "10-20 m",
+    "n": 227,
+    "detected": 113,
+    "recall": 0.4978,
+    "ci_low": 0.431,
+    "ci_high": 0.5647
+   },
+   {
+    "condition": "fog_100",
+    "class": "pedestrian",
+    "band": "20-30 m",
+    "n": 138,
+    "detected": 22,
+    "recall": 0.1594,
+    "ci_low": 0.1027,
+    "ci_high": 0.2314
+   },
+   {
+    "condition": "fog_100",
+    "class": "pedestrian",
+    "band": "30-40 m",
+    "n": 47,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0755
+   },
+   {
+    "condition": "fog_100",
+    "class": "pedestrian",
+    "band": ">= 40 m",
+    "n": 8,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.3694
+   },
+   {
+    "condition": "fog_100",
+    "class": "cyclist",
+    "band": "0-10 m",
+    "n": 16,
+    "detected": 8,
+    "recall": 0.5,
+    "ci_low": 0.2465,
+    "ci_high": 0.7535
+   },
+   {
+    "condition": "fog_100",
+    "class": "cyclist",
+    "band": "10-20 m",
+    "n": 29,
+    "detected": 4,
+    "recall": 0.1379,
+    "ci_low": 0.0389,
+    "ci_high": 0.3166
+   },
+   {
+    "condition": "fog_100",
+    "class": "cyclist",
+    "band": "20-30 m",
+    "n": 17,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.1951
+   },
+   {
+    "condition": "fog_100",
+    "class": "cyclist",
+    "band": "30-40 m",
+    "n": 7,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.4096
+   },
+   {
+    "condition": "fog_100",
+    "class": "cyclist",
+    "band": ">= 40 m",
+    "n": 1,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.975
+   },
+   {
+    "condition": "fog_100",
+    "class": "car",
+    "band": "0-10 m",
+    "n": 22,
+    "detected": 19,
+    "recall": 0.8636,
+    "ci_low": 0.6509,
+    "ci_high": 0.9709
+   },
+   {
+    "condition": "fog_100",
+    "class": "car",
+    "band": "10-20 m",
+    "n": 73,
+    "detected": 41,
+    "recall": 0.5616,
+    "ci_low": 0.4405,
+    "ci_high": 0.6776
+   },
+   {
+    "condition": "fog_100",
+    "class": "car",
+    "band": "20-30 m",
+    "n": 52,
+    "detected": 25,
+    "recall": 0.4808,
+    "ci_low": 0.3401,
+    "ci_high": 0.6237
+   },
+   {
+    "condition": "fog_100",
+    "class": "car",
+    "band": "30-40 m",
+    "n": 41,
+    "detected": 9,
+    "recall": 0.2195,
+    "ci_low": 0.1056,
+    "ci_high": 0.3761
+   },
+   {
+    "condition": "fog_100",
+    "class": "car",
+    "band": ">= 40 m",
+    "n": 25,
+    "detected": 3,
+    "recall": 0.12,
+    "ci_low": 0.0255,
+    "ci_high": 0.3122
+   },
+   {
+    "condition": "fog_50",
+    "class": "pedestrian",
+    "band": "0-10 m",
+    "n": 100,
+    "detected": 74,
+    "recall": 0.74,
+    "ci_low": 0.6427,
+    "ci_high": 0.8226
+   },
+   {
+    "condition": "fog_50",
+    "class": "pedestrian",
+    "band": "10-20 m",
+    "n": 227,
+    "detected": 119,
+    "recall": 0.5242,
+    "ci_low": 0.4571,
+    "ci_high": 0.5907
+   },
+   {
+    "condition": "fog_50",
+    "class": "pedestrian",
+    "band": "20-30 m",
+    "n": 138,
+    "detected": 21,
+    "recall": 0.1522,
+    "ci_low": 0.0967,
+    "ci_high": 0.2232
+   },
+   {
+    "condition": "fog_50",
+    "class": "pedestrian",
+    "band": "30-40 m",
+    "n": 47,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0755
+   },
+   {
+    "condition": "fog_50",
+    "class": "pedestrian",
+    "band": ">= 40 m",
+    "n": 8,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.3694
+   },
+   {
+    "condition": "fog_50",
+    "class": "cyclist",
+    "band": "0-10 m",
+    "n": 16,
+    "detected": 8,
+    "recall": 0.5,
+    "ci_low": 0.2465,
+    "ci_high": 0.7535
+   },
+   {
+    "condition": "fog_50",
+    "class": "cyclist",
+    "band": "10-20 m",
+    "n": 29,
+    "detected": 2,
+    "recall": 0.069,
+    "ci_low": 0.0085,
+    "ci_high": 0.2277
+   },
+   {
+    "condition": "fog_50",
+    "class": "cyclist",
+    "band": "20-30 m",
+    "n": 17,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.1951
+   },
+   {
+    "condition": "fog_50",
+    "class": "cyclist",
+    "band": "30-40 m",
+    "n": 7,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.4096
+   },
+   {
+    "condition": "fog_50",
+    "class": "cyclist",
+    "band": ">= 40 m",
+    "n": 1,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.975
+   },
+   {
+    "condition": "fog_50",
+    "class": "car",
+    "band": "0-10 m",
+    "n": 22,
+    "detected": 17,
+    "recall": 0.7727,
+    "ci_low": 0.5463,
+    "ci_high": 0.9218
+   },
+   {
+    "condition": "fog_50",
+    "class": "car",
+    "band": "10-20 m",
+    "n": 73,
+    "detected": 42,
+    "recall": 0.5753,
+    "ci_low": 0.4541,
+    "ci_high": 0.6903
+   },
+   {
+    "condition": "fog_50",
+    "class": "car",
+    "band": "20-30 m",
+    "n": 52,
+    "detected": 21,
+    "recall": 0.4038,
+    "ci_low": 0.2701,
+    "ci_high": 0.549
+   },
+   {
+    "condition": "fog_50",
+    "class": "car",
+    "band": "30-40 m",
+    "n": 41,
+    "detected": 3,
+    "recall": 0.0732,
+    "ci_low": 0.0154,
+    "ci_high": 0.1992
+   },
+   {
+    "condition": "fog_50",
+    "class": "car",
+    "band": ">= 40 m",
+    "n": 25,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.1372
+   },
+   {
+    "condition": "fog_25",
+    "class": "pedestrian",
+    "band": "0-10 m",
+    "n": 100,
+    "detected": 77,
+    "recall": 0.77,
+    "ci_low": 0.6751,
+    "ci_high": 0.8483
+   },
+   {
+    "condition": "fog_25",
+    "class": "pedestrian",
+    "band": "10-20 m",
+    "n": 227,
+    "detected": 106,
+    "recall": 0.467,
+    "ci_low": 0.4007,
+    "ci_high": 0.5341
+   },
+   {
+    "condition": "fog_25",
+    "class": "pedestrian",
+    "band": "20-30 m",
+    "n": 138,
+    "detected": 11,
+    "recall": 0.0797,
+    "ci_low": 0.0405,
+    "ci_high": 0.1381
+   },
+   {
+    "condition": "fog_25",
+    "class": "pedestrian",
+    "band": "30-40 m",
+    "n": 47,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0755
+   },
+   {
+    "condition": "fog_25",
+    "class": "pedestrian",
+    "band": ">= 40 m",
+    "n": 8,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.3694
+   },
+   {
+    "condition": "fog_25",
+    "class": "cyclist",
+    "band": "0-10 m",
+    "n": 16,
+    "detected": 4,
+    "recall": 0.25,
+    "ci_low": 0.0727,
+    "ci_high": 0.5238
+   },
+   {
+    "condition": "fog_25",
+    "class": "cyclist",
+    "band": "10-20 m",
+    "n": 29,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.1194
+   },
+   {
+    "condition": "fog_25",
+    "class": "cyclist",
+    "band": "20-30 m",
+    "n": 17,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.1951
+   },
+   {
+    "condition": "fog_25",
+    "class": "cyclist",
+    "band": "30-40 m",
+    "n": 7,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.4096
+   },
+   {
+    "condition": "fog_25",
+    "class": "cyclist",
+    "band": ">= 40 m",
+    "n": 1,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.975
+   },
+   {
+    "condition": "fog_25",
+    "class": "car",
+    "band": "0-10 m",
+    "n": 22,
+    "detected": 15,
+    "recall": 0.6818,
+    "ci_low": 0.4513,
+    "ci_high": 0.8614
+   },
+   {
+    "condition": "fog_25",
+    "class": "car",
+    "band": "10-20 m",
+    "n": 73,
+    "detected": 30,
+    "recall": 0.411,
+    "ci_low": 0.2971,
+    "ci_high": 0.5323
+   },
+   {
+    "condition": "fog_25",
+    "class": "car",
+    "band": "20-30 m",
+    "n": 52,
+    "detected": 14,
+    "recall": 0.2692,
+    "ci_low": 0.1557,
+    "ci_high": 0.4102
+   },
+   {
+    "condition": "fog_25",
+    "class": "car",
+    "band": "30-40 m",
+    "n": 41,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.086
+   },
+   {
+    "condition": "fog_25",
+    "class": "car",
+    "band": ">= 40 m",
+    "n": 25,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.1372
+   },
+   {
+    "condition": "low_light_64",
+    "class": "pedestrian",
+    "band": "0-10 m",
+    "n": 100,
+    "detected": 58,
+    "recall": 0.58,
+    "ci_low": 0.4771,
+    "ci_high": 0.678
+   },
+   {
+    "condition": "low_light_64",
+    "class": "pedestrian",
+    "band": "10-20 m",
+    "n": 227,
+    "detected": 68,
+    "recall": 0.2996,
+    "ci_low": 0.2407,
+    "ci_high": 0.3637
+   },
+   {
+    "condition": "low_light_64",
+    "class": "pedestrian",
+    "band": "20-30 m",
+    "n": 138,
+    "detected": 16,
+    "recall": 0.1159,
+    "ci_low": 0.0677,
+    "ci_high": 0.1814
+   },
+   {
+    "condition": "low_light_64",
+    "class": "pedestrian",
+    "band": "30-40 m",
+    "n": 47,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0755
+   },
+   {
+    "condition": "low_light_64",
+    "class": "pedestrian",
+    "band": ">= 40 m",
+    "n": 8,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.3694
+   },
+   {
+    "condition": "low_light_64",
+    "class": "cyclist",
+    "band": "0-10 m",
+    "n": 16,
+    "detected": 4,
+    "recall": 0.25,
+    "ci_low": 0.0727,
+    "ci_high": 0.5238
+   },
+   {
+    "condition": "low_light_64",
+    "class": "cyclist",
+    "band": "10-20 m",
+    "n": 29,
+    "detected": 1,
+    "recall": 0.0345,
+    "ci_low": 0.0009,
+    "ci_high": 0.1776
+   },
+   {
+    "condition": "low_light_64",
+    "class": "cyclist",
+    "band": "20-30 m",
+    "n": 17,
+    "detected": 1,
+    "recall": 0.0588,
+    "ci_low": 0.0015,
+    "ci_high": 0.2869
+   },
+   {
+    "condition": "low_light_64",
+    "class": "cyclist",
+    "band": "30-40 m",
+    "n": 7,
+    "detected": 1,
+    "recall": 0.1429,
+    "ci_low": 0.0036,
+    "ci_high": 0.5787
+   },
+   {
+    "condition": "low_light_64",
+    "class": "cyclist",
+    "band": ">= 40 m",
+    "n": 1,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.975
+   },
+   {
+    "condition": "low_light_64",
+    "class": "car",
+    "band": "0-10 m",
+    "n": 22,
+    "detected": 12,
+    "recall": 0.5455,
+    "ci_low": 0.3221,
+    "ci_high": 0.7561
+   },
+   {
+    "condition": "low_light_64",
+    "class": "car",
+    "band": "10-20 m",
+    "n": 73,
+    "detected": 37,
+    "recall": 0.5068,
+    "ci_low": 0.3872,
+    "ci_high": 0.626
+   },
+   {
+    "condition": "low_light_64",
+    "class": "car",
+    "band": "20-30 m",
+    "n": 52,
+    "detected": 25,
+    "recall": 0.4808,
+    "ci_low": 0.3401,
+    "ci_high": 0.6237
+   },
+   {
+    "condition": "low_light_64",
+    "class": "car",
+    "band": "30-40 m",
+    "n": 41,
+    "detected": 6,
+    "recall": 0.1463,
+    "ci_low": 0.0557,
+    "ci_high": 0.2917
+   },
+   {
+    "condition": "low_light_64",
+    "class": "car",
+    "band": ">= 40 m",
+    "n": 25,
+    "detected": 4,
+    "recall": 0.16,
+    "ci_low": 0.0454,
+    "ci_high": 0.3608
+   },
+   {
+    "condition": "low_light_256",
+    "class": "pedestrian",
+    "band": "0-10 m",
+    "n": 100,
+    "detected": 46,
+    "recall": 0.46,
+    "ci_low": 0.3598,
+    "ci_high": 0.5626
+   },
+   {
+    "condition": "low_light_256",
+    "class": "pedestrian",
+    "band": "10-20 m",
+    "n": 227,
+    "detected": 22,
+    "recall": 0.0969,
+    "ci_low": 0.0617,
+    "ci_high": 0.1431
+   },
+   {
+    "condition": "low_light_256",
+    "class": "pedestrian",
+    "band": "20-30 m",
+    "n": 138,
+    "detected": 2,
+    "recall": 0.0145,
+    "ci_low": 0.0018,
+    "ci_high": 0.0514
+   },
+   {
+    "condition": "low_light_256",
+    "class": "pedestrian",
+    "band": "30-40 m",
+    "n": 47,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0755
+   },
+   {
+    "condition": "low_light_256",
+    "class": "pedestrian",
+    "band": ">= 40 m",
+    "n": 8,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.3694
+   },
+   {
+    "condition": "low_light_256",
+    "class": "cyclist",
+    "band": "0-10 m",
+    "n": 16,
+    "detected": 2,
+    "recall": 0.125,
+    "ci_low": 0.0155,
+    "ci_high": 0.3835
+   },
+   {
+    "condition": "low_light_256",
+    "class": "cyclist",
+    "band": "10-20 m",
+    "n": 29,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.1194
+   },
+   {
+    "condition": "low_light_256",
+    "class": "cyclist",
+    "band": "20-30 m",
+    "n": 17,
+    "detected": 1,
+    "recall": 0.0588,
+    "ci_low": 0.0015,
+    "ci_high": 0.2869
+   },
+   {
+    "condition": "low_light_256",
+    "class": "cyclist",
+    "band": "30-40 m",
+    "n": 7,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.4096
+   },
+   {
+    "condition": "low_light_256",
+    "class": "cyclist",
+    "band": ">= 40 m",
+    "n": 1,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.975
+   },
+   {
+    "condition": "low_light_256",
+    "class": "car",
+    "band": "0-10 m",
+    "n": 22,
+    "detected": 9,
+    "recall": 0.4091,
+    "ci_low": 0.2071,
+    "ci_high": 0.6365
+   },
+   {
+    "condition": "low_light_256",
+    "class": "car",
+    "band": "10-20 m",
+    "n": 73,
+    "detected": 19,
+    "recall": 0.2603,
+    "ci_low": 0.1645,
+    "ci_high": 0.3762
+   },
+   {
+    "condition": "low_light_256",
+    "class": "car",
+    "band": "20-30 m",
+    "n": 52,
+    "detected": 15,
+    "recall": 0.2885,
+    "ci_low": 0.1713,
+    "ci_high": 0.4308
+   },
+   {
+    "condition": "low_light_256",
+    "class": "car",
+    "band": "30-40 m",
+    "n": 41,
+    "detected": 5,
+    "recall": 0.122,
+    "ci_low": 0.0408,
+    "ci_high": 0.262
+   },
+   {
+    "condition": "low_light_256",
+    "class": "car",
+    "band": ">= 40 m",
+    "n": 25,
+    "detected": 2,
+    "recall": 0.08,
+    "ci_low": 0.0098,
+    "ci_high": 0.2603
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "pedestrian",
+    "band": "0-10 m",
+    "n": 100,
+    "detected": 65,
+    "recall": 0.65,
+    "ci_low": 0.5482,
+    "ci_high": 0.7427
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "pedestrian",
+    "band": "10-20 m",
+    "n": 227,
+    "detected": 101,
+    "recall": 0.4449,
+    "ci_low": 0.3792,
+    "ci_high": 0.5121
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "pedestrian",
+    "band": "20-30 m",
+    "n": 138,
+    "detected": 29,
+    "recall": 0.2101,
+    "ci_low": 0.1455,
+    "ci_high": 0.2877
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "pedestrian",
+    "band": "30-40 m",
+    "n": 47,
+    "detected": 4,
+    "recall": 0.0851,
+    "ci_low": 0.0237,
+    "ci_high": 0.2038
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "pedestrian",
+    "band": ">= 40 m",
+    "n": 8,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.3694
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "cyclist",
+    "band": "0-10 m",
+    "n": 16,
+    "detected": 12,
+    "recall": 0.75,
+    "ci_low": 0.4762,
+    "ci_high": 0.9273
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "cyclist",
+    "band": "10-20 m",
+    "n": 29,
+    "detected": 10,
+    "recall": 0.3448,
+    "ci_low": 0.1794,
+    "ci_high": 0.5433
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "cyclist",
+    "band": "20-30 m",
+    "n": 17,
+    "detected": 2,
+    "recall": 0.1176,
+    "ci_low": 0.0146,
+    "ci_high": 0.3644
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "cyclist",
+    "band": "30-40 m",
+    "n": 7,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.4096
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "cyclist",
+    "band": ">= 40 m",
+    "n": 1,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.975
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "car",
+    "band": "0-10 m",
+    "n": 22,
+    "detected": 22,
+    "recall": 1.0,
+    "ci_low": 0.8456,
+    "ci_high": 1.0
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "car",
+    "band": "10-20 m",
+    "n": 73,
+    "detected": 56,
+    "recall": 0.7671,
+    "ci_low": 0.6535,
+    "ci_high": 0.8581
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "car",
+    "band": "20-30 m",
+    "n": 52,
+    "detected": 36,
+    "recall": 0.6923,
+    "ci_low": 0.549,
+    "ci_high": 0.8128
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "car",
+    "band": "30-40 m",
+    "n": 41,
+    "detected": 19,
+    "recall": 0.4634,
+    "ci_low": 0.3066,
+    "ci_high": 0.6258
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "car",
+    "band": ">= 40 m",
+    "n": 25,
+    "detected": 16,
+    "recall": 0.64,
+    "ci_low": 0.4252,
+    "ci_high": 0.8203
+   }
+  ],
+  "by_occlusion": [
+   {
+    "class": "pedestrian",
+    "occlusion": 0,
+    "n": 283,
+    "detected": 185,
+    "recall": 0.6537,
+    "ci_low": 0.5951,
+    "ci_high": 0.709
+   },
+   {
+    "class": "pedestrian",
+    "occlusion": 1,
+    "n": 143,
+    "detected": 33,
+    "recall": 0.2308,
+    "ci_low": 0.1645,
+    "ci_high": 0.3085
+   },
+   {
+    "class": "pedestrian",
+    "occlusion": 2,
+    "n": 94,
+    "detected": 4,
+    "recall": 0.0426,
+    "ci_low": 0.0117,
+    "ci_high": 0.1054
+   },
+   {
+    "class": "cyclist",
+    "occlusion": 0,
+    "n": 49,
+    "detected": 25,
+    "recall": 0.5102,
+    "ci_low": 0.3634,
+    "ci_high": 0.6558
+   },
+   {
+    "class": "cyclist",
+    "occlusion": 1,
+    "n": 13,
+    "detected": 1,
+    "recall": 0.0769,
+    "ci_low": 0.0019,
+    "ci_high": 0.3603
+   },
+   {
+    "class": "cyclist",
+    "occlusion": 2,
+    "n": 8,
+    "detected": 4,
+    "recall": 0.5,
+    "ci_low": 0.157,
+    "ci_high": 0.843
+   },
+   {
+    "class": "car",
+    "occlusion": 0,
+    "n": 81,
+    "detected": 80,
+    "recall": 0.9877,
+    "ci_low": 0.9331,
+    "ci_high": 0.9997
+   },
+   {
+    "class": "car",
+    "occlusion": 1,
+    "n": 64,
+    "detected": 54,
+    "recall": 0.8438,
+    "ci_low": 0.7314,
+    "ci_high": 0.9224
+   },
+   {
+    "class": "car",
+    "occlusion": 2,
+    "n": 68,
+    "detected": 29,
+    "recall": 0.4265,
+    "ci_low": 0.3072,
+    "ci_high": 0.5523
+   }
+  ],
+  "by_truncation": [
+   {
+    "class": "pedestrian",
+    "truncation": "0.00-0.15",
+    "n": 500,
+    "detected": 209,
+    "recall": 0.418,
+    "ci_low": 0.3744,
+    "ci_high": 0.4626
+   },
+   {
+    "class": "pedestrian",
+    "truncation": "0.15-0.30",
+    "n": 10,
+    "detected": 7,
+    "recall": 0.7,
+    "ci_low": 0.3475,
+    "ci_high": 0.9333
+   },
+   {
+    "class": "pedestrian",
+    "truncation": "0.30-0.50",
+    "n": 10,
+    "detected": 6,
+    "recall": 0.6,
+    "ci_low": 0.2624,
+    "ci_high": 0.8784
+   },
+   {
+    "class": "cyclist",
+    "truncation": "0.00-0.15",
+    "n": 68,
+    "detected": 29,
+    "recall": 0.4265,
+    "ci_low": 0.3072,
+    "ci_high": 0.5523
+   },
+   {
+    "class": "cyclist",
+    "truncation": "0.15-0.30",
+    "n": 1,
+    "detected": 1,
+    "recall": 1.0,
+    "ci_low": 0.025,
+    "ci_high": 1.0
+   },
+   {
+    "class": "cyclist",
+    "truncation": "0.30-0.50",
+    "n": 1,
+    "detected": 0,
+    "recall": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.975
+   },
+   {
+    "class": "car",
+    "truncation": "0.00-0.15",
+    "n": 202,
+    "detected": 153,
+    "recall": 0.7574,
+    "ci_low": 0.6923,
+    "ci_high": 0.8148
+   },
+   {
+    "class": "car",
+    "truncation": "0.15-0.30",
+    "n": 7,
+    "detected": 7,
+    "recall": 1.0,
+    "ci_low": 0.5904,
+    "ci_high": 1.0
+   },
+   {
+    "class": "car",
+    "truncation": "0.30-0.50",
+    "n": 4,
+    "detected": 3,
+    "recall": 0.75,
+    "ci_low": 0.1941,
+    "ci_high": 0.9937
+   }
+  ],
+  "lens_dirt": [
+   {
+    "condition": "lens_dirt_25",
+    "class": "pedestrian",
+    "where": "outside dirt",
+    "n": 394,
+    "detected": 164,
+    "recall": 0.4162,
+    "ci_low": 0.3671,
+    "ci_high": 0.4667
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "pedestrian",
+    "where": "behind dirt",
+    "n": 126,
+    "detected": 35,
+    "recall": 0.2778,
+    "ci_low": 0.2017,
+    "ci_high": 0.3646
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "cyclist",
+    "where": "outside dirt",
+    "n": 48,
+    "detected": 16,
+    "recall": 0.3333,
+    "ci_low": 0.204,
+    "ci_high": 0.4841
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "cyclist",
+    "where": "behind dirt",
+    "n": 22,
+    "detected": 8,
+    "recall": 0.3636,
+    "ci_low": 0.172,
+    "ci_high": 0.5934
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "car",
+    "where": "outside dirt",
+    "n": 153,
+    "detected": 121,
+    "recall": 0.7908,
+    "ci_low": 0.7178,
+    "ci_high": 0.8523
+   },
+   {
+    "condition": "lens_dirt_25",
+    "class": "car",
+    "where": "behind dirt",
+    "n": 60,
+    "detected": 28,
+    "recall": 0.4667,
+    "ci_low": 0.3367,
+    "ci_high": 0.6
+   }
+  ]
+ },
+ "triggering_conditions": [
+  {
+   "condition": "clear",
+   "label": "clear (original image)",
+   "in_odd": true,
+   "n": 246,
+   "detected": 143,
+   "recall": 0.5813,
+   "lower_bound": 0.527,
+   "upper_bound": 0.6341,
+   "verdict": "does not meet",
+   "v_max_kmh": null,
+   "range_at_v_max_m": null,
+   "fp_per_frame": 1.225,
+   "measure": "exclude condition from the ODD (needs an ODD monitor) or improve the design"
+  },
+  {
+   "condition": "fog_200",
+   "label": "fog, V = 200 m",
+   "in_odd": false,
+   "n": 246,
+   "detected": 148,
+   "recall": 0.6016,
+   "lower_bound": 0.5475,
+   "upper_bound": 0.6539,
+   "verdict": "does not meet",
+   "v_max_kmh": null,
+   "range_at_v_max_m": null,
+   "fp_per_frame": 1.3,
+   "measure": "exclude condition from the ODD (needs an ODD monitor) or improve the design"
+  },
+  {
+   "condition": "fog_100",
+   "label": "fog, V = 100 m",
+   "in_odd": false,
+   "n": 246,
+   "detected": 145,
+   "recall": 0.5894,
+   "lower_bound": 0.5352,
+   "upper_bound": 0.642,
+   "verdict": "does not meet",
+   "v_max_kmh": null,
+   "range_at_v_max_m": null,
+   "fp_per_frame": 1.3333,
+   "measure": "exclude condition from the ODD (needs an ODD monitor) or improve the design"
+  },
+  {
+   "condition": "fog_50",
+   "label": "fog, V = 50 m",
+   "in_odd": false,
+   "n": 246,
+   "detected": 148,
+   "recall": 0.6016,
+   "lower_bound": 0.5475,
+   "upper_bound": 0.6539,
+   "verdict": "does not meet",
+   "v_max_kmh": null,
+   "range_at_v_max_m": null,
+   "fp_per_frame": 1.2833,
+   "measure": "exclude condition from the ODD (needs an ODD monitor) or improve the design"
+  },
+  {
+   "condition": "fog_25",
+   "label": "fog, V = 25 m",
+   "in_odd": false,
+   "n": 246,
+   "detected": 135,
+   "recall": 0.5488,
+   "lower_bound": 0.4943,
+   "upper_bound": 0.6023,
+   "verdict": "does not meet",
+   "v_max_kmh": null,
+   "range_at_v_max_m": null,
+   "fp_per_frame": 1.3583,
+   "measure": "exclude condition from the ODD (needs an ODD monitor) or improve the design"
+  },
+  {
+   "condition": "low_light_64",
+   "label": "low light, k = 1/64",
+   "in_odd": true,
+   "n": 246,
+   "detected": 98,
+   "recall": 0.3984,
+   "lower_bound": 0.3461,
+   "upper_bound": 0.4525,
+   "verdict": "does not meet",
+   "v_max_kmh": null,
+   "range_at_v_max_m": null,
+   "fp_per_frame": 1.0583,
+   "measure": "exclude condition from the ODD (needs an ODD monitor) or improve the design"
+  },
+  {
+   "condition": "low_light_256",
+   "label": "low light, k = 1/256",
+   "in_odd": false,
+   "n": 246,
+   "detected": 56,
+   "recall": 0.2276,
+   "lower_bound": 0.1843,
+   "upper_bound": 0.276,
+   "verdict": "does not meet",
+   "v_max_kmh": null,
+   "range_at_v_max_m": null,
+   "fp_per_frame": 0.6417,
+   "measure": "exclude condition from the ODD (needs an ODD monitor) or improve the design"
+  },
+  {
+   "condition": "lens_dirt_25",
+   "label": "lens dirt, 25 % covered",
+   "in_odd": false,
+   "n": 246,
+   "detected": 133,
+   "recall": 0.5407,
+   "lower_bound": 0.4862,
+   "upper_bound": 0.5944,
+   "verdict": "does not meet",
+   "v_max_kmh": null,
+   "range_at_v_max_m": null,
+   "fp_per_frame": 1.2,
+   "measure": "exclude condition from the ODD (needs an ODD monitor) or improve the design"
+  }
+ ],
+ "release": {
+  "verdict": "DO NOT RELEASE",
+  "requirement": "PR-01",
+  "odd_conditions": [
+   "clear",
+   "low_light_64"
+  ],
+  "restricted_odd_kmh": {
+   "clear": null,
+   "low_light_64": null
+  },
+  "outside_odd_not_met": [
+   "fog, V = 200 m",
+   "fog, V = 100 m",
+   "fog, V = 50 m",
+   "fog, V = 25 m",
+   "low light, k = 1/256",
+   "lens dirt, 25 % covered"
+  ],
+  "reasons": [
+   "clear (original image): recall 0.5813 (n = 246, one-sided lower bound 0.527 vs 0.9) -> does not meet; supported up to no speed in the grid",
+   "low light, k = 1/64: recall 0.3984 (n = 246, one-sided lower bound 0.346 vs 0.9) -> does not meet; supported up to no speed in the grid"
+  ],
+  "rule": "RELEASE if met at full speed in all ODD conditions; RELEASE WITH ODD RESTRICTION if met in clear air at some speed; otherwise DO NOT RELEASE"
+ }
+}

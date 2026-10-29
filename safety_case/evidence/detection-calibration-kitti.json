@@ -1,0 +1,28 @@
+{
+  "schema": "avsafety.evidence/1",
+  "id": "detection-calibration-kitti",
+  "title": "Detection-score calibration on held-out KITTI frames",
+  "values": {
+    "dece_raw": 0.190451,
+    "dece_temperature": 0.183478,
+    "dece_platt": 0.0261906,
+    "platt_a": 0.994193,
+    "platt_b": -2.00043,
+    "worst_slice_gap": 0.0574706
+  },
+  "units": {
+    "dece_platt": "D-ECE (10 bins)"
+  },
+  "n": 477,
+  "confidence": null,
+  "producer": {
+    "notebook": "06_AI_Safety_ISO_PAS_8800/04_calibration.ipynb",
+    "code_hash": "sha256:b355582a8eaadb46",
+    "avsafety_version": "1.2.0"
+  },
+  "recorded_at": "2026-10-29T08:44:42Z",
+  "dataset": {
+    "name": "KITTI object detection, 40 training frames (20 held out)",
+    "licence": "CC BY-NC-SA 3.0"
+  }
+}

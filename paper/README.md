@@ -1,0 +1,2 @@
+Paper for the Journal of Open Source Education (JOSE). Build the draft PDF locally from the repository root with the Open Journals image: `docker run --rm -v $PWD:/data -u $(id -u):$(id -g) --env JOURNAL=jose openjournals/inara -o pdf paper/paper.md` (writes `paper/paper.pdf`).
+On GitHub, the `openjournals/openjournals-draft-action` with `journal: jose` and `paper-path: paper/paper.md` builds the same PDF as a workflow artifact.

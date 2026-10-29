@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   toolkit:
-    name: Toolkit tests and course linter
+    name: Toolkit tests, linters and safety case
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,13 +23,37 @@ jobs:
         with:
           node-version: "20"
       - name: Install toolkit
-        run: pip install -e ".[test]"
+        run: pip install -e ".[test,assurance]"
       - name: Unit tests (Python + browser-tool parity under Node)
         run: pytest -q
       - name: Course linter
         run: python scripts/check_course.py
       - name: Module READMEs are up to date with the notebook headers
         run: python scripts/build_readmes.py --check
+      - name: Normative references (registered, consistent paragraph numbers)
+        run: python scripts/check_references.py --strict
+      - name: Reference index and used_in are up to date
+        run: |
+          python scripts/check_references.py --update-used-in --index > /dev/null
+          git diff --exit-code references/normative.yaml site/references.md
+      - name: Safety case integrity (claim statuses are reported, not enforced)
+        run: python scripts/safety_case.py --check
+      - name: Benchmark results valid and leaderboard up to date
+        run: python scripts/build_leaderboard.py --check
+      - name: Classroom template grades the reference answers and rejects the empty template
+        run: |
+          AVSAFETY_ANSWERS=classroom/reference_answers.py python -m pytest -q classroom/assignment
+          if python -m pytest -q classroom/assignment; then echo "empty template passed" && exit 1; fi
+      - name: German edition in sync with the English notebooks
+        run: python scripts/check_translations.py
+      - name: Safety case changes against the base branch (informational)
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        run: |
+          git fetch --depth=1 origin ${{ github.base_ref }}
+          mkdir -p "$RUNNER_TEMP/evidence-base"
+          git archive FETCH_HEAD safety_case/evidence | tar -x -C "$RUNNER_TEMP/evidence-base"
+          python scripts/safety_case.py --diff "$RUNNER_TEMP/evidence-base/safety_case/evidence"
 
   notebooks:
     name: Execute notebooks (${{ matrix.module }})
@@ -46,6 +70,7 @@ jobs:
           - 06_AI_Safety_ISO_PAS_8800
           - 07_Runtime_Assurance_and_Operations
           - 08_Standards_Regulation_and_Safety_Case
+          - de
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -56,15 +81,19 @@ jobs:
         run: |
           pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
           pip install -r requirements.txt
-          pip install -e ".[data]"
+          pip install -e ".[data,assurance]"
       - name: Cache downloaded datasets and model weights
         uses: actions/cache@v4
         with:
           path: |
             ~/.cache/avsafety
             ~/.cache/torch
-          key: data-${{ matrix.module }}-v1
+          key: data-${{ matrix.module }}-v2
+      - name: Keep the committed safety-case evidence
+        run: cp -r safety_case/evidence "$RUNNER_TEMP/evidence-committed"
       - name: Execute every notebook in the module
         env:
           MPLBACKEND: Agg
-        run: python scripts/execute_notebooks.py --timeout 1800 ${{ matrix.module }}/*.ipynb
+        run: python scripts/execute_notebooks.py --timeout 1800 $(find ${{ matrix.module }} -name '*.ipynb' | sort)
+      - name: "Safety case: did re-running this module change a claim's status?"
+        run: python scripts/safety_case.py --diff "$RUNNER_TEMP/evidence-committed"

@@ -1,0 +1,181 @@
+{
+ "EU2019/2144 eu-cellar 32019R2144": {
+  "fingerprint": "064692e82a81fe56",
+  "summary": [
+   "32019R2144: amending acts 32021R1243, 32021R1341, 32021R1958, 32022R0545, 32022R1398, 32023R2590, 32024R1689, 32024R2220, 32025R1122; consolidated versions 20191216, 20220706, 20220905, 20240707, 20250901, 20260107, 20260802"
+  ],
+  "checked": "2026-10-29"
+ },
+ "EU2022/1426 eu-cellar 32022R1426": {
+  "fingerprint": "b8568f6f08476d54",
+  "summary": [
+   "32022R1426: amending acts 32026R0481; consolidated versions 20220826, 20260324"
+  ],
+  "checked": "2026-10-29"
+ },
+ "EU2024/1689 eu-cellar 32024R1689": {
+  "fingerprint": "e841d67fb1aba028",
+  "summary": [
+   "32024R1689: amending acts 32026R1744; consolidated versions 20240712, 20260727"
+  ],
+  "checked": "2026-10-29"
+ },
+ "ISO21434 iso-open-data ISO/SAE 21434:2021": {
+  "fingerprint": "f8e97c1774b1a148",
+  "summary": [
+   "ISO/SAE 21434:2021: stage 9092",
+   "successor ISO/SAE AWI 21434: stage 2000"
+  ],
+  "checked": "2026-10-29"
+ },
+ "ISO21448 iso-open-data ISO 21448:2022": {
+  "fingerprint": "0a0b0f0da9e90219",
+  "summary": [
+   "ISO 21448:2022: stage 9092",
+   "successor ISO/WD 21448: stage 2060"
+  ],
+  "checked": "2026-10-29"
+ },
+ "ISO24089 iso-open-data ISO 24089:2023": {
+  "fingerprint": "4eb0c6f4457d74f1",
+  "summary": [
+   "ISO 24089:2023: stage 6060"
+  ],
+  "checked": "2026-10-29"
+ },
+ "ISO26262 iso-open-data ISO 26262-1:2018": {
+  "fingerprint": "c28c0ac8ec6b247d",
+  "summary": [
+   "ISO 26262-1:2018: stage 9092",
+   "successor ISO/DIS 26262-1: stage 4020"
+  ],
+  "checked": "2026-10-29"
+ },
+ "ISO26262-2 iso-open-data ISO 26262-2:2018": {
+  "fingerprint": "8ad7548b872823d6",
+  "summary": [
+   "ISO 26262-2:2018: stage 9092",
+   "successor ISO/DIS 26262-2: stage 4020"
+  ],
+  "checked": "2026-10-29"
+ },
+ "ISO26262-3 iso-open-data ISO 26262-3:2018": {
+  "fingerprint": "3571f7257aeffa11",
+  "summary": [
+   "ISO 26262-3:2018: stage 9092",
+   "successor ISO/DIS 26262-3: stage 4020"
+  ],
+  "checked": "2026-10-29"
+ },
+ "ISO34502 iso-open-data ISO 34502:2022": {
+  "fingerprint": "4eb0c6f4457d74f1",
+  "summary": [
+   "ISO 34502:2022: stage 6060"
+  ],
+  "checked": "2026-10-29"
+ },
+ "ISO34503 iso-open-data ISO 34503:2023": {
+  "fingerprint": "4eb0c6f4457d74f1",
+  "summary": [
+   "ISO 34503:2023: stage 6060"
+  ],
+  "checked": "2026-10-29"
+ },
+ "ISO5083 iso-open-data ISO/TS 5083:2025": {
+  "fingerprint": "dfa37b72e1b1852b",
+  "summary": [
+   "ISO/TS 5083:2025: stage 9092",
+   "successor ISO/WD TS 5083: stage 2060"
+  ],
+  "checked": "2026-10-29"
+ },
+ "ISO8800 iso-open-data ISO/PAS 8800:2024": {
+  "fingerprint": "5670535c69b3fdac",
+  "summary": [
+   "ISO/PAS 8800:2024: stage 6060",
+   "successor ISO/PWI PAS 8800-1: stage 98",
+   "successor ISO/PWI PAS 8800-2: stage 98"
+  ],
+  "checked": "2026-10-29"
+ },
+ "KITTI headers https://s3.eu-central-1.amazonaws.com/avg-kitti/data_object_label_2.zip": {
+  "fingerprint": "eefec811e1650a5b",
+  "summary": [
+   "etag: \"c846a1608cbba1e555ac56280ebca4a1\", last-modified: Fri, 11 May 2018 14:46:21 GMT, content-length: 5601213"
+  ],
+  "checked": "2026-10-29"
+ },
+ "KITTI headers https://s3.eu-central-1.amazonaws.com/avg-kitti/data_tracking_label_2.zip": {
+  "fingerprint": "aef1cd345ac7d908",
+  "summary": [
+   "etag: \"d6017790d39ba180ad09eaf450e48f1f\", last-modified: Fri, 11 May 2018 17:38:19 GMT, content-length: 2259128"
+  ],
+  "checked": "2026-10-29"
+ },
+ "NGSIM json-fields https://data.transportation.gov/api/views/8ect-6jqj.json": {
+  "fingerprint": "bf48421efd9b52de",
+  "summary": [
+   "rowsUpdatedAt: 1535394233",
+   "columns[].fieldName: [\"vehicle_id\", \"frame_id\", \"total_frames\", \"global_time\", \"local_x\", \"local_y\", \"global..."
+  ],
+  "checked": "2026-10-29"
+ },
+ "NHTSA-SGO csv-header https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/SGO-2021-01_Incident_Reports_ADAS.csv": {
+  "fingerprint": "68ee25e37d430edd",
+  "summary": [
+   "116 columns: Report ID, Report Version, Reporting Entity, Report Type, Report Month, Report Year ..."
+  ],
+  "checked": "2026-10-29"
+ },
+ "NHTSA-SGO csv-header https://static.nhtsa.gov/odi/ffdd/sgo-2021-01/SGO-2021-01_Incident_Reports_ADS.csv": {
+  "fingerprint": "68ee25e37d430edd",
+  "summary": [
+   "116 columns: Report ID, Report Version, Reporting Entity, Report Type, Report Month, Report Year ..."
+  ],
+  "checked": "2026-10-29"
+ },
+ "ROAD json-fields https://zenodo.org/api/records/10462796": {
+  "fingerprint": "f47b3ae44e692433",
+  "summary": [
+   "revision: 8",
+   "files[].checksum: [\"md5:cab184cfc2fe12c0834bc46188c0f330\"]"
+  ],
+  "checked": "2026-10-29"
+ },
+ "UNR155 regex-page https://globalautoregs.com/rules/226/modifications": {
+  "fingerprint": "1a77d0dd87b376ac",
+  "summary": [
+   "1 matches; last: Original text"
+  ],
+  "checked": "2026-10-29"
+ },
+ "UNR156 regex-page https://globalautoregs.com/rules/235/modifications": {
+  "fingerprint": "b87f00bfa73ad93d",
+  "summary": [
+   "2 matches; last: Original text"
+  ],
+  "checked": "2026-10-29"
+ },
+ "UNR157 regex-page https://globalautoregs.com/rules/247/modifications": {
+  "fingerprint": "b87f00bfa73ad93d",
+  "summary": [
+   "2 matches; last: Original text"
+  ],
+  "checked": "2026-10-29"
+ },
+ "UNR157 regex-page https://globalautoregs.com/rules/247/texts": {
+  "fingerprint": "b39b01abcd63017c",
+  "summary": [
+   "8 matches; last: Revision 1 | Amendment 2"
+  ],
+  "checked": "2026-10-29"
+ },
+ "VEREMI json-fields https://zenodo.org/api/records/20090854": {
+  "fingerprint": "5a689c84a3f54685",
+  "summary": [
+   "revision: 4",
+   "files[].checksum: [\"md5:b438766687a24358bb58fe9a3dcd6c5d\", \"md5:6561d57c0893f2b41906d7809ebc7e84\", \"md5:4..."
+  ],
+  "checked": "2026-10-29"
+ }
+}
